@@ -1,0 +1,24 @@
+// SETUP
+<<<<<<< HEAD
+=======
+// @import 'setup/typography';
+>>>>>>> bdf822e03d5833a3608ffb71c87de3c61e9aedb9
+@import 'setup/variables';
+@import 'setup/mixins';
+@import 'setup/functions';
+
+// BASICS
+@import 'basics/helpers';
+@import 'basics/base';
+@import 'basics/layout';
+
+// COMPONENTS
+@import 'components/main-header';
+@import 'components/teaser';
+@import 'components/pager';
+@import 'components/news';
+<<<<<<< HEAD
+@import 'components/cards';
+=======
+@import 'components/cards';
+>>>>>>> bdf822e03d5833a3608ffb71c87de3c61e9aedb9

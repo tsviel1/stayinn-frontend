@@ -8,6 +8,11 @@
   },
   "dependencies": {
     "element-plus": "^2.2.9",
+<<<<<<< HEAD
+    "node-sass": "^7.0.1",
+=======
+>>>>>>> bdf822e03d5833a3608ffb71c87de3c61e9aedb9
+    "sass": "^1.53.0",
     "vue": "^3.2.37",
     "vue-router": "^4.1.2",
     "vuex": "^4.0.2"

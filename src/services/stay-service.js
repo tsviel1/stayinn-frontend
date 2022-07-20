@@ -1,5 +1,5 @@
 import { storageService } from "./async-storage.service.js";
-import { db } from "./data/airbnb"
+import { db } from "./data/airbnb.js"
 const STAY_KEY = 'stayDB'
 
 // let gStays;
