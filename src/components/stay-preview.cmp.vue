@@ -1,6 +1,7 @@
 <template>
 <el-card>
   <div>
+    <img :src="stay.img" alt="">
     <span>{{stay.name}}</span>
     <div class="buttom">{{stay.address.street}}</div>
   </div>
