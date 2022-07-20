@@ -1,14 +1,26 @@
-<script setup>
-import { RouterLink, RouterView } from 'vue-router'
-</script>
 
 <template>
-  <header></header>
-  <RouterView />
+  <section>
+    <app-header />
+    <RouterView />
+  </section>
 </template>
+<script>
+
+import { RouterLink, RouterView } from 'vue-router'
+import appHeader from './components/header.cmp.vue'
+export default {
+  components: {
+    appHeader,
+  },
+  created() {
+    this.$store.dispatch({ type: 'loadStays' })
+    console.log('Hi')
+  },
+}
+</script>
 
 <style scoped>
-
 nav {
   width: 100%;
   font-size: 12px;
