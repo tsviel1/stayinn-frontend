@@ -5,17 +5,19 @@
         <p>{{stay.capacity}}<span> guests</span> .</p>
         <p>{{stay.bedrooms}}<span> bedroom</span> .</p>
         <p>{{stay.beds}}<span> beds</span> </p>
-        <br  />
       </div>
       <p>{{stay.summary}}</p>
+      <stay-reserve :stay="stay" />
     </section>
 </template>
  <script>
+import stayReserve from '../components/stay-reserve.cmp.vue';
 
  export default {
+
  name: 'stay-details',
     components: {
-
+      stayReserve,
     },
   data() {
    return {
