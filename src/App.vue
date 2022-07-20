@@ -6,11 +6,16 @@
   </section>
 </template>
 <script>
+
 import { RouterLink, RouterView } from 'vue-router'
-import appHeader from './cmps/header.cmp.vue'
+import appHeader from './components/header.cmp.vue'
 export default {
   components: {
     appHeader,
+  },
+  created() {
+    this.$store.dispatch({ type: 'loadStays' })
+    console.log('Hi')
   },
 }
 </script>

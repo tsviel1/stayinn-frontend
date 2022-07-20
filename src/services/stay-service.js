@@ -49,7 +49,7 @@ function _createStays() {
     }
 }
 
-module.export = {
+export const stayService = {
     query,
     getById,
     save,
