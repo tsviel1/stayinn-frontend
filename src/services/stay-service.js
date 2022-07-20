@@ -43,7 +43,7 @@ function addReview(stayId, review) {
 
 async function _createStays() {
     let stays = await storageService.query(STAY_KEY)
-    console.log('CREATE STAYS:', stays)
+    // console.log('CREATE STAYS:', stays)
     if(!stays || !stays.length ) {
         localStorage.setItem(STAY_KEY, JSON.stringify(db.stay))
     }

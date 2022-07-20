@@ -3,13 +3,25 @@ import { stayService } from '../../services/stay-service'
 export default {
   state: {
     stays: null,
+    currStay: null,
   },
   getters: {
     getStays({stays}) { return stays },
+    getCurrStay({currStay}) {
+      console.log('In get currStay')
+      return currStay
+    },
   },
+  
   mutations: {
     setstays(state, { stays }) {
         state.stays = stays
+    },
+    
+    setCurrStay(state, { stay }) {
+      // console.log(stay)
+      state.currStay = stay
+      // console.log(state.currStay)
     },
   },
   actions: {
@@ -21,6 +33,17 @@ export default {
         console.log('stayStore: Error in loadstays', err)
         throw err
       }
+    },
+    async getCurrStay({commit}, {stayId}) {
+      try {
+        const stay = await stayService.getById(stayId)
+        // console.log(stay)
+        commit({ type: 'setCurrStay', stay })
+      } catch (err) {
+        console.log('stayStore: Error in getCurrStay', err)
+        throw err
+      }
+     
     },
   },
 }
