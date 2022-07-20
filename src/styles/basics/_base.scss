@@ -9,7 +9,7 @@
 
 html { 
    font-family: Bahnschrift, sans-serif; 
-   color: $clr3;
+   color: $clr2;
    line-height: 1.8;
    line-height: lh(26px);
 
@@ -20,13 +20,14 @@ html {
 
 body {
     margin: 0;
-    background-color: $clr2;
+    background-color: $clr3;
+    color: $clr5;
 
-    @include for-normal-layout {
-        &.sidebar-open {
+     @include for-normal-layout {
+         &.sidebar-open {
             overflow: hidden;
         }
-    }
+     }
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -43,7 +44,7 @@ h2 {
     font-size: em(16px);
     margin: em(63px) 0;
     grid-area: title;
-    color: $clr1;
+    // color: $clr1;
     text-transform: uppercase;
     @include type(boldCondensed);
 }
@@ -56,39 +57,39 @@ img {
     width: 100%;
 }
 
-p {
-    margin: 0 0 1em;
-    max-width: 60ch;
-    @include type(light);
-    .main-text & {
-        grid-column: 3 / 6;
-        font-size: rem(22px);
-        line-height: 1.384615;
-        padding-inline-start: rem(30px);
-        position: relative;
+// p {
+//     margin: 0 0 1em;
+//     max-width: 60ch;
+//     @include type(light);
+//     .main-text & {
+//         grid-column: 3 / 6;
+//         font-size: rem(22px);
+//         line-height: 1.384615;
+//         padding-inline-start: rem(30px);
+//         position: relative;
         
-        &::after {
-            content: "";
-            position: absolute;
-            display: block;
-            top: 0;
-            left: 0;
-            width: 8px;
-            height: 100%;
-            max-height: 42px;
-            background-color: $clr1;
+//         &::after {
+//             content: "";
+//             position: absolute;
+//             display: block;
+//             top: 0;
+//             left: 0;
+//             width: 8px;
+//             height: 100%;
+//             max-height: 42px;
+//             background-color: $clr1;
             
-            @include for-wide-layout {
-                width: 10px;
-            }
-        }
+//             @include for-wide-layout {
+//                 width: 10px;
+//             }
+//         }
         
-        @include for-wide-layout {
-            grid-column: 3 / 5;
-            font-size: rem(26px);
-        }
-    }
-}
+//         @include for-wide-layout {
+//             grid-column: 3 / 5;
+//             font-size: rem(26px);
+//         }
+//     }
+// }
 
 .btn {
     @include btn;
@@ -105,15 +106,15 @@ p {
 
 // links
 a {
-    color: $clr1;
+    // color: $clr1;
 
     &.active {
         background-color: $clr1;
-        color: $clr2;
+        // color: $clr2;
     }
 }
 
 mark {
-    color: $clr1;
+    // color: $clr1;
     background-color: transparent;
 }

@@ -1,10 +1,11 @@
 <template>
-  <section>
-    <el-row v-if="stays">
-      <el-col v-for="stay in stays" :key="stay._id">
+  <section v-if="stays">
+    <ul class="card-layout">
+      <li class="card-container flex " v-for="stay in stays" :key="stay._id" >
         <stay-preview :stay="stay" />
-      </el-col>
-    </el-row>
+      </li>
+    </ul>
+
   </section>
 
 </template>
