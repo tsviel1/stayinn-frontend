@@ -1,11 +1,16 @@
 import { storageService } from "./async-storage.service.js";
+import { db } from "./data/airbnb"
 const STAY_KEY = 'stayDB'
+
+// let gStays;
+
+_createStays()
 
 function query() {
     return storageService.query(STAY_KEY)
 }
 
-function get(stayId) {
+function getById(stayId) {
     return storageService.get(STAY_KEY, stayId)
 }
 
@@ -34,4 +39,20 @@ function addReview(stayId, review) {
             stay.reviews.push(review)
             return storageService.put(STAY_KEY, stay)
         })
+}
+
+function _createStays() {
+    let stays = JSON.parse(storageService.query(STAY_KEY))
+    console.log('CREATE STAYS:', stays)
+    if(!stays || !stays.length) {
+        localStorage.setItem(db.stay)
+    }
+}
+
+module.export = {
+    query,
+    getById,
+    save,
+    removeReview,
+    addReview
 }
