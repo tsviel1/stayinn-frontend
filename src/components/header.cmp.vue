@@ -2,7 +2,8 @@
     <header class="main-header flex items-center justify-between">
         <div>
             <div class="logo uppercase">
-                <h2>StayInn</h2>
+                <h2>StayInn <logo-cmp/></h2>
+                
             </div>
             <search-cmp />
             <nav class="">
@@ -15,8 +16,9 @@
 </template>
 
 <script>
-import searchCmp from "./search.cmp.vue";
-import categoriesFilter from "./categories-filter.cmp.vue";
+import logoCmp from "./logo.cmp.vue"
+import searchCmp from "./search.cmp.vue"
+import categoriesFilter from "./categories-filter.cmp.vue"
 
 export default {
     template: `
@@ -32,7 +34,8 @@ export default {
     computed: {},
     components: {
         searchCmp,
-        categoriesFilter
+        categoriesFilter,
+        logoCmp
     }
 };
 </script>
