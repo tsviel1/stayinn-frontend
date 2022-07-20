@@ -10,6 +10,9 @@
     align-self: center;
 }
 
+.justify-between {
+    justify-content: space-between;
+  }
 
 // List 
 .clean-list {
@@ -23,6 +26,10 @@
      writing-mode: tb-rl;
     transform: rotate(-180deg);  
  }
+
+ .items-center {
+    align-items: center;
+  }
 
  .tag-text {
      color: $clr1;
