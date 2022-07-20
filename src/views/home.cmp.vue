@@ -1,7 +1,7 @@
 <template>
   <section>
     <stay-filter />
-    <stay-list />
+    <stay-list  />
   </section>
 </template>
 <script>
