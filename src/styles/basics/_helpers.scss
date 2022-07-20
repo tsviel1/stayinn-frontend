@@ -1,6 +1,7 @@
 // Flex 
 .flex {
     display: flex;
+    color: green
 }
 .flex.inline-flex {
     display: inline-flex;
@@ -38,3 +39,4 @@
 .ratio-card { @include aspect-ratio(100, 80); }
 
 .ratio-poster { @include aspect-ratio(100, 150); }
+
