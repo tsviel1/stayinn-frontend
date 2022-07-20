@@ -5,7 +5,9 @@
  name: 'home-page',
     components: {},
   data() {
-   return {};
+   return {
+    
+   };
     },
   created() {},
  methods: {},
