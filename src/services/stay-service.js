@@ -45,7 +45,7 @@ function _createStays() {
     let stays = JSON.parse(storageService.query(STAY_KEY))
     console.log('CREATE STAYS:', stays)
     if(!stays || !stays.length) {
-        localStorage.setItem(db.stay)
+        localStorage.setItem(STAY_KEY, db.stay)
     }
 }
 
