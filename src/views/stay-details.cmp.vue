@@ -1,5 +1,5 @@
 <template>
-    <section class="stay-details">
+    <section v-if="stay" class="stay-details">
       <h3>{{ stay.name }}</h3>
       <div class="flex">
         <p>{{stay.capacity}}<span> guests</span> .</p>
