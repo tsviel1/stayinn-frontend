@@ -1,10 +1,9 @@
 <template>
-  <el-card>
     <div>
+      <img class="card-img" :src="stay.imgUrls[0]"/> 
       <span>{{ stay.name }}</span>
-      <div class="buttom">{{ stay.loc.address }}</div>
+      <div class="buttom">{{ stay.loc.address }} • {{stay.loc.country}}</div>
     </div>
-  </el-card>
 </template>
  <script>
 export default {
@@ -17,10 +16,6 @@ export default {
     return {};
   },
   created() { },
-  methods: {},
-  computed: {},
-  unmounted() { },
+
 };
 </script>
- <style>
- </style>
