@@ -18,4 +18,4 @@ function logout(userId) {
 
 function getLoggedInUser() {
     return storageService.query(KEY)
-  }
+}
