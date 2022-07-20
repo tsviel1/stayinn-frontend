@@ -6,18 +6,11 @@ export default {
     currStay: null,
   },
   getters: {
-<<<<<<< HEAD
     getStays({stays}) { return stays },
     getCurrStay({currStay}) {
       console.log('In get currStay')
       return currStay
     },
-=======
-    getStays({stays}) { 
-
-      
-      return stays },
->>>>>>> 6a22e2ad659ab938853adc9bd4340ecf1cacb97a
   },
   
   mutations: {
