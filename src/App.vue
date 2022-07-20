@@ -2,12 +2,10 @@
 <template>
   <section>
     <app-header />
-    <RouterView />
+    <router-view/>
   </section>
 </template>
 <script>
-
-import { RouterLink, RouterView } from 'vue-router'
 import appHeader from './components/header.cmp.vue'
 export default {
   components: {

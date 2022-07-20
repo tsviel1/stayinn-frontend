@@ -1,7 +1,11 @@
 <template>
-  <section>
+  <section class="home-page">
     <stay-filter />
+<<<<<<< HEAD
     <stay-list  />
+=======
+    <stay-list v-if="staysToDisplay" :stays="staysToDisplay" />
+>>>>>>> bdf822e03d5833a3608ffb71c87de3c61e9aedb9
   </section>
 </template>
 <script>
@@ -28,12 +32,12 @@ export default {
     loadStays() {
 
     },
-    computed: {
-      stays() {
-        return this.$store.getters.getStays
-      }
-    },
-    unmounted() { },
-  }
+  },
+  computed: {
+    staysToDisplay() {
+      return this.$store.getters.getStays
+    }
+  },
+  unmounted() { },
 }
 </script>
