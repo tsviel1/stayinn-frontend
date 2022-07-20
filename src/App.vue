@@ -1,14 +1,21 @@
-<script setup>
-import { RouterLink, RouterView } from 'vue-router'
-</script>
 
 <template>
-   
-  <RouterView />
+  <section>
+    <app-header />
+    <RouterView />
+  </section>
 </template>
+<script>
+import { RouterLink, RouterView } from 'vue-router'
+import appHeader from './cmps/header.cmp.vue'
+export default {
+  components: {
+    appHeader,
+  },
+}
+</script>
 
 <style scoped>
-
 nav {
   width: 100%;
   font-size: 12px;
