@@ -1,7 +1,7 @@
 <template>
-  <section>
+  <section class="home-page">
     <stay-filter />
-    <stay-list />
+    <stay-list v-if="staysToDisplay" :stays="staysToDisplay" />
   </section>
 </template>
 <script>
@@ -28,12 +28,12 @@ export default {
     loadStays() {
 
     },
-    computed: {
-      stays() {
-        return this.$store.getters.getStays
-      }
-    },
-    unmounted() { },
-  }
+  },
+  computed: {
+    staysToDisplay() {
+      return this.$store.getters.getStays
+    }
+  },
+  unmounted() { },
 }
 </script>
