@@ -2,18 +2,21 @@
     <section>
         <el-card shadow="always">
             <p><span>{{stay.price}} $</span> night</p>
+            <reserve-table :stay="stay" />
         </el-card>
     </section>
 </template>
 
 <script>
+    import reserveTable from './reserve-table.cmp.vue'
+
     export default {
         name: 'stay-reserve',
         props: {
             stay: Object
         },
         components: {
-
+            reserveTable
         },
         data() {
         return {
