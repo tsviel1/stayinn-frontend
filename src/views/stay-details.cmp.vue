@@ -15,6 +15,7 @@
 
       <review-list :stay="stay"  />
       <mini-host-preview :stay="stay" />
+      <map-cmp :stay="stay"/>
     </section>
 </template>
  <script>
@@ -22,7 +23,7 @@ import stayReserve from '../components/stay-reserve.cmp.vue';
 import ameneties from '../components/ameneties.cmp.vue';
 import reviewList from '../components/review-list.cmp.vue'; 
 import miniHostPreview from '../components/mini-hostPreview.cmp.vue';
- 
+ import mapCmp from '../components/map.cmp.vue'
  export default {
 
  name: 'stay-details',
@@ -30,7 +31,8 @@ import miniHostPreview from '../components/mini-hostPreview.cmp.vue';
       stayReserve,
       ameneties,
       reviewList,
-      miniHostPreview
+      miniHostPreview,
+      mapCmp
     },
   data() {
    return {
