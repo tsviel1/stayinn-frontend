@@ -1,7 +1,12 @@
 <template>
     <section v-if="stay" class="stay-details container">
     <a @click="onClickStay">Back</a>
-      <h3>{{ stay.name }}</h3>
+    <div>
+      <h1 class="stay-title">{{ stay.name }}</h1>
+      <div>
+        <span><i class="fa fa-star"></i><span></span></span>
+      </div>
+    </div>
       <div class="flex">
         <p>{{stay.capacity}}<span> guests</span> .</p>
         <p>{{stay.bedrooms}}<span> bedroom</span> .</p>

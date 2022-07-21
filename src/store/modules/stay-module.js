@@ -11,6 +11,9 @@ export default {
       console.log('In get currStay')
       return currStay
     },
+    getCurrStayAvg({currStay}) {
+      
+    },
   },
   
   mutations: {
