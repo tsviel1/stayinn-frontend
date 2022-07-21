@@ -2,14 +2,17 @@
 <template>
   <section>
     <app-header />
-    <router-view/>
+    <router-view />
+    <user-msg />
   </section>
 </template>
 <script>
 import appHeader from './components/header.cmp.vue'
+import userMsg from './components/user-msg.vue';
 export default {
   components: {
     appHeader,
+    userMsg
   },
   created() {
     this.$store.dispatch({ type: 'loadStays' })
