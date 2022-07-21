@@ -1,14 +1,14 @@
 <template>
-    <header class="main-header flex items-center justify-between">
-        <div>
-            <div class="logo uppercase">
-                <h2>StayInn <logo-cmp/></h2>
+    <header class="main-header ">
+        <div class="app-header container">
+            <div class="logo ">
+                <h2>StayInn<i class="fab fa-airbnb"></i></h2>
                 
             </div>
             <search-cmp />
-            <nav class="">
-                <router-link class="link" to="/stay">Explore</router-link>
-                <router-link class="link" to="/user/:userId">User</router-link>
+            <nav class="nav-container">
+                <a><router-link class="link" to="/stay">Explore</router-link></a>
+                <a><router-link class="link" to="/user/:userId">User</router-link></a>
             </nav>
         </div>
         <categories-filter v-if="isHomePage" />

@@ -47,3 +47,7 @@
 
  .ratio-poster { @include aspect-ratio(100, 150); }
 
+ .container {
+    padding-inline-start: 80px;
+    padding-inline-end: 80px;
+ }
