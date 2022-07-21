@@ -14,12 +14,14 @@
       <ameneties :stay="stay" />
 
       <review-list :stay="stay"  />
+      <mini-host-preview :stay="stay" />
     </section>
 </template>
  <script>
 import stayReserve from '../components/stay-reserve.cmp.vue';
 import ameneties from '../components/ameneties.cmp.vue';
 import reviewList from '../components/review-list.cmp.vue'; 
+import miniHostPreview from '../components/mini-hostPreview.cmp.vue';
  
  export default {
 
@@ -27,7 +29,8 @@ import reviewList from '../components/review-list.cmp.vue';
     components: {
       stayReserve,
       ameneties,
-      reviewList
+      reviewList,
+      miniHostPreview
     },
   data() {
    return {
