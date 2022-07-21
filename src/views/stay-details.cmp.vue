@@ -11,12 +11,14 @@
       <stay-reserve :stay="stay" />
 
       <ameneties :stay="stay" />
+
+      <review-list :stay="stay"  />
     </section>
 </template>
  <script>
 import stayReserve from '../components/stay-reserve.cmp.vue';
 import ameneties from './ameneties.cmp.vue';
- 
+import reviewList from '../components/review-list.cmp.vue'; 
  
  export default {
 
@@ -24,6 +26,7 @@ import ameneties from './ameneties.cmp.vue';
     components: {
       stayReserve,
       ameneties,
+      reviewList
     },
   data() {
    return {
