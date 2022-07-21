@@ -4,4 +4,27 @@
         font-weight: 600;
         font-size: 26px;
     }
+    .sub-titles {
+        font-weight: 600;
+        font-size: 14px;
+    }
+    .dot {
+        color: #717171;
+        margin-right: 8px;
+        margin-left: 8px;
+    }
+    .type-heading {
+        padding: 48px 0 24px;
+        h2 {
+            font-weight: 600;
+            font-size: 22px;
+            margin: 0 0 8px 0;
+        }
+    }
+    .capacities {
+        font-size: 16px;
+        font-weight: 400;
+        line-height: 20px;
+        height: 20px;
+    }
 }

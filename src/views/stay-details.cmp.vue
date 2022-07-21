@@ -1,17 +1,23 @@
 <template>
     <section v-if="stay" class="stay-details container">
     <a @click="onClickStay">Back</a>
-    <div>
-      <h1 class="stay-title">{{ stay.name }}</h1>
-      <div>
-        <span><i class="fa fa-star"></i><span></span></span>
-      </div>
+
+      <stay-details-heading :stay="stay" />
+      
+      <!-- <div class="details-img-gallery flex" v-for="img in stay.imgUrls"> 
+        <pre>{{img}}</pre>
+        <img :src="'img'" />
+      </div> -->
+    <div class="type-heading">
+      <h2>{{ stay.propertyType  }} hosted by {{ stay.host.fullname }}</h2>
+      <ul class="capacities clean-list flex">
+        <li>{{stay.capacity}}<span> guests</span> .</li>
+        <li>{{stay.bedrooms}}<span> bedroom</span> .</li>
+        <li>{{stay.beds}}<span> beds</span> </li>
+      </ul>
     </div>
-      <div class="flex">
-        <p>{{stay.capacity}}<span> guests</span> .</p>
-        <p>{{stay.bedrooms}}<span> bedroom</span> .</p>
-        <p>{{stay.beds}}<span> beds</span> </p>
-      </div>
+
+      
       <p>{{stay.summary}}</p>
       <hr />
       <stay-reserve :stay="stay" />
@@ -27,7 +33,9 @@ import stayReserve from '../components/stay-reserve.cmp.vue';
 import ameneties from '../components/ameneties.cmp.vue';
 import reviewList from '../components/review-list.cmp.vue'; 
 import miniHostPreview from '../components/mini-hostPreview.cmp.vue';
- 
+import stayDetailsHeading from '../components/stay-details-heading.cmp.vue'
+
+
  export default {
 
  name: 'stay-details',
@@ -35,7 +43,8 @@ import miniHostPreview from '../components/mini-hostPreview.cmp.vue';
       stayReserve,
       ameneties,
       reviewList,
-      miniHostPreview
+      miniHostPreview,
+      stayDetailsHeading,
     },
   data() {
    return {
@@ -60,6 +69,12 @@ import miniHostPreview from '../components/mini-hostPreview.cmp.vue';
   stay() {
     
     return this.$store.getters.getCurrStay
+  },
+  getAvgReviews() {
+    return this.$store.getters.getCurrStayAvg
+  },
+  getReviewsAmount() {
+    return this.$store.getters.getReviewsLength
   }
  },
  unmounted() {},
