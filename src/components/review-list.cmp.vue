@@ -8,9 +8,7 @@
     </h3>
     <ul class="clean-list" v-for="(review, index) in stay.reviews">
       <review-preview :review="review" />
-      <h4>{{ review.by.fullname }}</h4>
-      <h5>Here there will be createdAt date</h5>
-      <li>{{review.txt}}</li>
+      
     </ul>
   </section>
 </template>
