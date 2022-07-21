@@ -1,5 +1,5 @@
 <template>
-  <section class="home-page">
+  <section class="home-page container">
     <stay-filter />
     <stay-list v-if="staysToDisplay" :stays="staysToDisplay" />
   </section>

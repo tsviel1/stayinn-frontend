@@ -8,7 +8,7 @@
 }
 
 html { 
-   font-family: Bahnschrift, sans-serif; 
+   font-family: airbnb-book, sans-serif; 
    color: $clr2;
    line-height: 1.8;
    line-height: lh(26px);
@@ -45,8 +45,8 @@ h2 {
     margin: em(63px) 0;
     grid-area: title;
     // color: $clr1;
-    text-transform: uppercase;
-    @include type(boldCondensed);
+    // text-transform: uppercase;
+    // @include type(boldCondensed);
 }
 
 h3 {

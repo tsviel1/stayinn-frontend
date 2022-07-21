@@ -1,7 +1,7 @@
 <template>
   <section v-if="stays">
     <ul class="card-layout">
-      <li class="card-container flex " v-for="stay in stays" :key="stay._id" >
+      <li class="card-container flex" v-for="stay in stays" :key="stay._id"  >
         <stay-preview :stay="stay" />
       </li>
     </ul>
@@ -22,6 +22,9 @@ export default {
   components: {
     stayPreview
   },
+ computed: {
+  
+ },
 };
 </script>
  <style>
