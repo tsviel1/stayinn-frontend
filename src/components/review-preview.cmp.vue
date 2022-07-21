@@ -1,7 +1,9 @@
 <template>
-    <div>
-
-    </div>
+    <section class="review-preview">
+        <h4>{{ review.by.fullname }}</h4>
+        <h5>Here there will be createdAt date</h5>
+        <li>{{ review.txt }}</li>
+    </section>
 </template>
 
 <script>
@@ -13,7 +15,9 @@ export default {
     data() {
         return {}
     },
-    created() { },
+    created() {
+        console.log(this.review)
+    },
     methods: {},
     computed: {},
     unmounted() { },
