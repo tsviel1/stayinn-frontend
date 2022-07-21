@@ -24,7 +24,7 @@
         }
         },
         created() {
-            console.log(this.stay)
+            // console.log(this.stay)
         },
         methods: {},
         computed: {},

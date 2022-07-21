@@ -8,6 +8,8 @@
 </template>
 
 <script>
+    import {amentiesMap} from '../services/data/amenties-map.js'
+
     export default {
         name: 'ameneties',
         props: {
@@ -16,7 +18,9 @@
         data() {
         return {}
         },
-        created() {},
+        created() {
+            console.log(amentiesMap["Air conditioning"])
+        },
         methods: {},
         computed: {},
         unmounted() {},

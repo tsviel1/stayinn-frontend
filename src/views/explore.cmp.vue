@@ -1,6 +1,8 @@
 <template>
+<section class="explore-app container">
   <stay-filter />
   <stay-list />
+  </section>
 </template>
  <script>
 import stayFilter from '../components/stay-filter.cmp.vue';

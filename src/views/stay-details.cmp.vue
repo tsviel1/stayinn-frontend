@@ -1,5 +1,6 @@
 <template>
-    <section v-if="stay" class="stay-details">
+    <section v-if="stay" class="stay-details container">
+    <a @click="onClickStay">Back</a>
       <h3>{{ stay.name }}</h3>
       <div class="flex">
         <p>{{stay.capacity}}<span> guests</span> .</p>
@@ -31,6 +32,7 @@ import reviewList from '../components/review-list.cmp.vue';
    return {
     stayId: this.$route.params.id,
     // stay: null
+    orderInfo:''
    };
     },
   created() {
@@ -40,7 +42,11 @@ import reviewList from '../components/review-list.cmp.vue';
     // this.$store.commit({type: 'setCurrStayId', stayId: newStayId} )
     this.$store.dispatch({ type: 'getCurrStay', stayId: newStayId })
   },
- methods: {},
+ methods: {
+  onClickStay(filterBy) {
+       this.$router.push(`/explore/${filterBy}`)
+     }
+ },
  computed: {
   stay() {
     
