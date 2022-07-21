@@ -1,9 +1,6 @@
 <template>
-    <section class="ameneties">
-        <h3>What this place offers</h3>
-        <ul class="clean-list" v-for="(a, index) in stay.amenities">
-            <li>{{ a }}</li>
-        </ul>
+    <section class="amenety-preview">
+        <li><i :class="`${icons[amenety]}`"></i>  {{ amenety }}</li>
     </section>
 </template>
 
@@ -13,19 +10,21 @@
     export default {
         name: 'ameneties',
         props: {
-            stay: Object
+            amenety: String
         },
         data() {
-        return {}
+        return {
+            icons: amentiesMap
+        }
         },
         created() {
-            console.log(amentiesMap["Air conditioning"])
+            // console.log(this.amenety)
         },
         methods: {},
         computed: {},
         unmounted() {},
+        }
 
-    }
 </script>
 
 <style lang="scss" scoped>

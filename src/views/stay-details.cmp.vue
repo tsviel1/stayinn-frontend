@@ -8,17 +8,20 @@
         <p>{{stay.beds}}<span> beds</span> </p>
       </div>
       <p>{{stay.summary}}</p>
+      <hr />
       <stay-reserve :stay="stay" />
 
       <ameneties :stay="stay" />
 
       <review-list :stay="stay"  />
+      <mini-host-preview :stay="stay" />
     </section>
 </template>
  <script>
 import stayReserve from '../components/stay-reserve.cmp.vue';
-import ameneties from './ameneties.cmp.vue';
+import ameneties from '../components/ameneties.cmp.vue';
 import reviewList from '../components/review-list.cmp.vue'; 
+import miniHostPreview from '../components/mini-hostPreview.cmp.vue';
  
  export default {
 
@@ -26,7 +29,8 @@ import reviewList from '../components/review-list.cmp.vue';
     components: {
       stayReserve,
       ameneties,
-      reviewList
+      reviewList,
+      miniHostPreview
     },
   data() {
    return {
