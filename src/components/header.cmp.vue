@@ -2,7 +2,7 @@
     <header class="main-header ">
         <div class="app-header container">
             <div class="logo ">
-                <h2>StayInn<i class="fa-brands fa-airbnb"></i></h2>
+                <h2>StayInn<i class="fab fa-airbnb"></i></h2>
                 
             </div>
             <search-cmp />
