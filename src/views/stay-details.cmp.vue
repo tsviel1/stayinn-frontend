@@ -17,7 +17,7 @@
 </template>
  <script>
 import stayReserve from '../components/stay-reserve.cmp.vue';
-import ameneties from './ameneties.cmp.vue';
+import ameneties from '../components/ameneties.cmp.vue';
 import reviewList from '../components/review-list.cmp.vue'; 
  
  export default {
