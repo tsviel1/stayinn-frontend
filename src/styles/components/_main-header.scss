@@ -9,13 +9,23 @@
         justify-content: space-between;
         flex-direction: row;
         align-items: center;
-       border-bottom: 1px solid $clr4;
+        border-bottom: 1px solid $clr4;
     }
 
-    .nav-container a {
-        color: $clr5;
-        text-decoration: none;
-        justify-content: space-between;
+    .nav-container {
+        display: flex;
+
+        a {
+            color: $clr5;
+            text-decoration: none;
+            justify-content: space-between;
+            font-size: 1.2rem;
+
+            &:nth-child(2) {
+                padding-left: 30px;
+
+            }
+        }
     }
 
     .logo h2 {

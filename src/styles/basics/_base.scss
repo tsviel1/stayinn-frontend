@@ -10,24 +10,21 @@
 html { 
    font-family: airbnb-book, sans-serif; 
    color: $clr2;
-   line-height: 1.8;
-   line-height: lh(26px);
+   line-height: 1.2;
 
-   @media (max-width: 1300px) {
-       font-size: 13px;
-   }
+
+
+       font-size: 11px;
+   
 }
 
 body {
     margin: 0;
     background-color: $clr3;
     color: $clr5;
+    font-size:  1rem;
 
-     @include for-normal-layout {
-         &.sidebar-open {
-            overflow: hidden;
-        }
-     }
+
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -41,7 +38,7 @@ h1 {
 }
 
 h2 {
-    font-size: em(16px);
+    font-size: 30px;
     margin: em(63px) 0;
     grid-area: title;
     // color: $clr1;
@@ -105,16 +102,16 @@ img {
 
 
 // links
-a {
-    // color: $clr1;
+// a {
+//     // color: $clr1;
 
-    &.active {
-        background-color: $clr1;
-        // color: $clr2;
-    }
-}
+//     &.active {
+//         background-color: $clr1;
+//         // color: $clr2;
+//     }
+// }
 
-mark {
-    // color: $clr1;
-    background-color: transparent;
-}
+// mark {
+//     // color: $clr1;
+//     background-color: transparent;
+// }

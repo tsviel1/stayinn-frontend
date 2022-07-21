@@ -3,20 +3,43 @@
     display: flex;
     margin: 0;
     color: #222;
-    background-color:$clr3;
-    
+    background-color: $clr3;
+
     li {
         list-style: none;
         margin: 0;
         padding: 0;
-        
+
     }
-    img{
+    .text-container{
+        margin-top: 8px;
+        .title {
+            font-family: airbnb-bold;
+            color: black;
+            font-size: 12px;
+            font-weight: 550;
+        }
+    
+        p {
+            // font-size: 15px;
+            line-height: 5px;
+            color: $clr2;
+        }
+        span.price{
+            font-size: 13px;
+            color: $clr5;
+            font-weight: 550;
+
+        }
+    }
+
+    img {
         border-radius: 0.5em;
         width: 100%;
         aspect-ratio: 1 / 1;
         object-fit: cover;
     }
+
 }
 
 .card-layout {
@@ -30,8 +53,8 @@
     // padding-top: 1rem;
     //  padding-bottom: 250px
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(30ch, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(38ch, 1fr));
     grid-gap: 1.5rem;
     padding: 0;
- 
-  }
+
+}

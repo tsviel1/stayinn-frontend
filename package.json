@@ -9,6 +9,7 @@
   "dependencies": {
     "element-plus": "^2.2.9",
     "esbuild": "^0.14.49",
+    "litepie-datepicker": "^1.0.14",
     "sass": "^1.53.0",
     "vue": "^3.2.37",
     "vue-router": "^4.1.2",
