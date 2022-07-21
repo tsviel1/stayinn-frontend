@@ -8,6 +8,7 @@
         <p>{{stay.beds}}<span> beds</span> </p>
       </div>
       <p>{{stay.summary}}</p>
+      <hr />
       <stay-reserve :stay="stay" />
 
       <ameneties :stay="stay" />
