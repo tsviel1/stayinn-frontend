@@ -1,7 +1,8 @@
 <template>
   <section class="review-list">
     <h3>
-      <font-awesome-icon icon="fas fa-star" />
+      <i class="fas fa-star"></i> 
+      {{ getReviewAvg }} Average .
       {{reviewLength}} reviews
     
     </h3>
@@ -29,7 +30,13 @@
     this.reviewLength = this.stay.reviews.length
   },
  methods: {},
- computed: {},
+ computed: {
+  getReviewAvg() {
+    let sumRate = this.stay.reviews.reduce((acc, currVal) => acc + currVal.rate, 0)
+    let avg = sumRate / this.reviewLength
+    return avg
+  }
+ },
  unmounted() {},
   };
   </script>
