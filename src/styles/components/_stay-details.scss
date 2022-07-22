@@ -1,5 +1,6 @@
 .stay-details{
-    h1 {
+    //stay-details-heading component
+    .stay-title {
         color: $clr5;
         font-weight: 600;
         font-size: 26px;
@@ -15,7 +16,7 @@
     }
     .type-heading {
         padding: 48px 0 24px;
-        h2 {
+        .type-heading-title {
             font-weight: 600;
             font-size: 22px;
             margin: 0 0 8px 0;
@@ -26,5 +27,29 @@
         font-weight: 400;
         line-height: 20px;
         height: 20px;
+    }
+    .stay-details-desc {
+        font-size: 16px;
+        font-weight: 400;
+    }
+    //Amenties components
+    .ameneties-title {
+        font-size: 22px;
+        font-weight: 600;
+        padding: 0 0 24px;
+    }
+    .ameneties-list {
+        flex-wrap: wrap;
+    }
+    //amenties-preview component
+    .amenety-preview {
+        padding: 0 8px;
+    }
+    .amenety-list-item {
+        font-size: 16px;
+        font-weight: 400;
+        padding-bottom: 16px;
+        justify-content: flex-end;
+
     }
 }

@@ -1,6 +1,9 @@
 <template>
     <section class="amenety-preview">
-        <li><i :class="`${icons[amenety]}`"></i>  {{ amenety }}</li>
+        <li class="amenety-list-item flex">
+            <i :class="`${icons[amenety]} amenety-icon`"></i>
+            <span class="amenety-span">{{ amenety }} </span> 
+        </li>
     </section>
 </template>
 

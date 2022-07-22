@@ -4,12 +4,12 @@
 
       <stay-details-heading :stay="stay" />
       
-      <div class="details-img-gallery flex" v-for="img in stay.imgUrls"> 
+      <!-- <div class="details-img-gallery flex" v-for="img in stay.imgUrls"> 
         <pre>{{img}}</pre>
         <img :src="img" />
-      </div> 
+      </div>  -->
     <div class="type-heading">
-      <h2>{{ stay.propertyType  }} hosted by {{ stay.host.fullname }}</h2>
+      <h2 class="type-heading-title">{{ stay.propertyType  }} hosted by {{ stay.host.fullname }}</h2>
       <ul class="capacities clean-list flex">
         <li>{{stay.capacity}}<span> guests</span> .</li>
         <li>{{stay.bedrooms}}<span> bedroom</span> .</li>
@@ -18,7 +18,7 @@
     </div>
 
       
-      <p>{{stay.summary}}</p>
+      <p class="stay-details-desc">{{stay.summary}}</p>
       <hr />
       <stay-reserve :stay="stay" />
 
