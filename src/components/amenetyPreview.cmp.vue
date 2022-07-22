@@ -1,6 +1,6 @@
 <template>
     <section class="amenety-preview">
-        <li><i :class="`${icons[amenety]}`"></i>  {{ amenety }}</li>
+        <li><i :class="`${icons[amenety]}`"></i> {{ amenety }}</li>
     </section>
 </template>
 
