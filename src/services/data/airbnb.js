@@ -1,4 +1,4 @@
-
+// import immg from '../../assets/Images'
 // State: stay (crudl) , trip => order.
 
 const db = {
@@ -10,7 +10,7 @@ const db = {
       "propertyType": "Serviced apartment",
       "roomType": "Entire home/apt",
       "bedType": "Real Bed",
-      "imgUrls": ["https://a0.muscache.com/im/pictures/e83e702f-ef49-40fb-8fa0-6512d7e26e9b.jpg?aki_policy=large", "@/assets/Images/001.jpeg", "../../assets/Images/002.jpeg", "../../assets/Images/03.jpeg", "../../assets/Images/004.jpeg"],
+      "imgUrls": ["https://a0.muscache.com/im/pictures/e83e702f-ef49-40fb-8fa0-6512d7e26e9b.jpg?aki_policy=large","../assets/images/001.jpeg", "../assets/images/002.jpeg", "../assets/images/003.jpeg", "../assets/images/004.jpeg"],
       "price": 80.00,
       "summary": "Fantastic duplex apartment with three bedrooms, located in the historic area of Porto, Ribeira (Cube)...",
       "capacity": 8,
@@ -40,7 +40,7 @@ const db = {
         "city": "Istanbul",
         "address": "Taksim, Cihangir, Istanbul , Beyoğlu, Turkey",
         "lat": 28.98648,
-        "lan": 41.03376
+        "lng": 41.03376
       },
       "reviews": [
         {
@@ -63,7 +63,7 @@ const db = {
       "propertyType": "Serviced apartment",
       "roomType": "Entire home/apt",
       "bedType": "Real Bed",
-      "imgUrls": ["https://a0.muscache.com/im/pictures/e83e702f-ef49-40fb-8fa0-6512d7e26e9b.jpg?aki_policy=large", "@/assets/Images/001.jpeg", "../../assets/Images/002.jpeg", "../../assets/Images/03.jpeg", "../../assets/Images/004.jpeg"],
+      "imgUrls": ["https://a0.muscache.com/im/pictures/e83e702f-ef49-40fb-8fa0-6512d7e26e9b.jpg?aki_policy=large","../assets/images/001.jpeg", "../assets/images/002.jpeg", "../assets/images/003.jpeg", "../assets/images/004.jpeg"],
       "price": 80.00,
       "summary": "Fantastic duplex apartment with three bedrooms, located in the historic area of Porto, Ribeira (Cube)...",
       "capacity": 8,
@@ -93,7 +93,7 @@ const db = {
         "city": "Barcelona",
         "address": "Barcelona, Catalunya, Spain",
         "lat": 2.16685,
-        "lan": 41.38371
+        "lng": 41.38371
       },
       "reviews": [
         {
@@ -109,6 +109,8 @@ const db = {
       ],
       "likedByUsers" : ['mini-user'] // for user-wishlist : use $in
     },
+    
+    
     {
       "_id": "100066646546",
       "name": "Ribeira Charming Duplex",
@@ -116,7 +118,7 @@ const db = {
       "propertyType": "Serviced apartment",
       "roomType": "Entire home/apt",
       "bedType": "Real Bed",
-      "imgUrls": ["https://a0.muscache.com/im/pictures/e83e702f-ef49-40fb-8fa0-6512d7e26e9b.jpg?aki_policy=large", "@/assets/Images/001.jpeg", "../../assets/Images/002.jpeg", "../../assets/Images/03.jpeg", "../../assets/Images/004.jpeg"],
+      "imgUrls": ["https://a0.muscache.com/im/pictures/e83e702f-ef49-40fb-8fa0-6512d7e26e9b.jpg?aki_policy=large","../assets/images/001.jpeg", "../assets/images/002.jpeg", "../assets/images/003.jpeg", "../assets/images/004.jpeg"],
       "price": 80.00,
       "summary": "Fantastic duplex apartment with three bedrooms, located in the historic area of Porto, Ribeira (Cube)...",
       "capacity": 8,
@@ -146,7 +148,7 @@ const db = {
         "city": "New York",
         "address": "Brooklyn, NY, United States",
         "lat": -73.92922,
-        "lan": 40.68683
+        "lng": 40.68683
       },
       "reviews": [
         {
@@ -169,7 +171,7 @@ const db = {
       "propertyType": "Serviced apartment",
       "roomType": "Entire home/apt",
       "bedType": "Real Bed",
-      "imgUrls": ["https://a0.muscache.com/im/pictures/e83e702f-ef49-40fb-8fa0-6512d7e26e9b.jpg?aki_policy=large", "@/assets/Images/001.jpeg", "../../assets/Images/002.jpeg", "../../assets/Images/03.jpeg", "../../assets/Images/004.jpeg"],
+      "imgUrls": ["https://a0.muscache.com/im/pictures/e83e702f-ef49-40fb-8fa0-6512d7e26e9b.jpg?aki_policy=large","../assets/images/001.jpeg", "../assets/images/002.jpeg", "../assets/images/003.jpeg", "../assets/images/004.jpeg"],
       "price": 80.00,
       "summary": "Fantastic duplex apartment with three bedrooms, located in the historic area of Porto, Ribeira (Cube)...",
       "capacity": 8,
@@ -199,7 +201,7 @@ const db = {
         "city": "Montreal",
         "address": "Montréal, QC, Canada",
         "lat": -73.54985,
-        "lan": 45.52797
+        "lng": 45.52797
       },
       "reviews": [
         {
@@ -222,7 +224,7 @@ const db = {
       "propertyType": "Serviced apartment",
       "roomType": "Entire home/apt",
       "bedType": "Real Bed",
-      "imgUrls": ["https://a0.muscache.com/im/pictures/e83e702f-ef49-40fb-8fa0-6512d7e26e9b.jpg?aki_policy=large", "@/assets/Images/001.jpeg", "../../assets/Images/002.jpeg", "../../assets/Images/03.jpeg", "../../assets/Images/004.jpeg"],
+      "imgUrls": ["https://a0.muscache.com/im/pictures/e83e702f-ef49-40fb-8fa0-6512d7e26e9b.jpg?aki_policy=large","../assets/images/001.jpeg", "../assets/images/002.jpeg", "../assets/images/003.jpeg", "../assets/images/004.jpeg"],
       "price": 80.00,
       "summary": "Fantastic duplex apartment with three bedrooms, located in the historic area of Porto, Ribeira (Cube)...",
       "capacity": 8,
@@ -275,7 +277,7 @@ const db = {
       "propertyType": "Serviced apartment",
       "roomType": "Entire home/apt",
       "bedType": "Real Bed",
-      "imgUrls": ["https://a0.muscache.com/im/pictures/e83e702f-ef49-40fb-8fa0-6512d7e26e9b.jpg?aki_policy=large", "@/assets/Images/001.jpeg", "../../assets/Images/002.jpeg", "../../assets/Images/03.jpeg", "../../assets/Images/004.jpeg"],
+      "imgUrls": ["https://a0.muscache.com/im/pictures/e83e702f-ef49-40fb-8fa0-6512d7e26e9b.jpg?aki_policy=large","../assets/images/001.jpeg", "../assets/images/002.jpeg", "../assets/images/003.jpeg", "../assets/images/004.jpeg"],
       "price": 80.00,
       "summary": "Fantastic duplex apartment with three bedrooms, located in the historic area of Porto, Ribeira (Cube)...",
       "capacity": 8,

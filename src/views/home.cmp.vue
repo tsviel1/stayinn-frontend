@@ -31,7 +31,7 @@ export default {
   },
   computed: {
     staysToDisplay() {
-      return this.$store.getters.getStays
+      return this.$store.getters.staysToDisplay
     }
   },
   unmounted() { },

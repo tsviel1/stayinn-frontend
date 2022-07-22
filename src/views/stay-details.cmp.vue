@@ -4,10 +4,12 @@
 
       <stay-details-heading :stay="stay" />
       
-      <!-- <div class="details-img-gallery flex" v-for="img in stay.imgUrls"> 
-        <pre>{{img}}</pre>
-        <img :src="'img'" />
-      </div> -->
+        <pre>{{stay.imgUrls}}</pre>
+      <div class="details-img-gallery flex" v-for="img in stay.imgUrls"> 
+        <img :src="img" />
+        <!-- <img src="../assets/images/003.jpeg" alt=""> -->
+         <!-- <img src="../assets/Images/001.jpeg"/> -->
+      </div> 
     <div class="type-heading">
       <h2>{{ stay.propertyType  }} hosted by {{ stay.host.fullname }}</h2>
       <ul class="capacities clean-list flex">
@@ -34,13 +36,10 @@ import stayReserve from '../components/stay-reserve.cmp.vue';
 import ameneties from '../components/ameneties.cmp.vue';
 import reviewList from '../components/review-list.cmp.vue'; 
 import miniHostPreview from '../components/mini-hostPreview.cmp.vue';
-<<<<<<< HEAD
  import mapCmp from '../components/map.cmp.vue'
-=======
 import stayDetailsHeading from '../components/stay-details-heading.cmp.vue'
 
 
->>>>>>> f5abcf21e6b655747275ee3485f9441d98fb15bd
  export default {
 
  name: 'stay-details',
@@ -49,11 +48,8 @@ import stayDetailsHeading from '../components/stay-details-heading.cmp.vue'
       ameneties,
       reviewList,
       miniHostPreview,
-<<<<<<< HEAD
-      mapCmp
-=======
+      mapCmp,
       stayDetailsHeading,
->>>>>>> f5abcf21e6b655747275ee3485f9441d98fb15bd
     },
   data() {
    return {

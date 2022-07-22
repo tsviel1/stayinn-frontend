@@ -14,7 +14,7 @@ app.use(router)
 
 app.use(VueGoogleMaps, {
     load: {
-        key: 'YOUR GOOGLE KEY'
+        key: "AIzaSyAFw6ve-CfQhrg0zGENP9QzB9UorG_3lWU"
     },
 })
 app.use(store)

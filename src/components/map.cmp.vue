@@ -25,8 +25,8 @@ export default {
         position() {
             console.log(this.stay);
             const pos = {
-                lat: this.stay.loc.lat,
-                lng: this.stay.loc.lng
+                lat: +this.stay.loc.lat,
+                lng: +this.stay.loc.lan
             }
             return pos
         }

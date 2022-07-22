@@ -1,55 +1,43 @@
 import { stayService } from '../../services/stay-service'
-
 export default {
   state: {
     stays: null,
     currStay: null,
+    currFilterBy: null
   },
   getters: {
-    getStays({ stays }) {
+    staysToDisplay(state) {
+      var stays = state.stays
+      if (state.currFilterBy?.txt) {
+        const regex = new RegExp(state.currFilterBy.txt, 'i')
+        stays = stays.filter(stay => regex.test(stay.loc.city))
+      }
       return stays
     },
     getCurrStay({ currStay }) {
-      console.log('In get currStay')
       return currStay
     },
-<<<<<<< HEAD
-=======
-    getCurrStayAvg({ currStay }) {
-      let sumRate = currStay.reviews.reduce(
-        (acc, currVal) => acc + currVal.rate,
-        0
-      )
-      let avg = sumRate / currStay.reviews.length
-      return avg
+    currFilterBy(state) {
+      return state.currFilterBy
     },
-    getReviewsLength({currStay}) {
-      return currStay.reviews.length
-    },
->>>>>>> f5abcf21e6b655747275ee3485f9441d98fb15bd
-    
   },
-
   mutations: {
     setstays(state, { stays }) {
-      console.log('stays mutation', stays)
-
       state.stays = stays
-      console.log('state.stays', state.stays)
     },
-
     setCurrStay(state, { stay }) {
       // console.log(stay)
       state.currStay = stay
       // console.log(state.currStay)
+    },
+    setFilter(state, { filterBy }) {
+      state.currFilterBy = filterBy
     },
   },
   actions: {
     async loadStays({ commit, state }) {
       try {
         const stays = await stayService.query()
-        console.log('stays', stays)
-
         commit({ type: 'setstays', stays })
       } catch (err) {
         console.log('stayStore: Error in loadstays', err)
