@@ -52,4 +52,34 @@
         justify-content: flex-end;
 
     }
+
+    //review-list component
+    .review-list-title {
+        font-weight: 600;
+        font-size: 22px;
+    }
+    .review-preview-name {
+        font-size: 16px;
+        font-weight: 600;
+        margin: 0;
+    }
+    .review-preview-box {
+        margin-bottom: 16px;
+    }
+    .review-preview-txt {
+        font-size: 16px;
+        font-weight: 400;
+    }
+    .reviewer-img {
+        height: 40px;
+        width: 40px;
+        object-fit: cover;
+        border-radius: 50%;
+    }
+    .review-heading-txt {
+        flex-direction: column;
+        // justify-content: space-between;
+        margin-left: 12px;
+        line-height: 20px;
+    }
 }

@@ -1,8 +1,14 @@
 <template>
     <section class="review-preview">
-        <h4>{{ review.by.fullname }}</h4>
-        <h5>Here there will be createdAt date</h5>
-        <li>{{ review.txt }}</li>
+        <div class="review-preview-box  flex">
+            <img class="reviewer-img" :src="review.by.imgUrl" />
+            <div class="review-heading-txt flex">
+
+                <h3  class="review-preview-name">{{ review.by.fullname }}</h3>
+                <h3>July 2022</h3>
+            </div>
+        </div>
+        <li class="review-preview-txt">{{ review.txt }}</li>
     </section>
 </template>
 

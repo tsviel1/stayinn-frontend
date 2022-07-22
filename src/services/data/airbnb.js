@@ -32,7 +32,7 @@ const db = {
       "host": {
         "_id": "51399391",
         "fullname": "Davit Pok",
-        "imgUrl": "https://a0.muscache.com/im/pictures/fab79f25-2e10-4f0f-9711-663cb69dc7d8.jpg?aki_policy=profile_small",
+        "imgUrl": "https://xsgames.co/randomusers/assets/avatars/female/1.jpg",
       },
       "loc": {
         "country": "Turkey",
@@ -50,7 +50,7 @@ const db = {
           "by": {
             "_id": "u102",
             "fullname": "user2",
-            "imgUrl": "/img/img2.jpg"
+            "imgUrl": "https://xsgames.co/randomusers/assets/avatars/male/2.jpg"
           }
         }
       ],
@@ -85,7 +85,7 @@ const db = {
       "host": {
         "_id": "51399391",
         "fullname": "Davit Pok",
-        "imgUrl": "https://a0.muscache.com/im/pictures/fab79f25-2e10-4f0f-9711-663cb69dc7d8.jpg?aki_policy=profile_small",
+        "imgUrl": "https://xsgames.co/randomusers/assets/avatars/female/1.jpg",
       },
       "loc": {
         "country": "Spain",
@@ -103,7 +103,7 @@ const db = {
           "by": {
             "_id": "u102",
             "fullname": "user2",
-            "imgUrl": "/img/img2.jpg"
+            "imgUrl": "https://xsgames.co/randomusers/assets/avatars/male/2.jpg"
           }
         }
       ],
@@ -138,7 +138,7 @@ const db = {
       "host": {
         "_id": "51399391",
         "fullname": "Davit Pok",
-        "imgUrl": "https://a0.muscache.com/im/pictures/fab79f25-2e10-4f0f-9711-663cb69dc7d8.jpg?aki_policy=profile_small",
+        "imgUrl": "https://xsgames.co/randomusers/assets/avatars/female/2.jpg",
       },
       "loc": {
         "country": "United States",
@@ -156,7 +156,7 @@ const db = {
           "by": {
             "_id": "u102",
             "fullname": "user2",
-            "imgUrl": "/img/img2.jpg"
+            "imgUrl": "https://xsgames.co/randomusers/assets/avatars/male/2.jpg"
           }
         }
       ],
@@ -191,7 +191,7 @@ const db = {
       "host": {
         "_id": "51399391",
         "fullname": "Davit Pok",
-        "imgUrl": "https://a0.muscache.com/im/pictures/fab79f25-2e10-4f0f-9711-663cb69dc7d8.jpg?aki_policy=profile_small",
+        "imgUrl": "https://xsgames.co/randomusers/assets/avatars/female/1.jpg",
       },
       "loc": {
         "country": "Canada",
@@ -209,7 +209,7 @@ const db = {
           "by": {
             "_id": "u102",
             "fullname": "user2",
-            "imgUrl": "/img/img2.jpg"
+            "imgUrl": "https://xsgames.co/randomusers/assets/avatars/male/2.jpg"
           }
         }
       ],
@@ -244,7 +244,7 @@ const db = {
       "host": {
         "_id": "51399391",
         "fullname": "Davit Pok",
-        "imgUrl": "https://a0.muscache.com/im/pictures/fab79f25-2e10-4f0f-9711-663cb69dc7d8.jpg?aki_policy=profile_small",
+        "imgUrl": "https://xsgames.co/randomusers/assets/avatars/female/1.jpg",
       },
       "loc": {
         "country": "Portugal",
@@ -262,7 +262,7 @@ const db = {
           "by": {
             "_id": "u102",
             "fullname": "user2",
-            "imgUrl": "/img/img2.jpg"
+            "imgUrl": "https://xsgames.co/randomusers/assets/avatars/male/2.jpg"
           }
         }
       ],
@@ -297,7 +297,7 @@ const db = {
       "host": {
         "_id": "51399391",
         "fullname": "Davit Pok",
-        "imgUrl": "https://a0.muscache.com/im/pictures/fab79f25-2e10-4f0f-9711-663cb69dc7d8.jpg?aki_policy=profile_small",
+        "imgUrl": "https://xsgames.co/randomusers/assets/avatars/female/1.jpg",
       },
       "loc": {
         "country": "Portugal",
@@ -315,7 +315,7 @@ const db = {
           "by": {
             "_id": "u102",
             "fullname": "user2",
-            "imgUrl": "/img/img2.jpg"
+            "imgUrl": "https://xsgames.co/randomusers/assets/avatars/male/2.jpg"
           }
         }
       ],
@@ -359,7 +359,7 @@ const db = {
     {
       "_id": "u102",
       "fullname": "User 2",
-      "imgUrl": "/img/img2.jpg",
+      "imgUrl": "https://xsgames.co/randomusers/assets/avatars/male/2.jpg",
       "isAdmin": false,
       "username" : "user2",
       "password" : "secret"

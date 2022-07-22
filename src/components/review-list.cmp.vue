@@ -1,11 +1,11 @@
 <template>
   <section class="review-list">
-    <h3>
+    <h2 class="review-list-title">
       <i class="fas fa-star"></i> 
-      {{ getReviewAvg }} Average .
+      {{ getReviewAvg }} .
       {{reviewLength}} reviews
     
-    </h3>
+    </h2>
     <ul class="clean-list" v-for="(review, index) in stay.reviews">
       <review-preview :review="review" />
       
