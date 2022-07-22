@@ -4,10 +4,10 @@
 
       <stay-details-heading :stay="stay" />
       
-      <!-- <div class="details-img-gallery flex" v-for="img in stay.imgUrls"> 
+      <div class="details-img-gallery flex" v-for="img in stay.imgUrls"> 
         <pre>{{img}}</pre>
-        <img :src="'img'" />
-      </div> -->
+        <img :src="img" />
+      </div> 
     <div class="type-heading">
       <h2>{{ stay.propertyType  }} hosted by {{ stay.host.fullname }}</h2>
       <ul class="capacities clean-list flex">
