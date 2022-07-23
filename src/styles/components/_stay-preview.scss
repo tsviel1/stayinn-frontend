@@ -11,21 +11,27 @@
         padding: 0;
 
     }
-    .text-container{
+
+    .text-container {
         margin-top: 8px;
         .title {
-            font-family: airbnb-bold;
-            color: black;
-            font-size: 12px;
-            font-weight: 550;
+            display: flex;
+            justify-content: space-between;
+            span {
+                font-family: airbnb-bold;
+                color: black;
+                font-size: 12px;
+                font-weight: 550;
+            }
         }
-    
+
         p {
             // font-size: 15px;
             line-height: 5px;
             color: $clr2;
         }
-        span.price{
+
+        span.price {
             font-size: 13px;
             color: $clr5;
             font-weight: 550;

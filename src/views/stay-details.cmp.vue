@@ -2,7 +2,6 @@
   <section v-if="stay" class="stay-details container">
     <a @click="onClickStay">Back</a>
 
-    <stay-details-heading :stay="stay" />
 
     <!-- <div class="details-img-gallery flex" v-for="img in stay.imgUrls"> 
         <pre>{{img}}</pre>
@@ -19,16 +18,6 @@
       </div>
       <img class="type-heading-img" :src="stay.host.imgUrl" />
     </div>
-
-
-    <p class="stay-details-desc">{{ stay.summary }}</p>
-    <hr />
-    <stay-reserve :stay="stay" />
-
-    <ameneties :stay="stay" />
-
-    <review-list :stay="stay" />
-    <mini-host-preview :stay="stay" />
   </section>
 </template>
  <script>
@@ -36,19 +25,21 @@ import stayReserve from '../components/stay-reserve.cmp.vue';
 import ameneties from '../components/ameneties.cmp.vue';
 import reviewList from '../components/review-list.cmp.vue';
 import miniHostPreview from '../components/mini-hostPreview.cmp.vue';
+ import mapCmp from '../components/map.cmp.vue'
 import stayDetailsHeading from '../components/stay-details-heading.cmp.vue'
 
 
 export default {
 
-  name: 'stay-details',
-  components: {
-    stayReserve,
-    ameneties,
-    reviewList,
-    miniHostPreview,
-    stayDetailsHeading,
-  },
+ name: 'stay-details',
+    components: {
+      stayReserve,
+      ameneties,
+      reviewList,
+      miniHostPreview,
+      mapCmp,
+      stayDetailsHeading,
+    },
   data() {
     return {
       stayId: this.$route.params.id,
