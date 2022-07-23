@@ -12,6 +12,12 @@ export default {
         const regex = new RegExp(state.currFilterBy.txt, 'i')
         stays = stays.filter(stay => regex.test(stay.loc.city))
       }
+      if(state.currFilterBy?.beds){
+        stays=stays.filter(stay=> stay.beds===state.currFilterBy.beds)
+      }
+      if(state.currFilterBy?.bedrooms){
+        stays=stays.filter(stay=>stay.bedrooms===state.currFilterBy.bedrooms)
+      }
       return stays
     },
     getCurrStay({ currStay }) {
@@ -55,5 +61,6 @@ export default {
         throw err
       }
     },
+
   },
 }

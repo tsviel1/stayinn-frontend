@@ -18,6 +18,13 @@
             display: flex;
             align-items: center;
         }
+        input {
+            border: 0 solid $clr1;
+            line-height: 18px;
+            &:focus {
+                outline: none;
+            }
+        }
     }
 
     .search-btn {
@@ -74,10 +81,9 @@
 .position-modal {
     position: relative;
     .guests-modal {
-        background-color: rgb(235, 147, 147);
-        // opacity: 0;
+        background-color: $clr3;
         right: 0;
-        // display: flex;
+        box-shadow: 10px 10px 5px 100vh rgba(0, 0, 0, 0.3);
         position: absolute;
         padding: 16px 32px;
         border-radius: 32px;
@@ -91,7 +97,27 @@
             flex-direction: row;
             justify-content: space-between;
             .guests-type-view {
-                font-size: rem(16px);
+                .title {
+                    padding-bottom: 6px;
+                    font-weight: 600;
+                }
+                .second-title {
+                    font-size: rem(14px);
+                    font-weight: 400;
+                    color: $clr2;
+                    line-height: 18px;
+                }
+            }
+            .guests-type-selection {
+                width: 104px;
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                span {
+                    display: inline-flex;
+                    align-items: center;
+
+                }
             }
         }
     }

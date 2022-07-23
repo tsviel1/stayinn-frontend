@@ -73,10 +73,9 @@
   text-decoration: none;
   text-transform: uppercase;
   padding: $padding;
-  line-height: 1.25;
-  font-size: em(14px);
+  // line-height: 1.25;
   font-variation-settings: "wght" 430;
-  border: none;
+  // border: none;
   cursor: pointer;
 
   transition: background-color 0.2s;
@@ -100,6 +99,23 @@
     &:hover {
       background-color: $clr1;
       color: $clr3;
+    }
+  } @else if $type == round {
+    background-color: $clr3;
+    color: $clr2;
+    border: 1px solid $clr2;
+    width: 32px;
+    text-align: center;
+    justify-content: center;
+    height: 32px;
+    border-radius: 50%;
+    &:hover {
+      color: $clr5;
+    }
+    &:disabled {
+      cursor: not-allowed;
+      color: $clr4;
+      border-color: $clr4;
     }
   }
 }

@@ -8,13 +8,17 @@ export default {
             guests: {
                 adults: 2,
                 kids: 1
+            },
+            dest: {
+                cityName: null
             }
         },
     },
     getters: {
         getStartDate({trip}) {return trip.startDate},
         getEndDate({trip}) {return trip.endDate},
-        getGuests({trip}) {return trip.guests}
+        getGuests({trip}) {return trip.guests},
+        getCitySearched({trip}) {return trip.dest.city}
     },
     mutations: {
         setStartDate(state, {startDate}) {
@@ -25,6 +29,9 @@ export default {
         },
         setGuests(state, {guests}) {
             state.guests = guests
+        },
+        setTripCity(state, {tripCity}) {
+            state.dest.city = tripCity
         }
     },
 };
