@@ -31,7 +31,13 @@ export default {
   },
   computed: {
     staysToDisplay() {
-      return this.$store.getters.staysToDisplay
+      let filter = this.$store.getters.currFilterBy
+      if (filter) {
+        this.$router.push(`/stay`)
+      } else {
+
+        return this.$store.getters.staysToDisplay
+      }
     }
   },
   unmounted() { },

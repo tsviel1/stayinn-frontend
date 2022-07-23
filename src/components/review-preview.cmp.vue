@@ -22,7 +22,7 @@ export default {
         return {}
     },
     created() {
-        console.log(this.review)
+        // console.log(this.review)
     },
     methods: {},
     computed: {},

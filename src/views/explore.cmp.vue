@@ -16,9 +16,15 @@ export default {
   data() {
     return {};
   },
-  created() { },
+  created() { 
+
+  },
   methods: {},
-  computed: {},
+  computed: {
+    staysToDisplay() {
+      return this.$store.getters.staysToDisplay
+    }
+  },
   unmounted() { },
 };
 </script>

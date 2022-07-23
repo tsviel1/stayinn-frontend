@@ -57,7 +57,9 @@ export default {
   },
   methods: {
     setFilterBy() {
+      const copyfilter = JSON.parse(JSON.stringify(this.filterBy))
       this.$emit('setFilterBy', { ...this.filterBy })
+      // this.dispatch({type: 'loadStays', filterBy: copyfilter })
     },
     setTrip() {
       const startDate = this.tripDates[0].toLocaleDateString()

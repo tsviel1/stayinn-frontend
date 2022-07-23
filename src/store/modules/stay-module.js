@@ -37,7 +37,8 @@ export default {
   actions: {
     async loadStays({ commit, state }) {
       try {
-        const stays = await stayService.query()
+        console.log(state.currFilterBy)
+        const stays = await stayService.query(state.currFilterBy)
         commit({ type: 'setstays', stays })
       } catch (err) {
         console.log('stayStore: Error in loadstays', err)
