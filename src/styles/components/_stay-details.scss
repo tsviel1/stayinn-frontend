@@ -60,6 +60,7 @@
     //amenties-preview component
     .amenety-preview {
         padding: 0 8px;
+
     }
     .amenety-list-item {
         font-size: 16px;
@@ -80,6 +81,9 @@
     .review-list-title {
         font-weight: 600;
         font-size: 22px;
+    }
+    .review-preview {
+        
     }
     .review-preview-name {
         font-size: 16px;
@@ -105,4 +109,15 @@
         margin-left: 12px;
         line-height: 20px;
     }
+    .reviews-container {
+        // flex-wrap: wrap;
+        // // width: 100%;
+        flex-direction: column;
+        // flex-flow: row wrap;
+        // >*{
+        //     flex: 1 1 160px;
+            
+        // }
+    }
+    
 }

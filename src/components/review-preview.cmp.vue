@@ -1,5 +1,5 @@
 <template>
-    <section class="review-preview">
+    <section class="review-preview ">
         <div class="review-preview-box  flex">
             <img class="reviewer-img" :src="review.by.imgUrl" />
             <div class="review-heading-txt flex">
