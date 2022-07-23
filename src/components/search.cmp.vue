@@ -1,8 +1,8 @@
 <template>
   <section class="search-cmp">
-    <div class="search-container">
+    <form @submit.prevent="searchTrip" class="search-container">
       <div class="filter">
-        <input type="search" v-model="filterBy.txt" @input="setFilterBy" placeholder="Anywhere" />
+        <input class="text-input" v-model="filterBy.txt" @input="setTripCity" placeholder="Anywhere" />
       </div>
       <div class="break-point"></div>
       <label>
@@ -10,36 +10,48 @@
         <div class="break-point"></div>
         <div class="filter">Check out</div>
         <div class="break-point"></div>
-        <el-date-picker class="date-picker" v-model="tripDates" type="daterange" @change="setTrip" range-separator="To"
-          start-placeholder="Start date" end-placeholder="End date" />
+        <el-date-picker class="date-picker" v-model="tripDates" type="daterange" @change="setTripDates"
+          range-separator="To" start-placeholder="Start date" end-placeholder="End date" />
       </label>
       <div class="filter add-guests" @click="shouldShow = !shouldShow">Add guests</div>
-      <div class="search-btn"><i class="fas fa-search"></i></div>
-    </div>
-    <div class="position-modal">
+      <div class="search-btn" @click="searchTrip"><i class="fas fa-search"></i></div>
+    </form>
+    <div v-if="shouldShow" class="position-modal">
       <div class="guests-modal">
         <section>
           <div class="guests-type">
             <div class="guests-type-view">
-              <div>
+              <div class="title">
                 Adults
               </div>
-              <div>
+              <div class="second-title">
                 Ages 13 or above
               </div>
             </div>
             <div class="guests-type-selection">
-              <button>-</button>
-              <span>2</span>
-              <button>+</button>
+              <button :disabled="adultsCounter <= 0" class="btn-round" @click="adultsCounter--">-</button>
+              <span>{{adultsCounter}}</span>
+              <button :disabled="adultsCounter >= 10" class="btn-round" @click="adultsCounter++">+</button>
+            </div>
+          </div>
+          <div class="guests-type">
+            <div class="guests-type-view">
+              <div class="title">
+                Children
+              </div>
+              <div class="second-title">
+                Ages 2-12
+              </div>
+            </div>
+            <div class="guests-type-selection">
+              <button :disabled="kidsCounter <= 0" class="btn-round" @click="kidsCounter--">-</button>
+              <span>{{kidsCounter}}</span>
+              <button :disabled="kidsCounter >= 10" class="btn-round" @click="kidsCounter++">+</button>
             </div>
           </div>
         </section>
       </div>
     </div>
-
-
-
   </section>
 </template>
  <script>
@@ -52,18 +64,27 @@ export default {
       filterBy: {
         txt: ''
       },
-      tripDates: null
+      tripDates: null,
+      kidsCounter: 0,
+      adultsCounter: 0
     };
   },
   methods: {
-    setFilterBy() {
+    setTripCity() {
+      // filter stays
       this.$emit('setFilterBy', { ...this.filterBy })
+      // save trip settings
+      this.$emit('setTripCity', { ...this.filterBy })
     },
-    setTrip() {
+    setTripDates() {
       const startDate = this.tripDates[0].toLocaleDateString()
       const endDate = this.tripDates[1].toLocaleDateString()
 
       this.$emit('setTripDates', startDate, endDate)
+    },
+    searchTrip() {
+      this.shouldShow = false
+      console.log('trip is searched');
     }
   },
   components: {

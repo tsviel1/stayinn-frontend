@@ -3,7 +3,6 @@
         <div class="app-header container">
             <div class="logo ">
                 <h2>StayInn<i class="fab fa-airbnb"></i></h2>
-
             </div>
             <search-cmp @setFilterBy="setFilterBy" @setTripDates="setTripDates" :currFilterBy="getFilterBy" />
             <nav class="nav-container">
@@ -35,6 +34,12 @@ export default {
     },
     created() { },
     methods: {
+        setTripCity(filterBy) {
+            this.$store.commit({
+                type: 'setTripCity',
+                filterBy
+            })
+        },
         setFilterBy(filterBy) {
             this.$store.commit({
                 type: 'setFilter',
@@ -42,7 +47,6 @@ export default {
             })
         },
         setTripDates(startDate, endDate) {
-
             this.$store.commit({
                 type: 'setStartDate',
                 startDate
