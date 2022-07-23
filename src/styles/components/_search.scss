@@ -14,7 +14,7 @@
             border-radius: 40px;
         }
 
-        &.guest{
+        &.guest {
             display: flex;
             align-items: center;
         }
@@ -25,10 +25,75 @@
         padding: 10px;
         border-radius: 50%;
         color: #ffffff;
+        z-index: 10;
     }
 
     .break-point {
         border-right: 1px solid $clr6;
         height: 32px
     }
+
+    .date-picker {
+        z-index: 1;
+        opacity: 0;
+        position: fixed;
+    }
+
+    .add-guests {
+        z-index: 10;
+    }
+
+    label {
+        justify-content: space-between;
+        align-items: center;
+        display: flex;
+
+        .filter {
+            padding: 14px 30px 14px 30px;
+
+            //  margin-left: 50px;
+            &:hover {
+                background-color: $clr4;
+                border-radius: 40px;
+            }
+
+            &.guest {
+                display: flex;
+                align-items: center;
+            }
+        }
+    }
 }
+
+.search-cmp {
+    display: flex;
+    flex-direction: column;
+}
+
+
+.position-modal {
+    position: relative;
+    .guests-modal {
+        background-color: rgb(235, 147, 147);
+        // opacity: 0;
+        right: 0;
+        // display: flex;
+        position: absolute;
+        padding: 16px 32px;
+        border-radius: 32px;
+        margin-top: 12px;
+        section {
+            width: 330px;
+        }
+        .guests-type {
+            padding: 24px 0;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            .guests-type-view {
+                font-size: rem(16px);
+            }
+        }
+    }
+}
+

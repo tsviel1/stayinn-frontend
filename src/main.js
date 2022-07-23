@@ -7,14 +7,16 @@ import './styles/styles.scss'
 import VueGoogleMaps from '@fawmi/vue-google-maps'
 
 import 'element-plus/dist/index.css'
-import {keyDB} from './assets/google-key.js'
+import { clickOutsideDirective } from './directives'
+// import {keyDB} from './assets/google-key.js'
 
 const app = createApp(App)
+app.directive('click-outside', clickOutsideDirective)
 app.use(router)
 
 app.use(VueGoogleMaps, {
     load: {
-        key: "AIzaSyAFw6ve-CfQhrg0zGENP9QzB9UorG_3lWU"
+        key: "key"
     },
 })
 app.use(store)

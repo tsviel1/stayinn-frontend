@@ -2,7 +2,8 @@
  <script>
  export default {
  name: 'order-details',
-    components: {},
+    components: {
+    },
   data() {
    return {};
     },

@@ -1,14 +1,18 @@
 <template>
-    <header class="main-header ">
+    <header class="main-header">
         <div class="app-header container">
             <div class="logo ">
                 <h2>StayInn<i class="fab fa-airbnb"></i></h2>
-                
+
             </div>
-            <search-cmp />
+            <search-cmp @setFilterBy="setFilterBy" @setTripDates="setTripDates" :currFilterBy="getFilterBy" />
             <nav class="nav-container">
-                <a><router-link class="link" to="/stay">Explore</router-link></a>
-                <a><router-link class="link" to="/user/:userId">User</router-link></a>
+                <a>
+                    <router-link class="link" to="/stay">Explore</router-link>
+                </a>
+                <a>
+                    <router-link class="link" to="/user/:userId">User</router-link>
+                </a>
             </nav>
         </div>
         <categories-filter v-if="isHomePage" />
@@ -30,8 +34,30 @@ export default {
         };
     },
     created() { },
-    methods: {},
-    computed: {},
+    methods: {
+        setFilterBy(filterBy) {
+            this.$store.commit({
+                type: 'setFilter',
+                filterBy
+            })
+        },
+        setTripDates(startDate, endDate) {
+
+            this.$store.commit({
+                type: 'setStartDate',
+                startDate
+            })
+            this.$store.commit({
+                type: 'setEndDate',
+                endDate
+            })
+        },
+    },
+    computed: {
+        getFilterBy() {
+            return this.$store.getters.currFilterBy
+        },
+    },
     components: {
         searchCmp,
         categoriesFilter,

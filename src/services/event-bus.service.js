@@ -26,3 +26,7 @@ export function showSuccessMsg(txt) {
 export function showErrorMsg(txt) {
     showUserMsg({txt, type: 'error'})
 }
+
+// export function showSearch(searchParmeter) {
+//     eventBus.emit('show-search', msg)
+// }
