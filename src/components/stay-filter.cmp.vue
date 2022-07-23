@@ -109,7 +109,7 @@ export default {
         type: 'setFilter',
         filterBy: {...this.filterBy}
       })
-
+      this.$store.dispatch({type:"loadStays", filterBy: {...this.filterBy}})
     }
   },
   computed: {},

@@ -25,6 +25,7 @@
      return {};
    },
    created() { 
+    console.log('See error', typeof this.stay.imgUrls[0])
    },
    methods: {
     onClickStay(stayId) {
@@ -37,6 +38,8 @@
             let sumRate = reviews.reduce((acc, currVal) => acc + currVal.rate, 0)
             let avg = sumRate / reviews.length
             var newAvg=avg.toFixed(1)
+            console.log('newAvg',newAvg)
+
             return newAvg
         },
       beds(){
