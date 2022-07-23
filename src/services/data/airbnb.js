@@ -603,7 +603,9 @@ const db = {
   ]  
 }
 
-export { db }
+const tagBank = ["beach", "design", "desert", "amazing-views", "countryside", "bed-breakfast"]
+
+export { db, tagBank }
 
 
 // Homepage: TOP categories: Best Rate / Houses / Kitchen

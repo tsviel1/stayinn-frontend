@@ -1,6 +1,7 @@
 <template>
   <section class="home-page container">
     <stay-filter />
+    <categories-filter />
     <stay-list v-if="staysToDisplay" :stays="staysToDisplay" />
   </section>
 </template>
@@ -8,12 +9,14 @@
 import stayList from '../components/stay-list.cmp.vue'
 import stayFilter from '../components/stay-filter.cmp.vue'
 import { stayService } from '../services/stay-service';
+import categoriesFilter from '../components/categories-filter.cmp.vue';
 
 export default {
   name: 'home-page',
   components: {
     stayList,
-    stayFilter
+    stayFilter,
+    categoriesFilter
   },
   data() {
     return {

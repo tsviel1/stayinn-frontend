@@ -1,12 +1,28 @@
-<template></template>
+<template>
+    <section class="categories-container">
+      <ul class="clean-list grid">
+        <li v-for="category in categories">
+            <button>{{ category }}</button>
+        </li>
+      </ul>
+    </section>
+
+</template>
  <script>
+import { tagBank } from '../services/data/airbnb.js';
+
  export default {
  name: 'categories-filter',
-    components: {},
-  data() {
-   return {};
+    components: {
     },
-  created() {},
+  data() {
+   return {
+    categories: tagBank
+   };
+    },
+  created() {
+    // console.log(this.categories)
+  },
  methods: {},
  computed: {},
  unmounted() {},
