@@ -1,7 +1,7 @@
 <template>
 <section class="explore-app container">
   <stay-filter />
-  <stay-list :stay="staysToDisplay"/>
+  <stay-list :stays="staysToDisplay"/>
   </section>
 </template>
  <script>
@@ -15,7 +15,7 @@ export default {
   },
   data() {
     return {
-   
+    
     };
   },
   created() { 
@@ -24,17 +24,12 @@ export default {
   methods: {},
   computed: {
     staysToDisplay() {
-      return this.$store.getters.staysToDisplay
+      let stays = this.$store.getters.stays
+      // console.log(stays)
+      return stays
     }
   },
-  // watch: {
-  //   filterBy: {
-  //     handler() {
 
-  //     },
-  //     deep
-  //   }
-  // },
   unmounted() { },
 };
 </script>

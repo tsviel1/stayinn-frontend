@@ -6,6 +6,7 @@ export default {
     currFilterBy: null
   },
   getters: {
+    stays(state) {return state.stays },
     staysToDisplay(state) {
       var stays = state.stays
       if (state.currFilterBy?.txt) {
@@ -30,6 +31,7 @@ export default {
   mutations: {
     setstays(state, { stays }) {
       state.stays = stays
+      console.log(state.stays)
     },
     setCurrStay(state, { stay }) {
       // console.log(stay)
@@ -38,12 +40,13 @@ export default {
     },
     setFilter(state, { filterBy }) {
       state.currFilterBy = filterBy
+      console.log(state.currFilterBy)
     },
   },
   actions: {
     async loadStays({ commit, state }) {
       try {
-        console.log(state.currFilterBy)
+        // console.log(state.currFilterBy)
         const stays = await stayService.query(state.currFilterBy)
         commit({ type: 'setstays', stays })
       } catch (err) {
