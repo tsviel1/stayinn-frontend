@@ -1,9 +1,10 @@
 <template>
     <section class="ameneties">
         <h2 class="ameneties-title">What this place offers</h2>
-        <ul class="ameneties-list clean-list flex" v-for="(amenety, index) in stay.amenities">
-            <amenety-preview :amenety="amenety" />
-            
+        <ul class="ameneties-list clean-list flex" >
+            <li class="amenety-preview" v-for="(amenety, index) in stay.amenities">
+                <amenety-preview :amenety="amenety" />
+            </li>    
         </ul>
         <hr/>
     </section>

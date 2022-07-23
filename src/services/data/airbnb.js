@@ -52,7 +52,47 @@ const db = {
             "fullname": "user2",
             "imgUrl": "https://xsgames.co/randomusers/assets/avatars/male/2.jpg"
           }
-        }
+        },
+        {
+          "id": "madeId",
+          "txt": "Incredible stay, location was amazing! The room was very comfortable and the shower was great, but be mindful that there are around 80 very steep and small stairs to reach the apartment which posed an issue for us with large suitcases; but luggage can be kept down stairs.",
+          "rate": 3,
+          "by": {
+            "_id": "u103",
+            "fullname": "Tal",
+            "imgUrl": "https://xsgames.co/randomusers/assets/avatars/male/3.jpg"
+          }
+        },
+        {
+          "id": "madeId",
+          "txt": "very pleasent stay in one of the most beautiful cities i ve seen.Great host and great apartment , will come back to rome for sure and i already know where i will stay!",
+          "rate": 4,
+          "by": {
+            "_id": "u104",
+            "fullname": "userGila",
+            "imgUrl": "https://xsgames.co/randomusers/assets/avatars/female/4.jpg"
+          }
+        },
+        {
+          "id": "madeId",
+          "txt": "The apartment was stunning and exactly as pictured with also a beautiful view. The location was perfect being in the heart of the city, I pretty much walked everywhere. The communication was super responsive and prompt as well. I will 100% be staying here the next time",
+          "rate": 5,
+          "by": {
+            "_id": "u105",
+            "fullname": "Lila",
+            "imgUrl": "https://xsgames.co/randomusers/assets/avatars/female/5.jpg"
+          }
+        },
+        {
+          "id": "madeId",
+          "txt": "not great not terrible, you get what you paid for ",
+          "rate": 3,
+          "by": {
+            "_id": "u106",
+            "fullname": "Moshe",
+            "imgUrl": "https://xsgames.co/randomusers/assets/avatars/male/6.jpg"
+          }
+        },
       ],
       "likedByUsers" : ['mini-user'] // for user-wishlist : use $in
     },
@@ -105,7 +145,47 @@ const db = {
             "fullname": "user2",
             "imgUrl": "https://xsgames.co/randomusers/assets/avatars/male/2.jpg"
           }
-        }
+        },
+        {
+          "id": "madeId",
+          "txt": "Incredible stay, location was amazing! The room was very comfortable and the shower was great, but be mindful that there are around 80 very steep and small stairs to reach the apartment which posed an issue for us with large suitcases; but luggage can be kept down stairs.",
+          "rate": 3,
+          "by": {
+            "_id": "u103",
+            "fullname": "Tal",
+            "imgUrl": "https://xsgames.co/randomusers/assets/avatars/male/3.jpg"
+          }
+        },
+        {
+          "id": "madeId",
+          "txt": "very pleasent stay in one of the most beautiful cities i ve seen.Great host and great apartment , will come back to rome for sure and i already know where i will stay!",
+          "rate": 4,
+          "by": {
+            "_id": "u104",
+            "fullname": "userGila",
+            "imgUrl": "https://xsgames.co/randomusers/assets/avatars/female/4.jpg"
+          }
+        },
+        {
+          "id": "madeId",
+          "txt": "The apartment was stunning and exactly as pictured with also a beautiful view. The location was perfect being in the heart of the city, I pretty much walked everywhere. The communication was super responsive and prompt as well. I will 100% be staying here the next time",
+          "rate": 5,
+          "by": {
+            "_id": "u105",
+            "fullname": "Lila",
+            "imgUrl": "https://xsgames.co/randomusers/assets/avatars/female/5.jpg"
+          }
+        },
+        {
+          "id": "madeId",
+          "txt": "not great not terrible, you get what you paid for ",
+          "rate": 3,
+          "by": {
+            "_id": "u106",
+            "fullname": "Moshe",
+            "imgUrl": "https://xsgames.co/randomusers/assets/avatars/male/6.jpg"
+          }
+        },
       ],
       "likedByUsers" : ['mini-user'] // for user-wishlist : use $in
     },
@@ -158,7 +238,47 @@ const db = {
             "fullname": "user2",
             "imgUrl": "https://xsgames.co/randomusers/assets/avatars/male/2.jpg"
           }
-        }
+        },
+        {
+          "id": "madeId",
+          "txt": "Incredible stay, location was amazing! The room was very comfortable and the shower was great, but be mindful that there are around 80 very steep and small stairs to reach the apartment which posed an issue for us with large suitcases; but luggage can be kept down stairs.",
+          "rate": 3,
+          "by": {
+            "_id": "u103",
+            "fullname": "Tal",
+            "imgUrl": "https://xsgames.co/randomusers/assets/avatars/male/3.jpg"
+          }
+        },
+        {
+          "id": "madeId",
+          "txt": "very pleasent stay in one of the most beautiful cities i ve seen.Great host and great apartment , will come back to rome for sure and i already know where i will stay!",
+          "rate": 4,
+          "by": {
+            "_id": "u104",
+            "fullname": "userGila",
+            "imgUrl": "https://xsgames.co/randomusers/assets/avatars/female/4.jpg"
+          }
+        },
+        {
+          "id": "madeId",
+          "txt": "The apartment was stunning and exactly as pictured with also a beautiful view. The location was perfect being in the heart of the city, I pretty much walked everywhere. The communication was super responsive and prompt as well. I will 100% be staying here the next time",
+          "rate": 5,
+          "by": {
+            "_id": "u105",
+            "fullname": "Lila",
+            "imgUrl": "https://xsgames.co/randomusers/assets/avatars/female/5.jpg"
+          }
+        },
+        {
+          "id": "madeId",
+          "txt": "not great not terrible, you get what you paid for ",
+          "rate": 3,
+          "by": {
+            "_id": "u106",
+            "fullname": "Moshe",
+            "imgUrl": "https://xsgames.co/randomusers/assets/avatars/male/6.jpg"
+          }
+        },
       ],
       "likedByUsers" : ['mini-user'] // for user-wishlist : use $in
     },
@@ -211,7 +331,47 @@ const db = {
             "fullname": "user2",
             "imgUrl": "https://xsgames.co/randomusers/assets/avatars/male/2.jpg"
           }
-        }
+        },
+        {
+          "id": "madeId",
+          "txt": "Incredible stay, location was amazing! The room was very comfortable and the shower was great, but be mindful that there are around 80 very steep and small stairs to reach the apartment which posed an issue for us with large suitcases; but luggage can be kept down stairs.",
+          "rate": 3,
+          "by": {
+            "_id": "u103",
+            "fullname": "Tal",
+            "imgUrl": "https://xsgames.co/randomusers/assets/avatars/male/3.jpg"
+          }
+        },
+        {
+          "id": "madeId",
+          "txt": "very pleasent stay in one of the most beautiful cities i ve seen.Great host and great apartment , will come back to rome for sure and i already know where i will stay!",
+          "rate": 4,
+          "by": {
+            "_id": "u104",
+            "fullname": "userGila",
+            "imgUrl": "https://xsgames.co/randomusers/assets/avatars/female/4.jpg"
+          }
+        },
+        {
+          "id": "madeId",
+          "txt": "The apartment was stunning and exactly as pictured with also a beautiful view. The location was perfect being in the heart of the city, I pretty much walked everywhere. The communication was super responsive and prompt as well. I will 100% be staying here the next time",
+          "rate": 5,
+          "by": {
+            "_id": "u105",
+            "fullname": "Lila",
+            "imgUrl": "https://xsgames.co/randomusers/assets/avatars/female/5.jpg"
+          }
+        },
+        {
+          "id": "madeId",
+          "txt": "not great not terrible, you get what you paid for ",
+          "rate": 3,
+          "by": {
+            "_id": "u106",
+            "fullname": "Moshe",
+            "imgUrl": "https://xsgames.co/randomusers/assets/avatars/male/6.jpg"
+          }
+        },
       ],
       "likedByUsers" : ['mini-user'] // for user-wishlist : use $in
     },
@@ -264,7 +424,47 @@ const db = {
             "fullname": "user2",
             "imgUrl": "https://xsgames.co/randomusers/assets/avatars/male/2.jpg"
           }
-        }
+        },
+        {
+          "id": "madeId",
+          "txt": "Incredible stay, location was amazing! The room was very comfortable and the shower was great, but be mindful that there are around 80 very steep and small stairs to reach the apartment which posed an issue for us with large suitcases; but luggage can be kept down stairs.",
+          "rate": 3,
+          "by": {
+            "_id": "u103",
+            "fullname": "Tal",
+            "imgUrl": "https://xsgames.co/randomusers/assets/avatars/male/3.jpg"
+          }
+        },
+        {
+          "id": "madeId",
+          "txt": "very pleasent stay in one of the most beautiful cities i ve seen.Great host and great apartment , will come back to rome for sure and i already know where i will stay!",
+          "rate": 4,
+          "by": {
+            "_id": "u104",
+            "fullname": "userGila",
+            "imgUrl": "https://xsgames.co/randomusers/assets/avatars/female/4.jpg"
+          }
+        },
+        {
+          "id": "madeId",
+          "txt": "The apartment was stunning and exactly as pictured with also a beautiful view. The location was perfect being in the heart of the city, I pretty much walked everywhere. The communication was super responsive and prompt as well. I will 100% be staying here the next time",
+          "rate": 5,
+          "by": {
+            "_id": "u105",
+            "fullname": "Lila",
+            "imgUrl": "https://xsgames.co/randomusers/assets/avatars/female/5.jpg"
+          }
+        },
+        {
+          "id": "madeId",
+          "txt": "not great not terrible, you get what you paid for ",
+          "rate": 3,
+          "by": {
+            "_id": "u106",
+            "fullname": "Moshe",
+            "imgUrl": "https://xsgames.co/randomusers/assets/avatars/male/6.jpg"
+          }
+        },
       ],
       "likedByUsers" : ['mini-user'] // for user-wishlist : use $in
     },
@@ -317,7 +517,47 @@ const db = {
             "fullname": "user2",
             "imgUrl": "https://xsgames.co/randomusers/assets/avatars/male/2.jpg"
           }
-        }
+        },
+        {
+          "id": "madeId",
+          "txt": "Incredible stay, location was amazing! The room was very comfortable and the shower was great, but be mindful that there are around 80 very steep and small stairs to reach the apartment which posed an issue for us with large suitcases; but luggage can be kept down stairs.",
+          "rate": 3,
+          "by": {
+            "_id": "u103",
+            "fullname": "Tal",
+            "imgUrl": "https://xsgames.co/randomusers/assets/avatars/male/3.jpg"
+          }
+        },
+        {
+          "id": "madeId",
+          "txt": "very pleasent stay in one of the most beautiful cities i ve seen.Great host and great apartment , will come back to rome for sure and i already know where i will stay!",
+          "rate": 4,
+          "by": {
+            "_id": "u104",
+            "fullname": "userGila",
+            "imgUrl": "https://xsgames.co/randomusers/assets/avatars/female/4.jpg"
+          }
+        },
+        {
+          "id": "madeId",
+          "txt": "The apartment was stunning and exactly as pictured with also a beautiful view. The location was perfect being in the heart of the city, I pretty much walked everywhere. The communication was super responsive and prompt as well. I will 100% be staying here the next time",
+          "rate": 5,
+          "by": {
+            "_id": "u105",
+            "fullname": "Lila",
+            "imgUrl": "https://xsgames.co/randomusers/assets/avatars/female/5.jpg"
+          }
+        },
+        {
+          "id": "madeId",
+          "txt": "not great not terrible, you get what you paid for ",
+          "rate": 3,
+          "by": {
+            "_id": "u106",
+            "fullname": "Moshe",
+            "imgUrl": "https://xsgames.co/randomusers/assets/avatars/male/6.jpg"
+          }
+        },
       ],
       "likedByUsers" : ['mini-user'] // for user-wishlist : use $in
     }

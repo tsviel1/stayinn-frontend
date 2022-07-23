@@ -1,9 +1,9 @@
 <template>
-    <section class="amenety-preview">
-        <li class="amenety-list-item flex">
-            <i :class="`${icons[amenety]} amenety-icon`"></i>
-            <span class="amenety-span">{{ amenety }} </span> 
-        </li>
+    <section class="amenety-preview ">
+            <div class="amenety-list-item ">
+                <i :class="`${icons[amenety]} amenety-icon`"></i>
+                <span class="amenety-span">{{ amenety }} </span> 
+            </div>
     </section>
 </template>
 
