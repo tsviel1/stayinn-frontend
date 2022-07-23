@@ -5,7 +5,7 @@
             <div class="review-heading-txt flex">
 
                 <h3  class="review-preview-name">{{ review.by.fullname }}</h3>
-                <h3>July 2022</h3>
+                <h3 class="review-preview-date">July 2022</h3>
             </div>
         </div>
         <li class="review-preview-txt">{{ review.txt }}</li>
