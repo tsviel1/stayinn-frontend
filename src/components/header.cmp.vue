@@ -45,6 +45,7 @@ export default {
                 type: 'setFilter',
                 filterBy
             })
+            this.$store.dispatch({type: 'loadStays'})
         },
         setTripDates(startDate, endDate) {
             this.$store.commit({

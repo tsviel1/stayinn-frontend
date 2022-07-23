@@ -25,6 +25,7 @@
      return {};
    },
    created() { 
+
    },
    methods: {
     onClickStay(stayId) {
@@ -37,6 +38,8 @@
             let sumRate = reviews.reduce((acc, currVal) => acc + currVal.rate, 0)
             let avg = sumRate / reviews.length
             var newAvg=avg.toFixed(1)
+
+
             return newAvg
         },
       beds(){

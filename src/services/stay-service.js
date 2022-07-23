@@ -6,8 +6,36 @@ const STAY_KEY = 'stayDB'
 
 _createStays()
 
-function query() {
-    return storageService.query(STAY_KEY)
+async function query(filterBy) {
+    // console.log(filterBy)
+    let stays = await storageService.query(STAY_KEY)
+    if (!filterBy) {
+        return stays
+    }
+    if (filterBy.price) {
+        console.log(filterBy)
+        stays = stays.filter((stay) => filterBy.price.min <= stay.price && stay.price <= filterBy.price.max)
+    }
+    if (filterBy.txt && filterBy.beds && filterBy.bedrooms) {
+        console.log('Infrist condition')
+    } else if (filterBy.txt && filterBy.beds) {
+        console.log('In second condition')
+    } else if (filterBy.txt && filterBy.bedrooms) {
+        console.log('third condition ') 
+    } else if (filterBy.beds && filterBy.bedrooms) {
+        stays =stays.filter((stay) => filterBy.beds <= stay.beds && filterBy.bedrooms <= stay.bedrooms )
+    } else if (filterBy.txt) {
+        const regex = new RegExp(filterBy.txt, 'i')
+        stays = stays.filter(stay => regex.test(stay.loc.address))
+        // console.log(stays)
+    } else if (filterBy.beds) {
+        stays = stays.filter((stay) => filterBy.beds <= stay.beds  )
+    } else if (filterBy.bedrooms) {
+        stays =stays.filter((stay) => filterBy.bedrooms <= stay.bedrooms)
+    } 
+
+    return stays
+    
 }
 
 function getById(stayId) {
