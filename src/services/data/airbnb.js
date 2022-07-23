@@ -10,6 +10,7 @@ const db = {
       "propertyType": "Serviced apartment",
       "roomType": "Entire home/apt",
       "bedType": "Real Bed",
+      "imgUrls": ["https://a0.muscache.com/im/pictures/e83e702f-ef49-40fb-8fa0-6512d7e26e9b.jpg?aki_policy=large", "./Images/001.jpeg", "../../assets/Images/002.jpeg", "./Images/001.jpeg", "../../assets/Images/004.jpeg"],
       "price": 80.00,
       "beds": 4,
       "amenities": [
@@ -194,6 +195,7 @@ const db = {
       "propertyType": "Serviced apartment",
       "roomType": "Entire home/apt",
       "bedType": "Real Bed",
+      "imgUrls": ["https://a0.muscache.com/im/pictures/e83e702f-ef49-40fb-8fa0-6512d7e26e9b.jpg?aki_policy=large", "./Images/001.jpeg", "../../assets/Images/002.jpeg", "./Images/001.jpeg", "../../assets/Images/004.jpeg"],
       "price": 80.00,
       "beds": 4,
       "amenities": [
