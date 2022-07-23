@@ -70,21 +70,27 @@ export default {
     };
   },
   methods: {
+    setTripCity() {
+      // filter stays
+      this.$emit('setFilterBy', { ...this.filterBy })
+      // save trip settings
+      this.$emit('setTripCity', { ...this.filterBy })
+    },
     setTripDates() {
       const startDate = this.tripDates[0].toLocaleDateString()
       const endDate = this.tripDates[1].toLocaleDateString()
 
       this.$emit('setTripDates', startDate, endDate)
     },
-      searchTrip() {
-        this.shouldShow = false
-        console.log('trip is searched');
-      }
-    },
-    components: {
-      calenderCmp,
-    },
-  }
+    searchTrip() {
+      this.shouldShow = false
+      console.log('trip is searched');
+    }
+  },
+  components: {
+    calenderCmp,
+  },
+}
 
 </script>
  <style>
