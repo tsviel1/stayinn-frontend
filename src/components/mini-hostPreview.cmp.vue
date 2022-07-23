@@ -1,6 +1,12 @@
 <template>
     <section class="mini-host-preview">
-        <h3>Hosted by {{stay.host.fullname}}</h3>
+        <div class="mini-host-flex flex">
+            <img class="mini-host-img" :src="stay.host.imgUrl" />
+            <div class="">
+                <h2 class="mini-host-title">Hosted by {{stay.host.fullname}}</h2>
+                <p class="mini-host-date">Joined in October 2019</p>
+            </div>
+        </div>
         <!-- <el-button plain>Contact Host</el-button> -->
         <button class="contact-btn">Contact Host</button>
     </section>

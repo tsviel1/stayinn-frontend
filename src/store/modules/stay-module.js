@@ -1,5 +1,4 @@
 import { stayService } from '../../services/stay-service'
-
 export default {
   state: {
     stays: null,
@@ -54,7 +53,6 @@ export default {
         console.log('stayStore: Error in getCurrStay', err)
         throw err
       }
-
     },
   },
 }

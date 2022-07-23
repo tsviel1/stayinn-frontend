@@ -1,13 +1,39 @@
 .mini-host-preview {
+    padding: 48px 0;
     button {
         background-color: white;
-        color: black;
+        color: $clr5;
         border-radius: 8px;
+        border: 1px solid $clr5;
+        font-size: 16px;
+        font-weight: 600;
         width: auto;
+        height: 48px;
     }
     button:hover {
         cursor: pointer;
-        background-color: rgb(222, 196, 244);
+        background-color: $clr4;
+        // background-color: #f7f7f7;
         
     }
+    .mini-host-flex {
+        margin: 0 0 24px;
+    }
+    .mini-host-img {
+        height: 64px;
+        width: 64px;
+        object-fit: cover;
+        border-radius: 50%;
+        margin-right: 16px;
+    }
+    .mini-host-date {
+        color: $clr2;
+        font-size: 14px;
+        font-weight: 400;
+    }
+    .mini-host-title {
+        font-size: 22px;
+        font-weight: 600;
+    }
+
 }
