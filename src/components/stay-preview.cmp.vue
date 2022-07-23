@@ -24,7 +24,9 @@
    data() {
      return {};
    },
-   created() { },
+   created() { 
+    console.log('See error', typeof this.stay.imgUrls[0])
+   },
    methods: {
     onClickStay(stayId) {
        this.$router.push(`/stay/${stayId}`)

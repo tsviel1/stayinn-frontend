@@ -1,7 +1,7 @@
 <template>
   <section v-if="stay" class="stay-details container">
     <a @click="onClickStay">Back</a>
-
+    <stay-details-heading :stay="stay" />
 
     <!-- <div class="details-img-gallery flex" v-for="img in stay.imgUrls"> 
         <pre>{{img}}</pre>
@@ -17,7 +17,18 @@
         </ul>
       </div>
       <img class="type-heading-img" :src="stay.host.imgUrl" />
+
+   
     </div>
+
+    <p class="stay-details-desc">{{ stay.summary }}</p>
+    <hr />
+
+    <stay-reserve :stay="stay" />
+
+    <ameneties :stay="stay" />
+    <review-list :stay="stay" />
+    <mini-host-preview :stay="stay" />
   </section>
 </template>
  <script>
