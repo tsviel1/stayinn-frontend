@@ -17,14 +17,16 @@ export default {
         getGuests({trip}) {return trip.guests}
     },
     mutations: {
-        setStartDate(state, {date}) {
-            state.startDate = date
+        setStartDate(state, {startDate}) {
+            state.trip.startDate = startDate
         },
-        setEndDate(state, {date}) {
-            state.endDate = date
+        setEndDate(state, {endDate}) {
+            state.trip.endDate = endDate
         },
         setGuests(state, {guests}) {
             state.guests = guests
         }
     },
 };
+
+// "2022-07-18T21:00:00.000Z"

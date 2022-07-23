@@ -31,11 +31,6 @@ export default {
             tableData: null
         }
     },
-    created() {
-        console.log('this.startDate', this.startDate)
-        
-
-    },
     methods: {},
     computed: {
         startDate() {

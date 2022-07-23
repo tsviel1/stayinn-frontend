@@ -1,44 +1,44 @@
 <template>
-    <section v-if="stay" class="stay-details container">
+  <section v-if="stay" class="stay-details container">
     <a @click="onClickStay">Back</a>
-      <h3>{{ stay.name }}</h3>
-      <div class="flex">
-        <p>{{stay.capacity}}<span> guests</span> .</p>
-        <p>{{stay.bedrooms}}<span> bedroom</span> .</p>
-        <p>{{stay.beds}}<span> beds</span> </p>
-      </div>
-      <p>{{stay.summary}}</p>
-      <hr />
-      <stay-reserve :stay="stay" />
+    <h3>{{ stay.name }}</h3>
+    <div class="flex">
+      <p>{{ stay.capacity }}<span> guests</span> .</p>
+      <p>{{ stay.bedrooms }}<span> bedroom</span> .</p>
+      <p>{{ stay.beds }}<span> beds</span> </p>
+    </div>
+    <p>{{ stay.summary }}</p>
+    <hr />
+    <stay-reserve :stay="stay" />
 
-      <ameneties :stay="stay" />
+    <ameneties :stay="stay" />
 
-      <review-list :stay="stay"  />
-      <mini-host-preview :stay="stay" />
-    </section>
+    <review-list :stay="stay" />
+    <mini-host-preview :stay="stay" />
+  </section>
 </template>
  <script>
 import stayReserve from '../components/stay-reserve.cmp.vue';
 import ameneties from '../components/ameneties.cmp.vue';
-import reviewList from '../components/review-list.cmp.vue'; 
+import reviewList from '../components/review-list.cmp.vue';
 import miniHostPreview from '../components/mini-hostPreview.cmp.vue';
- 
- export default {
 
- name: 'stay-details',
-    components: {
-      stayReserve,
-      ameneties,
-      reviewList,
-      miniHostPreview
-    },
+export default {
+
+  name: 'stay-details',
+  components: {
+    stayReserve,
+    ameneties,
+    reviewList,
+    miniHostPreview
+  },
   data() {
-   return {
-    stayId: this.$route.params.id,
-    // stay: null
-    orderInfo:''
-   };
-    },
+    return {
+      stayId: this.$route.params.id,
+      // stay: null
+      orderInfo: ''
+    };
+  },
   created() {
     console.log('STAY ID', this.stayId)
     const newStayId = JSON.parse(JSON.stringify(this.stayId))
@@ -46,18 +46,19 @@ import miniHostPreview from '../components/mini-hostPreview.cmp.vue';
     // this.$store.commit({type: 'setCurrStayId', stayId: newStayId} )
     this.$store.dispatch({ type: 'getCurrStay', stayId: newStayId })
   },
- methods: {
-  onClickStay(filterBy) {
-       this.$router.push(`/explore/${filterBy}`)
-     }
- },
- computed: {
-  stay() {
-    
-    return this.$store.getters.getCurrStay
-  }
- },
- unmounted() {},
-  };
-  </script>
- <style></style>
+  methods: {
+    onClickStay(filterBy) {
+      this.$router.push(`/explore/${filterBy}`)
+    }
+  },
+  computed: {
+    stay() {
+
+      return this.$store.getters.getCurrStay
+    }
+  },
+  unmounted() { },
+};
+</script>
+ <style>
+ </style>
