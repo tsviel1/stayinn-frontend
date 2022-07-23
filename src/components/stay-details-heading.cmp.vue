@@ -30,6 +30,8 @@ export default {
             return this.$store.getters.getCurrStayAvg
         },
         getReviewsAmount() {
+            console.log('this.$store.getters.getReviewsLength', this.$store.getters.getReviewsLength)
+            
             return this.$store.getters.getReviewsLength
         }
     },
