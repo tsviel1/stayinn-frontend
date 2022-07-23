@@ -4,18 +4,32 @@
         color: $clr5;
         font-weight: 600;
         font-size: 26px;
+        height: auto;
     }
     .sub-titles {
         font-weight: 600;
         font-size: 14px;
+    }
+    .type-heading-img {
+        height: 56px;
+        width: 56px;
+        object-fit: cover;
+        border-radius: 50%;
+        margin-left: 16px;
+        // justify-content: center;
+        // align-items: center;
+        // justify-self: center;
     }
     .dot {
         color: #717171;
         margin-right: 8px;
         margin-left: 8px;
     }
-    .type-heading {
+    .flex-type {
         padding: 48px 0 24px;
+    }
+    .type-heading {
+        
         .type-heading-title {
             font-weight: 600;
             font-size: 22px;
@@ -40,6 +54,7 @@
     }
     .ameneties-list {
         flex-wrap: wrap;
+        // padding: 48px 0;
     }
     //amenties-preview component
     .amenety-preview {
@@ -54,6 +69,10 @@
     }
 
     //review-list component
+    .review-list {
+        border-bottom: 0.0714285714em solid #ddd;
+        padding: 48px 0;
+    }
     .review-list-title {
         font-weight: 600;
         font-size: 22px;
