@@ -12,6 +12,10 @@ async function query(filterBy) {
     if (!filterBy) {
         return stays
     }
+    if (filterBy.price) {
+        console.log(filterBy)
+        stays = stays.filter((stay) => filterBy.price.min <= stay.price && stay.price <= filterBy.price.max)
+    }
     if (filterBy.txt && filterBy.beds && filterBy.bedrooms) {
         console.log('Infrist condition')
     } else if (filterBy.txt && filterBy.beds) {
@@ -19,15 +23,15 @@ async function query(filterBy) {
     } else if (filterBy.txt && filterBy.bedrooms) {
         console.log('third condition ') 
     } else if (filterBy.beds && filterBy.bedrooms) {
-        console.log('forth condtion')
+        stays =stays.filter((stay) => filterBy.beds <= stay.beds && filterBy.bedrooms <= stay.bedrooms )
     } else if (filterBy.txt) {
         const regex = new RegExp(filterBy.txt, 'i')
         stays = stays.filter(stay => regex.test(stay.loc.address))
         // console.log(stays)
     } else if (filterBy.beds) {
-        console.log('sixth')
+        stays = stays.filter((stay) => filterBy.beds <= stay.beds  )
     } else if (filterBy.bedrooms) {
-        console.log('seventh')
+        stays =stays.filter((stay) => filterBy.bedrooms <= stay.bedrooms)
     } 
 
     return stays
