@@ -1,13 +1,15 @@
 .stay-details{
     //stay-details-heading component
     .img-container {
+        height: 430px;
         // border: 1px solid $clr3;
         // border-radius: 16px;
         padding-top: 24px;
         .img-list {
+            height: 100%;
             display: grid;
             grid-template-columns: repeat(4, 1fr);
-            grid-template-rows: repeat(2, 1fr);
+            grid-template-rows: repeat(2, 230px);
             gap: 10px;
              
             li:nth-child(3) {
@@ -35,8 +37,11 @@
         .stay-img {
         height: 100%;
         width: 100%;
+        object-fit: cover;
         }
     .two-sections {
+        margin-top: 30px;
+
         .first-section {
             width: 58%;
         }

@@ -98,6 +98,9 @@ img {
     &-round {
         @include btn($type: round, $padding: rem(5px));
     }
+    &-category {
+        @include btn($type: category);
+    }
 }
 
 
