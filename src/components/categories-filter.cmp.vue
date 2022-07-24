@@ -2,7 +2,9 @@
     <section class="categories-container">
       <ul class="clean-list grid">
         <li v-for="category in categories">
-            <button>{{ category }}</button>
+            <button>{{ category }}
+              <img  />
+            </button>
         </li>
       </ul>
     </section>

@@ -14,7 +14,7 @@
                 </a>
             </nav>
         </div>
-        <categories-filter v-if="isHomePage" />
+
     </header>
 </template>
 

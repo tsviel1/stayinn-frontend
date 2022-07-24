@@ -3,21 +3,25 @@ export default {
   state: {
     stays: null,
     currStay: null,
-    currFilterBy: null
+    currFilterBy: null,
   },
   getters: {
-    stays(state) {return state.stays },
+    stays(state) {
+      return state.stays
+    },
     staysToDisplay(state) {
       var stays = state.stays
       if (state.currFilterBy?.txt) {
         const regex = new RegExp(state.currFilterBy.txt, 'i')
-        stays = stays.filter(stay => regex.test(stay.loc.city))
+        stays = stays.filter((stay) => regex.test(stay.loc.city))
       }
-      if(state.currFilterBy?.beds){
-        stays=stays.filter(stay=> stay.beds===state.currFilterBy.beds)
+      if (state.currFilterBy?.beds) {
+        stays = stays.filter((stay) => stay.beds === state.currFilterBy.beds)
       }
-      if(state.currFilterBy?.bedrooms){
-        stays=stays.filter(stay=>stay.bedrooms===state.currFilterBy.bedrooms)
+      if (state.currFilterBy?.bedrooms) {
+        stays = stays.filter(
+          (stay) => stay.bedrooms === state.currFilterBy.bedrooms
+        )
       }
       return stays
     },
@@ -26,6 +30,17 @@ export default {
     },
     currFilterBy(state) {
       return state.currFilterBy
+    },
+    getCurrStayAvg({ currStay }) {
+      let sumRate = currStay.reviews.reduce(
+        (acc, currVal) => acc + currVal.rate,
+        0
+      )
+      let avg = sumRate / currStay.reviews.length
+      return avg
+    },
+    getReviewsLength({ currStay }) {
+      return currStay.reviews.length
     },
   },
   mutations: {
@@ -57,13 +72,12 @@ export default {
     async getCurrStay({ commit }, { stayId }) {
       try {
         const stay = await stayService.getById(stayId)
-        // console.log(stay)
+        console.log(stay)
         commit({ type: 'setCurrStay', stay })
       } catch (err) {
         console.log('stayStore: Error in getCurrStay', err)
         throw err
       }
     },
-
   },
 }
