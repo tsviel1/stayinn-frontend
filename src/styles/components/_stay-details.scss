@@ -103,32 +103,35 @@
         font-weight: 400;
     }
     //Amenties components
-    .ameneties-title {
-        font-size: 22px;
-        font-weight: 600;
-        padding: 0 0 24px;
-        margin: 0;
-    }
-    .ameneties-list {
-        flex-wrap: wrap;
-        flex-direction: column;
-        // padding: 48px 0;
-    }
-    //amenties-preview component
-    .amenety-preview {
-        padding: 0 8px;
+    .ameneties{
+        border-bottom: 0.0714285714em solid #ddd;
+        .ameneties-title {
+            font-size: 22px;
+            font-weight: 600;
+            padding: 0 0 24px;
+            margin: 0;
+        }
+        .ameneties-list {
+            flex-wrap: wrap;
+            flex-direction: column;
+            // padding: 48px 0;
+        }
+        //amenties-preview component
+        .amenety-preview {
+            padding: 0 8px;
+    
+        }
+        .amenety-list-item {
+            font-size: 16px;
+            font-weight: 400;
+            padding-bottom: 16px;
+            justify-content: flex-end;
+            .amenety-icon {
+                padding-inline-end: 17px;
+            }
+        }
 
     }
-    .amenety-list-item {
-        font-size: 16px;
-        font-weight: 400;
-        padding-bottom: 16px;
-        justify-content: flex-end;
-        .amenety-icon {
-            padding-inline-end: 17px;
-        }
-    }
-    
 
     //review-list component
     .review-list {

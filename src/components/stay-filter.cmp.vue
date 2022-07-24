@@ -1,8 +1,10 @@
 <template>
   <section>
-    <a @click="isShown = !isShown" class="filter-btn">
-      <i class="fas fa-ellipsis-h"></i> Filters
-    </a>
+    <div class="btn-container">
+      <a @click="isShown = !isShown" class="filter-btn">
+        <i class="fas fa-ellipsis-h"></i> Filters
+      </a>
+    </div>
 
     <form v-if="isShown" @submit.prevent="setFilterBy">
       <div>
@@ -87,13 +89,13 @@ export default {
       console.log(this.filterBy.bedrooms);
     },
     onFilterBed(ev) {
-      if(this.filterBy.beds){
+      if (this.filterBy.beds) {
         this.filterBy.beds = ev.target._value
-      }else{
-        this.filterBy.beds=null
+      } else {
+        this.filterBy.beds = null
       }
 
-      console.log(typeof this.filterBy.beds,'yo');
+      console.log(typeof this.filterBy.beds, 'yo');
     },
     onFilterPrice(ev) {
       console.log(ev);
@@ -107,9 +109,9 @@ export default {
     setFilterBy() {
       this.$store.commit({
         type: 'setFilter',
-        filterBy: {...this.filterBy}
+        filterBy: { ...this.filterBy }
       })
-      this.$store.dispatch({type:"loadStays", filterBy: {...this.filterBy}})
+      this.$store.dispatch({ type: "loadStays", filterBy: { ...this.filterBy } })
     }
   },
   computed: {},
