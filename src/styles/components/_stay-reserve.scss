@@ -1,4 +1,7 @@
 .stay-reserve {
+    position: sticky;
+    top: 80px;
+
     .order-container {
         border: 1px solid #00000030;
         border-radius: 13px;
@@ -140,8 +143,7 @@
         font-weight: 600;
         font-family: sans-serif;
     }
-    position: fixed;
-    // right: 0;
+
 
 
 }
