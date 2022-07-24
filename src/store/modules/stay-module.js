@@ -72,7 +72,7 @@ export default {
     async getCurrStay({ commit }, { stayId }) {
       try {
         const stay = await stayService.getById(stayId)
-        // console.log(stay)
+        console.log(stay)
         commit({ type: 'setCurrStay', stay })
       } catch (err) {
         console.log('stayStore: Error in getCurrStay', err)

@@ -2,7 +2,7 @@
   <section class="review-list">
     <h2 class="review-list-title">
       <i class="fas fa-star"></i>
-      {{ getReviewAvg }} .
+      {{ getReviewAvg }} ·
       {{ reviewLength }} reviews
 
     </h2>
