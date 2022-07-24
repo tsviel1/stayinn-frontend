@@ -1,8 +1,8 @@
 <template>
   <section>
-    <button @click="isShown = !isShown">
+    <a @click="isShown = !isShown" class="filter-btn">
       <i class="fas fa-ellipsis-h"></i> Filters
-    </button>
+    </a>
 
     <form v-if="isShown" @submit.prevent="setFilterBy">
       <div>

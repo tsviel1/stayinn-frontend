@@ -1,2 +1,11 @@
-.el-dialog{
-    -el-dialog-width: 100%;}
+a.filter-btn {
+    background-color: $clr3;
+    // padding: 100px;
+    display: flex;
+    text-align: center;
+    justify-content: flex-end;
+
+    i {
+        padding-inline-end: 0.25rem
+    }
+}
