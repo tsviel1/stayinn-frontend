@@ -8,6 +8,7 @@
             </span>
             <span class="dot"> · </span>
             <span class="stay-location underline">
+                {{ stay.loc.address }}
             </span>
         </div>
     </section>
