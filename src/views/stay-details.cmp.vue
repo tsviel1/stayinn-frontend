@@ -69,7 +69,7 @@ export default {
   },
   methods: {
     onClickStay(filterBy) {
-      this.$router.push(`/home`)
+      this.$router.push(`/`)
     },
 
 
