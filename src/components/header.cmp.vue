@@ -2,7 +2,7 @@
     <header class="main-header">
         <div class="app-header container">
             <div class="logo " @click="backToHomePage">
-                <h2 >StayInn<i class="fab fa-airbnb"></i></h2>
+                <h2 ><i class="fab fa-airbnb"></i>stayinn</h2>
             </div>
             <search-cmp @setFilterBy="setFilterBy" @setTripDates="setTripDates" :currFilterBy="getFilterBy" />
             <nav class="nav-container">
