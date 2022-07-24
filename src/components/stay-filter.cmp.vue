@@ -1,10 +1,10 @@
 <template>
   <section>
-    <button @click="isShown = true">
+    <button @click="isShown = !isShown">
       <i class="fas fa-ellipsis-h"></i> Filters
     </button>
 
-    <form @submit.prevent="setFilterBy">
+    <form v-if="isShown" @submit.prevent="setFilterBy">
       <div>
         <h3>Price Range</h3>
         <el-slider v-model.number="filterBy.price" range :min="10" :max="1000" @change="onFilterPrice($event)" />
