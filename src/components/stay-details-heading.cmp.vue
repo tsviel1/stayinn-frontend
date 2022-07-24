@@ -8,7 +8,6 @@
             </span>
             <span class="dot"> · </span>
             <span class="stay-location underline">
-                {{ stay.loc.address }}
             </span>
         </div>
     </section>
@@ -30,8 +29,6 @@ export default {
             return this.$store.getters.getCurrStayAvg
         },
         getReviewsAmount() {
-            console.log('this.$store.getters.getReviewsLength', this.$store.getters.getReviewsLength)
-            
             return this.$store.getters.getReviewsLength
         }
     },

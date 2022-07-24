@@ -8,9 +8,9 @@
           <div class="type-heading">
             <h2 class="type-heading-title">{{ stay.propertyType }} hosted by {{ stay.host.fullname }}</h2>
             <ul class="capacities clean-list flex">
-              <li>{{ stay.capacity }}<span> guests</span> .</li>
-              <li>{{ stay.bedrooms }}<span> bedroom</span> .</li>
-              <li>{{ stay.beds }}<span> beds</span> </li>
+              <li>{{ stay.capacity }}<span> guests</span></li>
+              <li><span class="dot2">·</span><span>{{ stay.bedrooms }} bedrooms</span></li>
+              <li><span class="dot2">·</span>{{ stay.beds }}<span> beds</span> </li>
             </ul>
           </div>
           <img class="type-heading-img" :src="stay.host.imgUrl" />
@@ -61,10 +61,7 @@ export default {
     };
   },
   created() {
-    console.log('STAY ID', this.stayId)
     const newStayId = JSON.parse(JSON.stringify(this.stayId))
-    console.log(newStayId)
-    // this.$store.commit({type: 'setCurrStayId', stayId: newStayId} )
     this.$store.dispatch({ type: 'getCurrStay', stayId: newStayId })
   },
   methods: {
@@ -74,7 +71,6 @@ export default {
   },
   computed: {
     stay() {
-
       return this.$store.getters.getCurrStay
     },
     getAvgReviews() {
