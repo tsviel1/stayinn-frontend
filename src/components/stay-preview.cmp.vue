@@ -5,7 +5,8 @@
         <h3 class="small justify-center" text="2xl">{{ item }}</h3>
       </el-carousel-item>
     </el-carousel> -->
-    <img class="card-img" :src="stay.imgUrls[0]" />
+    <img class="card-img" :src="setupImgUrl(stay.imgUrls[0])" />
+ 
     <div class="text-container">
     <div  class="title"><span>{{ stay.type }} in {{stay.loc.city}}</span><div class="rating"><i class="fas fa-star"></i> {{reviewsAvg}}</div></div>
     <p class="stay-summery">{{ stay.summary}}</p>
@@ -30,7 +31,11 @@
    methods: {
     onClickStay(stayId) {
        this.$router.push(`/stay/${stayId}`)
-     }
+     },
+     setupImgUrl(name) {
+      return new URL(`../assets/Images/${name}`, import.meta.url).href;
+    },
+
    },
    computed:{
       reviewsAvg() {

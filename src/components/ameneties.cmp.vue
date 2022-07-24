@@ -6,7 +6,7 @@
                 <amenety-preview :amenety="amenety" />
             </li>    
         </ul>
-        <hr/>
+        
     </section>
 </template>
 
