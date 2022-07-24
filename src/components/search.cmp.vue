@@ -2,19 +2,26 @@
   <section class="search-cmp">
     <form @submit.prevent="searchTrip" class="search-container">
       <div class="filter">
-        <input class="text-input" v-model="filterBy.txt" @input="setTripCity" placeholder="Anywhere" />
+        <label for="place">Where</label>
+        <input id="place" class="text-input" v-model="filterBy.txt" @input="setTripCity" placeholder="Anywhere" />
       </div>
       <div class="break-point"></div>
       <label>
-        <div class="filter">Check in</div>
+        <label class="filter date-input" for="checkIn">Check out
+          <div v-if="checkIn">{{ checkIn }}</div>
+        </label>
         <div class="break-point"></div>
-        <div class="filter">Check out</div>
+        <label class="filter date-input" for="checkOut">Check in
+          <div v-if="checkOut">{{ checkOut }}</div>
+        </label>
         <div class="break-point"></div>
         <el-date-picker class="date-picker" v-model="tripDates" type="daterange" @change="setTripDates"
           range-separator="To" start-placeholder="Start date" end-placeholder="End date" />
       </label>
-      <div class="filter add-guests" @click="shouldShow = !shouldShow">Add guests</div>
-      <div class="search-btn" @click="searchTrip"><i class="fas fa-search"></i></div>
+      <label class="guests-filter filter" for="guests">Who
+        <div id="guests" class="add-guests" @click="shouldShow = !shouldShow">Add guests</div>
+      </label>
+      <div class="search-btn" @click="searchTrip"><i class="fas fa-search srch-logo"></i></div>
     </form>
     <div v-if="shouldShow" class="position-modal">
       <div class="guests-modal">
@@ -55,6 +62,7 @@
   </section>
 </template>
  <script>
+import { dataType } from 'element-plus/lib/components/table-v2/src/common';
 import calenderCmp from './calender.cmp.vue'
 export default {
   name: 'search-stay',
@@ -64,10 +72,15 @@ export default {
       filterBy: {
         txt: ''
       },
+      checkIn: 'Add dates',
+      checkOut: 'Add dates',
       tripDates: null,
       kidsCounter: 0,
       adultsCounter: 0
     };
+  },
+  computed: {
+
   },
   methods: {
     setTripCity() {
@@ -79,13 +92,27 @@ export default {
     setTripDates() {
       const startDate = this.tripDates[0].toLocaleDateString()
       const endDate = this.tripDates[1].toLocaleDateString()
+      const checkInDate = this.tripDates[0]
+      checkInDate.setMonth(checkInDate.getMonth())
+      const checkInMonth = checkInDate.toLocaleString('en-US', {
+        month: 'short',
+      })
+      const checkInDay = checkInDate.getDate()
+      this.checkIn = `${checkInMonth} ${checkInDay}`
+      const checkOutDate = this.tripDates[1]
+      checkOutDate.setMonth(checkOutDate.getMonth())
+      const checkOutMonth = checkOutDate.toLocaleString('en-US', {
+        month: 'short',
+      })
+      const checkOutDay = checkOutDate.getDate()
+      this.checkOut = `${checkOutMonth} ${checkOutDay}`
 
       this.$emit('setTripDates', startDate, endDate)
     },
     searchTrip() {
       this.shouldShow = false
       console.log('trip is searched');
-    }
+    },
   },
   components: {
     calenderCmp,

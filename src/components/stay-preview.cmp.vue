@@ -7,10 +7,10 @@
     </el-carousel> -->
     <img class="card-img" :src="stay.imgUrls[0]" />
     <div class="text-container">
-    <div  class="title"><span>{{ stay.name }}</span><div><i class="fas fa-star"></i> {{reviewsAvg}}</div></div>
-    <p>{{ stay.loc.address }} • {{ stay.loc.country }}</p>
+    <div  class="title"><span>{{ stay.type }} in {{stay.loc.city}}</span><div class="rating"><i class="fas fa-star"></i> {{reviewsAvg}}</div></div>
+    <p class="stay-summery">{{ stay.summary}}</p>
     <p>{{stay.beds}} {{beds}}</p>
-    <p ><span class="price">${{stay.price}} </span> / night</p>
+    <p ><span class="price">${{stay.price}} </span>  night</p>
     </div>
   </div>
 </template>
