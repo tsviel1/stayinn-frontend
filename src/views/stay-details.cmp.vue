@@ -2,6 +2,7 @@
   <section v-if="stay" class="stay-details container">
     <a @click="onClickStay">Back</a>
     <stay-details-heading :stay="stay" />
+    <details-images :stay="stay" />
     <div class="two-sections flex">
       <div class="first-section">
         <div class="flex-type flex">
@@ -16,7 +17,7 @@
           <img class="type-heading-img" :src="stay.host.imgUrl" />
         </div>
 
-        <hr />
+        
         <p class="stay-details-desc">{{ stay.summary }}</p>
         <ameneties :stay="stay" />
       </div>
@@ -40,6 +41,7 @@ import reviewList from '../components/review-list.cmp.vue';
 import miniHostPreview from '../components/mini-hostPreview.cmp.vue';
 import mapCmp from '../components/map.cmp.vue'
 import stayDetailsHeading from '../components/stay-details-heading.cmp.vue'
+import detailsImages from '../components/details-imges.cmp.vue'
 
 
 export default {
@@ -52,6 +54,7 @@ export default {
     miniHostPreview,
     mapCmp,
     stayDetailsHeading,
+    detailsImages
   },
   data() {
     return {
@@ -66,8 +69,10 @@ export default {
   },
   methods: {
     onClickStay(filterBy) {
-      this.$router.push(`/explore/${filterBy}`)
-    }
+      this.$router.push(`/home`)
+    },
+
+
   },
   computed: {
     stay() {
@@ -78,7 +83,11 @@ export default {
     },
     getReviewsAmount() {
       return this.$store.getters.getReviewsLength
-    }
+    },
+    // getImageUrl(name) {
+    //   console.log(name)
+    //    return new URL(`@/assets/images/${name}`, import.meta.url).href
+    // }
   },
   unmounted() { },
 };
