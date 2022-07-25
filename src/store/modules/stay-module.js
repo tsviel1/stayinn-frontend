@@ -61,7 +61,7 @@ export default {
     },
     setFilter(state, { filterBy }) {
       state.currFilterBy = filterBy
-      console.log(state.currFilterBy)
+      // console.log(state.currFilterBy)
     },
     toggleSearchBig(state) {
       state.currSearchBig = !state.currSearchBig

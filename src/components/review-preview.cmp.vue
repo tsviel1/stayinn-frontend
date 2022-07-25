@@ -8,7 +8,9 @@
                 <h3 class="review-preview-date">July 2022</h3>
             </div>
         </div>
-        <span class="review-preview-txt">{{ review.txt }}</span>
+        <span class="review-preview-txt">{{ formatedText }}<span v-if="!isMore && getReviewLength">...</span>
+        </span>
+        <span :style="readStyle" v-if="getReviewLength" @click="isMore = !isMore">{{ readText }} </span>
     </section>
 </template>
 
@@ -19,13 +21,33 @@ export default {
         review: Object
     },
     data() {
-        return {}
+        return {
+            isMore: false,
+        }
     },
     created() {
         // console.log(this.review)
     },
     methods: {},
-    computed: {},
+    computed: {
+        getReviewLength() {
+            console.log(this.review.txt.length);
+            return this.review.txt.length > 180
+
+        },
+        formatedText() {
+            return this.isMore ? this.review.txt : this.review.txt.slice(0, 180)
+        },
+        readText() {
+            return this.isMore ? ' Read Less' : 'Read more'
+        },
+        readStyle() {
+            return {
+                cursor: 'pointer',
+                'text-decoration': 'underline',
+            }
+        },
+    },
     unmounted() { },
 }
 
