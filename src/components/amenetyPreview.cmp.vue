@@ -1,14 +1,15 @@
 <template>
     <section class="amenety-preview ">
             <div class="amenety-list-item ">
-                <i :class="`${icons[amenety]} amenety-icon`"></i>
+                <img class="amenity-img" :src="setupImgUrl(icons[amenety])" /> 
+                
                 <span class="amenety-span">{{ amenety }} </span> 
             </div>
     </section>
 </template>
 
 <script>
-    import {amentiesMap} from '../services/data/amenties-map.js'
+    import {amenitiesMap} from '../services/data/amenties-map.js'
 
     export default {
         name: 'ameneties',
@@ -17,13 +18,17 @@
         },
         data() {
         return {
-            icons: amentiesMap
+            icons: amenitiesMap
         }
         },
         created() {
             // console.log(this.amenety)
         },
-        methods: {},
+        methods: {
+            setupImgUrl(name) {
+            return new URL(`../assets/svgs/${name}.svg`, import.meta.url).href;
+        },
+        },
         computed: {},
         unmounted() {},
         }

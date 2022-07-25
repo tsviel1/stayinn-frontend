@@ -13,7 +13,7 @@ export default {
       var stays = state.stays
       if (state.currFilterBy?.txt) {
         const regex = new RegExp(state.currFilterBy.txt, 'i')
-        stays = stays.filter((stay) => regex.test(stay.loc.city))
+        stays = stays.filter((stay) => regex.test(stay.address.city))
       }
       if (state.currFilterBy?.beds) {
         stays = stays.filter((stay) => stay.beds === state.currFilterBy.beds)
@@ -32,21 +32,24 @@ export default {
       return state.currFilterBy
     },
     getCurrStayAvg({ currStay }) {
-      let sumRate = currStay.reviews.reduce(
-        (acc, currVal) => acc + currVal.rate,
-        0
-      )
-      let avg = sumRate / currStay.reviews.length
+      // let sumRate = currStay.reviews.reduce(
+      //   (acc, currVal) => acc + currVal.rate,
+      //   0
+      // )
+
+      let sumRate = currStay.reviewScores.rating
+      let avg = sumRate / 20
       return avg
     },
     getReviewsLength({ currStay }) {
       return currStay.reviews.length
     },
+  
   },
   mutations: {
     setstays(state, { stays }) {
       state.stays = stays
-      console.log(state.stays)
+      // console.log(state.stays)
     },
     setCurrStay(state, { stay }) {
       // console.log(stay)

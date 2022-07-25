@@ -36,9 +36,7 @@ export default {
   methods: {},
   computed: {
     getReviewAvg() {
-      let sumRate = this.stay.reviews.reduce((acc, currVal) => acc + currVal.rate, 0)
-      let avg = sumRate / this.reviewLength
-      return avg
+      return this.$store.getters.getCurrStayAvg
     }
   },
   unmounted() { },

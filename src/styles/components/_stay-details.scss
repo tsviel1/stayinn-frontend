@@ -5,7 +5,7 @@
         height: 430px;
         // border: 1px solid $clr3;
         // border-radius: 16px;
-        padding-top: 24px;
+        padding-top: 10px;
 
         .img-list {
             height: 100%;
@@ -47,7 +47,7 @@
     }
 
     .two-sections {
-        margin-top: 30px;
+        margin-top: 50px;
 
         .first-section {
             width: 58%;
@@ -162,7 +162,10 @@
         //amenties-preview component
         .amenety-preview {
             padding: 0 8px;
-
+            .amenity-img {
+                height: 24px;
+                width: 24px;
+            }
         }
 
         .amenety-list-item {

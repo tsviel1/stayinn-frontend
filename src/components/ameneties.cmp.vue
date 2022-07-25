@@ -11,7 +11,7 @@
 </template>
 
 <script>
-    import {amentiesMap} from '../services/data/amenties-map.js'
+    import {amenitiesMap} from '../services/data/amenties-map.js'
     import amenetyPreview from './amenetyPreview.cmp.vue'
 
     export default {
@@ -24,7 +24,7 @@
         },
         data() {
         return {
-            icons: amentiesMap
+            icons: amenitiesMap
         }
         },
         created() {

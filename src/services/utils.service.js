@@ -41,10 +41,19 @@ function timeAgo(ms = new Date()) {
   }
 }
 
+function calculateStayAvg(stay) {
+  let sumRate = stay.reviewScores.rating
+      let avg = sumRate / 20
+      return avg
+}
 
-module.exports = {
-    makeId,
-    getRandomInt,
-    timeAgo,
-  }
+// module.exports = {
+//     makeId,
+//     getRandomInt,
+//     timeAgo,
+    
+//   }
   
+export const utilsService  = {
+  calculateStayAvg
+}
