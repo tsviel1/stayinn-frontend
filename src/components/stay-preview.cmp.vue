@@ -8,7 +8,7 @@
       </el-carousel>
       <div class="wishlist" @click.stop="isliked = !isliked">
         <span v-if="isliked"><i class="fas fa-heart liked"></i></span>
-        <span v-else><i class="far fa-heart unliked"></i></span>
+        <span v-else><i class="fas fa-heart unliked"></i></span>
       </div>
       <div class="text-container">
         <div class="title"><span>{{ stay.type }} in {{ stay.loc.city }}</span>

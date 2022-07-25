@@ -34,6 +34,23 @@ li.card-container {
         // height: 50%;
         overflow: hidden;
         width:100%;
+        .el-carousel__buttonr{
+            // border-radius: 50%;
+            width: 10px;
+            height: 10px;
+            
+                border-radius: 50%;
+            
+        }
+        .el-carousel__arrow {
+            background-color: #ffffffb2;
+            color: #222;
+            &:hover{
+                background-color: white;
+                box-shadow: 0 0 0 0 #ffffff;
+
+            }
+        }
     }
     
     li {
@@ -70,7 +87,9 @@ li.card-container {
         color: $clr1;
     }
     .unliked{
-        color: $clr3;
+        color:rgba(0, 0, 0, 0.445);
+        stroke: #ffffff;
+        stroke-width: 2;
     }
 
     .text-container {
