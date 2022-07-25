@@ -44,6 +44,7 @@ export default {
     getReviewsLength({ currStay }) {
       return currStay.reviews.length
     },
+    
   
   },
   mutations: {

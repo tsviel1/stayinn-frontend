@@ -65,4 +65,6 @@ Aspect ratios .ratio-16-9 {
 .container {
     padding-inline-start: 80px;
     padding-inline-end: 80px;
+    max-width: 1600px;
+    margin: auto;
 }

@@ -58,6 +58,8 @@ export default {
   data() {
     return {
       stayId: this.$route.params.id,
+     
+			// longText: this.stay.summary > 100,
       // stay: null
       orderInfo: ''
     };
@@ -83,10 +85,7 @@ export default {
     getReviewsAmount() {
       return this.$store.getters.getReviewsLength
     },
-    // getImageUrl(name) {
-    //   console.log(name)
-    //    return new URL(`@/assets/images/${name}`, import.meta.url).href
-    // }
+    
   },
   unmounted() { },
 };
