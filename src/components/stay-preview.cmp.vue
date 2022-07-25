@@ -1,8 +1,8 @@
 <template>
-  <section @click="onClickStay(stay._id)">
+  <section class="preview-section" @click="onClickStay(stay._id)">
     <div>
       <el-carousel trigger="click" :autoplay="false" height="330px">
-        <el-carousel-item :trigger="click" :autoplay="false" v-for="img in stay.imgUrls" :key="img">
+        <el-carousel-item trigger="click" :autoplay="false" v-for="img in stay.imgUrls" :key="img">
           <img class="card-img" :src="setupImgUrl(img)" />
         </el-carousel-item>
       </el-carousel>
@@ -14,7 +14,9 @@
         <div class="title"><span>{{ stay.type }} in {{ stay.loc.city }}</span>
           <div class="rating"><i class="fas fa-star"></i> {{ reviewsAvg }} ({{ stay.reviews.length }})</div>
         </div>
-        <p class="stay-summery">{{ stay.summary }}</p>
+        <div>
+          <p class="stay-summery">{{ stay.summary }}</p>
+        </div>
         <p>{{ stay.beds }} {{ beds }}</p>
         <p><span class="price">${{ stay.price }} </span> night</p>
       </div>

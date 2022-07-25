@@ -1,6 +1,5 @@
 <template>
-  <section v-if="stay" class="stay-details container">
-    <a @click="onClickStay">Back</a>
+  <section v-if="stay" class="stay-details container main-layout">
     <stay-details-heading :stay="stay" />
     <details-images :stay="stay" />
     <div class="two-sections flex">
@@ -16,7 +15,7 @@
           </div>
           <img class="type-heading-img" :src="stay.host.imgUrl" />
         </div>
-
+       
         
         <p class="stay-details-desc">{{ stay.summary }}</p>
         <ameneties :stay="stay" />

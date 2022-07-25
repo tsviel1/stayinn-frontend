@@ -1,3 +1,7 @@
+.preview-section{
+    width: 100%;
+}
+
 .card-layout {
     // width: 100%;
     // display: grid;
@@ -41,11 +45,10 @@ li.card-container {
         
     }
     .stay-summery{
-        // overflow: hidden;
-        // white-space: nowrap;
-        // text-overflow: ellipsis;
-        // width: 250px;
-        // background-color: rgb(221, 98, 98);
+        width: 275px;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        overflow: hidden;
     }
     .wishlist{
         position: absolute;
