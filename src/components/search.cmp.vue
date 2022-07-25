@@ -1,5 +1,5 @@
 <template>
-  <section class="search-cmp container">
+  <section class="container" :class="{'search-cmp-big': getCurrSearch, 'search-cmp': !getCurrSearch}">
     <form @submit.prevent="searchTrip" class="search-container">
       <div class="search-first-section search-section">
         <label for="place" class="search-head">Where</label>
@@ -39,12 +39,16 @@ export default {
         txt: ''
       },
       tripDates: null,
-      shouldShow: false
-
+      shouldShow: false,
+      shouldShowSearch: false
     };
   },
   computed: {
-
+    getCurrSearch() {
+      console.log('this.$store.getters.currSearch', this.$store.getters.currSearch)
+      
+      return this.$store.getters.getSearch
+    }
   },
   methods: {
     setTripCity() {
@@ -76,6 +80,7 @@ export default {
     searchTrip() {
       this.$emit('searchClicked')
       this.shouldShow = false
+      this.$store.commit('toggleSearchBig')
       console.log('trip is searched');
     },
   },

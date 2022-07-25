@@ -153,13 +153,24 @@
     display: flex;
     justify-content: center;
     padding-bottom: 16px;
+    transform: translateY(-100px) scale(0,0);
+    position: absolute;
+    transition: 0.3s;
+    opacity: 0;
 }
+
+.search-cmp-big {
+    display: flex;
+    justify-content: center;
+    padding-bottom: 16px;
+    transition: 0.3s;
+    opacity: 1;
+}
+
 
 
 .position-modal {
     position: relative;
-    height: 10px;
-    background-color: pink;
 
     .guests-modal {
         background-color: $clr3;
