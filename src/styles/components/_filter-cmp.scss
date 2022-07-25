@@ -1,4 +1,4 @@
-.btn-container{
+.btn-container {
     margin-top: 10px;
     display: flex;
     justify-content: flex-end;
@@ -8,17 +8,19 @@
     font-weight: 600;
     color: $clr5;
     font-size: 12px;
+
     a.filter-btn {
         padding: 18px;
         display: flex;
         background-color: $clr3;
         text-align: center;
         align-items: center;
-        justify-content:center;
+        justify-content: center;
         height: 32px;
         width: 88px;
-        border:  1px solid $clr6;
+        border: 1px solid $clr6;
         border-radius: 12px;
+
         i {
             padding-inline-end: 0.25rem
         }

@@ -4,7 +4,7 @@
     <header class="main-header">
         <div class="app-header container">
             <div class="logo " @click="backToHomePage">
-                <h2>StayInn<i class="fab fa-airbnb"></i></h2>
+                <h2 ><i class="fab fa-airbnb"></i>stayinn</h2>
             </div>
             <mini-search-cmp v-if="!isSearch" @click="isSearch = true" />
             <nav class="nav-container">
