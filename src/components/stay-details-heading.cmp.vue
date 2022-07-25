@@ -9,7 +9,7 @@
                 </span>
                 <span class="dot"> · </span>
                 <span class="stay-location underline">
-                    {{ stay.loc.address }}
+                    {{ stay.address.street }}
                 </span>
             </div>
             <div class="share-save flex">

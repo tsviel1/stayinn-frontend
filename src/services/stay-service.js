@@ -1,14 +1,16 @@
 import { storageService } from './async-storage.service.js'
 import { db } from './data/airbnb.js'
+import newData from './data/stays.json'
 const STAY_KEY = 'stayDB'
-
+const data = newData
 // let gStays;
-
+// console.log(data)
 _createStays()
 
 async function query(filterBy) {
   // console.log(filterBy)
   let stays = await storageService.query(STAY_KEY)
+  // console.log(stays)
   if (!filterBy) {
     return stays
   }
@@ -22,18 +24,18 @@ async function query(filterBy) {
   if (filterBy.txt && filterBy.beds && filterBy.bedrooms) {
     stays = stays.filter((stay) => {
       return (
-        regex.test(stay.loc.address) &&
+        regex.test(stay.address.city) &&
         filterBy.beds <= stay.beds &&
         filterBy.bedrooms <= stay.bedrooms
       )
     })
   } else if (filterBy.txt && filterBy.beds) {
     stays = stays.filter((stay) => {
-      return regex.test(stay.loc.address) && filterBy.beds <= stay.beds
+      return regex.test(stay.address.city) && filterBy.beds <= stay.beds
     })
   } else if (filterBy.txt && filterBy.bedrooms) {
     stays = stays.filter((stay) => {
-      return regex.test(stay.loc.address) && filterBy.bedrooms <= stay.bedrooms
+      return regex.test(stay.address.city) && filterBy.bedrooms <= stay.bedrooms
     })
   } else if (filterBy.beds && filterBy.bedrooms) {
     stays = stays.filter(
@@ -41,7 +43,7 @@ async function query(filterBy) {
     )
   } else if (filterBy.txt) {
     const regex = new RegExp(filterBy.txt, 'i')
-    stays = stays.filter((stay) => regex.test(stay.loc.address))
+    stays = stays.filter((stay) => regex.test(stay.address.city))
     // console.log(stays)
   } else if (filterBy.beds) {
     stays = stays.filter((stay) => filterBy.beds <= stay.beds)
@@ -81,10 +83,12 @@ function addReview(stayId, review) {
 }
 
 async function _createStays() {
+
+  // console.log(data)
   let stays = await storageService.query(STAY_KEY)
   // console.log('CREATE STAYS:', stays)
   if (!stays || !stays.length) {
-    localStorage.setItem(STAY_KEY, JSON.stringify(db.stay))
+    localStorage.setItem(STAY_KEY, JSON.stringify(data))
   }
 }
 
