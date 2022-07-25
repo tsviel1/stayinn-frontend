@@ -4,16 +4,21 @@
     <app-header />
     <router-view />
     <user-msg />
+    <app-footer />
   </section>
 </template>
 <script>
 import appHeader from './components/header.cmp.vue'
 import userMsg from './components/user-msg.vue';
+import appFooter from './components/app-footer.cmp.vue'
+
+
 export default {
   components: {
     appHeader,
-    userMsg
-  },
+    userMsg,
+    appFooter,
+},
   created() {
     this.$store.dispatch({ type: 'loadStays' })
     console.log('Hi')
