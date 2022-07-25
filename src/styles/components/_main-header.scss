@@ -1,19 +1,22 @@
 .main-header {
     background-color: $clr3;
     z-index: 30;
+    border-bottom: 1px solid $clr4;
 
     .app-header {
         padding-block-start: 10px;
         padding-block-end: 10px;
-
         display: flex;
         justify-content: space-between;
         flex-direction: row;
         align-items: center;
-        border-bottom: 1px solid $clr4;
+
         :hover{
             cursor: pointer
         };
+        .active {
+            height: 50px;
+        }
     }
 
     .nav-container {

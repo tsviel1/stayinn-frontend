@@ -75,6 +75,17 @@
         font-size: 14px;
         line-height: 20px;
         margin-top: 8px;
+        justify-content: space-between;
+        .share-btn, .save-btn {
+            align-items: center;
+            padding: 8px;
+            svg {
+                margin-right: 8px;
+            }
+            span {
+                text-decoration: underline;
+            }
+        }
     }
 
     .type-heading-img {
