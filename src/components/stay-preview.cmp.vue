@@ -11,7 +11,7 @@
         <span v-else><i class="fas fa-heart unliked"></i></span>
       </div>
       <div class="text-container">
-        <div class="title"><span>{{ stay.type }} in {{ stay.address.city }}</span>
+        <div class="title"><span>{{ stay.propertyType }} in {{ stay.address.city }}</span>
           <div class="rating"><i class="fas fa-star"></i> {{ reviewsAvg }} ({{ stay.reviews.length }})</div>
         </div>
         <div>
@@ -24,6 +24,8 @@
   </section>
 </template>
  <script>
+import { utilsService } from '../services/utils.service.js';
+
  export default {
    name: 'stay-preview',
    components: {},
@@ -49,13 +51,14 @@
    },
    computed: {
      reviewsAvg() {
-       const reviews = this.stay.reviews
-       let sumRate = reviews.reduce((acc, currVal) => acc + currVal.rate, 0)
-       let avg = sumRate / reviews.length
-       var newAvg = avg.toFixed(1)
+      //  const reviews = this.stay.reviews
+      //  let sumRate = reviews.reduce((acc, currVal) => acc + currVal.rate, 0)
+      //  let avg = sumRate / reviews.length
+      //  var newAvg = avg.toFixed(1)
  
- 
-       return newAvg
+      return utilsService.calculateStayAvg(this.stay)
+      //  return newAvg
+
      },
      beds() {
        const bedStr = this.stay.beds > 1 ? "beds" : "bed"

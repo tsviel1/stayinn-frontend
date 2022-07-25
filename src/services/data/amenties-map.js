@@ -5,7 +5,7 @@ export const amenitiesMap = {
   "Pool": "pool",
   "Kitchen": "kitchen",
   "Free parking on premises": "parking",
-  "Doorman": "doorman",
+  "Doorman": "building-staff",
   "Gym": "gym",
   "Elevator": "elevator",
   "Hot tub": "hot-tub",
@@ -50,7 +50,7 @@ export const amenitiesMap = {
   "Pets allowed": "pets",
   "Body soap": "body-soap",
   "Beach view": "beach-view",
-  "Bathroom essentials": "bathroom-essentials",
+  "Bathroom essentials": "essentials",
   "Indoor fireplace": "indoor-fireplace",
   "Hot water kettle": "hot-water-kettle"
 }

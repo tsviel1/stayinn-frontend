@@ -162,7 +162,10 @@
         //amenties-preview component
         .amenety-preview {
             padding: 0 8px;
-
+            .amenity-img {
+                height: 24px;
+                width: 24px;
+            }
         }
 
         .amenety-list-item {
