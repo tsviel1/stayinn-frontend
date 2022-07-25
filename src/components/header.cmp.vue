@@ -3,10 +3,10 @@
 <template>
     <header class="main-header">
         <div class="app-header container">
-            <div class="logo " @click="backToHomePage">
-                <h2 ><i class="fab fa-airbnb"></i>stayinn</h2>
+            <div class="logo" @click="backToHomePage">
+                <h2><i class="fab fa-airbnb"></i>stayinn</h2>
             </div>
-            <mini-search-cmp @click="isSearch = true" />
+            <mini-search-cmp v-if="currSearchFalse" @click="toggleSearchBig" />
             <nav class="nav-container">
                 <a>
                     <router-link class="link" to="/stay">Explore</router-link>
@@ -16,8 +16,8 @@
                 </a>
             </nav>
         </div>
-        <search-cmp v-if="isSearch" @setFilterBy="setFilterBy" @setTripDates="setTripDates" :currFilterBy="getFilterBy"
-            @searchClicked="toggleIsActive" @showModal="shouldShow = true" />
+        <search-cmp @setFilterBy="setFilterBy" @setTripDates="setTripDates" :currFilterBy="getFilterBy"
+            @searchClicked="toggleIsActive" />
 
     </header>
 
@@ -38,8 +38,6 @@ export default {
     data() {
         return {
             isHomePage: true,
-            isSearch: false,
-
         };
     },
     created() { },
@@ -73,12 +71,20 @@ export default {
         toggleIsActive() {
             this.isActive = !this.isActive
             this.shouldShow = false
+        },
+        toggleSearchBig() {
+            this.$store.commit('toggleSearchBig')
         }
     },
     computed: {
         getFilterBy() {
             return this.$store.getters.currFilterBy
         },
+        currSearchFalse() {
+            if (this.$store.getters.getSearch === false) return true
+            else return false
+        }
+
     },
     components: {
         searchCmp,
