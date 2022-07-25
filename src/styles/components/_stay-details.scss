@@ -67,12 +67,21 @@
         .share-btn, .save-btn {
             align-items: center;
             padding: 8px;
+            border-radius: 8px;
             svg {
                 margin-right: 8px;
             }
             span {
                 text-decoration: underline;
             }
+        }
+        .share-btn:hover {
+            cursor: pointer;
+            background-color: $clr4;
+        }
+        .save-btn:hover {
+            cursor: pointer;
+            background-color: $clr4;
         }
     }
     .type-heading-img {
