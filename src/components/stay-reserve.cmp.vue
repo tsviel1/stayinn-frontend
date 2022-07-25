@@ -38,8 +38,10 @@ export default {
     created() {
     },
     methods: {
-        reserveTrip() {
+        async reserveTrip() {
             showSuccessMsg('Trip Reserved')
+            console.log('trip reserved')
+            await this.$store.dispatch({ type: 'saveOrder' })
         }
     },
     computed: {
