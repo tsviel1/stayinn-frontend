@@ -5,12 +5,77 @@
     border: 1px solid $clr4;
     height: 64px;
     width: 850px;
+
+    .chck-in {
+        flex-grow: 1;
+        z-index: 10;
+        position: relative;
+    }
+
+    .search-first-section {
+        flex-grow: 1;
+
+        &.search-section {
+            padding: 14px 32px;
+        }
+    }
+
     .search-middle-section {
         display: flex;
         align-items: center;
+
+        .search-section {
+            flex-grow: 1;
+            z-index: 10;
+            position: relative;
+        }
     }
 
-    label {
+
+    .search-last-section {
+        display: flex;
+        flex-grow: 0.95;
+        align-items: center;
+
+        &:hover {
+            background-color: $clr4;
+            border-radius: 40px;
+
+        }
+
+        .search-section {
+            flex-grow: 1;
+        }
+
+        .search-btn-section {
+            padding-right: 9px;
+
+            .search-btn {
+                padding: 16px;
+                background-color: $clr1;
+                padding: 16px;
+                border-radius: 50%;
+                color: $clr3;
+                z-index: 10;
+
+                &:hover {
+                    background-image: radial-gradient(circle at center,
+                    #FF385C 0%,
+                    #E61E4D 27.5%,
+                    #E31C5F 40%,
+                    #D70466 57.5%,
+                    #bd1e59 75%,
+                    #BD1E59 100%
+                  );
+                }
+            }
+        }
+
+
+
+    }
+
+    label.search-head {
         display: block;
     }
 
@@ -18,11 +83,13 @@
         padding: 14px 24px;
         font-size: rem(14px);
         text-align: left;
-        flex-grow: 1;
 
         &.last {
             z-index: 10;
+            display: flex;
+            flex-basis: auto;
         }
+
 
         &:hover {
             background-color: $clr4;
@@ -71,25 +138,8 @@
         color: $clr2;
     }
 
-
-
-    .search-btn {
-        background-color: $clr1;
-        padding: 8px 10px;
-        border-radius: 50%;
-        color: $clr3;
-        z-index: 10;
-        margin-right: 10px;
-
-        &:hover {
-            background-color: #92174D;
-        }
-    }
-
-
-
     .date-picker {
-        // z-index: 1;
+        z-index: 1;
         opacity: 0;
         position: fixed;
 
@@ -102,12 +152,7 @@
 .search-cmp {
     display: flex;
     justify-content: center;
-    // flex-direction: column;
-    // margin: 0 92px;
     padding-bottom: 16px;
-    // width: 848px;
-    flex-grow: 1;
-
 }
 
 

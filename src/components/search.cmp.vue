@@ -1,7 +1,7 @@
 <template>
   <section class="search-cmp container">
     <form @submit.prevent="searchTrip" class="search-container">
-      <div class="search-section">
+      <div class="search-first-section search-section">
         <label for="place" class="search-head">Where</label>
         <input id="place" class="text-input" v-model="filterBy.txt" @input="setTripCity"
           placeholder="Search destinations" />
@@ -9,11 +9,17 @@
       <div class="break-point"></div>
       <chck-in />
       <div class="break-point"></div>
-      <div class="search-section last">
-        <div class="search-head">Who</div>
-        <div id="guests" class="add-guests search-sub" @click="shouldShow = !shouldShow">Add guests</div>
+      <div class="search-last-section">
+        <div class="search-section">
+          <div class="search-head">Who</div>
+          <div id="guests" class="add-guests search-sub" @click="shouldShow = !shouldShow">Add guests</div>
+        </div>
+        <div class="search-btn-section" @click="searchTrip">
+          <div class="search-btn">
+            <search-svg class="search-svg" />
+          </div>
+        </div>
       </div>
-      <div class="search-btn" @click="searchTrip"><i class="fas fa-search srch-logo"></i></div>
     </form>
     <div class="position-modal">
       <guests-modal v-if="shouldShow" />
@@ -24,6 +30,7 @@
 import calenderCmp from './calender.cmp.vue'
 import chckIn from './chck-in.cmp.vue'
 import guestsModal from "./guests-modal.cmp.vue"
+import searchSvg from "./search-svg.vue"
 export default {
   name: 'search-stay',
   data() {
@@ -75,7 +82,8 @@ export default {
   components: {
     calenderCmp,
     chckIn,
-    guestsModal
+    guestsModal,
+    searchSvg
   },
 }
 
