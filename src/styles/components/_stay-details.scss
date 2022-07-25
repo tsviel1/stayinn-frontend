@@ -1,4 +1,5 @@
 .stay-details {
+    padding-top: 100px;
 
     //stay-details-heading component
     .img-container {
@@ -76,21 +77,27 @@
         line-height: 20px;
         margin-top: 8px;
         justify-content: space-between;
-        .share-btn, .save-btn {
+
+        .share-btn,
+        .save-btn {
             align-items: center;
             padding: 8px;
             border-radius: 8px;
+
             svg {
                 margin-right: 8px;
             }
+
             span {
                 text-decoration: underline;
             }
         }
+
         .share-btn:hover {
             cursor: pointer;
             background-color: $clr4;
         }
+
         .save-btn:hover {
             cursor: pointer;
             background-color: $clr4;
@@ -196,6 +203,10 @@
 
     .review-preview {
         margin-bottom: 40px;
+        // width: 41.6667% !important;
+        margin-right: 8.33333% !important;
+        padding-left: 8px !important;
+        padding-right: 8px !important;
     }
 
     .review-preview-name {
@@ -217,8 +228,14 @@
     .review-preview-txt {
         font-size: 16px;
         font-weight: 400;
-        // word-break: break-all;
+        word-break: break-all;
         width: 100px;
+        overflow: hidden;
+        // white-space: nowrap;
+        // text-overflow: ellipsis;
+        // height: 100px;
+        // overflow: hidden;
+        // white-space: nowrap
     }
 
     .reviewer-img {
@@ -230,11 +247,14 @@
 
     .review-heading-txt {
         flex-direction: column;
-        // justify-content: space-between;
+        justify-content: space-between;
         margin-left: 12px;
         line-height: 20px;
-        word-break: break-word;
-        font-size: 1rem;
+
+
+        // word-break: break-word;
+        // font-size: 1rem;
+
     }
 
     .reviews-container {

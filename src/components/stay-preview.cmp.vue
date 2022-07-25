@@ -1,7 +1,7 @@
 <template>
   <section class="preview-section" @click="onClickStay(stay._id)">
     <div>
-      <el-carousel trigger="click" :autoplay="false" height="330px">
+      <el-carousel trigger="click" :autoplay="false" >
         <el-carousel-item trigger="click" :autoplay="false" v-for="img in stay.imgUrls" :key="img">
           <img class="card-img" :src="setupImgUrl(img)" />
         </el-carousel-item>
