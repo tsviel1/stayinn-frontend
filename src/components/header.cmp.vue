@@ -1,10 +1,12 @@
+//:class="{active: isActive}"
+
 <template>
     <header class="main-header">
         <div class="app-header container">
             <div class="logo " @click="backToHomePage">
-                <h2 >StayInn<i class="fab fa-airbnb"></i></h2>
+                <h2>StayInn<i class="fab fa-airbnb"></i></h2>
             </div>
-            <search-cmp @setFilterBy="setFilterBy" @setTripDates="setTripDates" :currFilterBy="getFilterBy" />
+            <mini-search-cmp v-if="!isSearch" @click="isSearch = true" />
             <nav class="nav-container">
                 <a>
                     <router-link class="link" to="/stay">Explore</router-link>
@@ -14,14 +16,20 @@
                 </a>
             </nav>
         </div>
+        <search-cmp v-if="isSearch" @setFilterBy="setFilterBy" @setTripDates="setTripDates" :currFilterBy="getFilterBy"
+            @searchClicked="toggleIsActive" @showModal="shouldShow = true" />
 
     </header>
+
+
 </template>
 
 <script>
 import logoCmp from "./logo.cmp.vue"
 import searchCmp from "./search.cmp.vue"
+import miniSearchCmp from "./mini-search.cmp.vue"
 import categoriesFilter from "./categories-filter.cmp.vue"
+import guestsModal from "./guests-modal.cmp.vue"
 
 export default {
     template: `
@@ -29,7 +37,9 @@ export default {
     props: [],
     data() {
         return {
-            isHomePage: true
+            isHomePage: true,
+            isSearch: false,
+
         };
     },
     created() { },
@@ -45,7 +55,7 @@ export default {
                 type: 'setFilter',
                 filterBy
             })
-            this.$store.dispatch({type: 'loadStays'})
+            this.$store.dispatch({ type: 'loadStays' })
         },
         setTripDates(startDate, endDate) {
             this.$store.commit({
@@ -57,8 +67,12 @@ export default {
                 endDate
             })
         },
-        backToHomePage(){
-            this.$router.push(`/`) 
+        backToHomePage() {
+            this.$router.push(`/`)
+        },
+        toggleIsActive() {
+            this.isActive = !this.isActive
+            this.shouldShow = false
         }
     },
     computed: {
@@ -69,7 +83,9 @@ export default {
     components: {
         searchCmp,
         categoriesFilter,
-        logoCmp
+        logoCmp,
+        miniSearchCmp,
+        guestsModal
     }
 };
 </script>

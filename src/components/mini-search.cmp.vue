@@ -1,39 +1,43 @@
 <template>
-  <section class="search-cmp container">
-    <form @submit.prevent="searchTrip" class="search-container">
-      <div class="search-section">
-        <label for="place" class="search-head">Where</label>
-        <input id="place" class="text-input" v-model="filterBy.txt" @input="setTripCity"
-          placeholder="Search destinations" />
-      </div>
-      <div class="break-point"></div>
-      <chck-in />
-      <div class="break-point"></div>
-      <div class="search-section last">
-        <div class="search-head">Who</div>
-        <div id="guests" class="add-guests search-sub" @click="shouldShow = !shouldShow">Add guests</div>
-      </div>
-      <div class="search-btn" @click="searchTrip"><i class="fas fa-search srch-logo"></i></div>
-    </form>
-    <div class="position-modal">
-      <guests-modal v-if="shouldShow" />
+  <section class="mini-search-cmp">
+    <div class="filter">
+      <span>Anywhere</span>
+    </div>
+    <div class="break-point"></div>
+    <div class="filter date-input search-head">
+      <span>Any week</span>
+    </div>
+    <div class="break-point"></div>
+    <div class="filter date-input search-sub">
+      <span>Add guests</span>
+    </div>
+    <div class="search-btn" @click="searchTrip">
+      <svg viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="presentation"
+        focusable="false"
+        style="display: block; fill: none; height: 12px; width: 12px; stroke: currentcolor; stroke-width: 5.33333; overflow: visible;">
+        <g fill="none">
+          <path
+            d="m13 24c6.0751322 0 11-4.9248678 11-11 0-6.07513225-4.9248678-11-11-11-6.07513225 0-11 4.92486775-11 11 0 6.0751322 4.92486775 11 11 11zm8-3 9 9">
+          </path>
+        </g>
+      </svg>
     </div>
   </section>
 </template>
  <script>
+import { dataType } from 'element-plus/lib/components/table-v2/src/common';
 import calenderCmp from './calender.cmp.vue'
-import chckIn from './chck-in.cmp.vue'
-import guestsModal from "./guests-modal.cmp.vue"
 export default {
   name: 'search-stay',
   data() {
     return {
+      shouldShow: false,
       filterBy: {
         txt: ''
       },
       tripDates: null,
-      shouldShow: false
-
+      kidsCounter: 0,
+      adultsCounter: 0
     };
   },
   computed: {
@@ -74,8 +78,6 @@ export default {
   },
   components: {
     calenderCmp,
-    chckIn,
-    guestsModal
   },
 }
 
