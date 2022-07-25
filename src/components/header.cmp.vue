@@ -6,7 +6,7 @@
             <div class="logo " @click="backToHomePage">
                 <h2 ><i class="fab fa-airbnb"></i>stayinn</h2>
             </div>
-            <mini-search-cmp v-if="!isSearch" @click="isSearch = true" />
+            <mini-search-cmp @click="isSearch = true" />
             <nav class="nav-container">
                 <a>
                     <router-link class="link" to="/stay">Explore</router-link>

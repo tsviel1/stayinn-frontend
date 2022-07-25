@@ -32,16 +32,19 @@ export default {
       return state.currFilterBy
     },
     getCurrStayAvg({ currStay }) {
-      let sumRate = currStay.reviews.reduce(
-        (acc, currVal) => acc + currVal.rate,
-        0
-      )
-      let avg = sumRate / currStay.reviews.length
+      // let sumRate = currStay.reviews.reduce(
+      //   (acc, currVal) => acc + currVal.rate,
+      //   0
+      // )
+
+      let sumRate = currStay.reviewScores.rating
+      let avg = sumRate / 20
       return avg
     },
     getReviewsLength({ currStay }) {
       return currStay.reviews.length
     },
+  
   },
   mutations: {
     setstays(state, { stays }) {
