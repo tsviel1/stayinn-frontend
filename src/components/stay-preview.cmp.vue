@@ -11,7 +11,7 @@
         <span v-else><i class="fas fa-heart unliked"></i></span>
       </div>
       <div class="text-container">
-        <div class="title"><span>{{ stay.type }} in {{ stay.loc.city }}</span>
+        <div class="title"><span>{{ stay.type }} in {{ stay.address.city }}</span>
           <div class="rating"><i class="fas fa-star"></i> {{ reviewsAvg }} ({{ stay.reviews.length }})</div>
         </div>
         <div>

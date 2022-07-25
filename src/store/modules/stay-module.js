@@ -13,7 +13,7 @@ export default {
       var stays = state.stays
       if (state.currFilterBy?.txt) {
         const regex = new RegExp(state.currFilterBy.txt, 'i')
-        stays = stays.filter((stay) => regex.test(stay.loc.city))
+        stays = stays.filter((stay) => regex.test(stay.address.city))
       }
       if (state.currFilterBy?.beds) {
         stays = stays.filter((stay) => stay.beds === state.currFilterBy.beds)
@@ -46,7 +46,7 @@ export default {
   mutations: {
     setstays(state, { stays }) {
       state.stays = stays
-      console.log(state.stays)
+      // console.log(state.stays)
     },
     setCurrStay(state, { stay }) {
       // console.log(stay)
