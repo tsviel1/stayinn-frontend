@@ -1,15 +1,15 @@
 <template>
   <section class="mini-search-cmp">
     <div class="filter">
-      <span>Anywhere</span>
+      <span>{{ getCitySearched }}</span>
     </div>
     <div class="break-point"></div>
     <div class="filter date-input search-head">
-      <span>Any week</span>
+      <span>{{ getDatesSearched }}</span>
     </div>
     <div class="break-point"></div>
     <div class="filter date-input search-sub">
-      <span>Add guests</span>
+      <span>{{getNumOfGuests}}</span>
     </div>
     <div class="search-btn" @click="searchTrip">
       <svg viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="presentation"
@@ -25,62 +25,58 @@
   </section>
 </template>
  <script>
-import { dataType } from 'element-plus/lib/components/table-v2/src/common';
-import calenderCmp from './calender.cmp.vue'
-export default {
-  name: 'search-stay',
-  data() {
-    return {
-      shouldShow: false,
-      filterBy: {
-        txt: ''
-      },
-      tripDates: null,
-      kidsCounter: 0,
-      adultsCounter: 0
-    };
-  },
-  computed: {
-
-  },
-  methods: {
-    setTripCity() {
-      // filter stays
-      this.$emit('setFilterBy', { ...this.filterBy })
-      // save trip settings
-      this.$emit('setTripCity', { ...this.filterBy })
-    },
-    setTripDates() {
-      const startDate = this.tripDates[0].toLocaleDateString()
-      const endDate = this.tripDates[1].toLocaleDateString()
-      const checkInDate = this.tripDates[0]
-      checkInDate.setMonth(checkInDate.getMonth())
-      const checkInMonth = checkInDate.toLocaleString('en-US', {
-        month: 'short',
-      })
-      const checkInDay = checkInDate.getDate()
-      this.checkIn = `${checkInMonth} ${checkInDay}`
-      const checkOutDate = this.tripDates[1]
-      checkOutDate.setMonth(checkOutDate.getMonth())
-      const checkOutMonth = checkOutDate.toLocaleString('en-US', {
-        month: 'short',
-      })
-      const checkOutDay = checkOutDate.getDate()
-      this.checkOut = `${checkOutMonth} ${checkOutDay}`
-
-      this.$emit('setTripDates', startDate, endDate)
-    },
-    searchTrip() {
-      this.$emit('searchClicked')
-      this.shouldShow = false
-      console.log('trip is searched');
-    },
-  },
-  components: {
-    calenderCmp,
-  },
-}
-
-</script>
- <style>
- </style>
+ export default {
+   name: 'search-stay',
+   data() {
+     return {
+       shouldShow: false,
+       filterBy: {
+         txt: ''
+       },
+       tripDates: null,
+       childrenCounter: 0,
+       adultsCounter: 0
+     };
+   },
+   computed: {
+     getCitySearched() {
+       const citySearched = this.$store.getters.getCitySearched
+ 
+       if (!citySearched) return 'Anywhere'
+       else return citySearched
+     },
+     getDatesSearched() {
+       const chckInDate = this.$store.getters.getCurrChckInDate
+       const chckOutDate = this.$store.getters.getCurrChckOutDate
+       if (!chckInDate) return 'Any week'
+       if (!chckOutDate) return 'Any week'
+       const chckInDay = chckInDate.getDate()
+       const chckOutDay = chckOutDate.getDate()
+       const chckInMonth = chckInDate.toLocaleString('en-US', {
+         month: 'short',
+       })
+       const chckOutMonth = chckOutDate.toLocaleString('en-US', {
+         month: 'short'
+       })
+       if (chckInMonth === chckOutMonth) {
+          return `${chckInMonth} ${chckInDay} - ${chckOutDay}`
+       } else {
+        return `${chckInMonth} ${chckInDay} - ${chckOutMonth} ${chckOutDay}`
+       }
+     },
+     getNumOfGuests() {
+      const adultsNum = this.$store.getters.getAdultsNum
+      const childrenNum = this.$store.getters.getChildrenNum
+      
+      if (!adultsNum && !childrenNum) return 'Add guests'
+      if (!childrenNum) return adultsNum + ' guests'
+      if (!adultsNum) return childrenNum + ' guests'
+      return adultsNum + childrenNum + ' guests'
+     }
+ 
+   },
+   methods: {
+   },
+ }
+ 
+ </script>

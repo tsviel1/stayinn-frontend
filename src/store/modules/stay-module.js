@@ -4,13 +4,15 @@ export default {
     stays: null,
     currStay: null,
     currFilterBy: null,
-    currSearchBig: false
+    currSearchBig: false,
+    tags: ["beach", "design", "desert", "amazing-views", "countryside", "bed-breakfast", "cabins", "lake", "amazing-pools", "iconic-cities", "earth-homes", "omg"]
   },
   getters: {
     stays(state) {
       return state.stays
     },
     staysToDisplay(state) {
+
       var stays = state.stays
       if (state.currFilterBy?.txt) {
         const regex = new RegExp(state.currFilterBy.txt, 'i')
@@ -47,7 +49,13 @@ export default {
     },
   getSearch({currSearchBig}) {
     return currSearchBig
-  }
+  },
+  getCategories({tags}){
+    return tags
+  },
+    getSearch({ currSearchBig }) {
+      return currSearchBig
+    }
   },
   mutations: {
     setstays(state, { stays }) {

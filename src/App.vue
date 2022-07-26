@@ -1,11 +1,11 @@
 
 <template>
-  <section>
+  
     <app-header />
     <router-view />
     <user-msg />
 
-  </section>
+  
 </template>
 <script>
 import appHeader from './components/header.cmp.vue'

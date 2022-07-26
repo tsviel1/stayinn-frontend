@@ -3,6 +3,13 @@
     top: 80px;
     margin-top: 46px;
 
+    .reserve-card {
+        border: 1px solid rgb(221, 221, 221);
+        border-radius: 12px;
+        padding: 24px !important;
+        box-shadow: rgb(0 0 0 / 12%) 0px 6px 16px;
+    }
+
     .order-container {
         border: 1px solid #00000030;
         border-radius: 13px;
@@ -14,31 +21,48 @@
 
     .order-form-header {
         display: flex;
-        align-items: center;
+        align-items: baseline;
         justify-content: space-between;
         width: 100%;
+        margin-bottom: 24px;
+
+        p {
+            margin: 0;
+        }
     }
 
     .order-data {
         border: 1px solid #00000050;
-        border-radius: 13px;
+        border-radius: 8px;
         margin-bottom: 15px;
     }
 
     .date-picker {
         display: flex;
-        justify-content: space-between;
+        align-items: flex-start;
     }
 
     .date-input {
         display: flex;
+        flex-grow: 1;
         flex-direction: column;
         gap: 5px;
-        padding: 7px 12px;
-        text-transform: uppercase;
+        padding: 12px 12px;
 
-        &:last-of-type {
+        &.last {
             border-left: 1px solid #00000050;
+        }
+        .date-head-reserve-table {
+            font-weight: 600;
+            font-size: 12px;
+            text-transform: uppercase;
+        }
+        .date-reserve-table {
+            border: none;
+            padding: 0;
+            width: 50%;
+            outline: none;
+            color: $clr2;
         }
     }
 
@@ -47,7 +71,13 @@
         flex-direction: column;
         gap: 5px;
         border-top: 1px solid #00000050;
-        padding: 7px 12px;
+        padding: 11px 12px;
+
+        label {
+            text-transform: uppercase;
+            font-size: 12px;
+            font-weight: 600;
+        }
     }
 
     input {
@@ -57,19 +87,22 @@
         outline: none;
     }
 
-    label {
-        font-weight: 600;
-        font-size: 0.75em;
-    }
-
     span.cost {
-        color: black;
-        font-size: 1.3em;
+        font-family: airbnb-medium;
+        color: $clr5;
+        font-size: 22px;
+        line-height: 26px;
+
+        span {
+            color: $clr5;
+            font-family: airbnb-book;
+        }
     }
 
     span.reviews {
-        color: #00000070;
-        font-size: 1em;
+        color: $clr2;
+        padding-left: 4px;
+        font-size: 14px;
         text-decoration: underline;
     }
 
@@ -94,6 +127,24 @@
             }
         }
     }
+
+    .statement-container {
+        font-weight: 400;
+        align-items: center;
+        flex-direction: column ;
+        margin: 8px 0px 0px;
+        padding: 0;
+        text-align: center;
+
+        .statement {
+            margin-top: 8px;
+            white-space: normal;
+            font-size: 14px;
+            line-height: 18px;
+            list-style-type: none;
+        }
+    }
+
 
     .cell {
         width: 100%;
@@ -136,15 +187,17 @@
     }
 
     span {
+        font-family: airbnb-medium;
         padding: 0 0;
         margin: 0 0;
         color: white;
         font-size: 16px;
         line-height: 20px;
-        font-weight: 600;
+        // font-weight: 600;
         font-family: sans-serif;
     }
 
 
 
 }
+

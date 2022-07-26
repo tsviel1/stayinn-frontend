@@ -1,13 +1,27 @@
 <template>
-  <section class="container" :class="{'search-cmp-big': getCurrSearch, 'search-cmp': !getCurrSearch}">
+  <section class="container" :class="{ 'search-cmp-big': getCurrSearch, 'search-cmp': !getCurrSearch }">
     <form @submit.prevent="searchTrip" class="search-container">
       <div class="search-first-section search-section">
         <label for="place" class="search-head">Where</label>
-        <input id="place" class="text-input" v-model="filterBy.txt" @input="setTripCity"
+        <input id="place" class="text-input" v-model="filterBy.txt" @keyup.enter="searchTrip"
           placeholder="Search destinations" />
       </div>
       <div class="break-point"></div>
-      <chck-in />
+      <div class="chck-in">
+        <label class="search-middle-section">
+          <div class="search-section">
+            <div class="search-head">Check in</div>
+            <div class="search-sub">{{ getCurrChckInDate }}</div>
+          </div>
+          <div class="break-point"></div>
+          <div class="search-section">
+            <div class="search-head">Check out</div>
+            <div class="search-sub">{{ getCurrChckOutDate }}</div>
+          </div>
+          <el-date-picker class="date-picker-container" v-model="tripDates" type="daterange" @change="setTripDates"
+            range-separator="To" start-placeholder="Start date" end-placeholder="End date" />
+        </label>
+      </div>
       <div class="break-point"></div>
       <div class="search-last-section">
         <div class="search-section">
@@ -40,44 +54,45 @@ export default {
       },
       tripDates: null,
       shouldShow: false,
-      shouldShowSearch: false
+      shouldShowSearch: false,
+
     };
   },
   computed: {
     getCurrSearch() {
-      console.log('this.$store.getters.currSearch', this.$store.getters.currSearch)
-      
       return this.$store.getters.getSearch
+    },
+    getCurrChckInDate() {
+      const chckInDate = this.$store.getters.getCurrChckInDate
+      if (!chckInDate) return 'Add dates'
+      const chckInMonth = chckInDate.toLocaleString('en-US', {
+        month: 'short',
+      })
+      const chckInDay = chckInDate.getDate()
+      return `${chckInMonth} ${chckInDay}`
+
+    },
+    getCurrChckOutDate() {
+      const chckOutDate = this.$store.getters.getCurrChckOutDate
+      if (!chckOutDate) return 'Add dates'
+      const chckOutMonth = chckOutDate.toLocaleString('en-US', {
+        month: 'short',
+      })
+      const chckOutDay = chckOutDate.getDate()
+      return `${chckOutMonth} ${chckOutDay}`
     }
   },
   methods: {
-    setTripCity() {
+    setTripDates() {
+      const chckInDate = this.tripDates[0]
+      const chckOutDate = this.tripDates[1]
+      this.$emit('setTripDates', chckInDate, chckOutDate)
+    },
+    searchTrip() {
       // filter stays
       this.$emit('setFilterBy', { ...this.filterBy })
       // save trip settings
       this.$emit('setTripCity', { ...this.filterBy })
-    },
-    setTripDates() {
-      const startDate = this.tripDates[0].toLocaleDateString()
-      const endDate = this.tripDates[1].toLocaleDateString()
-      const checkInDate = this.tripDates[0]
-      checkInDate.setMonth(checkInDate.getMonth())
-      const checkInMonth = checkInDate.toLocaleString('en-US', {
-        month: 'short',
-      })
-      const checkInDay = checkInDate.getDate()
-      this.checkIn = `${checkInMonth} ${checkInDay}`
-      const checkOutDate = this.tripDates[1]
-      checkOutDate.setMonth(checkOutDate.getMonth())
-      const checkOutMonth = checkOutDate.toLocaleString('en-US', {
-        month: 'short',
-      })
-      const checkOutDay = checkOutDate.getDate()
-      this.checkOut = `${checkOutMonth} ${checkOutDay}`
-
-      this.$emit('setTripDates', startDate, endDate)
-    },
-    searchTrip() {
       this.$emit('searchClicked')
       this.shouldShow = false
       this.$store.commit('toggleSearchBig')
@@ -94,4 +109,23 @@ export default {
 
 </script>
  <style>
+ .date-picker-container {
+   z-index: 1 !important;
+   position: absolute !important;
+   opacity: 0 !important;
+   width: 270px !important;
+ }
+ 
+ .el-date-table td.available:hover {
+   color: black !important;
+ }
+ 
+ 
+ .start-date.in-range .el-date-table-cell .el-date-table-cell__text {
+   background: black;
+ }
+ 
+ .end-date.in-range .el-date-table-cell .el-date-table-cell__text {
+   background: black;
+ }
  </style>
