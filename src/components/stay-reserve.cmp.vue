@@ -1,18 +1,25 @@
 <template>
     <section class="stay-reserve">
-        <el-card shadow="always">
+        <div class="reserve-card" shadow="always">
             <div class="order-form-header">
                 <p>
-                    <span class="cost">${{ stay.price }}</span> night
+                    <span class="cost">${{ stay.price }} <span>night</span></span> 
                 </p>
                 <p>
-                    <i class="fas fa-star"></i> {{ reviewsAvg }} ·
                     <span class="reviews">{{ stay.reviews.length }} reviews</span>
                 </p>
             </div>
             <reserve-table :stay="stay" />
             <reserve-btn @click="reserveTrip" />
-        </el-card>
+            <ul class="flex statement-container">
+                <li class="statement">
+                    You won't be charged yet
+                </li>
+            </ul>
+            <div>
+                <div>${{stay.price}} x </div>
+            </div>
+        </div>
     </section>
 </template>
 
