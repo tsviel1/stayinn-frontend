@@ -3,6 +3,13 @@
     top: 80px;
     margin-top: 46px;
 
+    .reserve-card {
+        border: 1px solid rgb(221, 221, 221);
+        border-radius: 12px;
+        padding: 24px !important;
+        box-shadow: rgb(0 0 0 / 12%) 0px 6px 16px;
+    }
+
     .order-container {
         border: 1px solid #00000030;
         border-radius: 13px;
@@ -17,11 +24,12 @@
         align-items: center;
         justify-content: space-between;
         width: 100%;
+        margin-bottom: 24px;
     }
 
     .order-data {
         border: 1px solid #00000050;
-        border-radius: 13px;
+        border-radius: 8px;
         margin-bottom: 15px;
     }
 
@@ -59,17 +67,25 @@
 
     label {
         font-weight: 600;
-        font-size: 0.75em;
+        font-size: 0.6em;
+        text-transform: uppercase;
     }
 
     span.cost {
-        color: black;
+        font-family: airbnb-medium;
+        color: $clr5;
         font-size: 1.3em;
+
+        span {
+            color: $clr5;
+            font-family: airbnb-book;
+        }
     }
 
     span.reviews {
-        color: #00000070;
-        font-size: 1em;
+        color: $clr2;
+        padding-left: 4px;
+        font-size: 14px;
         text-decoration: underline;
     }
 
@@ -94,6 +110,24 @@
             }
         }
     }
+
+    .statement-container {
+        font-weight: 400;
+        align-items: center;
+        flex-direction: column ;
+        margin: 8px 0px 0px;
+        padding: 0;
+        text-align: center;
+
+        .statement {
+            margin-top: 8px;
+            white-space: normal;
+            font-size: 14px;
+            line-height: 18px;
+            list-style-type: none;
+        }
+    }
+
 
     .cell {
         width: 100%;
@@ -136,12 +170,13 @@
     }
 
     span {
+        font-family: airbnb-medium;
         padding: 0 0;
         margin: 0 0;
         color: white;
         font-size: 16px;
         line-height: 20px;
-        font-weight: 600;
+        // font-weight: 600;
         font-family: sans-serif;
     }
 
