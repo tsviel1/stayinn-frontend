@@ -8,7 +8,7 @@ const data = newData
 _createStays()
 
 async function query(filterBy) {
-  // console.log(filterBy)
+  console.log(filterBy)
   let stays = await storageService.query(STAY_KEY)
   // console.log(stays)
   if (!filterBy) {
@@ -20,6 +20,13 @@ async function query(filterBy) {
       (stay) =>
         filterBy.price.min <= stay.price && stay.price <= filterBy.price.max
     )
+  }
+  if (filterBy.category) {
+    stays = stays.filter(
+      (stay) =>
+        stay.tags.includes(filterBy.category)
+    )
+    console.log(stays);
   }
   if (filterBy.txt && filterBy.beds && filterBy.bedrooms) {
     stays = stays.filter((stay) => {

@@ -3,7 +3,7 @@
         <div class="reserve-card" shadow="always">
             <div class="order-form-header">
                 <p>
-                    <span class="cost">${{ stay.price }} <span>night</span></span> 
+                    <span class="cost">${{ stay.price }} <span>night</span></span>
                 </p>
                 <p>
                     <span class="reviews">{{ stay.reviews.length }} reviews</span>
@@ -17,8 +17,25 @@
                 </li>
             </ul>
             <div>
-                <div>${{stay.price}} x </div>
+                <div>${{ stay.price }} x </div>
             </div>
+        </div>
+        <div class="reserve-modal">
+            <h1 class="modal-title">Confirm and pay</h1>
+            <div v-if="stay.reviews.length >= 4" class="rare-find">
+                <div>
+                    This is a rare find.
+                </div>
+                <div>{{ stay.host.fullname }} place is usually booked.</div>
+            </div>
+            <div class="trip-details">
+                <h4>Your Trip</h4>
+                <div>Dates</div>
+                <p>{{ startDate }}-{{ endDate}}</p>
+
+            </div>
+
+
         </div>
     </section>
 </template>
@@ -49,7 +66,7 @@ export default {
             showSuccessMsg('Trip Reserved')
             console.log('trip reserved')
             await this.$store.dispatch({ type: 'saveOrder' })
-        }
+        },
     },
     computed: {
         reviewsAvg() {
@@ -58,7 +75,24 @@ export default {
             // let avg = sumRate / reviews.length
             // return avg
             return this.$store.getters.getCurrStayAvg
-        }
+        },
+            startDate() {
+                console.log('yoo');
+                const checkInDate=  this.$store.getters.getStartDate
+                console.log(checkInDate);
+                // checkInDate.setMonth(checkInDate.getMonth())
+
+                // console.log(res);
+                // const checkInMonth = startTrip.toLocaleString('en-US', {
+                //     month: 'short',
+                // })
+                // const checkInDay = startTrip.getDate()
+                // const checkInDate = `${checkInMonth} ${checkInDay}`
+                // return checkInDate
+            },
+            endDate() {
+                return this.$store.getters.getEndDate
+            },
     },
 }
 

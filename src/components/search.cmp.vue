@@ -61,6 +61,7 @@ export default {
       const startDate = this.tripDates[0].toLocaleDateString()
       const endDate = this.tripDates[1].toLocaleDateString()
       const checkInDate = this.tripDates[0]
+      console.log(checkInDate);
       checkInDate.setMonth(checkInDate.getMonth())
       const checkInMonth = checkInDate.toLocaleString('en-US', {
         month: 'short',
@@ -93,5 +94,3 @@ export default {
 }
 
 </script>
- <style>
- </style>
