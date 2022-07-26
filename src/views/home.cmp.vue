@@ -1,7 +1,7 @@
 <template>
   <section class="home-page container">
-    <!-- <categories-filter /> -->
-    <stay-filter />
+    <categories-filter />
+    <!-- <stay-filter /> -->
     <stay-list v-if="staysToDisplay" :stays="staysToDisplay" />
   </section>
 </template>

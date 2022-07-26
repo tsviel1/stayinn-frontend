@@ -1,17 +1,17 @@
 <template>
   <section class="categories-container">
-    <button class="btn-category" v-for="category in categories">
-        <img :src="setupImgUrl(category)" class="flex" />
-        <span>{{ category }}</span>
 
-    </button>
+        <category-preview :category="category" v-for="category in categories" />
+
   </section>
 
 </template>
  <script>
 import { tagBank } from '../services/data/airbnb.js';
+import categoryPreview from './category-preview.cmp.vue'
 
 export default {
+
   name: 'categories-filter',
   components: {
   },
@@ -20,16 +20,12 @@ export default {
       categories: tagBank
     };
   },
-  created() {
-    // console.log(this.categories)
-  },
   methods: {
-    setupImgUrl(name) {
-      return new URL(`../assets/categories/${name}.jpg`, import.meta.url).href;
-    },
+
   },
-  computed: {},
-  unmounted() { },
+  components: {
+    categoryPreview
+  }
 };
 </script>
  <style>

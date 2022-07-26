@@ -22,6 +22,24 @@ export default {
 }
 </script>
 
-<style lang="sass" scoped>
+<style>
+    .date-picker {
+        z-index: 1 !important;
+        position: fixed !important;
+        opacity: 0 !important;
+        width: 270px !important;
+    }
+    .el-date-table td.available:hover {
+        color: black !important;
+    }
+
+
+    .start-date.in-range .el-date-table-cell .el-date-table-cell__text{
+        background: black;
+    }
+
+    .end-date.in-range .el-date-table-cell .el-date-table-cell__text{
+        background: black;
+    }
 
 </style>

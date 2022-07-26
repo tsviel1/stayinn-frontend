@@ -117,16 +117,6 @@
       color: $clr4;
       border-color: $clr4;
     }
-  } @else if $type == category {
-    display: inline-block;
-    background-color: $clr3;
-    color: $clr2;
-    border: 0px solid $clr2;
-    padding: 4px 14px 0 0;
-    // padding-top: 4px;
-    text-align: center;
-    justify-content: center;
-    // height: 32px;
   }
   
 }
