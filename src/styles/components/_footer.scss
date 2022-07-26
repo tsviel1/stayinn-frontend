@@ -4,4 +4,14 @@
     height: 20px;
     padding: 24px 0;
     border-top: $clr6 solid 1px;
+    justify-content: space-between;
+    .language-icon {
+        height: 16px;
+        width: 16px;
+        color: $clr5;
+    }
+    .social-icon {
+        height: 16px;
+        width: 16px;
+    }
 }
