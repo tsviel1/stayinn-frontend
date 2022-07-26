@@ -1,5 +1,5 @@
 .footer {
-    background-color: $clr1;
+    background-color: $clr7;
     color: $clr5;
     height: 20px;
     padding: 24px 0;
@@ -9,9 +9,38 @@
         height: 16px;
         width: 16px;
         color: $clr5;
+        margin-right: 8px;
     }
-    .social-icon {
-        height: 16px;
-        width: 16px;
+    .policies {
+        .dot {
+            width: 19px;
+        }
+        .dot~.dot {
+            margin: 0 9px;
+        }
+        
+
     }
+    .footer-settings {
+        flex-direction: column;
+        margin-left: 32px;
+        .social-icon {
+            height: 16px;
+            width: 16px;
+            fill: $clr5 
+        }
+        :not(:last-child) {
+            margin-right: 24px;
+        }
+    }
+    .coffeeright {
+        margin-right: 19px;
+    }
+    .dollar {
+        margin-right: 5px;
+    }
+    .language {
+        margin-right: 24px;
+    }
+    
 }

@@ -31,7 +31,7 @@ export default {
     methods: {},
     computed: {
         getReviewLength() {
-            console.log(this.review.txt.length);
+            // console.log(this.review.txt.length);
             return this.review.txt.length > 180
 
         },
