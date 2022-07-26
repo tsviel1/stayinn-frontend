@@ -10,7 +10,7 @@
                 <div class="search-head">Check out</div>
                 <div class="search-sub">Add dates</div>
             </div>
-            <el-date-picker class="date-picker" v-model="tripDates" type="daterange" @change="setTripDates"
+            <el-date-picker class="date-picker-container" v-model="tripDates" type="daterange" @change="setTripDates"
                 range-separator="To" start-placeholder="Start date" end-placeholder="End date" />
         </label>
     </section>
@@ -23,7 +23,7 @@ export default {
 </script>
 
 <style>
-    .date-picker {
+   .date-picker-container {
         z-index: 1 !important;
         position: fixed !important;
         opacity: 0 !important;

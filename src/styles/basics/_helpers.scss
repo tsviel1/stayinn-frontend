@@ -68,5 +68,7 @@ Aspect ratios .ratio-16-9 {
     max-width: 1600px;
     margin: auto;
 }
-// for filter modal 
-// transition: box-shadow 0.2s ease,transform 0.1s ease;
+.svg-color-filter {
+    filter: invert(6%) sepia(14%) saturate(50%) hue-rotate(314deg) brightness(108%) contrast(85%);
+
+}

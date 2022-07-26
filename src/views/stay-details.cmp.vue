@@ -32,6 +32,7 @@
     <review-list :stay="stay" />
     <mini-host-preview :stay="stay" />
   </section>
+  <app-footer />
 </template>
  <script>
 import stayReserve from '../components/stay-reserve.cmp.vue';
@@ -41,6 +42,7 @@ import miniHostPreview from '../components/mini-hostPreview.cmp.vue';
 import mapCmp from '../components/map.cmp.vue'
 import stayDetailsHeading from '../components/stay-details-heading.cmp.vue'
 import detailsImages from '../components/details-imges.cmp.vue'
+import appFooter from '../components/app-footer.cmp.vue';
 
 
 export default {
@@ -53,7 +55,8 @@ export default {
     miniHostPreview,
     mapCmp,
     stayDetailsHeading,
-    detailsImages
+    detailsImages,
+    appFooter
   },
   data() {
     return {
