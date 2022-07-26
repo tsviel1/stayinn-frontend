@@ -1,7 +1,7 @@
 <template>
   <section class="review-list">
     <h2 class="review-list-title">
-      <i class="fas fa-star"></i>
+      <i class="fas fa-star reviews-svg"></i>
       {{ getReviewAvg }} ·
       {{ reviewLength }} reviews
 
@@ -11,6 +11,7 @@
         <review-preview :review="review" />
       </li>
     </ul>
+    <button class="review-btn">Show all {{reviewLength}} reviews</button>
   </section>
 </template>
  <script>

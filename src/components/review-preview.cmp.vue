@@ -10,7 +10,7 @@
         </div>
         <span class="review-preview-txt">{{ formatedText }}<span v-if="!isMore && getReviewLength">...</span>
         </span>
-        <span :style="readStyle" v-if="getReviewLength" @click="isMore = !isMore">{{ readText }} </span>
+        <span class="show-btn" :style="readStyle" v-if="getReviewLength" @click="isMore = !isMore">{{ readText }}  </span>
     </section>
 </template>
 
@@ -39,7 +39,7 @@ export default {
             return this.isMore ? this.review.txt : this.review.txt.slice(0, 180)
         },
         readText() {
-            return this.isMore ? ' Read Less' : 'Read more'
+            return this.isMore ? ' Show less' : 'Show more'
         },
         readStyle() {
             return {
