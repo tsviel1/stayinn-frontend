@@ -14,21 +14,18 @@
             grid-template-columns: repeat(4, 1fr);
             grid-template-rows: repeat(2, 200px);
             gap: 10px;
-
             li:nth-child(3) {
                 .stay-img {
                     border-radius: 0 12px 0 0;
 
                 }
             }
-
             li:nth-child(5) {
                 .stay-img {
                     border-radius: 0 0 12px 0;
 
                 }
             }
-
             li:first-child {
                 grid-column: 1 / span 2;
                 grid-row: 1 / span 2;
@@ -60,9 +57,10 @@
     }
 
     .stay-title {
+        font-family: airbnb-medium;
         padding-top: 24px;
         color: $clr5;
-        font-weight: 600;
+        // font-weight: 600;
         font-size: 26px;
         line-height: 30px;
         height: auto;
@@ -70,8 +68,8 @@
     }
 
     .sub-titles {
-        // font-family: airbnb-bold;
-        font-weight: 600;
+        font-family: airbnb-medium;
+        // font-weight: 600;
         font-size: 14px;
         line-height: 20px;
         // margin-top: 8px;
@@ -99,12 +97,12 @@
 
         .share-btn:hover {
             cursor: pointer;
-            background-color: $clr4;
+            background:$clr7;
         }
 
         .save-btn:hover {
             cursor: pointer;
-            background-color: $clr4;
+           background: $clr7;
         }
     }
 
@@ -135,7 +133,8 @@
     .type-heading {
 
         .type-heading-title {
-            font-weight: 600;
+            font-family: airbnb-medium;
+            // font-weight: 600;
             font-size: 22px;
             margin: 0 0 8px 0;
         }
@@ -162,10 +161,13 @@
     //Amenties components
     .ameneties {
         // border-bottom: 0.0714285714em solid #ddd;
+        padding-top: 48px;
+        padding-bottom: 48px;
 
         .ameneties-title {
+            font-family: airbnb-medium;
             font-size: 22px;
-            font-weight: 600;
+            // font-weight: 600;
             padding: 0 0 24px;
             margin: 0;
         }
@@ -175,6 +177,7 @@
             flex-direction: column;
             // padding: 48px 0;
             display: grid;
+            width: 100%;
             grid-template-columns: 1fr 1fr;
 
         }
@@ -183,10 +186,11 @@
         .amenety-preview {
             span {
                 align-self: center;
-                text-align: center;
+
             }
 
             .amenity-img {
+                align-self: center;
                 height: 24px;
                 width: 24px;
                 padding-inline-end: 5px;
@@ -194,6 +198,7 @@
         }
 
         .amenety-list-item {
+            width: 100%;
             display: flex;
             font-size: 16px;
             font-weight: 400;
@@ -210,69 +215,101 @@
     //review-list component
     .review-list {
         border-bottom: 0.0714285714em solid #ddd;
+        border-top: 0.0714285714em solid #ddd;
         padding: 48px 0;
+
+        .review-list-title {
+            display: flex;
+            align-items: center;
+            font-family: airbnb-medium;
+            // font-weight: 600;
+            font-size: 22px;
+            margin-bottom: 32px;
+        }
+        .reviews-svg{
+            font-size: 14px;
+            text-align: center;
+            padding-right: 15px;
+        }
+
+        .review-preview {
+            margin-bottom: 40px;
+            // width: 41.6667% !important;
+            margin-right: 8.33333% !important;
+            padding-right: 8px !important;
+        }
+
+        .review-preview-name {
+            font-size: 16px;
+            font-weight: 600;
+            margin: 0;
+        }
+
+
+        .review-preview-date {
+            font-size: 14px;
+            color: $clr2;
+            margin-bottom: 0;
+        }
+
+        .review-preview-box {
+            margin-bottom: 16px;
+        }
+
+        .review-preview-txt {
+            font-size: 16px;
+            font-weight: 400;
+            width: 100px;
+            overflow: hidden;
+            // white-space: nowrap;
+            // text-overflow: ellipsis;
+            // height: 100px;
+            // overflow: hidden;
+            // white-space: nowrap
+        }
+
+        span.show-btn {
+            font-family: airbnb-medium;
+            // font-weight:600 ;
+        }
+
+        .reviewer-img {
+            height: 40px;
+            width: 40px;
+            object-fit: cover;
+            border-radius: 50%;
+        }
+
+        .review-heading-txt {
+            flex-direction: column;
+            justify-content: space-between;
+            margin-left: 12px;
+            line-height: 20px;
+
+
+            // word-break: break-word;
+            // font-size: 1rem;
+
+        }
+
+        .review-btn {
+            border-radius: 8px;
+            border: 1px solid $clr5;
+            background: $clr3;
+            padding: 13px 23px;
+            cursor: pointer;
+            font-family: airbnb-medium;
+            //    font-weight: 550;
+            font-size: 16px;
+            line-height: 20px;
+
+            &:hover {
+                border-color: black;
+                background: $clr7;
+            }
+        }
     }
 
-    .review-list-title {
-        font-weight: 600;
-        font-size: 22px;
-        margin-bottom: 32px;
-    }
-
-    .review-preview {
-        margin-bottom: 40px;
-        // width: 41.6667% !important;
-        margin-right: 8.33333% !important;
-        padding-left: 8px !important;
-        padding-right: 8px !important;
-    }
-
-    .review-preview-name {
-        font-size: 16px;
-        font-weight: 600;
-        margin: 0;
-    }
-
-    .review-preview-date {
-        font-size: 14px;
-        color: $clr2;
-        margin-bottom: 0;
-    }
-
-    .review-preview-box {
-        margin-bottom: 16px;
-    }
-
-    .review-preview-txt {
-        font-size: 16px;
-        font-weight: 400;
-        width: 100px;
-        overflow: hidden;
-        // white-space: nowrap;
-        // text-overflow: ellipsis;
-        // height: 100px;
-        // overflow: hidden;
-        // white-space: nowrap
-    }
-
-    .reviewer-img {
-        height: 40px;
-        width: 40px;
-        object-fit: cover;
-        border-radius: 50%;
-    }
-
-    .review-heading-txt {
-        flex-direction: column;
-        justify-content: space-between;
-        margin-left: 12px;
-        line-height: 20px;
-
-
-        // word-break: break-word;
-        // font-size: 1rem;
-
-    }
 
     .reviews-container {
         display: grid;
