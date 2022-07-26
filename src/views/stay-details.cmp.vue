@@ -31,8 +31,8 @@
 
     <review-list :stay="stay" />
     <mini-host-preview :stay="stay" />
-    <app-footer />
   </section>
+  <app-footer />
 </template>
  <script>
 import stayReserve from '../components/stay-reserve.cmp.vue';

@@ -2,8 +2,8 @@
 <section class="explore-app container">
   <stay-filter />
   <stay-list :stays="staysToDisplay"/>
-  <app-footer />
   </section>
+  <app-footer />
 </template>
  <script>
 import stayFilter from '../components/stay-filter.cmp.vue';

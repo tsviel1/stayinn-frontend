@@ -1,17 +1,28 @@
 .categories-container {
-    background-color: lightpink;
     display: grid;
-    color: $clr5;
-    height: 40px;
-    width: 400px;
-    // grid-auto-columns: max-content;
-    // grid-auto-flow: column;
-    grid-template-columns: repeat(6, 1fr);
-    // grid-auto-fit: 
-    // grid-template-rows: 1fr;
+    grid-auto-columns: max-content;
+    grid-auto-flow: column;
     column-gap: 32px;
+    margin-bottom: 40px;
+
+    .category-btn {
+        display: flex;
+        flex-direction: column;
+        background-color: $clr3;
+        color: $clr2;
+        border: none;
+        justify-content: space-between;
+        row-gap: 8px;
+        text-decoration: none;
+        align-items: center;
+        margin-top: 12px;
+
+    }
+
     img {
-        height: 50px;
+        width: 24px;
+        height: 24px;
         object-fit: fill;
+        color: $clr2;
     }
 }

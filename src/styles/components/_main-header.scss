@@ -2,17 +2,22 @@
     background-color: $clr3;
     z-index: 30;
     border-bottom: 1px solid $clr4;
-    position: fixed;
     width: 100%;
-    transition: 0.3s;
+    top: 0;
 
+    &.home {
+        position: fixed;
+    }
+    
     .app-header {
-        padding-block-start: 10px;
-        padding-block-end: 10px;
         display: flex;
         justify-content: space-between;
         flex-direction: row;
         align-items: center;
+
+        .invisible {
+            visibility: hidden;
+        }
 
 
         :hover{
@@ -39,11 +44,16 @@
         }
     }
 
-    .logo h2 {
-        font-family:airbnb-bold;
-        // font-size: 38px;
-        margin: 0;
+
+    .logo {
+        display: flex;
+        align-items: center;
+        font-family: airbnb-bold;
         color: $clr1;
+        height: 80px;
+        span {
+            font-size: 23px;
+        }
     }
 
 }
