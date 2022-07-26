@@ -17,7 +17,7 @@
             </nav>
         </div>
         <search-cmp @setFilterBy="setFilterBy" @setTripDates="setTripDates" :currFilterBy="getFilterBy"
-            @searchClicked="toggleIsActive" />
+            @searchClicked="toggleIsActive" @setTripCity="setTripCity" />
 
     </header>
 
@@ -55,14 +55,10 @@ export default {
             })
             this.$store.dispatch({ type: 'loadStays' })
         },
-        setTripDates(startDate, endDate) {
+        setTripDates(chckInDate, chckOutDate) {
             this.$store.commit({
-                type: 'setStartDate',
-                startDate
-            })
-            this.$store.commit({
-                type: 'setEndDate',
-                endDate
+                type: 'setTripDates',
+                chckInDate, chckOutDate
             })
         },
         backToHomePage() {

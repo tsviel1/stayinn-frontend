@@ -11,14 +11,7 @@
             </div>
             <reserve-table :stay="stay" />
             <reserve-btn @click="reserveTrip" />
-            <ul class="flex statement-container">
-                <li class="statement">
-                    You won't be charged yet
-                </li>
-            </ul>
-            <div>
-                <div>${{ stay.price }} x </div>
-            </div>
+            <order-calc-section v-if="getIsDatesSelected" />
         </div>
         <div class="reserve-modal">
             <h1 class="modal-title">Confirm and pay</h1>
@@ -43,6 +36,7 @@
 <script>
 import reserveTable from './reserve-table.cmp.vue'
 import reserveBtn from './reserve-btn.cmp.vue'
+import orderCalcSection from './order-calc.cmp.vue'
 import { showSuccessMsg } from '../services/event-bus.service'
 
 export default {
@@ -52,7 +46,8 @@ export default {
     },
     components: {
         reserveTable,
-        reserveBtn
+        reserveBtn,
+        orderCalcSection
     },
     data() {
         return {
@@ -93,6 +88,12 @@ export default {
             endDate() {
                 return this.$store.getters.getEndDate
             },
+        getIsDatesSelected() {
+            const chckIn = this.$store.getters.getCurrChckInDate
+            const chckOut = this.$store.getters.getCurrChckOutDate
+            if (chckIn & chckOut) return true
+            else return false
+        }
     },
 }
 
