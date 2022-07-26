@@ -11,6 +11,7 @@ export default {
       return state.stays
     },
     staysToDisplay(state) {
+      
       var stays = state.stays
       if (state.currFilterBy?.txt) {
         const regex = new RegExp(state.currFilterBy.txt, 'i')

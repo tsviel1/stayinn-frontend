@@ -1,7 +1,7 @@
 <template>
   <section class="mini-search-cmp">
     <div class="filter">
-      <span>Anywhere</span>
+      <span>{{getCitySearched}}</span>
     </div>
     <div class="break-point"></div>
     <div class="filter date-input search-head">
@@ -41,6 +41,13 @@ export default {
     };
   },
   computed: {
+    getCitySearched() {
+      const citySearched = this.$store.getters.getCitySearched
+      console.log('citySearched', citySearched)
+      
+      if (!citySearched) return 'Anywhere'
+      else return citySearched
+    }
 
   },
   methods: {

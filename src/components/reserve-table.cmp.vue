@@ -11,7 +11,6 @@
                     <input :placeholder="endDate" />
                 </div>
             </div>
-
             <div class="guest-input">
                 <label>guests</label>
                 <input :placeholder="guests.adults" />
@@ -34,10 +33,14 @@ export default {
     methods: {},
     computed: {
         startDate() {
-            return this.$store.getters.getStartDate
+            const chckInDate = this.$store.getters.getCurrChckInDate
+            if (!chckInDate) return 'Add date'
+            return chckInDate.toLocaleDateString()
         },
         endDate() {
-            return this.$store.getters.getEndDate
+            const ckckOutDate = this.$store.getters.getCurrChckOutDate
+            if (!ckckOutDate) return 'Add date'
+            return ckckOutDate.toLocaleDateString()
         },
         guests() {
             return this.$store.getters.getGuests

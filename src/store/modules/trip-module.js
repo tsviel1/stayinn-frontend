@@ -3,8 +3,8 @@ import { orderService } from "../../services/order-service.js";
 export default {
     state: {
         trip: {
-            startDate: '2025/10/15',
-            endDate: '2025/10/17',
+            chckInDate: null,
+            chckOutDate: null,
             guests: {
                 adults: 2,
                 kids: 1
@@ -15,27 +15,22 @@ export default {
         },
     },
     getters: {
-        getStartDate({trip}) {return trip.startDate},
-        getEndDate({trip}) {return trip.endDate},
+        getCurrChckInDate({trip}) {return trip.chckInDate},
+        getCurrChckOutDate({trip}) {return trip.chckOutDate},
         getGuests({trip}) {return trip.guests},
         getCitySearched({trip}) {return trip.dest.city}
     },
     mutations: {
-        setStartDate(state, {startDate}) {
-            state.trip.startDate = startDate
-            console.log(state.trip)
-        },
-        setEndDate(state, {endDate}) {
-            state.trip.endDate = endDate
-            console.log(state.trip)
+        setTripDates(state, {chckInDate, chckOutDate}) {
+            state.trip.chckInDate = chckInDate
+            state.trip.chckOutDate = chckOutDate
+            
         },
         setGuests(state, {guests}) {
             state.guests = guests
-            console.log(state.trip)
         },
         setTripCity(state, {tripCity}) {
             state.dest.city = tripCity
-            console.log(state.trip)
         }
     },
     actions: {
