@@ -1,10 +1,10 @@
 //:class="{active: isActive}"
 
 <template>
-    <header class="main-header">
-        <div class="app-header container">
+    <header class="main-header container" :class="{home:currPageHome, 'main-layout':!currPageHome}">
+        <div class="app-header">
             <div class="logo" @click="backToHomePage">
-                <stayinn-logo-svg/><span>stayinn</span>
+                <stayinn-logo-svg /><span>stayinn</span>
             </div>
             <mini-search-cmp v-if="currSearchFalse" @click="toggleSearchBig" />
             <nav class="nav-container">
@@ -37,7 +37,7 @@ export default {
     props: [],
     data() {
         return {
-            isHomePage: true,
+            currPageHome: null
         };
     },
     created() { },
@@ -84,7 +84,18 @@ export default {
             if (this.$store.getters.getSearch === false) return true
             else return false
         }
-
+    },
+    watch: {
+        $route: {
+            handler() {
+                console.log("route change!", this.$route.params.id);
+                if (this.$route.params.id) this.currPageHome = false
+                else this.currPageHome = true
+                console.log('this.currPageHome', this.currPageHome)
+                
+            },
+            immediate: true,
+        },
     },
     components: {
         searchCmp,

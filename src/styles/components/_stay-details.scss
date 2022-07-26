@@ -1,18 +1,18 @@
 .stay-details {
-    padding-top: 60px;
+    // padding-top: 60px;
 
     //stay-details-heading component
     .img-container {
         // height: 430px;
         // border: 1px solid $clr3;
         // border-radius: 16px;
-        padding-top: 10px;
+        padding-top: 24px;
 
         .img-list {
             height: 100%;
             display: grid;
             grid-template-columns: repeat(4, 1fr);
-            grid-template-rows: repeat(2, 230px);
+            grid-template-rows: repeat(2, 200px);
             gap: 10px;
 
             li:nth-child(3) {
@@ -60,7 +60,7 @@
     }
 
     .stay-title {
-        padding-top: 40px;
+        padding-top: 24px;
         color: $clr5;
         font-weight: 600;
         font-size: 26px;
@@ -79,6 +79,7 @@
 
         .sub-titles-details {
             align-items: center;
+            margin-top: 8px;
         }
 
         .share-btn,
