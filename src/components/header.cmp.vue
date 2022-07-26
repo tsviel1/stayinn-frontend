@@ -1,7 +1,7 @@
 //:class="{active: isActive}"
 
 <template>
-    <header class="main-header container" :class="{home:currPageHome, 'main-layout':!currPageHome}">
+    <header class="main-header" :class="{'main-layout':!currPageHome, home:currPageHome, container:currPageHome}">
         <div class="app-header">
             <div class="logo" @click="backToHomePage">
                 <stayinn-logo-svg /><span>stayinn</span>
