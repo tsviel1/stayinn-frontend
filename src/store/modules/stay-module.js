@@ -47,18 +47,15 @@ export default {
     getReviewsLength({ currStay }) {
       return currStay.reviews.length
     },
-<<<<<<< HEAD
   getSearch({currSearchBig}) {
     return currSearchBig
   },
   getCategories({tags}){
     return tags
-  }
-=======
+  },
     getSearch({ currSearchBig }) {
       return currSearchBig
     }
->>>>>>> 76f16ec9ef446c0bd9e737eff175a75bf20b0187
   },
   mutations: {
     setstays(state, { stays }) {
