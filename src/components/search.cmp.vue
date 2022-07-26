@@ -3,7 +3,7 @@
     <form @submit.prevent="searchTrip" class="search-container">
       <div class="search-first-section search-section">
         <label for="place" class="search-head">Where</label>
-        <input id="place" class="text-input" v-model="filterBy.txt" @keyup.enter="setTripCity"
+        <input id="place" class="text-input" v-model="filterBy.txt" @keyup.enter="searchTrip"
           placeholder="Search destinations" />
       </div>
       <div class="break-point"></div>
@@ -83,18 +83,16 @@ export default {
     }
   },
   methods: {
-    setTripCity() {
-      // filter stays
-      this.$emit('setFilterBy', { ...this.filterBy })
-      // save trip settings
-      this.$emit('setTripCity', { ...this.filterBy })
-    },
     setTripDates() {
       const chckInDate = this.tripDates[0]
       const chckOutDate = this.tripDates[1]
       this.$emit('setTripDates', chckInDate, chckOutDate)
     },
     searchTrip() {
+      // filter stays
+      this.$emit('setFilterBy', { ...this.filterBy })
+      // save trip settings
+      this.$emit('setTripCity', { ...this.filterBy })
       this.$emit('searchClicked')
       this.shouldShow = false
       this.$store.commit('toggleSearchBig')
@@ -113,7 +111,7 @@ export default {
  <style>
  .date-picker-container {
    z-index: 1 !important;
-   position: fixed !important;
+   position: absolute !important;
    opacity: 0 !important;
    width: 270px !important;
  }
@@ -131,20 +129,3 @@ export default {
    background: black;
  }
  </style>
-
-       const startDate = this.tripDates[0].toLocaleDateString()
-      const endDate = this.tripDates[1].toLocaleDateString()
-      const checkInDate = this.tripDates[0]
-      checkInDate.setMonth(checkInDate.getMonth())
-      const checkInMonth = checkInDate.toLocaleString('en-US', {
-        month: 'short',
-      })
-      const checkInDay = checkInDate.getDate()
-      this.checkIn = `${checkInMonth} ${checkInDay}`
-      const checkOutDate = this.tripDates[1]
-      checkOutDate.setMonth(checkOutDate.getMonth())
-      const checkOutMonth = checkOutDate.toLocaleString('en-US', {
-        month: 'short',
-      })
-      const checkOutDay = checkOutDate.getDate()
-      this.checkOut = `${checkOutMonth} ${checkOutDay}`

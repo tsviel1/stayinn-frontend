@@ -3,7 +3,7 @@
         <div class="reserve-card" shadow="always">
             <div class="order-form-header">
                 <p>
-                    <span class="cost">${{ stay.price }} <span>night</span></span> 
+                    <span class="cost">${{ stay.price }} <span>night</span></span>
                 </p>
                 <p>
                     <span class="reviews">{{ stay.reviews.length }} reviews</span>
@@ -11,14 +11,7 @@
             </div>
             <reserve-table :stay="stay" />
             <reserve-btn @click="reserveTrip" />
-            <ul class="flex statement-container">
-                <li class="statement">
-                    You won't be charged yet
-                </li>
-            </ul>
-            <div>
-                <div>${{stay.price}} x </div>
-            </div>
+            <order-calc-section v-if="getIsDatesSelected" />
         </div>
     </section>
 </template>
@@ -26,6 +19,7 @@
 <script>
 import reserveTable from './reserve-table.cmp.vue'
 import reserveBtn from './reserve-btn.cmp.vue'
+import orderCalcSection from './order-calc.cmp.vue'
 import { showSuccessMsg } from '../services/event-bus.service'
 
 export default {
@@ -35,7 +29,8 @@ export default {
     },
     components: {
         reserveTable,
-        reserveBtn
+        reserveBtn,
+        orderCalcSection
     },
     data() {
         return {
@@ -58,6 +53,12 @@ export default {
             // let avg = sumRate / reviews.length
             // return avg
             return this.$store.getters.getCurrStayAvg
+        },
+        getIsDatesSelected() {
+            const chckIn = this.$store.getters.getCurrChckInDate
+            const chckOut = this.$store.getters.getCurrChckOutDate
+            if (chckIn & chckOut) return true
+            else return false
         }
     },
 }

@@ -3,11 +3,11 @@
         <div class="order-data">
             <label class="date-picker">
                 <div class="date-input">
-                    <div class="date-head-reserve-table">check-in</div>
+                    <label class="date-head-reserve-table">check-in</label>
                     <div class="date-reserve-table">{{ startDate }}</div>
                 </div>
-                <div class="date-input last">
-                    <div class="date-head-reserve-table">checkout</div>
+                <div class="date-input">
+                    <label class="date-head-reserve-table">checkout</label>
                     <div class="date-reserve-table">{{ endDate }}</div>
                 </div>
                 <el-date-picker class="date-picker-container" v-model="tripDates" type="daterange"
@@ -33,16 +33,7 @@ export default {
             tripDates: null
         }
     },
-    methods: {
-        setTripDates() {
-            const chckInDate = this.tripDates[0]
-            const chckOutDate = this.tripDates[1]
-            this.$store.commit({
-                type: 'setTripDates',
-                chckInDate, chckOutDate
-            })
-        }
-    },
+    methods: {},
     computed: {
         startDate() {
             const chckInDate = this.$store.getters.getCurrChckInDate
@@ -67,15 +58,5 @@ export default {
 
 </script>
 
-<style lang="scss">
-.date-picker-container {
-    z-index: 1 !important;
-    // position: relative !important;
-    opacity: 0 !important;
-    width: 270px !important;
-}
-
-.el-date-table td.today .el-date-table-cell__text {
-    color: black !important;
-}
+<style lang="scss" scoped>
 </style>

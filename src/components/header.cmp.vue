@@ -17,7 +17,7 @@
             </nav>
         </div>
         <search-cmp @setFilterBy="setFilterBy" @setTripDates="setTripDates" :currFilterBy="getFilterBy"
-            @searchClicked="toggleIsActive" />
+            @searchClicked="toggleIsActive" @setTripCity="setTripCity" />
 
     </header>
 

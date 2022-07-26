@@ -7,7 +7,7 @@ export default {
             chckOutDate: null,
             guests: {
                 adults: 2,
-                kids: 1
+                children: 1
             },
             dest: {
                 cityName: null
@@ -18,7 +18,9 @@ export default {
         getCurrChckInDate({trip}) {return trip.chckInDate},
         getCurrChckOutDate({trip}) {return trip.chckOutDate},
         getGuests({trip}) {return trip.guests},
-        getCitySearched({trip}) {return trip.dest.city}
+        getCitySearched({trip}) {return trip.dest.cityName},
+        getAdultsNum({trip}) {return trip.guests.adults},
+        getChildrenNum({trip}) {return trip.guests.children}
     },
     mutations: {
         setTripDates(state, {chckInDate, chckOutDate}) {
@@ -29,8 +31,17 @@ export default {
         setGuests(state, {guests}) {
             state.guests = guests
         },
-        setTripCity(state, {tripCity}) {
-            state.dest.city = tripCity
+        setTripCity(state, {filterBy}) {
+            console.log('tripCity', filterBy.txt)
+            
+            state.trip.dest.cityName = filterBy.txt
+        },
+        setAdults(state, {newAdultsNum}) {
+            
+            state.trip.guests.adults = newAdultsNum
+        },
+        setChildren(state, {newChildrenNum}) {
+            state.trip.guests.children += newChildrenNum
         }
     },
     actions: {
