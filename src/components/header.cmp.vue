@@ -4,7 +4,7 @@
     <header class="main-header">
         <div class="app-header container">
             <div class="logo" @click="backToHomePage">
-                <h2><i class="fab fa-airbnb"></i>stayinn</h2>
+                <stayinn-logo-svg/><span>stayinn</span>
             </div>
             <mini-search-cmp v-if="currSearchFalse" @click="toggleSearchBig" />
             <nav class="nav-container">
@@ -25,11 +25,11 @@
 </template>
 
 <script>
-import logoCmp from "./logo.cmp.vue"
 import searchCmp from "./search.cmp.vue"
 import miniSearchCmp from "./mini-search.cmp.vue"
 import categoriesFilter from "./categories-filter.cmp.vue"
 import guestsModal from "./guests-modal.cmp.vue"
+import stayinnLogoSvg from "./svg/stayinn-logo-svg.vue"
 
 export default {
     template: `
@@ -89,9 +89,9 @@ export default {
     components: {
         searchCmp,
         categoriesFilter,
-        logoCmp,
         miniSearchCmp,
-        guestsModal
+        guestsModal,
+        stayinnLogoSvg
     }
 };
 </script>

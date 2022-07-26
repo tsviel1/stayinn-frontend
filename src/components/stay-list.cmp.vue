@@ -1,5 +1,5 @@
 <template>
-  <section v-if="stays">
+  <section class="stay-list" v-if="stays">
     <ul class="card-layout">
       <li class="card-container " v-for="stay in stays" :key="stay._id"  >
         <stay-preview :stay="stay" />

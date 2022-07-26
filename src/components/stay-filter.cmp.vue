@@ -2,7 +2,7 @@
   <section>
     <div class="btn-container">
       <a @click="isShown = !isShown" class="filter-btn">
-        <i class="fas fa-ellipsis-h"></i> Filters
+        <img src="../assets/svgs/filters.svg"/> Filters
       </a>
     </div>
 

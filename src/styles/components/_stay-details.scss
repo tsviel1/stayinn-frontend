@@ -1,9 +1,9 @@
 .stay-details {
-    padding-top: 100px;
+    padding-top: 60px;
 
     //stay-details-heading component
     .img-container {
-        height: 430px;
+        // height: 430px;
         // border: 1px solid $clr3;
         // border-radius: 16px;
         padding-top: 10px;
@@ -48,7 +48,6 @@
     }
 
     .two-sections {
-        margin-top: 50px;
 
         .first-section {
             width: 58%;
@@ -75,8 +74,12 @@
         font-weight: 600;
         font-size: 14px;
         line-height: 20px;
-        margin-top: 8px;
+        // margin-top: 8px;
         justify-content: space-between;
+
+        .sub-titles-details {
+            align-items: center;
+        }
 
         .share-btn,
         .save-btn {
