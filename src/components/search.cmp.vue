@@ -114,10 +114,19 @@ export default {
    position: absolute !important;
    opacity: 0 !important;
    width: 270px !important;
+   cursor: pointer !important;
  }
  
+.el-range-editor.el-input__wrapper {
+  cursor: pointer !important;
+}
+
  .el-date-table td.available:hover {
    color: black !important;
+ }
+
+ .el-range-editor .el-range-input {
+  cursor: pointer !important;
  }
  
  

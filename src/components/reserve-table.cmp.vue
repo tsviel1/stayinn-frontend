@@ -15,8 +15,8 @@
                     end-placeholder="End date" />
             </label>
             <div class="guest-input">
-                <label>guests</label>
-                <input :placeholder="guests.adults" />
+                <label for="guests-number">guests</label>
+                <div id="guests-number" class="guests-number">{{guests.adults}}</div>
             </div>
         </div>
     </section>
@@ -70,9 +70,9 @@ export default {
 <style lang="scss">
 .date-picker-container {
     z-index: 1 !important;
-    // position: relative !important;
     opacity: 0 !important;
     width: 270px !important;
+    cursor: pointer !important;
 }
 
 .el-date-table td.today .el-date-table-cell__text {
