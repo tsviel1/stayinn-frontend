@@ -1,66 +1,85 @@
-import { orderService } from "../../services/order-service.js";
+import { orderService } from '../../services/order-service.js'
 
 export default {
-    state: {
-        trip: {
-            chckInDate: null,
-            chckOutDate: null,
-            guests: {
-                adults: 0,
-                children: 0
-            },
-            dest: {
-                cityName: null
-            }
-        },
-        oreders: null,
+  state: {
+    trip: {
+      chckInDate: null,
+      chckOutDate: null,
+      guests: {
+        adults: 0,
+        children: 0,
+      },
+      dest: {
+        cityName: null,
+      },
     },
-    getters: {
-        getCurrChckInDate({trip}) {return trip.chckInDate},
-        getCurrChckOutDate({trip}) {return trip.chckOutDate},
-        getGuests({trip}) {return trip.guests},
-        getCitySearched({trip}) {return trip.dest.cityName},
-        getAdultsNum({trip}) {return trip.guests.adults},
-        getChildrenNum({trip}) {return trip.guests.children}
+    oreders: null,
+  },
+  getters: {
+    getCurrChckInDate({ trip }) {
+      return trip.chckInDate
     },
-    mutations: {
-        setTripDates(state, {chckInDate, chckOutDate}) {
-            state.trip.chckInDate = chckInDate
-            state.trip.chckOutDate = chckOutDate
-            
-        },
-        setGuests(state, {guests}) {
-            state.guests = guests
-        },
-        setTripCity(state, {filterBy}) {
-            console.log('tripCity', filterBy.txt)
-            
-            state.trip.dest.cityName = filterBy.txt
-        },
-        setAdults(state, {newAdultsNum}) {
-            
-            state.trip.guests.adults = newAdultsNum
-        },
-        setChildren(state, {newChildrenNum}) {
-            state.trip.guests.children += newChildrenNum
-        }
+    getCurrChckOutDate({ trip }) {
+      return trip.chckOutDate
     },
-    actions: {
-        async getOrders ({commit }) {
-            
-        },
-        async saveOrder({commit, state, rootState}) {
-            try{
-                const currStay = rootState.stayStore.currStay
-                let order = {...state.trip, stay: currStay}
-                const isEdit = !!order._id
-                const savedOrder =  await orderService.save(order)
-
-            } catch (err) {
-                console.log(err)
-            }
-        },
+    getGuests({ trip }) {
+      return trip.guests
+    },
+    getCitySearched({ trip }) {
+      return trip.dest.cityName
+    },
+    getAdultsNum({ trip }) {
+      return trip.guests.adults
+    },
+    getChildrenNum({ trip }) {
+      return trip.guests.children
+    },
+    getOrders({orders}) {
+        return orders
     }
-};
+  },
+  mutations: {
+    setTripDates(state, { chckInDate, chckOutDate }) {
+      state.trip.chckInDate = chckInDate
+      state.trip.chckOutDate = chckOutDate
+    },
+    setGuests(state, { guests }) {
+      state.guests = guests
+    },
+    setTripCity(state, { filterBy }) {
+      console.log('tripCity', filterBy.txt)
+
+      state.trip.dest.cityName = filterBy.txt
+    },
+    setAdults(state, { newAdultsNum }) {
+      state.trip.guests.adults = newAdultsNum
+    },
+    setChildren(state, { newChildrenNum }) {
+      state.trip.guests.children += newChildrenNum
+    },
+    setOrders(state, { orders })  {
+        state.orders = orders
+    },
+  },
+  actions: {
+    async loadOrders({ commit, state }) {
+      try {
+        const orders = await orderService.query()
+        commit({type: 'setOrders', orders})
+      } catch (err) {}
+    },
+    async saveOrder({ commit, state, rootState }) {
+      try {
+        console.log(state.trip.chckInDate)
+        const currStay = rootState.stayStore.currStay
+        let order = { ...state.trip, stay: currStay, createdAt: Date.now() }
+        const isEdit = !!order._id
+        const savedOrder = await orderService.save(order)
+      } catch (err) {
+        console.log(err)
+      }
+    },
+  },
+}
 
 // "2022-07-18T21:00:00.000Z"
