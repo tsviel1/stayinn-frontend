@@ -12,6 +12,7 @@
         .reserve-table {
             cursor: pointer;
         }
+
     }
 
     .order-container {
@@ -58,18 +59,20 @@
         &.last {
             border-left: 1px solid #00000050;
         }
+
         .date-head-reserve-table {
-            font-weight: 600;
+            font-family: airbnb-bold;
             font-size: 12px;
             text-transform: uppercase;
         }
+
         .date-reserve-table {
             border: none;
             padding: 0;
             width: 50%;
             outline: none;
             color: $clr2;
-            font-size: 14px;
+            // font-size: 14px;
         }
     }
 
@@ -79,17 +82,74 @@
         gap: 5px;
         border-top: 1px solid #00000050;
         padding: 11px 12px;
+        position: relative;
 
         label {
             text-transform: uppercase;
             font-size: 12px;
-            font-weight: 600;
+            font-family: airbnb-bold;
             cursor: pointer;
         }
 
         .guests-number {
-            font-size: 14px;
+            // font-size: 14px;
             color: $clr2;
+        }
+
+        .guests-modal-reserve {
+            top: 100%;
+            // height: 10px;
+            background-color: white;
+            position: absolute;
+            right: -1px;
+            z-index: 5;
+            // left: 0;
+            padding: 16px;
+            border-radius: 6px;
+            min-width: 100%;
+            box-shadow: 0 0 0 1px rgba(0,0,0,0.04),0 8px 16px rgba(0,0,0,0.15);
+
+            .guests-type {
+                padding: 24px 0;
+                display: flex;
+                flex-direction: row;
+                justify-content: space-between;
+
+                .guests-type-view {
+                    flex-grow: 1;
+                    .title {
+                        padding-bottom: 6px;
+                        font-weight: 600;
+                    }
+
+                    .second-title {
+                        font-size: rem(14px);
+                        font-weight: 400;
+                        color: $clr2;
+                        line-height: 18px;
+                    }
+                }
+
+                .guests-type-selection {
+                    width: 104px;
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: center;
+
+                    span {
+                        display: inline-flex;
+                        align-items: center;
+                        color: $clr5;
+
+                    }
+                    .btn-round {
+                        height: 36px;
+                        width: 36px;
+                    }
+                }
+            }
+
+
         }
     }
 
@@ -145,7 +205,7 @@
     .statement-container {
         font-weight: 400;
         align-items: center;
-        flex-direction: column ;
+        flex-direction: column;
         margin: 8px 0px 0px;
         padding: 0;
         text-align: center;
@@ -214,4 +274,3 @@
 
 
 }
-
