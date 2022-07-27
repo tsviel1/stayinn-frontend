@@ -1,4 +1,4 @@
-// import Axios from 'axios'
+import axios from 'axios'
 
 const BASE_URL = process.env.NODE_ENV === 'production' ? '/api/' : '//localhost:3030/api/'
 
