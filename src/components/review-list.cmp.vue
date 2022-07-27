@@ -6,7 +6,6 @@
       {{ reviewLength }} reviews
 
     </h2>
-    <pre>{{readText}}</pre>
     <ul class=" reviews-container clean-list flex">
       <li v-for="(review, index) in formatedReviews" :key="index">
         <review-preview :review="review" />

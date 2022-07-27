@@ -21,20 +21,17 @@
         <ameneties :stay="stay" />
       </div>
       <div class="second-section">
-        <stay-reserve :stay="stay" />
+        <stay-reserve :stay="stay" @onReserve="openModal" />
+        <modal-cmp v-if="isShow" :stay="stay" @onCloseModal="closeModal" />
       </div>
     </div>
-
-
-
-
-
     <review-list :stay="stay" />
     <mini-host-preview :stay="stay" />
   </section>
   <app-footer />
 </template>
  <script>
+import modalCmp from '../components/reserve-modal.cmp.vue'
 import stayReserve from '../components/stay-reserve.cmp.vue';
 import ameneties from '../components/ameneties.cmp.vue';
 import reviewList from '../components/review-list.cmp.vue';
@@ -56,10 +53,12 @@ export default {
     mapCmp,
     stayDetailsHeading,
     detailsImages,
-    appFooter
+    appFooter,
+    modalCmp
   },
   data() {
     return {
+      isShow: false,
       stayId: this.$route.params.id,
 
       // longText: this.stay.summary > 100,
@@ -75,6 +74,16 @@ export default {
     onClickStay(filterBy) {
       this.$router.push(`/`)
     },
+
+    openModal() {
+      console.log('hi');
+      return this.isShow = true
+    },
+    closeModal() {
+      return this.isShow=false
+    },
+
+
   },
   computed: {
     stay() {

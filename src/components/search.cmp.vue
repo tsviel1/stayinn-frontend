@@ -50,7 +50,8 @@ export default {
   data() {
     return {
       filterBy: {
-        txt: ''
+        txt: '',
+        capacity: null
       },
       tripDates: null,
       shouldShow: false,
@@ -58,6 +59,7 @@ export default {
 
     };
   },
+  created(){},
   computed: {
     getCurrSearch() {
       return this.$store.getters.getSearch
@@ -89,6 +91,8 @@ export default {
       this.$emit('setTripDates', chckInDate, chckOutDate)
     },
     searchTrip() {
+      
+
       // filter stays
       this.$emit('setFilterBy', { ...this.filterBy })
       // save trip settings
@@ -117,16 +121,16 @@ export default {
    cursor: pointer !important;
  }
  
-.el-range-editor.el-input__wrapper {
-  cursor: pointer !important;
-}
-
+ .el-range-editor.el-input__wrapper {
+   cursor: pointer !important;
+ }
+ 
  .el-date-table td.available:hover {
    color: black !important;
  }
-
+ 
  .el-range-editor .el-range-input {
-  cursor: pointer !important;
+   cursor: pointer !important;
  }
  
  

@@ -25,10 +25,11 @@
 </template>
  <script>
 import { utilsService } from '../services/utils.service.js';
-
  export default {
    name: 'stay-preview',
-   components: {},
+   components: {
+    
+   },
    props: {
      stay: Object
    },

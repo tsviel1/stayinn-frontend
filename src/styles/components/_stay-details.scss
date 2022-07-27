@@ -14,18 +14,21 @@
             grid-template-columns: repeat(4, 1fr);
             grid-template-rows: repeat(2, 200px);
             gap: 10px;
+
             li:nth-child(3) {
                 .stay-img {
                     border-radius: 0 12px 0 0;
 
                 }
             }
+
             li:nth-child(5) {
                 .stay-img {
                     border-radius: 0 0 12px 0;
 
                 }
             }
+
             li:first-child {
                 grid-column: 1 / span 2;
                 grid-row: 1 / span 2;
@@ -97,12 +100,12 @@
 
         .share-btn:hover {
             cursor: pointer;
-            background:$clr7;
+            background: $clr7;
         }
 
         .save-btn:hover {
             cursor: pointer;
-           background: $clr7;
+            background: $clr7;
         }
     }
 
@@ -226,7 +229,8 @@
             font-size: 22px;
             margin-bottom: 32px;
         }
-        .reviews-svg{
+
+        .reviews-svg {
             font-size: 14px;
             text-align: center;
             padding-right: 15px;
@@ -270,6 +274,8 @@
 
         span.show-btn {
             font-family: airbnb-medium;
+            display: block;
+            padding-top: 15px;
             // font-weight:600 ;
         }
 

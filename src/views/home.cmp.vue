@@ -27,7 +27,7 @@ export default {
   created() {
     this.$store.dispatch({ type: 'loadStays' })
     this.$store.commit({type: 'makeSearchSmall'})
-
+    
   },
   methods: {
     setSearchSmall() {
@@ -37,12 +37,21 @@ export default {
   computed: {
     staysToDisplay() {
       let filter = this.$store.getters.currFilterBy
-      if (filter) {
-        this.$router.push(`/stay`)
-      } else {
-
-        return this.$store.getters.staysToDisplay
-      }
+      if (filter?.txt){
+      console.log('in??');
+      this.$router.push(`/stay`)
+    }
+      // if (filter?.category) {
+      //   this.$router.push(`/`)
+      //   return
+      // }
+      // else if (filter) {
+      //   this.$router.push(`/stay`)
+      // }
+      // else {
+        
+        return this.$store.getters.stays
+      // }
     },
     getIsSearchBig() {
       return this.$store.getters.getSearch

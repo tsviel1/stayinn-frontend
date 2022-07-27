@@ -1,0 +1,142 @@
+.reserve-modal {
+    border-radius: 8px;
+    max-height: 600px;
+    position: fixed;
+    top: 12%;
+    left: 20.6%;
+    right: 20.5%;
+    bottom: 10%;
+    padding-inline-start: 80px;
+    padding-inline-end: 80px;
+    max-width: 1600px;
+    margin: auto;
+    background-color: $clr3;
+    box-shadow: 0px 0px 20px 1px $clr2;
+
+    .modal-container {
+        display: flex;
+        flex-direction: row;
+        padding-top: 32px;
+        gap: 70px;
+
+        .rigth-side {
+            width: 100%;
+        }
+
+        .rare-find {
+            border: 1px solid rgb(221, 221, 221);
+            border-radius: 12px;
+            padding: 8px 24px 24px 24px;
+
+            .rare-details {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                // font-family: airbnb-medium;
+                font-weight: 600;
+            }
+        }
+
+        .trip-details {
+            h4 {
+                padding-top: 24px;
+                font-size: 1.3em;
+                font-family: airbnb-medium;
+            }
+
+            .trip-title {
+                font-weight: 600;
+            }
+        }
+
+        .order-container {
+            padding: 30px;
+            border: 1px solid $clr6;
+            border-radius: 8px;
+            width: 100%;
+
+            .order {
+                padding-left: 12px;
+                padding-bottom: 10px;
+
+                .details {
+                    margin: 0;
+                }
+
+                .details-card {
+                    flex-direction: column;
+                    padding-left: 12px;
+                    font-size: 14px;
+
+                    .type {
+                        font-size: 12px;
+                        color: $clr2;
+                    }
+
+                    .reviews {
+                        display: flex;
+                        align-items: center;
+                        font-size: 12px;
+
+                        .fa-star {
+                            height: 9px;
+                            width: 9px;
+                            font-size: 9px;
+                            padding-right: 15px;
+                        }
+
+                        span {
+                            color: $clr2;
+
+                        }
+                    }
+                }
+            }
+        }
+
+
+        .price-details {
+            padding-top: 24px;
+            padding-bottom: 24px px;
+        }
+    }
+
+    .close-btn {
+        border-radius: 8px;
+        border:none;
+        padding: 13px 23px;
+        cursor: pointer;
+        font-family: airbnb-medium;
+        font-size: 16px;
+        line-height: 20px;
+        color: $clr3;
+        background-color: #FF385C ;
+        &:hover {
+            background-image: radial-gradient(circle at center,
+            #FF385C 0%,
+            #E61E4D 27.5%,
+            #E31C5F 40%,
+            #D70466 57.5%,
+            #BD1E59 75%,
+            #BD1E59 100%)
+        }
+
+    }
+
+    img {
+        width: 124px;
+        height: 106px;
+        border-radius: 8px
+    }
+}
+
+.modal-title {
+    padding-top: 50px;
+    font-size: 1.7em;
+    font-family: airbnb-medium;
+    margin: 0;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
