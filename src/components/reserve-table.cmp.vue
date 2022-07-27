@@ -14,9 +14,46 @@
                     @change="setTripDates" range-separator="To" start-placeholder="Start date"
                     end-placeholder="End date" />
             </label>
-            <div class="guest-input">
+            <div class="guest-input" >
                 <label for="guests-number">guests</label>
-                <div id="guests-number" class="guests-number">{{guests.adults}}</div>
+                <div @click="guestsModalShown = !guestsModalShown" id="guests-number" class="guests-number">{{ guests.adults }}</div>
+                <div class="guests-modal-reserve" v-if="guestsModalShown">
+                    <div class="guests-type">
+                        <div class="guests-type-view">
+                            <div class="guests-type-view">
+                                <div class="title">
+                                    Adults
+                                </div>
+                                <div class="second-title">
+                                    Ages 13 +
+                                </div>
+                            </div>
+                        </div>
+                        <div class="guests-type-selection">
+                            <button :disabled="getAdultsNum <= 0" class="btn-round" @click="setAdults(-1)">-</button>
+                            <span>{{ getAdultsNum }}</span>
+                            <button :disabled="getAdultsNum >= 10" class="btn-round" @click="setAdults(1)">+</button>
+                        </div>
+                    </div>
+                    <div class="guests-type">
+                        <div class="guests-type-view">
+                            <div class="title">
+                                Children
+                            </div>
+                            <div class="second-title">
+                                Ages 2-12
+                            </div>
+                        </div>
+                        <div class="guests-type-selection">
+                            <button :disabled="getChildrenNum <= 0" class="btn-round"
+                                @click="setChildren(-1)">-</button>
+                            <span>{{ getChildrenNum }}</span>
+                            <button :disabled="getChildrenNum >= 10" class="btn-round"
+                                @click="setChildren(1)">+</button>
+                        </div>
+                    </div>
+                </div>
+
             </div>
         </div>
     </section>
@@ -30,7 +67,8 @@ export default {
     },
     data() {
         return {
-            tripDates: null
+            tripDates: null,
+            guestsModalShown: false
         }
     },
     methods: {
@@ -41,6 +79,16 @@ export default {
                 type: 'setTripDates',
                 chckInDate, chckOutDate
             })
+        },
+        setAdults(diff) {
+            const adultsNum = this.getAdultsNum
+            const newAdultsNum = adultsNum + diff
+            this.$store.commit({ type: 'setAdults', newAdultsNum })
+        },
+        setChildren(diff) {
+            const childrenNum = this.getChildrenNum
+            const newChildrenNum = childrenNum + diff
+            this.$store.commit({ type: 'setChildren', newChildrenNum })
         }
     },
     computed: {
@@ -57,12 +105,19 @@ export default {
         guests() {
             return this.$store.getters.getGuests
         },
+        getAdultsNum() {
+            return this.$store.getters.getAdultsNum
+        },
+        getChildrenNum() {
+            return this.$store.getters.getChildrenNum
+        }
     },
     created() {
         const chckInDate = this.$store.getters.getCurrChckInDate
         const chckOutDate = this.$store.getters.getCurrChckOutDate
         this.tripDates = [chckInDate, chckOutDate]
-    }
+    },
+
 }
 
 </script>
