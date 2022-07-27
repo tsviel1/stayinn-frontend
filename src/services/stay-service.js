@@ -1,4 +1,4 @@
-import { storageService } from './async-storage.service.js'
+// import { storageService } from './async-storage.service.js'
 import { httpService } from './http.service'
 import { db } from './data/airbnb.js'
 import newData from './data/stays.json'
@@ -6,7 +6,7 @@ const STAY_KEY = 'stayDB'
 const data = newData
 // let gStays;
 // console.log(data)
-_createStays()
+// _createStays()
 
 const ENDPOINT = 'stay'
 
@@ -79,13 +79,11 @@ async function getById(id) {
 //   return savedStay
 // }
 
-// async function save(stay) {
-//   if (stay._id) {
-//     const stay = httpService.post('stay')
-//   } else {
-
-//   }
-// }
+async function save(stay) {
+  return stay._id 
+  ? await httpService.put(`${ENDPOINT}/${stay._id}`, stay)
+  : await httpService.post(ENDPOINT, stay)
+}
 
 function removeReview(stayId, reviewId) {
   return get(stayId).then((stay) => {
@@ -105,9 +103,7 @@ function addReview(stayId, review) {
 }
 
 async function _createStays() {
-  // console.log(data)
   let stays = await storageService.query(STAY_KEY)
-  // console.log('CREATE STAYS:', stays)
   if (!stays || !stays.length) {
     localStorage.setItem(STAY_KEY, JSON.stringify(data))
   }
