@@ -22,7 +22,10 @@
 @import 'components/filter-cmp';
 @import 'components/footer';
 @import 'components/reserve-modal';
+@import 'components/order-calc';
+@import 'components/destination-modal';
 
 // PAGES
-@import 'pages/home-page.scss'
+@import 'pages/home-page.scss';
+@import 'pages/explore.scss';
 

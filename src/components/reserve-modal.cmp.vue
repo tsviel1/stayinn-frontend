@@ -41,7 +41,7 @@
           </div>
           <div>
             <h1 class="price-details">Price details</h1>
-            <order-calc-section />
+            <order-calc-section/>
           </div>
         </div>
       </div>
@@ -50,9 +50,12 @@
   </section>
 </template>
  <script>
+import orderCalcSection from './order-calc.cmp.vue'
 export default {
   name: 'reserve-modal',
-  components: {},
+  components: {
+    orderCalcSection
+  },
   props: {
         stay: Object
     },

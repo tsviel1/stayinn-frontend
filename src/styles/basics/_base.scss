@@ -1,26 +1,29 @@
-
-
 * {
     box-sizing: border-box;
 }
 
-html { 
-   font-family: airbnb-book, sans-serif; 
-   color: $clr2;
-   line-height: 1.2;
-   
+html {
+    font-family: airbnb-book, sans-serif;
+    color: $clr2;
+    line-height: 1.2;
+
 }
 
 body {
     margin: 0;
     background-color: $clr3;
     color: $clr5;
-    font-size:  1rem;
+    font-size: 1rem;
 
 
 }
 
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
     font-weight: 500;
     margin: 0 0 1rem;
     line-height: lh(40px, 29px);
@@ -57,7 +60,7 @@ img {
 //         line-height: 1.384615;
 //         padding-inline-start: rem(30px);
 //         position: relative;
-        
+
 //         &::after {
 //             content: "";
 //             position: absolute;
@@ -68,12 +71,12 @@ img {
 //             height: 100%;
 //             max-height: 42px;
 //             background-color: $clr1;
-            
+
 //             @include for-wide-layout {
 //                 width: 10px;
 //             }
 //         }
-        
+
 //         @include for-wide-layout {
 //             grid-column: 3 / 5;
 //             font-size: rem(26px);
@@ -83,22 +86,33 @@ img {
 
 .btn {
     @include btn;
-    
+
     &-dark {
         @include btn($type: dark);
     }
-    
+
     &-light {
         @include btn($type: light);
     }
+
     &-round {
         @include btn($type: round, $padding: rem(5px));
     }
+
     &-category {
         @include btn($type: category);
     }
 }
 
+
+.shadow {
+    position: fixed;
+    inset: 0;
+    background-color: rgba(0, 0, 0, 0.25);
+    pointer-events: auto;
+    transition: opacity 0.6s;
+    z-index: 20;
+}
 
 // links
 // a {

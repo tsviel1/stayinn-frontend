@@ -1,0 +1,51 @@
+.order-calc {
+    .statement-container {
+        font-weight: 400;
+        align-items: center;
+        flex-direction: column;
+        margin: 8px 0px 0px;
+        padding: 0;
+        text-align: center;
+
+        .statement {
+            margin-top: 8px;
+            white-space: normal;
+            font-size: 14px;
+            line-height: 18px;
+            list-style-type: none;
+        }
+    }
+
+    .order-calc-derails {
+        margin-top: 24px;
+
+        .calc-section {
+            display: flex;
+            justify-content: space-between;
+
+            &:not(:first-child) {
+                padding-top: 16px;
+            }
+
+            .calc-left {
+                text-decoration-line: underline;
+            }
+        }
+    }
+
+    .final-calc {
+        padding-top: 24px;
+        margin-top: 24px;
+        border-top: 1px solid $clr6;
+
+        .total-section {
+            font-family: airbnb-bold;
+            display: flex;
+            justify-content: space-between;
+            font-weight: 600;
+
+
+        }
+
+    }
+}

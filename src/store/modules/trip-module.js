@@ -6,8 +6,8 @@ export default {
             chckInDate: null,
             chckOutDate: null,
             guests: {
-                adults: 2,
-                children: 1
+                adults: 0,
+                children: 0
             },
             dest: {
                 cityName: null

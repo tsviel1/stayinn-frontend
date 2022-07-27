@@ -25,11 +25,6 @@
         <modal-cmp v-if="isShow" :stay="stay" @onCloseModal="closeModal" />
       </div>
     </div>
-
-
-
-
-
     <review-list :stay="stay" />
     <mini-host-preview :stay="stay" />
   </section>
