@@ -13,6 +13,7 @@ export default {
                 cityName: null
             }
         },
+        oreders: null,
     },
     getters: {
         getCurrChckInDate({trip}) {return trip.chckInDate},
@@ -45,6 +46,9 @@ export default {
         }
     },
     actions: {
+        async getOrders ({commit }) {
+            
+        },
         async saveOrder({commit, state, rootState}) {
             try{
                 const currStay = rootState.stayStore.currStay
