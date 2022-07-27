@@ -50,7 +50,8 @@ export default {
   data() {
     return {
       filterBy: {
-        txt: ''
+        txt: '',
+        capacity:null
       },
       tripDates: null,
       shouldShow: false,

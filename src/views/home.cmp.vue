@@ -35,11 +35,15 @@ export default {
   computed: {
     staysToDisplay() {
       let filter = this.$store.getters.currFilterBy
+      // if (filter?.category) {
+      //   this.$router.push(`/`)
+      //   return
+      // }
       if (filter) {
         this.$router.push(`/stay`)
-      } else {
-
-        return this.$store.getters.staysToDisplay
+      }
+      else {
+        return this.$store.getters.stays
       }
     }
   },
