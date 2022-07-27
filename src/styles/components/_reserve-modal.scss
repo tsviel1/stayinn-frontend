@@ -2,7 +2,7 @@
     border-radius: 8px;
     max-height: 600px;
     position: fixed;
-    top: 18%;
+    top: 12%;
     left: 20.6%;
     right: 20.5%;
     bottom: 10%;
@@ -56,7 +56,6 @@
             width: 100%;
 
             .order {
-                justify-content: space-between !important;
                 padding-left: 12px;
                 padding-bottom: 10px;
 
@@ -124,6 +123,11 @@
 
     }
 
+    img {
+        width: 124px;
+        height: 106px;
+        border-radius: 8px
+    }
 }
 
 .modal-title {
@@ -136,8 +140,3 @@
     align-items: center;
 }
 
-img {
-    width: 124px;
-    height: 106px;
-    border-radius: 8px
-}
