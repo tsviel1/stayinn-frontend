@@ -102,12 +102,12 @@ function addReview(stayId, review) {
   })
 }
 
-async function _createStays() {
-  let stays = await storageService.query(STAY_KEY)
-  if (!stays || !stays.length) {
-    localStorage.setItem(STAY_KEY, JSON.stringify(data))
-  }
-}
+// async function _createStays() {
+//   let stays = await storageService.query(STAY_KEY)
+//   if (!stays || !stays.length) {
+//     localStorage.setItem(STAY_KEY, JSON.stringify(data))
+//   }
+// }
 
 export const stayService = {
   query,
