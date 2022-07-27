@@ -1,26 +1,27 @@
 //:class="{active: isActive}"
 
 <template>
-    <header class="main-header" :class="{'main-layout':!currPageHome, home:currPageHome, container:currPageHome}">
-        <div class="app-header">
-            <div class="logo" @click="backToHomePage">
-                <stayinn-logo-svg /><span>stayinn</span>
+    <div class="header">
+        <div class="main-header" :class="{ 'main-layout': !currPageHome, home: currPageHome, container: currPageHome }">
+            <div class="app-header">
+                <div class="logo" @click="backToHomePage">
+                    <stayinn-logo-svg /><span>stayinn</span>
+                </div>
+                <mini-search-cmp v-if="currSearchFalse" @click="toggleSearchBig" />
+                <nav class="nav-container">
+                    <a>
+                        <router-link class="link" to="/stay">Explore</router-link>
+                    </a>
+                    <a>
+                        <router-link class="link" to="/user/:userId">User</router-link>
+                    </a>
+                </nav>
             </div>
-            <mini-search-cmp v-if="currSearchFalse" @click="toggleSearchBig" />
-            <nav class="nav-container">
-                <a>
-                    <router-link class="link" to="/stay">Explore</router-link>
-                </a>
-                <a>
-                    <router-link class="link" to="/user/:userId">User</router-link>
-                </a>
-            </nav>
+            <search-cmp @setFilterBy="setFilterBy" @setTripDates="setTripDates" :currFilterBy="getFilterBy"
+                @searchClicked="toggleIsActive" @setTripCity="setTripCity" />
+
         </div>
-        <search-cmp @setFilterBy="setFilterBy" @setTripDates="setTripDates" :currFilterBy="getFilterBy"
-            @searchClicked="toggleIsActive" @setTripCity="setTripCity" />
-
-    </header>
-
+    </div>
 
 </template>
 
@@ -88,7 +89,7 @@ export default {
                 if (this.$route.params.id) this.currPageHome = false
                 else this.currPageHome = true
                 console.log('this.currPageHome', this.currPageHome)
-                
+
             },
             immediate: true,
         },

@@ -1,7 +1,16 @@
+.header{
+    height: 81px;
+    border-bottom: 1px solid $clr4;
+    background-color: $clr3;
+    z-index: 30;
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+}
 .main-header {
     background-color: $clr3;
     z-index: 30;
-    border-bottom: 1px solid $clr4;
     width: 100%;
     top: 0;
 
