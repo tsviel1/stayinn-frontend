@@ -15,8 +15,8 @@
           </div>
           <img class="type-heading-img" :src="stay.host.imgUrl" />
         </div>
-       
-        
+
+
         <p class="stay-details-desc">{{ stay.summary }}</p>
         <ameneties :stay="stay" />
       </div>
@@ -61,8 +61,8 @@ export default {
   data() {
     return {
       stayId: this.$route.params.id,
-     
-			// longText: this.stay.summary > 100,
+
+      // longText: this.stay.summary > 100,
       // stay: null
       orderInfo: ''
     };
@@ -75,8 +75,6 @@ export default {
     onClickStay(filterBy) {
       this.$router.push(`/`)
     },
-
-
   },
   computed: {
     stay() {
@@ -88,10 +86,10 @@ export default {
     getReviewsAmount() {
       return this.$store.getters.getReviewsLength
     },
-    
+
   },
-  unmounted() { 
-    
+  unmounted() {
+
   },
 };
 </script>

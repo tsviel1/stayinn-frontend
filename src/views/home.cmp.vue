@@ -1,5 +1,6 @@
 <template>
   <section class="home-page container">
+    <div class="shadow" v-if="getIsSearchBig" @click="setSearchSmall"></div>
     <categories-filter />
     <!-- <stay-filter /> -->
     <stay-list v-if="staysToDisplay" :stays="staysToDisplay" />
@@ -25,11 +26,12 @@ export default {
   },
   created() {
     this.$store.dispatch({ type: 'loadStays' })
+    this.$store.commit({type: 'makeSearchSmall'})
 
   },
   methods: {
-    loadStays() {
-
+    setSearchSmall() {
+      this.$store.commit({type: 'toggleSearchBig'})
     },
   },
   computed: {
@@ -41,6 +43,9 @@ export default {
 
         return this.$store.getters.staysToDisplay
       }
+    },
+    getIsSearchBig() {
+      return this.$store.getters.getSearch
     }
   },
   unmounted() { },

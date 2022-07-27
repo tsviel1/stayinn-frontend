@@ -35,11 +35,6 @@ export default {
       return state.currFilterBy
     },
     getCurrStayAvg({ currStay }) {
-      // let sumRate = currStay.reviews.reduce(
-      //   (acc, currVal) => acc + currVal.rate,
-      //   0
-      // )
-
       let sumRate = currStay.reviewScores.rating
       let avg = sumRate / 20
       return avg
@@ -47,15 +42,12 @@ export default {
     getReviewsLength({ currStay }) {
       return currStay.reviews.length
     },
-  getSearch({currSearchBig}) {
-    return currSearchBig
-  },
-  getCategories({tags}){
-    return tags
-  },
     getSearch({ currSearchBig }) {
       return currSearchBig
-    }
+    },
+    getCategories({ tags }) {
+      return tags
+    },
   },
   mutations: {
     setstays(state, { stays }) {
@@ -73,6 +65,9 @@ export default {
     },
     toggleSearchBig(state) {
       state.currSearchBig = !state.currSearchBig
+    },
+    makeSearchSmall({currSearchBig}) {
+      currSearchBig = false
     }
   },
   actions: {
