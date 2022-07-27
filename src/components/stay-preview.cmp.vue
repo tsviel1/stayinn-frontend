@@ -7,8 +7,9 @@
         </el-carousel-item>
       </el-carousel>
       <div class="wishlist" @click.stop="isliked = !isliked">
-        <span v-if="isliked"><i class="fas fa-heart liked"></i></span>
-        <span v-else><i class="fas fa-heart unliked"></i></span>
+       <heart-svg :class="{liked:isliked,unliked:!isliked}"/>
+        <!-- <span v-if="isliked"><i class="fas fa-heart liked"></i></span>
+        <span v-else><i class="fas fa-heart unliked"></i></span> -->
       </div>
       <div class="text-container">
         <div class="title"><span>{{ stay.propertyType }} in {{ stay.address.city }}</span>
@@ -25,10 +26,11 @@
 </template>
  <script>
 import { utilsService } from '../services/utils.service.js';
+import heartSvg from './svg/heart-svg.cmp.vue'
  export default {
    name: 'stay-preview',
    components: {
-    
+    heartSvg
    },
    props: {
      stay: Object

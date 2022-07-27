@@ -91,7 +91,11 @@ export default {
       this.$emit('setTripDates', chckInDate, chckOutDate)
     },
     searchTrip() {
-      
+      const adults=  this.$store.getters.getAdultsNum
+      const kids=this.$store.getters.getChildrenNum
+      const sum=adults+kids
+      console.log(sum);
+      this.filterBy.capacity=sum
 
       // filter stays
       this.$emit('setFilterBy', { ...this.filterBy })
@@ -100,6 +104,7 @@ export default {
       this.$emit('searchClicked')
       this.shouldShow = false
       this.$store.commit('toggleSearchBig')
+      
       console.log('trip is searched');
     },
   },

@@ -33,7 +33,7 @@ export default {
     },
   },
   mutations: {
-    setstays(state, { stays }) {
+    setStays(state, { stays }) {
       state.stays = stays
       // console.log(state.stays)
     },
@@ -58,7 +58,7 @@ export default {
       try {
         console.log(state.currFilterBy)
         const stays = await stayService.query(state.currFilterBy)
-        commit({ type: 'setstays', stays })
+        commit({ type: 'setStays', stays })
       } catch (err) {
         console.log('stayStore: Error in loadstays', err)
         throw err
