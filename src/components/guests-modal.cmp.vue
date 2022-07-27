@@ -33,8 +33,6 @@
             </div>
         </section>
     </div>
-
-
 </template>
 
 <script>
@@ -43,7 +41,8 @@ export default {
     data() {
         return {
             childrenCounter: 0,
-            adultsCounter: 0
+            adultsCounter: 0,
+            currSum:null
         }
     },
     computed: {
@@ -58,13 +57,21 @@ export default {
         setAdults(diff) {
             const adultsNum = this.getAdultsNum
             const newAdultsNum = adultsNum + diff
-            this.$store.commit({type: 'setAdults', newAdultsNum})
+            this.$store.commit({ type: 'setAdults', newAdultsNum })
+            // this.sumOfGuests(0,newAdultsNum)
         },
         setChildren(diff) {
             const childrenNum = this.getChildrenNum
             const newChildrenNum = childrenNum + diff
-            this.$store.commit({type: 'setChildren', newChildrenNum})
-        }
+            this.$store.commit({ type: 'setChildren', newChildrenNum })
+            // this.sumOfGuests(0,newChildrenNum)
+        },
+        // sumOfGuests(adults, children ) {
+        //     const sum = adults + children
+        //     this.currSum=sum
+        //     console.log(currSum);
+        //     // this.$emit(onSetGuests,sum)
+        // }
     },
 
 }

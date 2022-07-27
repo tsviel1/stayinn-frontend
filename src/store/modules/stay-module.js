@@ -11,23 +11,6 @@ export default {
     stays(state) {
       return state.stays
     },
-    staysToDisplay(state) {
-
-      var stays = state.stays
-      if (state.currFilterBy?.txt) {
-        const regex = new RegExp(state.currFilterBy.txt, 'i')
-        stays = stays.filter((stay) => regex.test(stay.address.city))
-      }
-      if (state.currFilterBy?.beds) {
-        stays = stays.filter((stay) => stay.beds === state.currFilterBy.beds)
-      }
-      if (state.currFilterBy?.bedrooms) {
-        stays = stays.filter(
-          (stay) => stay.bedrooms === state.currFilterBy.bedrooms
-        )
-      }
-      return stays
-    },
     getCurrStay({ currStay }) {
       return currStay
     },
@@ -35,11 +18,6 @@ export default {
       return state.currFilterBy
     },
     getCurrStayAvg({ currStay }) {
-      // let sumRate = currStay.reviews.reduce(
-      //   (acc, currVal) => acc + currVal.rate,
-      //   0
-      // )
-
       let sumRate = currStay.reviewScores.rating
       let avg = sumRate / 20
       return avg
@@ -47,15 +25,12 @@ export default {
     getReviewsLength({ currStay }) {
       return currStay.reviews.length
     },
-  getSearch({currSearchBig}) {
-    return currSearchBig
-  },
-  getCategories({tags}){
-    return tags
-  },
     getSearch({ currSearchBig }) {
       return currSearchBig
-    }
+    },
+    getCategories({ tags }) {
+      return tags
+    },
   },
   mutations: {
     setstays(state, { stays }) {
@@ -73,12 +48,15 @@ export default {
     },
     toggleSearchBig(state) {
       state.currSearchBig = !state.currSearchBig
+    },
+    makeSearchSmall({currSearchBig}) {
+      currSearchBig = false
     }
   },
   actions: {
     async loadStays({ commit, state }) {
       try {
-        // console.log(state.currFilterBy)
+        console.log(state.currFilterBy)
         const stays = await stayService.query(state.currFilterBy)
         commit({ type: 'setstays', stays })
       } catch (err) {

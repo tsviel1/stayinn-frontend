@@ -172,11 +172,13 @@
     .guests-modal {
         background-color: $clr3;
         right: 0;
-        box-shadow: 10px 10px 5px 100vh rgba(0, 0, 0, 0.3);
+        box-shadow: 0 0 0 1px rgba(0,0,0,0.04),0 8px 16px rgba(0,0,0,0.15);
+        // box-shadow: 10px 10px 5px 100vh rgba(0, 0, 0, 0.3);
         position: absolute;
         padding: 16px 32px;
         border-radius: 32px;
         margin-top: 80px;
+
 
         section {
             width: 330px;

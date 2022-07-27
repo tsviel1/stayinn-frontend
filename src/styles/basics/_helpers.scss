@@ -72,3 +72,7 @@ Aspect ratios .ratio-16-9 {
     filter: invert(6%) sepia(14%) saturate(50%) hue-rotate(314deg) brightness(108%) contrast(85%);
 
 }
+
+.border{
+    border-bottom: 1px solid $clr6;
+}
