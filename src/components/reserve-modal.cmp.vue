@@ -7,7 +7,7 @@
           <div class="rare-find">
             <div class="rare-details">
               <p> This is a rare find.</p>
-              <modal-svg/>
+              <modal-svg />
             </div>
             <div class="rare-host">{{ stay.host.fullname }}'s place is usually booked.</div>
           </div>
@@ -26,7 +26,7 @@
           </div>
           <div class="btn-div">
             <button @click="onApproveOrder" class="approve-btn">Approve</button>
-            <button  @click="onCloseModal" class="close-btn" >Close</button>
+            <button @click="onCloseModal" class="close-btn">Close</button>
           </div>
         </div>
         <div class="order-container">
@@ -68,6 +68,10 @@
      setupImgUrl(name) {
        return new URL(`../assets/Images/${name}`, import.meta.url).href;
      },
+     onApproveOrder() {
+       this.$store.dispatch({ type: 'saveOrder' })
+       this.$emit('onApproveOrder')
+     }
    },
    computed: {
      startDate() {

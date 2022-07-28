@@ -25,6 +25,7 @@ export default  {
             try {
                 const user = await userService.login(userCred)
                 commit({ type: 'setLoggedinUser', user })
+                
                 return user
             } catch (err) {
                 console.log('userStore: Error in login', err)
