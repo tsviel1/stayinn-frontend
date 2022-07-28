@@ -7,7 +7,7 @@
           <div class="rare-find">
             <div class="rare-details">
               <p> This is a rare find.</p>
-              <!-- <modal-svg /> -->
+              <modal-svg/>
             </div>
             <div class="rare-host">{{ stay.host.fullname }}'s place is usually booked.</div>
           </div>
@@ -23,6 +23,9 @@
               <p class="trip-title">Guests</p>
               <p>{{ getGeusts }} guests</p>
             </div>
+          </div>
+          <div class="btn-div">
+            <button @click="onCloseModal" class="close-btn">Approve</button>
           </div>
         </div>
         <div class="order-container">
@@ -45,16 +48,17 @@
           </div>
         </div>
       </div>
-      <button @click="onCloseModal" class="close-btn">Approve</button>
     </div>
   </section>
 </template>
  <script>
  import orderCalcSection from './order-calc.cmp.vue'
+ import modalSvg from './svg/reserve-modal-svg.vue'
  export default {
    name: 'reserve-modal',
    components: {
-     orderCalcSection
+     orderCalcSection,
+     modalSvg
    },
    props: {
      stay: Object
@@ -66,13 +70,17 @@
    },
    computed: {
      startDate() {
+       console.log('yoo');
        const checkInDate = this.$store.getters.getCurrChckInDate
        this.checkIn = checkInDate
        if (checkInDate) {
+ 
+         console.log(checkInDate);
          const checkInMonth = checkInDate.toLocaleString('en-US', {
            month: 'short',
          })
          const checkInDay = checkInDate.getDate()
+         console.log(checkInMonth);
          return `${checkInMonth} ${checkInDay}`
        }
  

@@ -103,6 +103,12 @@ export default {
       this.$store.commit('toggleModalWhoInSearch')
     },
     searchTrip() {
+      const adults=  this.$store.getters.getAdultsNum
+      const kids=this.$store.getters.getChildrenNum
+      const sum=adults+kids
+      console.log(sum);
+      this.filterBy.capacity=sum
+
       // filter stays
       this.$emit('setFilterBy', { ...this.filterBy })
       // save trip settings

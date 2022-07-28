@@ -35,6 +35,10 @@
                 align-items: center;
                 // font-family: airbnb-medium;
                 font-weight: 600;
+                svg{
+                    height: 20px;
+                    width: 20px;
+                }
             }
         }
 
@@ -101,11 +105,17 @@
             padding-bottom: 24px px;
         }
     }
+    .btn-div{
+        display: flex;
+        justify-content: space-around;
+        margin-top:70px;
+    }
 
     .close-btn {
         border-radius: 8px;
+        margin: 0;
         border:none;
-        padding: 13px 23px;
+        padding: 13px 53px;
         cursor: pointer;
         font-family: airbnb-medium;
         font-size: 16px;
