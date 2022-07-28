@@ -1,7 +1,7 @@
 <template>
-    <section class="back-office"  v-if="orders">
+    <section class="back-office container"  v-if="orders">
         <!-- <pre>{{ getOrders }}</pre> -->
-        <h1>Pending Orders</h1>
+        <h1 class="back-office-title ">Pending Orders</h1>
         <ul class="orders-list clean-list">
             <li  v-for="(order) in orders" :key="order._id" >
                 <order-preview :order="order"  />

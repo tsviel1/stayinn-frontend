@@ -1,14 +1,23 @@
 .back-office {
+    padding-top: 81px;
+   
+    .back-office-title {
+        font-family: airbnb-medium;
+        color: $clr1;
+    }
   .orders-list {
-    padding-top: 50px;
+    // padding-top: 50px;
 
     .order-preview {
       justify-content: space-between;
-      margin: 20px 0;
+      margin-block: 30px ;
+      
       .preview-inner {
         flex-direction: row;
+        padding-bottom: 35px;
+        border-bottom: 1px solid $clr6;
         .guest-details {
-          margin: 10px;
+        //   margin-block: 10px;
           .guest-img {
             width: 50px;
             height: 50px;
@@ -19,9 +28,14 @@
             padding-left: 10px;
             .guest-name {
               margin: 0;
+              font-family: airbnb-medium;
               align-self: center;
               // padding-left: 10px;
               align-self: flex-start;
+            }
+            .order-created-at {
+                font-family: airbnb-medium;
+                font-size: 15px;
             }
           }
         }
@@ -33,6 +47,7 @@
         align-items: stretch;
         .order-details {
           margin: 0 3px;
+          
         }
       }
       .last-details {

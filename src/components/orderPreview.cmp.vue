@@ -1,11 +1,11 @@
 <template>
-    <section class="order-preview container main flex">
+    <section class="order-preview  flex">
         <div class="preview-inner flex">
             <div class="guest-details flex">
                 <img class="guest-img" src="https://xsgames.co/randomusers/assets/avatars/female/1.jpg" />
                 <div class="guest-details-inner flex">
                     <h3 class="guest-name">User name</h3>
-                    <h3 class="order-created-at">{{ formatCreatedAt }}</h3>
+                    <h3 class="order-created-at">Created at: {{ formatCreatedAt }}</h3>
                     <div class="sub-title">
                         <span class="order-details">{{ order.guests.adults + order.guests.children }} guests <span>
                                 |
