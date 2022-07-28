@@ -13,7 +13,6 @@ export default {
         cityName: null,
       },
     },
-    oreders: null,
   },
   getters: {
     getCurrChckInDate({ trip }) {
@@ -34,9 +33,7 @@ export default {
     getChildrenNum({ trip }) {
       return trip.guests.children
     },
-    getOrders({orders}) {
-        return orders
-    }
+   
   },
   mutations: {
     setTripDates(state, { chckInDate, chckOutDate }) {
@@ -57,28 +54,9 @@ export default {
     setChildren(state, { newChildrenNum }) {
       state.trip.guests.children += newChildrenNum
     },
-    setOrders(state, { orders })  {
-        state.orders = orders
-    },
+   
   },
   actions: {
-    async loadOrders({ commit, state }) {
-      try {
-        const orders = await orderService.query()
-        commit({type: 'setOrders', orders})
-      } catch (err) {}
-    },
-    async saveOrder({ commit, state, rootState }) {
-      try {
-        console.log(state.trip.chckInDate)
-        const currStay = rootState.stayStore.currStay
-        let order = { ...state.trip, stay: currStay, createdAt: Date.now() }
-        const isEdit = !!order._id
-        const savedOrder = await orderService.save(order)
-      } catch (err) {
-        console.log(err)
-      }
-    },
   },
 }
 
