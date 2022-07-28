@@ -1,15 +1,17 @@
 
 <template>
-  
-    <app-header />
-    <router-view />
-    <user-msg />
 
-  
+  <app-header />
+  <black-screen :class="{'modal-open': checkIfScreen}" @click="closeAllBig" />
+  <router-view />
+  <user-msg />
+
+
 </template>
 <script>
 import appHeader from './components/header.cmp.vue'
 import userMsg from './components/user-msg.vue';
+import blackScreen from './components/black-screen.cmp.vue';
 
 
 
@@ -17,11 +19,24 @@ export default {
   components: {
     appHeader,
     userMsg,
+    blackScreen
 
-},
+  },
+  computed: {
+    checkIfScreen() {
+      const isSearchBig = this.$store.getters.getSearch
+      const isReserveModal = this.$store.getters.getModal   
+      if (isSearchBig || isReserveModal) return true
+      else return false
+    }
+  },
+  methods: {
+    closeAllBig() {
+      this.$store.commit({type: 'closeAllBig'})
+    }
+  },
   created() {
     this.$store.dispatch({ type: 'loadStays' })
-    console.log('Hi')
   },
 }
 </script>

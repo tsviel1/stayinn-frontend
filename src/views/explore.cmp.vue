@@ -1,6 +1,5 @@
 <template>
   <section class="explore-app container">
-    <div class="shadow" v-if="getIsSearchBig" @click="setSearchSmall"></div>
     <!-- <stay-filter /> -->
     <stay-list :stays="staysToDisplay" />
   </section>

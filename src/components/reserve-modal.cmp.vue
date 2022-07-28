@@ -9,7 +9,7 @@
               <p> This is a rare find.</p>
               <modal-svg/>
             </div>
-            <div class="rare-host">{{ stay.host.fullname }} place is usually booked.</div>
+            <div class="rare-host">{{ stay.host.fullname }}'s place is usually booked.</div>
           </div>
           <div class="trip-details">
             <div>
@@ -38,7 +38,7 @@
                   <p class="details type">{{ stay.propertyType }}</p>
                   <p class="details">{{ stay.name }}</p>
                 </div>
-                <p class="details reviews"><i class="fas fa-star"></i> {{ reviewsAvg }} <span>({{ stay.reviews.length
+                <p class="details reviews"><i class="fas fa-star"></i> {{ reviewsAvg }} <span> ({{ stay.reviews.length
                 }} reviews)</span></p>
               </div>
             </div>
@@ -91,12 +91,10 @@
        this.checkOut = checkOutDate
  
        if (checkOutDate) {
-         console.log(checkOutDate);
          const checkOutMonth = checkOutDate.toLocaleString('en-US', {
            month: 'short',
          })
          const checkOutDay = checkOutDate.getDate()
-         console.log(checkOutMonth);
          return `${checkOutMonth} ${checkOutDay}`
        }
  
@@ -110,8 +108,12 @@
      },
      onCloseModal() {
        this.$emit('onCloseModal')
+     },
+     reviewsAvg() {
+       return this.$store.getters.getCurrStayAvg
      }
    },
+ 
  
  };
  </script>
