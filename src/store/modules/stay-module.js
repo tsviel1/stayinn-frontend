@@ -57,6 +57,9 @@ export default {
     toggleSearchBig(state) {
       state.currSearchBig = !state.currSearchBig
     },
+    closeSearchBig(state) {
+      state.currSearchBig = false
+    },
     makeSearchSmall({currSearchBig}) {
       currSearchBig = false
     },

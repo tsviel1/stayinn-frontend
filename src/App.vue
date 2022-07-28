@@ -2,7 +2,7 @@
 <template>
 
   <app-header />
-  <black-screen :class="{'modal-open': checkIfScreen}" @click="closeAllBig" />
+  <black-screen :class="{ 'modal-open': checkIfScreen }" @click="closeAllBig" />
   <router-view />
   <user-msg />
 
@@ -25,18 +25,25 @@ export default {
   computed: {
     checkIfScreen() {
       const isSearchBig = this.$store.getters.getSearch
-      const isReserveModal = this.$store.getters.getModal   
+      const isReserveModal = this.$store.getters.getModal
       if (isSearchBig || isReserveModal) return true
       else return false
     }
   },
   methods: {
     closeAllBig() {
-      this.$store.commit({type: 'closeAllBig'})
+      this.$store.commit({ type: 'closeAllBig' })
+    },
+    handleScroll() {
+      this.$store.commit({ type: 'closeSearchBig' })
     }
   },
   created() {
     this.$store.dispatch({ type: 'loadStays' })
+    window.addEventListener("scroll", this.handleScroll)
+  },
+  destroyed() {
+    window.removeEventListener("scroll", this.handleScroll)
   },
 }
 </script>

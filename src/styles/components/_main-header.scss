@@ -1,4 +1,4 @@
-.header{
+.header {
     height: 81px;
     border-bottom: 1px solid $clr4;
     background-color: $clr3;
@@ -21,6 +21,17 @@
         top: 0;
         right: 0;
         left: 0;
+
+        .app-header {
+            max-width: 1600px;
+            margin: auto;
+            // padding: 0 80px;
+        }
+
+        &.container {
+            max-width:none;
+            // min-width: 1600px;
+        }
     }
     
     .app-header {
