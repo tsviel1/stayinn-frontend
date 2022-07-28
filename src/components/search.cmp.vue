@@ -1,5 +1,5 @@
 <template>
-  <section class="container" :class="{ 'search-cmp-big': getCurrSearch, 'search-cmp': !getCurrSearch }">
+  <section class="container" :class="{ 'search-cmp-big': getIsSearchBig, 'search-cmp': !getIsSearchBig }">
     <form @submit.prevent="searchTrip" class="search-container">
       <div class="search-first-section search-section">
         <label for="place" class="search-head">Where</label>
@@ -26,7 +26,7 @@
       <div class="search-last-section">
         <div class="search-section">
           <div class="search-head">Who</div>
-          <div id="guests" class="add-guests search-sub" @click="shouldShow = !shouldShow">Add guests</div>
+          <div id="guests" class="add-guests search-sub" @click="toggleModalWhoInSearch">{{ getTotalGuests }}</div>
         </div>
         <div class="search-btn-section" @click="searchTrip">
           <div class="search-btn">
@@ -36,7 +36,7 @@
       </div>
     </form>
     <div class="position-modal">
-      <guests-modal v-if="shouldShow" />
+      <guests-modal v-if="isModalWhoInSearch" />
     </div>
   </section>
 </template>
@@ -59,9 +59,8 @@ export default {
 
     };
   },
-  created(){},
   computed: {
-    getCurrSearch() {
+    getIsSearchBig() {
       return this.$store.getters.getSearch
     },
     getCurrChckInDate() {
@@ -72,7 +71,6 @@ export default {
       })
       const chckInDay = chckInDate.getDate()
       return `${chckInMonth} ${chckInDay}`
-
     },
     getCurrChckOutDate() {
       const chckOutDate = this.$store.getters.getCurrChckOutDate
@@ -82,6 +80,17 @@ export default {
       })
       const chckOutDay = chckOutDate.getDate()
       return `${chckOutMonth} ${chckOutDay}`
+    },
+    isModalWhoInSearch() {
+      return this.$store.getters.getModalWhoInSearch
+    },
+    getTotalGuests() {
+      const adults = this.$store.getters.getAdultsNum
+      const children = this.$store.getters.getChildrenNum
+      const sum = adults + children
+      if (!sum) return 'Add guests'
+      if (sum === 1) return '1 guest'
+      else return `${sum} guests`
     }
   },
   methods: {
@@ -90,9 +99,10 @@ export default {
       const chckOutDate = this.tripDates[1]
       this.$emit('setTripDates', chckInDate, chckOutDate)
     },
+    toggleModalWhoInSearch() {
+      this.$store.commit('toggleModalWhoInSearch')
+    },
     searchTrip() {
-      
-
       // filter stays
       this.$emit('setFilterBy', { ...this.filterBy })
       // save trip settings
@@ -100,7 +110,6 @@ export default {
       this.$emit('searchClicked')
       this.shouldShow = false
       this.$store.commit('toggleSearchBig')
-      console.log('trip is searched');
     },
   },
   components: {

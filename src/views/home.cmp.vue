@@ -1,6 +1,5 @@
 <template>
   <section class="home-page container">
-    <div class="shadow" v-if="getIsSearchBig" @click="setSearchSmall"></div>
     <categories-filter />
     <!-- <stay-filter /> -->
     <stay-list v-if="staysToDisplay" :stays="staysToDisplay" />

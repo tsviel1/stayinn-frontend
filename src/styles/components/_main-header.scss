@@ -4,6 +4,7 @@
     border-bottom: 1px solid $clr4;
     width: 100%;
     top: 0;
+    position: relative;
 
     &.home {
         position: fixed;
@@ -33,6 +34,9 @@
 
     .nav-container {
         display: flex;
+        align-items: center;
+
+
 
         a {
             color: $clr5;
@@ -40,8 +44,18 @@
             justify-content: space-between;
             font-size: rem(14px);
 
-            &:nth-child(2) {
-                padding-left: 30px;
+            .user-svg {
+                margin-left: 12px;
+
+            }
+            transition: box-shadow 0.2s ease;
+
+            &.btn-user {
+                margin-left: 8px;
+            }
+
+            &.btn-user:hover {
+                box-shadow: 0 2px 4px rgba(0,0,0,0.18);
 
             }
         }

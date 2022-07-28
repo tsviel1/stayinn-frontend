@@ -8,11 +8,19 @@
             </div>
             <mini-search-cmp v-if="currSearchFalse" @click="toggleSearchBig" />
             <nav class="nav-container">
-                <a>
-                    <router-link class="link" to="/stay">Explore</router-link>
+                <a class="btn-grey">
+                    <router-link class="link" to="/stay">Become a Host</router-link>
                 </a>
-                <a>
-                    <router-link class="link" to="/user/:userId">User</router-link>
+                <div class="btn-grey">
+                    <world-svg/>
+                </div>
+                <a class="btn-user">
+                    <div class="hamburger">
+                        <hamburger-svg/>
+                    </div>
+                    <div class="user-svg">
+                        <user-svg/>
+                    </div>
                 </a>
             </nav>
         </div>
@@ -30,6 +38,9 @@ import miniSearchCmp from "./mini-search.cmp.vue"
 import categoriesFilter from "./categories-filter.cmp.vue"
 import guestsModal from "./guests-modal.cmp.vue"
 import stayinnLogoSvg from "./svg/stayinn-logo-svg.vue"
+import worldSvg from "./svg/world-svg_i18.vue"
+import userSvg from "./svg/user-svg.vue"
+import hamburgerSvg from "./svg/hamburger-svg.vue"
 
 export default {
     template: `
@@ -98,7 +109,10 @@ export default {
         categoriesFilter,
         miniSearchCmp,
         guestsModal,
-        stayinnLogoSvg
+        stayinnLogoSvg,
+        worldSvg,
+        userSvg,
+        hamburgerSvg
     }
 };
 </script>

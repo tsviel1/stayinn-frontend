@@ -41,7 +41,7 @@ export default {
             state.trip.guests.adults = newAdultsNum
         },
         setChildren(state, {newChildrenNum}) {
-            state.trip.guests.children += newChildrenNum
+            state.trip.guests.children = newChildrenNum
         }
     },
     actions: {
