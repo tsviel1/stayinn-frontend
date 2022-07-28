@@ -9,19 +9,22 @@
                     <span class="reviews">{{ stay.reviews.length }} reviews</span>
                 </p>
             </div>
+
             <reserve-table :stay="stay" />
-            <reserve-btn @click="reserveTrip" />
+            <reserve-btn v-if="getIsDatesSelected" @click="reserveTrip" />
+            <check-avail-btn v-if="!getIsDatesSelected"/>
             <order-calc-section v-if="getIsDatesSelected" />
-            
+
         </div>
     </section>
-   
+
 </template>
 
 <script>
 import modalSvg from '../components/svg/reserve-modal-svg.vue'
 import reserveTable from './reserve-table.cmp.vue'
 import reserveBtn from './reserve-btn.cmp.vue'
+import checkAvailBtn from './check-avail-btn.cmp.vue'
 import orderCalcSection from './order-calc.cmp.vue'
 import { showSuccessMsg } from '../services/event-bus.service'
 
@@ -34,26 +37,29 @@ export default {
         reserveTable,
         reserveBtn,
         orderCalcSection,
-        modalSvg
+        modalSvg,
+        checkAvailBtn
     },
     data() {
         return {
-            isShow:false
+            isShow: false
         }
     },
     created() {
     },
     methods: {
         async reserveTrip() {
+            chckIn = this.$store.getters.getCurrChckInDate
+            adults = this.$store.getters.getCurrChckInDate
             this.$emit('onReserve')
         },
-      
+
     },
     computed: {
         reviewsAvg() {
             return this.$store.getters.getCurrStayAvg
         },
-       
+
         getIsDatesSelected() {
             const chckIn = this.$store.getters.getCurrChckInDate
             const chckOut = this.$store.getters.getCurrChckOutDate
