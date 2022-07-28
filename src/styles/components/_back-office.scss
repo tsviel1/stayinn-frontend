@@ -1,32 +1,51 @@
 .back-office {
-    .orders-list{
-        padding-top: 50px;
-        .order-preview{
-            justify-content: space-between;
-            margin: 20px 0;
-            .guest-details {
-                margin: 10px;
-                .guest-img {
-                    width: 50px;
-                    height: 50px;
-                    border-radius: 50%;
-                }
-                .guest-name {
-                    margin: 0;
-                    align-self: center;
-                    padding-left: 10px;
-                }
-            }
-            .sub-title {
-                color: $clr2;
-                .order-details {
-                    margin: 0 3px;
-                }
-            }
-            .buttons {
-                align-self: flex-end;
-            }
-        }
+  .orders-list {
+    padding-top: 50px;
 
+    .order-preview {
+      justify-content: space-between;
+      margin: 20px 0;
+      .preview-inner {
+        flex-direction: row;
+        .guest-details {
+          margin: 10px;
+          .guest-img {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+          }
+          .guest-details-inner {
+            flex-direction: column;
+            padding-left: 10px;
+            .guest-name {
+              margin: 0;
+              align-self: center;
+              // padding-left: 10px;
+              align-self: flex-start;
+            }
+          }
+        }
+      }
+      .sub-title {
+        color: $clr2;
+        display: flex;
+        align-content: end;
+        align-items: stretch;
+        .order-details {
+          margin: 0 3px;
+        }
+      }
+      .last-details {
+        width: 200px;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        overflow: hidden;
+        display: inline-block;
+        margin: 0;
+      }
+      .buttons {
+        align-self: flex-end;
+      }
     }
+  }
 }
