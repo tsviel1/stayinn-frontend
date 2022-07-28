@@ -25,7 +25,8 @@
             </div>
           </div>
           <div class="btn-div">
-            <button @click="onCloseModal" class="close-btn">Approve</button>
+            <button @click="onApproveOrder" class="approve-btn">Approve</button>
+            <button  @click="onCloseModal" class="close-btn" >Close</button>
           </div>
         </div>
         <div class="order-container">
@@ -103,9 +104,7 @@
      getGeusts() {
        const guests = this.$store.getters.getGuests
        this.currGuests = guests
-       console.log(guests);
        const guestsSum = guests.adults + guests.children
-       // console.log();
        return guestsSum
  
      },

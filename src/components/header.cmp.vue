@@ -1,7 +1,7 @@
 //:class="{active: isActive}"
 
 <template>
-    <div class="header">
+    <div :class="{header:currPageHome}">
         <div class="main-header" :class="{ 'main-layout': !currPageHome, home: currPageHome, container: currPageHome }">
             <div class="app-header">
                 <div class="logo" @click="backToHomePage">
@@ -13,7 +13,7 @@
                         <router-link class="link" to="/stay">Explore</router-link>
                     </a>
                     <a>
-                        <router-link class="link" to="/user/:userId">User</router-link>
+                        <router-link class="link" to="/login">User</router-link>
                     </a>
                 </nav>
             </div>

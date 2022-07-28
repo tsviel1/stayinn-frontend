@@ -1,21 +1,44 @@
 import { storageService } from "./storage-service.js";
+import { httpService } from './http.service'
+import { store } from '../store/store'
+import { socketService, SOCKET_EVENT_USER_UPDATED, SOCKET_EMIT_USER_WATCH } from './socket.service'
+
 
 const KEY = 'loggedinUser'
-
-
-
-function signup(signupInfo) {
-    return storageService.post(KEY, signupInfo)
+export const userService = {
+    login,
+    logout,
+    signup,
+    getLoggedInUser,
+    saveLocalUser,
 }
 
-function login(userId) {
-    return storageService.get(KEY, userId)
+
+async function signup(userCred) {
+    const user = await httpService.post('auth/signup', userCred)
+    socketService.login(user._id)
+    return saveLocalUser(user)
 }
 
-function logout(userId) {
-    return storageService.remove(KEY, userId)
+async function login(userCred) {
+    const user = await httpService.post('auth/login', userCred)
+    if (user) {
+        socketService.login(user._id)
+        return saveLocalUser(user)
+    }
+}
+
+async function logout() {
+    sessionStorage.removeItem(KEY)
+    socketService.logout()
+    return await httpService.post('auth/logout')
 }
 
 function getLoggedInUser() {
-    return storageService.query(KEY)
+    return JSON.parse(sessionStorage.getItem(KEY))
+
+}
+function saveLocalUser(user) {
+    sessionStorage.setItem(KEY, JSON.stringify(user))
+    return user
 }

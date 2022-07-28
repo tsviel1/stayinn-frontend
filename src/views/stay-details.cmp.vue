@@ -22,7 +22,7 @@
       </div>
       <div class="second-section">
         <stay-reserve :stay="stay" @onReserve="openModal" />
-        <modal-cmp v-if="isShow" :stay="stay" @onCloseModal="closeModal" />
+        <modal-cmp v-if="isShow" :stay="stay" @onApproveOrder="approveOrder" @onCloseModal="closeModal" />
       </div>
     </div>
     <review-list :stay="stay" />
@@ -82,6 +82,9 @@ export default {
     closeModal() {
       return this.isShow=false
     },
+    approveOrder(){
+     this.$store.dispatch({ type: 'saveOrder' })
+    }
 
 
   },
