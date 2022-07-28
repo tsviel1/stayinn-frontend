@@ -15,10 +15,19 @@
                     end-placeholder="End date" />
             </label>
             <div class="guest-input">
-                <label for="guests-number">guests</label>
-                <div @click="guestsModalShown = !guestsModalShown" id="guests-number" class="guests-number">
-                        {{getTotalGuests}}
+                <div class="adding-guests" @click="guestsModalShown = !guestsModalShown">
+                    <div class="right-side">
+                        <label for="guests-number">guests</label>
+                        <div id="guests-number" class="guests-number">
+                            {{ getTotalGuests }}
+                        </div>
+                    </div>
+                    <div class="arrow-down">
+                        <arrow-down-svg />
+                    </div>
                 </div>
+
+
                 <div class="guests-modal-reserve" v-if="guestsModalShown">
                     <div class="guests-type">
                         <div class="guests-type-view">
@@ -66,6 +75,7 @@
 </template>
 
 <script>
+import arrowDownSvg from './svg/arrow-down-svg.vue'
 export default {
     name: 'reserve-table',
     props: {
@@ -136,6 +146,9 @@ export default {
         const chckOutDate = this.$store.getters.getCurrChckOutDate
         this.tripDates = [chckInDate, chckOutDate]
     },
+    components: {
+        arrowDownSvg
+    }
 
 }
 
