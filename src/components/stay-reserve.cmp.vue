@@ -49,8 +49,6 @@ export default {
     },
     methods: {
         async reserveTrip() {
-            chckIn = this.$store.getters.getCurrChckInDate
-            adults = this.$store.getters.getCurrChckInDate
             this.$emit('onReserve')
         },
 
