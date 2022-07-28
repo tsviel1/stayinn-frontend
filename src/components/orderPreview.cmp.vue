@@ -1,23 +1,29 @@
 <template>
-    <section class="order-preview flex">
-        <div>
+    <section class="order-preview  flex">
+        <div class="preview-inner flex">
             <div class="guest-details flex">
                 <img class="guest-img" src="https://xsgames.co/randomusers/assets/avatars/female/1.jpg" />
-                <h3 class="guest-name">User name</h3>
-            </div>
-            <div class="sub-title">
-                <span class="order-details">{{ order.guests.adults + order.guests.children }} guests <span> |
-                    </span></span>
-                <span class="order-details"> {{ formatCheckin }} <span> - </span></span>
+                <div class="guest-details-inner flex">
+                    <h3 class="guest-name">User name</h3>
+                    <h3 class="order-created-at">Created at: {{ formatCreatedAt }}</h3>
+                    <div class="sub-title">
+                        <span class="order-details">{{ order.guests.adults + order.guests.children }} guests <span>
+                                |
+                            </span></span>
+                        <span class="order-details"> {{ formatCheckin }} <span> - </span></span>
 
-                <span class="order-details">{{ formatCheckout }} <span> | </span></span>
-                <span class="order-details">{{ order.stay.name }} </span>
+                        <span class="order-details">{{ formatCheckout }} <span> | </span></span>
+                        <span class="order-details "><p class="last-details">{{ order.stay.name }} </p></span>
+                    </div>
+                </div>
+            </div>
+            <div class="buttons">
+                <el-button type="success" plain>Approve</el-button>
+                <el-button type="danger" plain>Reject</el-button>
             </div>
         </div>
-        <div class="buttons">
-            <el-button type="success" plain>Approve</el-button>
-            <el-button type="danger" plain>Reject</el-button>
-        </div>
+
+
     </section>
 </template>
 
@@ -61,6 +67,11 @@ export default {
             })
             const checkOutDay = checkOutDate.getDate()
             return `${checkOutMonth} ${checkOutDay}`
+        },
+        formatCreatedAt() {
+            const date = new Date(this.order.createdAt)
+            const formatedDate = date.toLocaleDateString('en-us', { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' })
+            return formatedDate
         }
     },
     unmounted() { },
