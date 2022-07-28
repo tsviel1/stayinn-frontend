@@ -14,16 +14,19 @@
                     @change="setTripDates" range-separator="To" start-placeholder="Start date"
                     end-placeholder="End date" />
             </label>
-            <div class="guest-input" @click="guestsModalShown = !guestsModalShown">
-                <div class="adding-guests">
-                    <label for="guests-number">guests</label>
-                    <div id="guests-number" class="guests-number">
-                        {{ getTotalGuests }}
+            <div class="guest-input">
+                <div class="adding-guests" @click="guestsModalShown = !guestsModalShown">
+                    <div class="right-side">
+                        <label for="guests-number">guests</label>
+                        <div id="guests-number" class="guests-number">
+                            {{ getTotalGuests }}
+                        </div>
+                    </div>
+                    <div class="arrow-down">
+                        <arrow-down-svg />
                     </div>
                 </div>
-                <div class="arrow-down">
-                    <arrow-down-svg/>
-                </div>
+
 
                 <div class="guests-modal-reserve" v-if="guestsModalShown">
                     <div class="guests-type">
