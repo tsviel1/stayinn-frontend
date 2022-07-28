@@ -15,11 +15,17 @@ export default {
     },
   },
   actions: {
-    async loadOrders({ commit, state }) {
+    async loadOrders({ commit, state, rootState }) {
         try {
-          const orders = await orderService.query()
+          console.log('Hi')
+          console.log(rootState.userStore.loggedinUser)
+          const currUser = rootState.userStore.loggedinUser
+          console.log('order module', currUser)
+          const orders = await orderService.query(currUser)
           commit({type: 'setOrders', orders})
-        } catch (err) {}
+        } catch (err) {
+          console.log(err)
+        }
       },
       async saveOrder({ commit, state, rootState }) {
         try {

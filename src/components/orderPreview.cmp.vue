@@ -1,14 +1,14 @@
 <template>
-    <section class="order-preview  flex">
+    <section v-if="user" class="order-preview  flex">
         <div class="preview-inner flex">
             <div class="guest-details flex">
-                <img class="guest-img" src="https://xsgames.co/randomusers/assets/avatars/female/1.jpg" />
+                <user-img class="guest-img" :user="user" />
                 <div class="guest-details-inner flex">
                     <h3 class="guest-name">{{ user.fullname }}</h3>
                     <h3 class="order-created-at">Created at: {{ formatCreatedAt }}</h3>
                     <div class="sub-title">
                         <span class="order-details">{{ order.guests.adults + order.guests.children }} guests <span>
-                                |
+                            |
                             </span></span>
                         <span class="order-details"> {{ formatCheckin }} <span> - </span></span>
 
@@ -28,15 +28,20 @@
 </template>
 
 <script>
+import userImg from './user-img.cmp.vue'
 export default {
     name: 'order-preview',
     props: {
         order: Object,
     },
+    components: {
+        userImg
+    },
     data() {
         return {}
     },
-    created() { },
+    created() {
+    },
     methods: {},
     computed: {
         formatCheckin() {
@@ -74,6 +79,7 @@ export default {
             return formatedDate
         },
         user() {
+            console.log(this.$store.getters.loggedinUser)
             return this.$store.getters.loggedinUser
         }
     },
