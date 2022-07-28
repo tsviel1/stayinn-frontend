@@ -5,6 +5,8 @@ export default {
     currStay: null,
     currFilterBy: null,
     currSearchBig: false,
+    currModal: false, // reservation modal (final)
+    currModalWhoInSearch: false,
     tags: ["beach", "design", "desert", "amazing-views", "countryside", "bed-breakfast", "cabins", "lake", "amazing-pools", "iconic-cities", "earth-homes", "omg"]
   },
   getters: {
@@ -28,12 +30,18 @@ export default {
     getSearch({ currSearchBig }) {
       return currSearchBig
     },
+    getModal({currModal}) {
+      return currModal
+    },
+    getModalWhoInSearch({currModalWhoInSearch}) {
+      return currModalWhoInSearch
+    },
     getCategories({ tags }) {
       return tags
     },
   },
   mutations: {
-    setstays(state, { stays }) {
+    setStays(state, { stays }) {
       state.stays = stays
       // console.log(state.stays)
     },
@@ -51,14 +59,25 @@ export default {
     },
     makeSearchSmall({currSearchBig}) {
       currSearchBig = false
-    }
+    },
+    closeAllBig(state) {
+      state.currSearchBig = false
+      state.currModal = false
+      state.currModalWhoInSearch = false
+    },
+    toggleModal(state) {
+      state.currModal = !state.currModal
+    },
+    toggleModalWhoInSearch(state) {
+      state.currModalWhoInSearch = !state.currModalWhoInSearch
+    },
   },
   actions: {
     async loadStays({ commit, state }) {
       try {
         console.log(state.currFilterBy)
         const stays = await stayService.query(state.currFilterBy)
-        commit({ type: 'setstays', stays })
+        commit({ type: 'setStays', stays })
       } catch (err) {
         console.log('stayStore: Error in loadstays', err)
         throw err

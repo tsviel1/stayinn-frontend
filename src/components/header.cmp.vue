@@ -1,36 +1,42 @@
-//:class="{active: isActive}"
-
 <template>
-    <header class="main-header" :class="{'main-layout':!currPageHome, home:currPageHome, container:currPageHome}">
-        <div class="app-header">
-            <div class="logo" @click="backToHomePage">
-                <stayinn-logo-svg /><span>stayinn</span>
+    <div :class="{ header: currPageHome }">
+        <header class="main-header" :class="{ 'main-layout': !currPageHome, home: currPageHome, container: currPageHome }">
+            <div class="app-header">
+                <div class="logo" @click="backToHomePage">
+                    <stayinn-logo-svg /><span>stayinn</span>
+                </div>
+                <mini-search-cmp v-if="currSearchFalse" @click="toggleSearchBig" />
+                <nav class="nav-container">
+                    <a class="btn-grey">
+                        <router-link class="link" to="/stay">Become a Host</router-link>
+                    </a>
+                    <div class="btn-grey">
+                        <world-svg />
+                    </div>
+                    <a class="btn-user">
+                        <div class="hamburger">
+                            <hamburger-svg />
+                        </div>
+                        <div class="user-svg">
+                            <user-svg />
+                        </div>
+                    </a>
+                </nav>
             </div>
-            <mini-search-cmp v-if="currSearchFalse" @click="toggleSearchBig" />
-            <nav class="nav-container">
-                <a>
-                    <router-link class="link" to="/stay">Explore</router-link>
-                </a>
-                <a>
-                    <router-link class="link" to="/user/:userId">User</router-link>
-                </a>
-            </nav>
-        </div>
-        <search-cmp @setFilterBy="setFilterBy" @setTripDates="setTripDates" :currFilterBy="getFilterBy"
-            @searchClicked="toggleIsActive" @setTripCity="setTripCity" />
-
-    </header>
-
-
+            <search-cmp @setFilterBy="setFilterBy" @setTripDates="setTripDates" :currFilterBy="getFilterBy"
+                @searchClicked="toggleIsActive" @setTripCity="setTripCity" />
+        </header>
+    </div>
 </template>
-
 <script>
 import searchCmp from "./search.cmp.vue"
 import miniSearchCmp from "./mini-search.cmp.vue"
 import categoriesFilter from "./categories-filter.cmp.vue"
 import guestsModal from "./guests-modal.cmp.vue"
 import stayinnLogoSvg from "./svg/stayinn-logo-svg.vue"
-
+import worldSvg from "./svg/world-svg_i18.vue"
+import userSvg from "./svg/user-svg.vue"
+import hamburgerSvg from "./svg/hamburger-svg.vue"
 export default {
     template: `
 `,
@@ -62,7 +68,7 @@ export default {
             })
         },
         backToHomePage() {
-            this.$router.push(`/`)
+            this.$router.push('/')
         },
         toggleIsActive() {
             this.isActive = !this.isActive
@@ -88,7 +94,6 @@ export default {
                 if (this.$route.params.id) this.currPageHome = false
                 else this.currPageHome = true
                 console.log('this.currPageHome', this.currPageHome)
-                
             },
             immediate: true,
         },
@@ -98,7 +103,10 @@ export default {
         categoriesFilter,
         miniSearchCmp,
         guestsModal,
-        stayinnLogoSvg
+        stayinnLogoSvg,
+        worldSvg,
+        userSvg,
+        hamburgerSvg
     }
 };
 </script>

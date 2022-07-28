@@ -14,9 +14,11 @@
                     @change="setTripDates" range-separator="To" start-placeholder="Start date"
                     end-placeholder="End date" />
             </label>
-            <div class="guest-input" >
+            <div class="guest-input">
                 <label for="guests-number">guests</label>
-                <div @click="guestsModalShown = !guestsModalShown" id="guests-number" class="guests-number">{{ guests.adults }}</div>
+                <div @click="guestsModalShown = !guestsModalShown" id="guests-number" class="guests-number">
+                        {{getTotalGuests}}
+                </div>
                 <div class="guests-modal-reserve" v-if="guestsModalShown">
                     <div class="guests-type">
                         <div class="guests-type-view">
@@ -52,7 +54,11 @@
                                 @click="setChildren(1)">+</button>
                         </div>
                     </div>
+                    <div class="close">
+                        <div class="close-btn" @click="guestsModalShown = !guestsModalShown">Close</div>
+                    </div>
                 </div>
+
 
             </div>
         </div>
@@ -86,8 +92,13 @@ export default {
             this.$store.commit({ type: 'setAdults', newAdultsNum })
         },
         setChildren(diff) {
+            console.log('diff', diff)
             const childrenNum = this.getChildrenNum
+            console.log('childrenNum', childrenNum)
+
             const newChildrenNum = childrenNum + diff
+            console.log('newChildrenNum', newChildrenNum)
+
             this.$store.commit({ type: 'setChildren', newChildrenNum })
         }
     },
@@ -110,6 +121,14 @@ export default {
         },
         getChildrenNum() {
             return this.$store.getters.getChildrenNum
+        },
+        getTotalGuests() {
+            const adults = this.$store.getters.getAdultsNum
+            const children = this.$store.getters.getChildrenNum
+            const sum = adults + children
+            if (!sum) return 'Add guests'
+            if (sum === 1) return '1 guest'
+            else return `${sum} guests`
         }
     },
     created() {

@@ -1,0 +1,76 @@
+.login-signup-container {
+    font-family: airbnb-book;
+
+    .login-header {
+        display: flex;
+        justify-content: center;
+        text-align: center;
+
+        h2 {
+            margin: 0;
+        }
+    }
+
+    .login-section {
+        border: 1px solid $clr6;
+        border-radius: 8px;
+        margin: 10px 150px;
+        padding: 10px 30px 30px 30px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    .input{
+        width: 100%;
+        padding: 10px;
+        font-size: 1rem;
+        border-radius: 8px;
+        border: 1px solid $clr5;
+
+    }
+
+    .input:focus {
+        outline: none;
+    }
+
+
+
+    .signup-btn {
+        border-radius: 8px;
+        margin-top: 20px;
+        margin-bottom: 20px;
+        border: none;
+        cursor: pointer;
+        padding: 10px 100px;
+        font-size: 1em;
+        color: $clr3;
+        background-image: radial-gradient(circle at calc((0 + var(--positionX, 0)) * 10%) calc((0 + var(--positionY, 0)) * 5%),
+                rgb(241, 37, 75) 0%,
+                rgb(230, 30, 77) 27.5%,
+                rgb(227, 28, 95) 40%,
+                rgb(215, 4, 102) 57.5%,
+                rgb(189, 30, 89) 75%,
+                rgb(189, 30, 89) 100%);
+
+    }
+    a{
+        cursor: pointer;
+    }
+    .signup-section{
+        border: 1px solid $clr6;
+        border-radius: 8px;
+        margin: 10px 150px;
+        padding: 10px 30px 30px 30px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        .signup-header{
+    
+        }
+        .input{
+            margin-bottom: 15px;
+        }
+    }
+}

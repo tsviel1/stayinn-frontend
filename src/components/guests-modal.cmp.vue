@@ -42,7 +42,6 @@ export default {
         return {
             childrenCounter: 0,
             adultsCounter: 0,
-            currSum:null
         }
     },
     computed: {
@@ -58,21 +57,16 @@ export default {
             const adultsNum = this.getAdultsNum
             const newAdultsNum = adultsNum + diff
             this.$store.commit({ type: 'setAdults', newAdultsNum })
-            // this.sumOfGuests(0,newAdultsNum)
         },
         setChildren(diff) {
             const childrenNum = this.getChildrenNum
             const newChildrenNum = childrenNum + diff
+            console.log(diff);
+            console.log(childrenNum);
             this.$store.commit({ type: 'setChildren', newChildrenNum })
-            // this.sumOfGuests(0,newChildrenNum)
+            
         },
-        // sumOfGuests(adults, children ) {
-        //     const sum = adults + children
-        //     this.currSum=sum
-        //     console.log(currSum);
-        //     // this.$emit(onSetGuests,sum)
-        // }
-    },
+    }
 
 }
 </script>

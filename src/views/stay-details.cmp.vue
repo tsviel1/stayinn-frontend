@@ -22,7 +22,7 @@
       </div>
       <div class="second-section">
         <stay-reserve :stay="stay" @onReserve="openModal" />
-        <modal-cmp v-if="isShow" :stay="stay" @onCloseModal="closeModal" />
+        <modal-cmp v-if="isShow" :stay="stay" @onApproveOrder="approveOrder" @onCloseModal="closeModal" />
       </div>
     </div>
     <review-list :stay="stay" />
@@ -58,7 +58,6 @@ export default {
   },
   data() {
     return {
-      isShow: false,
       stayId: this.$route.params.id,
 
       // longText: this.stay.summary > 100,
@@ -76,12 +75,14 @@ export default {
     },
 
     openModal() {
-      console.log('hi');
-      return this.isShow = true
+      this.$store.commit('toggleModal')
     },
     closeModal() {
-      return this.isShow=false
+      this.$store.commit('toggleModal')
     },
+    approveOrder(){
+     this.$store.dispatch({ type: 'saveOrder' })
+    }
 
 
   },
@@ -95,7 +96,9 @@ export default {
     getReviewsAmount() {
       return this.$store.getters.getReviewsLength
     },
-
+    isModalShown() {
+      return this.$store.getters.getModal
+    }
   },
   unmounted() {
 

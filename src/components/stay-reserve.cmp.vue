@@ -46,8 +46,6 @@ export default {
     methods: {
         async reserveTrip() {
             this.$emit('onReserve')
-            console.log('trip reserved')
-            await this.$store.dispatch({ type: 'saveOrder' })
         },
       
     },
