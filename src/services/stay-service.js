@@ -112,7 +112,7 @@ function addReview(stayId, review) {
 export const stayService = {
   query,
   getById,
-  // save,
+  save,
   removeReview,
   addReview,
 }

@@ -56,6 +56,7 @@ export default {
       }
     },
     async doSignup() {
+      console.log('submitted signup')
       await this.$store.dispatch({ type: 'signup', userCred: this.signupCred })
       this.$router.push('/')
 

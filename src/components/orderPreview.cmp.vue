@@ -4,7 +4,7 @@
             <div class="guest-details flex">
                 <img class="guest-img" src="https://xsgames.co/randomusers/assets/avatars/female/1.jpg" />
                 <div class="guest-details-inner flex">
-                    <h3 class="guest-name">User name</h3>
+                    <h3 class="guest-name">{{ user.fullname }}</h3>
                     <h3 class="order-created-at">Created at: {{ formatCreatedAt }}</h3>
                     <div class="sub-title">
                         <span class="order-details">{{ order.guests.adults + order.guests.children }} guests <span>
@@ -72,6 +72,9 @@ export default {
             const date = new Date(this.order.createdAt)
             const formatedDate = date.toLocaleDateString('en-us', { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' })
             return formatedDate
+        },
+        user() {
+            return this.$store.getters.loggedinUser
         }
     },
     unmounted() { },
