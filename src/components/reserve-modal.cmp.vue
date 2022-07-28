@@ -88,7 +88,11 @@
          console.log(checkInMonth);
          return `${checkInMonth} ${checkInDay}`
        }
- 
+
+     },
+     onApproveOrder() {
+      this.$emit('onApproveOrder')
+      this.$store.dispatch({type: 'saveOrder'})
      },
      endDate() {
        const checkOutDate = this.$store.getters.getCurrChckOutDate

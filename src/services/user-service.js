@@ -15,6 +15,7 @@ export const userService = {
 
 async function signup(userCred) {
     const user = await httpService.post('auth/signup', userCred)
+    console.log(user)
     socketService.login(user._id)
     return saveLocalUser(user)
 }
