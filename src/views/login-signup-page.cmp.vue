@@ -28,12 +28,17 @@
         <button class="signup-btn">Sign up</button>
       </div>
     </form>
+    <user-modal />
   </section>
 </template>
  <script>
+import userModal from '../components/user-modal.cmp.vue';
 export default {
+
   name: 'login-signup',
-  components: {},
+  components: {
+    userModal,
+  },
   data() {
     return {
       isUser: true,
