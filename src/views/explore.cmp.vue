@@ -2,6 +2,7 @@
   <section class="explore-app container">
     <!-- <stay-filter /> -->
     <stay-list :stays="staysToDisplay" />
+  <div></div>
   </section>
   <app-footer />
 </template>

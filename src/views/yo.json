@@ -1,0 +1,226 @@
+{"name": "Entire rental unit hosted by Tal",
+    "summary": "Stay in this superb, contemporary and brand-new penthouse on Shenkin Street in the heart of Tel Aviv and enjoy resplendent views of the city from its expansive balcony.\n You'll have all the amenities available in luxury hotels, plus customer support around the clock and a private concierge to help you plan your visit You are minutes on foot from Carmel Market and Rothschild Boulevard.\n Most of the cultural landmarks of central Tel Aviv are within easy reach too",
+    "interaction": "Hi Nice to meet you!",
+    "houseRules": "Please no shoes when you are in the apartment. the floors scuff easily and after all it is NYC.  Also, please take trash out when you leave and place towels on hooks to the left of the closet.",
+    "propertyType": "Rental Unit",
+    "roomType": "Entire home/apt",
+    "bedType": "Real Bed",
+    "cancellationPolicy": "flexible",
+    "capacity": 4,
+    "bedrooms": 2,
+    "beds": 2,
+    "numOfReviews": 19,
+    "amenities": [
+      "Wifi",
+      "Paid parking on premises",
+      "Dishes and silverware",
+      "Shampoo",
+      "Bathtub",
+      "TV",
+      "TV",
+      "Paid parking on premises",
+      "Dishes and silverware"
+    ],
+    "host": {
+      "_id": "62e2f8e95537ae0500289daf",
+      "fullname": "Tal ifrah",
+      "location": "Tel Aviv, Tel Aviv Jaffa, Israel",
+      "about": "I love a good adventure.",
+      "responseTime": "within an hour",
+      "isSuperhost": true,
+      "imgUrl": "https://xsgames.co/randomusers/assets/avatars/male/53.jpg"
+    },
+    "address": {
+      "street": "Tel Aviv, Tel Aviv District, Israel",
+      "country": "Israel",
+      "location": {
+        "lat": 32.0745096466 ,
+        "lan": 34.7703692619 
+      },
+      "countryCode": "IL",
+      "city": "Tel Aviv"
+    },
+    "bathrooms": 1,
+    "price": 200,
+    "securityDeposit": 0,
+    "cleaningFee": 125,
+    "extraPeople": 0,
+    "reviewScores": {
+      "accuracy": 10,
+      "cleanliness": 10,
+      "checkin": 10,
+      "communication": 10,
+      "location": 10,
+      "value": 10,
+      "rating": 100
+    },
+    "reviews": [
+      {
+        "at": "2016-10-03T04:00:00.000Z",
+        "by": {
+          "_id": "622f3403e36c59e6164fb27a",
+          "fullname": "Jean-Marie",
+          "imgUrl": "https://xsgames.co/randomusers/assets/avatars/male/0.jpg"
+        },
+        "txt": "top looking. Book this now. You won’t be disappointed. Beautiful apartment. Sparkling clean. Love the neighborhood. So much to see and do. I would definitely stay here again. \n We are a family of 6 with teenage girls. The space was more than comfortable. The host was communicative throughout the booking process. We had no reason to contact them throughout our stay as the apartment was well equipped and all our needs were more than satisfied. Highly recommend!"
+      },
+      {
+        "at": "2016-10-10T04:00:00.000Z",
+        "by": {
+          "_id": "622f3403e36c59e6164fb0b4",
+          "fullname": "Saundra",
+          "imgUrl": "https://xsgames.co/randomusers/assets/avatars/female/1.jpg"
+        },
+        "txt": "Everything was great! Nice clean apartment, bedrooms were both a good size. Host was generous and offered us toiletries throughout the place, hope to stay there again "
+      },
+      {
+        "at": "2017-01-01T05:00:00.000Z",
+        "by": {
+          "_id": "622f3406e36c59e6164fbc32",
+          "fullname": "Manuel",
+          "imgUrl": "https://xsgames.co/randomusers/assets/avatars/male/22.jpg"
+        },
+        "txt": "Very clean, open, airy and spacious. Luxurious accommodations within walking distance to great markets, shops, coffee, and the beach! Relaxing on the rooftop balcony was a delight. "
+      },
+      {
+        "at": "2017-09-11T04:00:00.000Z",
+        "by": {
+          "_id": "622f3406e36c59e6164fb9f3",
+          "fullname": "Sindre",
+          "imgUrl": "https://xsgames.co/randomusers/assets/avatars/female/36.jpg"
+        },
+        "txt": "Tal was very welcoming, accesible and flexible. She made our stay a pleasant experience."
+      },
+      {
+        "at": "2017-09-19T04:00:00.000Z",
+        "by": {
+          "_id": "622f3407e36c59e6164fbf57",
+          "fullname": "Roger",
+          "imgUrl": "https://xsgames.co/randomusers/assets/avatars/male/46.jpg"
+        },
+        "txt": "Tal's place was clean and beautifully decorated. We had the apartment to ourselves for the three days we were in Tel Aviv, and the whole experience was perfect. It's located within a quick walking distance of a 24-hour CVS, plenty of restaurants, a Metro Station, local markets and parks, and we always felt safe walking around together, even late at night. She's a very pleasant host and was quick to communicate with us whenever we had questions during our stay. I would absolutely book here again! Thank you, Tal!"
+      },
+      {
+        "at": "2017-10-30T04:00:00.000Z",
+        "by": {
+          "_id": "622f3406e36c59e6164fbba5",
+          "fullname": "Eliza",
+          "imgUrl": "https://xsgames.co/randomusers/assets/avatars/female/96.jpg"
+        },
+        "txt": "Great location. Everything was lovely and as described. Tal was a super accommodating and friendly host."
+      },
+      {
+        "at": "2017-12-04T05:00:00.000Z",
+        "by": {
+          "_id": "622f3406e36c59e6164fba3b",
+          "fullname": "Ant",
+          "imgUrl": "https://xsgames.co/randomusers/assets/avatars/male/6.jpg"
+        },
+        "txt": "We had a wonderful stay, again! \n Perfect location, perfect appartement (with the sunset on the terrace every night!) and ultra responsive management!."
+      },
+      {
+        "at": "2018-07-07T04:00:00.000Z",
+        "by": {
+          "_id": "622f3407e36c59e6164fc05b",
+          "fullname": "James",
+          "imgUrl": "https://xsgames.co/randomusers/assets/avatars/female/7.jpg"
+        },
+        "txt": "Amazing and quirky place. Excellent location and an amazing host."
+      },
+     
+      {
+        "at": "2018-08-16T04:00:00.000Z",
+        "by": {
+          "_id": "622f3407e36c59e6164fbe91",
+          "fullname": "Sophie",
+          "imgUrl": "https://xsgames.co/randomusers/assets/avatars/female/32.jpg"
+        },
+        "txt": "The host canceled this reservation 5 days before arrival. This is an automated posting."
+      },
+      
+      {
+        "at": "2018-09-17T04:00:00.000Z",
+        "by": {
+          "_id": "622f3402e36c59e6164faec8",
+          "fullname": "Logan",
+          "imgUrl": "https://xsgames.co/randomusers/assets/avatars/female/65.jpg"
+        },
+        "txt": "Tal's space was a lovely spot to visit in NY and was much better than expected. There were many places nearby to eat, shop and explore. Access to the subway was perfect. Could not have asked for better accommodations. Would definitely stay here again!"
+      },
+      {
+        "at": "2018-09-23T04:00:00.000Z",
+        "by": {
+          "_id": "622f3406e36c59e6164fba62",
+          "fullname": "Mark",
+          "imgUrl": "https://xsgames.co/randomusers/assets/avatars/male/77.jpg"
+        },
+        "txt": "Great location! Plenty to do around the apartment.  Bars, restaurants (check out Ippudo for ramen, or Ray's for a 24h slice after a long night out!) and subway access. Check in was a breeze and Tal was very accommodating and available for questions the few times we messaged her. Also, the apartment is wonderfully decorated (pics don't do it justice!). Highly recommend!"
+      },
+      {
+        "at": "2018-10-14T04:00:00.000Z",
+        "by": {
+          "_id": "622f3408e36c59e6164fc083",
+          "fullname": "Lisi",
+          "imgUrl": "https://xsgames.co/randomusers/assets/avatars/female/3.jpg"
+        },
+        "txt": "Perfect Place to Star in TLV!Many Young People!"
+      },
+      {
+        "at": "2018-10-21T04:00:00.000Z",
+        "by": {
+          "_id": "622f3402e36c59e6164fad64",
+          "fullname": "Mallory",
+          "imgUrl": "https://xsgames.co/randomusers/assets/avatars/male/14.jpg"
+        },
+        "txt": "Looking to adventure in Tel Aviv City? This is a good home base.  Local to several culture experiences of NYC.  Tal's space is very homey and decorated with vintage pieces and art. Would love to stay again for future trips I'll be making to NYC."
+      },
+      {
+        "at": "2018-10-28T04:00:00.000Z",
+        "by": {
+          "_id": "622f3404e36c59e6164fb354",
+          "fullname": "Tatiana",
+          "imgUrl": "https://xsgames.co/randomusers/assets/avatars/female/15.jpg"
+        },
+        "txt": "You expect all what Tal offers at his place. Lovely clean apartment. Definitely coming back to it ❤️"
+      },
+      {
+        "at": "2018-11-23T05:00:00.000Z",
+        "by": {
+          "_id": "622f3402e36c59e6164faccc",
+          "fullname": "思言",
+          "imgUrl": "https://xsgames.co/randomusers/assets/avatars/male/16.jpg"
+        },
+        "txt": "Perfect location!! Lots of nice Japanese restaurants and bubble tea downstairs. Real room decorating is better than photos. Cozy and romantic little apartment. Tal is nice. Good place to live in east village(๑˙ｰ˙๑)"
+      },
+      {
+        "at": "2019-01-13T05:00:00.000Z",
+        "by": {
+          "_id": "622f3402e36c59e6164fac9a",
+          "fullname": "Jacquii",
+          "imgUrl": "https://xsgames.co/randomusers/assets/avatars/female/17.jpg"
+        },
+        "txt": "Tal's place is wonderful! The apartment is cozy and comfortable, but oozes character and a great vibe. \nThe location is fantastic for exploring different delicious cuisines, and quirky bars. \nTal was quick to communicate and flexible with our check-in time. \nTal's place is an awesome base for exploring the lower east side, and NYC generally. Would highly recommend!"
+      },
+      {
+        "at": "2019-02-16T05:00:00.000Z",
+        "by": {
+          "_id": "622f3406e36c59e6164fbc0a",
+          "fullname": "陳",
+          "imgUrl": "https://xsgames.co/randomusers/assets/avatars/male/18.jpg"
+        },
+        "txt": "Definitely a must-stay place for ppl who want to enjoy the city in NY style. The neighborhood is great and close to metro. Tal is super lovely and always in contact. The place is gorgeous and laidback. Will come back again!"
+      }
+    ],
+    "_id": "622f337a75c7d36e498aab1b",
+    "imgUrls": [
+      "171.jpeg",
+      "172.jpeg",
+      "173.jpeg",
+      "174.jpeg",
+      "175.jpeg"
+    ],
+    "tags": [
+      "beach",
+      "bed-breakfast",
+      "amazing-views"
+    ]}

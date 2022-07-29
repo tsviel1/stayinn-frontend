@@ -5,11 +5,13 @@
 
 .stay-list {
     padding-top: 60px;
+    position: static;
 }
 
 .card-layout {
     width: 100%;
     height: 100%;
+    // min-height: 0px;
     // display: grid;
     // gap: 30px;
     // padding: 0;
@@ -18,17 +20,20 @@
     // grid-auto-rows: 1fr;
     //  row-gap: 40px;
     // padding-top: 1rem;
-    //  padding-bottom: 250px
+    //  padding-bottom: 250px;
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
     // grid-template-rows: re;
     column-gap: 1.5em;
     row-gap: 2.5em;
     padding: 0;
-
+    padding-bottom: 70px;
+    margin: 0;
+    
 }
 
 li.card-container {
+    max-height: 100%;
     position: relative;
     width: 100%;
     height: 100%;
@@ -38,7 +43,7 @@ li.card-container {
     background-color: $clr3;
     font-size: 15px;
     line-height: 1.125rem;
-
+    
     .el-carousel {
         // height: 50%;
         overflow: hidden;
@@ -48,15 +53,15 @@ li.card-container {
             aspect-ratio: 1/1;
             width: 100%;
             height: 100%;
-
-
+            
+            
         }
-
+        
         ul.el-carousel__indicators {
             margin-bottom: 10px;
-
+            
         }
-
+        
         .el-carousel__button {
             border-radius: 50% !important;
             width: 6px !important;
@@ -64,41 +69,41 @@ li.card-container {
             margin: 3px;
 
             border-radius: 50%;
-
+            
         }
-
+        
         .el-carousel__arrow {
             background-color: #ffffffb2;
             color: #222;
-
+            
             &:hover {
                 background-color: white;
                 box-shadow: 0 0 0 0 #ffffff;
-
+                
             }
         }
     }
-
+    
     li {
         list-style: none;
         // display: block;
         // width: 100%;
         margin: 0;
         padding: 0;
-
+        
     }
-
+    
     .stay-summery {
         width: 275px;
         text-overflow: ellipsis;
         white-space: nowrap;
         overflow: hidden;
     }
-
+    
     .wishlist {
         position: absolute;
         margin: -2px 0 0;
-    padding: 2px 0 0 0;
+        padding: 2px 0 0 0;
         // color: red;
         // width: 40px;
         // height: 40px;
@@ -108,13 +113,13 @@ li.card-container {
         z-index: 10;
         cursor: pointer;
         transition: .2s;
-
+        
         i {
             font-size: 23px;
             //    border: 1px solid white;
         }
     }
-
+    
     .liked {
         fill: $clr1 !important;
         stroke: $clr3 !important;
@@ -126,10 +131,10 @@ li.card-container {
         stroke: $clr3 !important;
         stroke-width: 2 !important;
     }
-
+    
     .text-container {
         margin-top: 15px;
-
+        
         .title {
             display: flex;
             justify-content: space-between;
@@ -137,8 +142,10 @@ li.card-container {
             align-items: center;
             align-self: center;
             align-content: center;
-
+            white-space: nowrap;
+            
             span {
+                overflow: clip;
                 color: black;
                 font-weight: 600;
             }
