@@ -31,8 +31,9 @@ export default {
         try {
         //   console.log(state.trip.chckInDate)
           const currStay = rootState.stayStore.currStay
+          const user = rootState.userStore.loggedinUser
           const trip = rootState.tripStore.trip
-          let order = { ...trip, stay: currStay, createdAt: Date.now() }
+          let order = { ...trip, stay: currStay, createdAt: Date.now(), by:  user}
           const isEdit = !!order._id
           const savedOrder = await orderService.save(order)
         } catch (err) {
