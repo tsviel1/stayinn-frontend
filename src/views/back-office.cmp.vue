@@ -7,7 +7,7 @@
             <chart-card :orders="orders" />
             
             <h1>Orders weekly incoming</h1>
-            <LineChart :chartData="ordersIncome" />
+            
         </div>
         <div>
             <h1 class="back-office-title ">Pending Orders</h1>

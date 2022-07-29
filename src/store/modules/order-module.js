@@ -26,12 +26,18 @@ export default {
       return pendings
     },
     calcTotalIncome({ orders }, {approvedOrders}) {
-      approvedOrders.forEach((order) => {
-        console.log(new Date(order.chckOutDate))
-      })
-      return approvedOrders
-    }
+      return approvedOrders.reduce((acc, order) => {
+            const {chckInDate, chckOutDate} = order  
+            const chckInMls =  new Date (chckInDate).getTime()
+            const chckOutMls = new Date (chckOutDate).getTime()
+            const diff = chckOutMls - chckInMls
+            const diffInDays = diff / (1000 * 3600 * 24)
+            const { price } = order.stay
+            const total = price * diffInDays
+          return acc + total
+    }, 0)
   },
+},
   mutations: {
     setOrders(state, { orders }) {
       state.orders = orders
