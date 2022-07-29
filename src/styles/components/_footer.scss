@@ -1,46 +1,67 @@
 .footer {
     background-color: $clr7;
+    // position: absolute;
+    right: 0;
+    left: 0;
+    bottom: 0;
     color: $clr5;
     height: 20px;
     padding: 24px 0;
     border-top: $clr6 solid 1px;
     justify-content: space-between;
+
     .language-icon {
         height: 16px;
         width: 16px;
         color: $clr5;
         margin-right: 8px;
     }
+
     .policies {
         .dot {
             width: 19px;
         }
+
         .dot~.dot {
             margin: 0 9px;
         }
-        
+
 
     }
+
+    span:first-child {
+        padding-inline-start: 80px;
+    }
+
+    ul {
+        padding-inline-end: 80px;
+    }
+
     .footer-settings {
         flex-direction: column;
         margin-left: 32px;
+
         .social-icon {
             height: 16px;
             width: 16px;
-            fill: $clr5 
+            fill: $clr5
         }
+
         :not(:last-child) {
             margin-right: 24px;
         }
     }
+
     .coffeeright {
         margin-right: 19px;
     }
+
     .dollar {
         margin-right: 5px;
     }
+
     .language {
         margin-right: 24px;
     }
-    
+
 }

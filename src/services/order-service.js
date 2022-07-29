@@ -8,8 +8,9 @@ const ENDPOINT = 'order'
 //   return orders
 // }
 
-async function query() {
-  return await httpService.get(ENDPOINT)
+async function query(user) {
+  // console.log(user)
+  return await httpService.get(ENDPOINT, user)
 }
 
 // function getById(orderId) {

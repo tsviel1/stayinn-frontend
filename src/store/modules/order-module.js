@@ -13,25 +13,34 @@ export default {
     setOrders(state, { orders }) {
       state.orders = orders
     },
+    
   },
   actions: {
-    async loadOrders({ commit, state }) {
+    async loadOrders({ commit, state, rootState }) {
         try {
-          const orders = await orderService.query()
+          const currUser = rootState.userStore.loggedinUser
+          const orders = await orderService.query(currUser)
           commit({type: 'setOrders', orders})
-        } catch (err) {}
+        } catch (err) {
+          console.log(err)
+        }
       },
       async saveOrder({ commit, state, rootState }) {
         try {
         //   console.log(state.trip.chckInDate)
           const currStay = rootState.stayStore.currStay
+          const user = rootState.userStore.loggedinUser
           const trip = rootState.tripStore.trip
-          let order = { ...trip, stay: currStay, createdAt: Date.now() }
+          let order = { ...trip, stay: currStay, createdAt: Date.now(), by:  user, status: 'pending'}
           const isEdit = !!order._id
           const savedOrder = await orderService.save(order)
         } catch (err) {
           console.log(err)
         }
       },
+      // async approveOrder({commit}, { order }) {
+      //   // commit({type: 'approveOrder', order })
+      // },
+ 
   },
 }

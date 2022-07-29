@@ -53,6 +53,7 @@ export default {
     created() {
     },
     methods: {
+        
         async reserveTrip() {
             this.$emit('onReserve')
         },

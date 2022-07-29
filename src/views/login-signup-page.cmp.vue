@@ -42,7 +42,7 @@ export default {
   data() {
     return {
       isUser: true,
-      loginCred: { username: 'user1', password: '123' },
+      loginCred: { username: 'dana', password: '1212' },
       signupCred: { username: '', password: '', fullname: '' }
     };
   },
@@ -56,6 +56,7 @@ export default {
       }
     },
     async doSignup() {
+      console.log('submitted signup')
       await this.$store.dispatch({ type: 'signup', userCred: this.signupCred })
       this.$router.push('/')
 

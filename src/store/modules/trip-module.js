@@ -12,6 +12,7 @@ export default {
       dest: {
         cityName: null,
       },
+      tripCost: null,
     },
   },
   getters: {
@@ -33,6 +34,9 @@ export default {
     getChildrenNum({ trip }) {
       return trip.guests.children
     },
+    getTripCost({trip}) {
+      return trip.tripCost
+    }
    
   },
   mutations: {
@@ -54,7 +58,14 @@ export default {
     setChildren(state, { newChildrenNum }) {
       state.trip.guests.children = newChildrenNum
     },
-   
+    setTripCost(state, rootState) {
+      const nightPrice = rootState.stayStore.currStay.price
+      const chckInDate = state.trip.chckInDate.getTime()
+      const chckOutDate =state.trip.chckOutDate.getTime()
+      const diff = (chckOutDate - chckInDate) / (1000 *3600 * 24)
+      const total = Math.round(diff * nightPrice) + Math.round(diff * nightPrice / 9)
+      state.trip.tripCost = total
+    }
   },
   actions: {
   },
