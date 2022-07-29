@@ -4,7 +4,8 @@
         <div class="data-card">
             
             <h1>Orders status</h1>
-            <DoughnutChart :chartData="ordersStatus" />
+            <chart-card :orders="orders" />
+            
             <h1>Orders weekly incoming</h1>
             <LineChart :chartData="ordersIncome" />
         </div>
@@ -23,36 +24,21 @@
 import orderPreview from '../components/orderPreview.cmp.vue'
 import { DoughnutChart,LineChart } from 'vue-chart-3';
 import { Chart, registerables } from "chart.js";
+import ChartCard from '../components/chart-card.cmp.vue';
 
 Chart.register(...registerables);
 
 export default {
     name: 'back-office',
     components: {
-        DoughnutChart,
-        orderPreview,
-        LineChart
-    },
+    DoughnutChart,
+    orderPreview,
+    LineChart,
+    ChartCard
+},
     data() {
         return {
-            ordersStatus: {
-                labels: ['Pending', 'Rejected', 'Approved'],
-                datasets: [
-                    {
-                        data: [30, 40, 60],
-                        backgroundColor: ['#bd1e59', '#e61e4d', '#fbadc4'],
-                    },
-                ],
-            },
-            ordersIncome:{
-                labels: ['22/07/2002','24/07/2022', '26/07/2022', '28/02/2022'],
-                 datasets: [
-                    {
-                        data: [30, 40, 60, 70, 5],
-                        backgroundColor: ['#bd1e59', '#e61e4d','#d2729e', '#fbadc4'],
-                    },
-                ],
-            }
+            
         }
 
     },
