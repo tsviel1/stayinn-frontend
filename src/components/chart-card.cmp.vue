@@ -1,6 +1,7 @@
 <template>
     <section>
-        <DoughnutChart :chartData="ordersStatus" />
+        <DoughnutChart v-if="ordersStatus" :chartData="ordersStatus" />
+        <LineChart :chartData="ordersIncome" />
     </section>
 </template>
 
@@ -20,15 +21,8 @@ export default {
     },
     data() {
         return {
-            ordersStatus: {
-                labels: ['Pending', 'Rejected', 'Approved'],
-                datasets: [
-                    {
-                        data: [30, 40, 60],
-                        backgroundColor: ['#bd1e59', '#e61e4d', '#fbadc4'],
-                    },
-                ],
-            },
+            
+
             ordersIncome: {
                 labels: ['22/07/2002', '24/07/2022', '26/07/2022', '28/02/2022'],
                 datasets: [
@@ -43,18 +37,32 @@ export default {
     created() { },
     methods: {},
     computed: {
-        pendingOrders() {
-            const pendings = this.orders.filter((order) => order.status === 'pending')
-            return pendings
+        ordersStatus() {
+            const status= {
+                labels: ['Pending', 'Rejected', 'Approved'],
+                datasets: [
+                    {
+                        data:[ this.orders.filter((order) => order.status === 'pending').length, this.orders.filter((order) => order.status === 'rejected').length,this.orders.filter((order) => order.status === 'approved').length],
+                        backgroundColor: ['#bd1e59', '#e61e4d', '#fbadc4'],
+                    },
+                ],
+            }
+            console.log(this.orders);
+            console.log(status);
+            return status
         },
-        rejectedOrders() {
-            const rejecteds = this.orders.filter((order) => order.status === 'rejected')
-            return rejecteds
-        },
-        approvedOrders() {
-            const approveds = this.orders.filter((order) => order.status === 'approved')
-            return approveds
-        },
+        // pendingOrders() {
+        //     const pendings =
+        //     return pendings
+        // },
+        // rejectedOrders() {
+        //     const rejecteds =
+        //     return rejecteds
+        // },
+        // approvedOrders() {
+        //     const approveds = 
+        //     return approveds
+        // },
     },
     unmounted() { },
 }
