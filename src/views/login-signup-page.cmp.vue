@@ -1,6 +1,6 @@
 <template>
   <section class="login-signup-container">
-    <form v-if="isUser" @submit.prevent="doLogin" class="container home-page main-layout">
+    <form v-if="isUser" @submit.prevent="doLogin" class=" home-page main-layout-details">
       <div class="login-header">
         <h2>Good to see you again</h2>
       </div>

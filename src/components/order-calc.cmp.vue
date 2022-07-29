@@ -1,10 +1,6 @@
 <template>
     <section class="order-calc">
-        <ul class="flex statement-container">
-            <li class="statement">
-                You won't be charged yet
-            </li>
-        </ul>
+
         <div class="order-calc-derails">
             <div class="calc-section">
                 <div class="calc-left">

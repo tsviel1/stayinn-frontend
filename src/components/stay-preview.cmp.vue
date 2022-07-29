@@ -19,7 +19,7 @@
           <p class="stay-summery">{{ stay.summary }}</p>
         </div>
         <p>{{ stay.beds }} {{ beds }}</p>
-        <p><span class="price">${{ stay.price }} </span> night</p>
+        <p class="price-night"><span class="price">${{ stay.price }} </span> night</p>
       </div>
     </div>
   </section>

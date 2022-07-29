@@ -12,7 +12,12 @@
 
             <reserve-table :stay="stay" />
             <reserve-btn v-if="getIsDatesSelected" @click="reserveTrip" />
-            <check-avail-btn v-if="!getIsDatesSelected"/>
+            <check-avail-btn v-if="!getIsDatesSelected" />
+            <ul class="flex statement-container">
+                <li class="statement">
+                    You won't be charged yet
+                </li>
+            </ul>
             <order-calc-section v-if="getIsDatesSelected" />
 
         </div>
