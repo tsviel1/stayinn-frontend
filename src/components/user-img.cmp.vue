@@ -1,17 +1,19 @@
 <template>
-    <img :src="user.imgUrl" >
+    <img :src="order.by.imgUrl" >
 </template>
 
 <script>
     export default {
         name: 'user-img', 
         props: {
-            user: Object
+            order: Object
         },
         data() {
         return {}
         },
-        created() {},
+        created() {
+            // console.log(this.order.by)
+        },
         methods: {},
         computed: {},
         unmounted() {},
