@@ -90,10 +90,7 @@
        }
 
      },
-     onApproveOrder() {
-      this.$emit('onApproveOrder')
-      this.$store.dispatch({type: 'saveOrder'})
-     },
+     
      endDate() {
        const checkOutDate = this.$store.getters.getCurrChckOutDate
        this.checkOut = checkOutDate
