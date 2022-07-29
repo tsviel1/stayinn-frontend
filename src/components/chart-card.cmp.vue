@@ -24,7 +24,7 @@ export default {
                 labels: ['Pending', 'Rejected', 'Approved'],
                 datasets: [
                     {
-                        data: [30, 40, 60],
+                        data: [this.rejectedOrders, this.approvedOrders, this.pendingOrders],
                         backgroundColor: ['#bd1e59', '#e61e4d', '#fbadc4'],
                     },
                 ],
