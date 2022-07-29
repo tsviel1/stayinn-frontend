@@ -9,7 +9,7 @@ const ENDPOINT = 'order'
 // }
 
 async function query(user) {
-  // console.log(user)
+  console.log('order query')
   return await httpService.get(ENDPOINT, user)
 }
 
