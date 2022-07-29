@@ -10,13 +10,15 @@ $clr7: #F7F7F7F7;
 
 
 // LAYOUT
-$layoutPadding: 20px;
+$layoutPaddingNarrow: 0;
+$layoutPaddingNormal: 40px;
+$layoutPaddingWide: 80px;
 
 // LAYOUT BREAKPOINTS
-$break-narrow: 1200px;
-$break-normal: 1360px;
-$break-wide: 1920px;
+$break-narrow: 740px;
+$break-normal: 1120px;
+$break-wide: 1600px;
 
-$padded-break-narrow: $break-narrow + $layoutPadding * 2;
-$padded-break-normal: $break-normal + $layoutPadding * 2;
-$padded-break-wide: $break-wide + $layoutPadding * 2;
+// $padded-break-narrow: $break-narrow + $layoutPadding * 2;
+// $padded-break-normal: $break-normal + $layoutPadding * 2;
+// $padded-break-wide: $break-wide + $layoutPadding * 2;

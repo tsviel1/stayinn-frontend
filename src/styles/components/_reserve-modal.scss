@@ -2,8 +2,8 @@
     border-radius: 8px;
     max-height: 600px;
     position: fixed;
-    top: 12%;
-    left: 20.6%;
+    top: 12vh;
+    left: 12%;
     right: 20.5%;
     bottom: 10%;
     padding-inline-start: 80px;
@@ -16,7 +16,6 @@
 
     .modal-container {
         display: flex;
-        flex-direction: row;
         padding-top: 32px;
         gap: 70px;
 
@@ -58,7 +57,7 @@
             padding: 30px;
             border: 1px solid $clr6;
             border-radius: 8px;
-            width: 100%;
+            // width: 100%;
 
             .order {
                 padding-left: 12px;

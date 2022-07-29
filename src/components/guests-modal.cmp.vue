@@ -61,8 +61,6 @@ export default {
         setChildren(diff) {
             const childrenNum = this.getChildrenNum
             const newChildrenNum = childrenNum + diff
-            console.log(diff);
-            console.log(childrenNum);
             this.$store.commit({ type: 'setChildren', newChildrenNum })
             
         },

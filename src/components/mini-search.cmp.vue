@@ -1,16 +1,24 @@
 <template>
   <section class="mini-search-cmp">
-    <div class="filter">
-      <span>{{ getCitySearched }}</span>
+    <div v-if="currPageHome" class="home-display">
+      <div class="filter">
+        <span>{{ getCitySearched }}</span>
+      </div>
+      <div class="break-point"></div>
+      <div class="filter date-input search-head">
+        <span>{{ getDatesSearched }}</span>
+      </div>
+      <div class="break-point"></div>
+      <div class="filter date-input search-sub">
+        <span>{{ getNumOfGuests }}</span>
+      </div>
     </div>
-    <div class="break-point"></div>
-    <div class="filter date-input search-head">
-      <span>{{ getDatesSearched }}</span>
+    <div v-else class="details-display">
+      <div class="filter-details">
+        Start your search
+      </div>
     </div>
-    <div class="break-point"></div>
-    <div class="filter date-input search-sub">
-      <span>{{getNumOfGuests}}</span>
-    </div>
+
     <div class="search-btn" @click="searchTrip">
       <svg viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="presentation"
         focusable="false"
@@ -35,7 +43,8 @@
        },
        tripDates: null,
        childrenCounter: 0,
-       adultsCounter: 0
+       adultsCounter: 0,
+       currPageHome: true
      };
    },
    computed: {
@@ -59,23 +68,33 @@
          month: 'short'
        })
        if (chckInMonth === chckOutMonth) {
-          return `${chckInMonth} ${chckInDay} - ${chckOutDay}`
+         return `${chckInMonth} ${chckInDay} - ${chckOutDay}`
        } else {
-        return `${chckInMonth} ${chckInDay} - ${chckOutMonth} ${chckOutDay}`
+         return `${chckInMonth} ${chckInDay} - ${chckOutMonth} ${chckOutDay}`
        }
      },
      getNumOfGuests() {
-      const adultsNum = this.$store.getters.getAdultsNum
-      const childrenNum = this.$store.getters.getChildrenNum
-      
-      if (!adultsNum && !childrenNum) return 'Add guests'
-      if (!childrenNum) return adultsNum + ' guests'
-      if (!adultsNum) return childrenNum + ' guests'
-      return adultsNum + childrenNum + ' guests'
+       const adultsNum = this.$store.getters.getAdultsNum
+       const childrenNum = this.$store.getters.getChildrenNum
+ 
+       if (!adultsNum && !childrenNum) return 'Add guests'
+       if (!childrenNum) return adultsNum + ' guests'
+       if (!adultsNum) return childrenNum + ' guests'
+       return adultsNum + childrenNum + ' guests'
      }
  
    },
-   methods: {
+   watch: {
+     $route: {
+       handler() {
+         if (this.$route.params.id) this.currPageHome = false
+         else this.currPageHome = true
+         if (this.$route.path === '/login' || this.$route.path === '/order') {
+           this.currPageHome = false
+         }
+       },
+       immediate: true,
+     },
    },
  }
  

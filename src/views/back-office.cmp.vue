@@ -1,5 +1,5 @@
 <template>
-    <section class="back-office container" v-if="orders">
+    <section class="back-office main-layout-details"  v-if="orders">
         <!-- <pre>{{ getOrders }}</pre> -->
         <div class="data-card">
             

@@ -1,5 +1,5 @@
 <template>
-  <section v-if="stay" class="stay-details container main-layout">
+  <section v-if="stay" class="stay-details main-layout-details">
     <stay-details-heading :stay="stay" />
     <details-images :stay="stay" />
     <div class="two-sections flex">

@@ -1,23 +1,24 @@
 <template>
-    <header class="main-header" :class="{'main-layout':!currPageHome, home:currPageHome, container:currPageHome}">
+    <header class="main-header"
+        :class="{ 'main-layout': currPageHome, home: currPageHome, 'main-layout-details': !currPageHome }">
         <div class="app-header">
             <div class="logo" @click="backToHomePage">
                 <stayinn-logo-svg /><span>stayinn</span>
             </div>
             <mini-search-cmp v-if="currSearchFalse" @click="toggleSearchBig" />
             <nav class="nav-container">
-                <a class="btn-grey">
+                <!-- <a class="btn-grey">
                     <router-link class="link" to="/stay">Become a Host</router-link>
                 </a>
                 <div class="btn-grey">
-                    <world-svg/>
-                </div>
+                    <world-svg />
+                </div> -->
                 <a class="btn-user">
                     <div class="hamburger">
-                        <hamburger-svg/>
+                        <hamburger-svg />
                     </div>
                     <div class="user-svg">
-                        <user-svg/>
+                        <user-svg />
                     </div>
                 </a>
             </nav>
@@ -46,7 +47,7 @@ export default {
     props: [],
     data() {
         return {
-            currPageHome: null
+            currPageHome: null,
         };
     },
     created() { },
@@ -93,11 +94,12 @@ export default {
     watch: {
         $route: {
             handler() {
-                console.log("route change!", this.$route.params.id);
                 if (this.$route.params.id) this.currPageHome = false
                 else this.currPageHome = true
-                console.log('this.currPageHome', this.currPageHome)
-                
+                if (this.$route.path === '/login' || this.$route.path === '/order')  {
+                    this.currPageHome = false
+                }
+
             },
             immediate: true,
         },
