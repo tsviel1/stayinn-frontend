@@ -2,9 +2,9 @@
     <section v-if="user" class="order-preview  flex">
         <div class="preview-inner flex">
             <div class="guest-details flex">
-                <user-img class="guest-img" :user="user" />
+                <user-img class="guest-img" :order="order" />
                 <div class="guest-details-inner flex">
-                    <h3 class="guest-name">{{ user.fullname }}</h3>
+                    <h3 class="guest-name">{{  order.by.fullname }}</h3>
                     <h3 class="order-created-at">Created at: {{ formatCreatedAt }}</h3>
                     <div class="sub-title">
                         <span class="order-details">{{ order.guests.adults + order.guests.children }} guests <span>
