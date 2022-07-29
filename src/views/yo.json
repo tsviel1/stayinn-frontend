@@ -1,8 +1,8 @@
-{"name": "Entire rental unit hosted by Tal",
-    "summary": "Stay in this superb, contemporary and brand-new penthouse on Shenkin Street in the heart of Tel Aviv and enjoy resplendent views of the city from its expansive balcony.\n You'll have all the amenities available in luxury hotels, plus customer support around the clock and a private concierge to help you plan your visit You are minutes on foot from Carmel Market and Rothschild Boulevard.\n Most of the cultural landmarks of central Tel Aviv are within easy reach too",
+{"name": "Entire renyosefa unit hosted by yosefa",
+    "summary": "Warm and cozy 2 level loft (bedroom upstairs),in old bldg in heart of old Jaffa, 1 blk from sea and popular flea market. Quiet garden patio retreat is a jewel and a lovely place to stay.",
     "interaction": "Hi Nice to meet you!",
     "houseRules": "Please no shoes when you are in the apartment. the floors scuff easily and after all it is NYC.  Also, please take trash out when you leave and place towels on hooks to the left of the closet.",
-    "propertyType": "Rental Unit",
+    "propertyType": "Renyosefa Unit",
     "roomType": "Entire home/apt",
     "bedType": "Real Bed",
     "cancellationPolicy": "flexible",
@@ -22,20 +22,20 @@
       "Dishes and silverware"
     ],
     "host": {
-      "_id": "62e2f8e95537ae0500289daf",
-      "fullname": "Tal ifrah",
+      "_id": "62e2d53563c5a34e38ad0ded",
+      "fullname": "yosefa alon",
       "location": "Tel Aviv, Tel Aviv Jaffa, Israel",
       "about": "I love a good adventure.",
       "responseTime": "within an hour",
       "isSuperhost": true,
-      "imgUrl": "https://xsgames.co/randomusers/assets/avatars/male/53.jpg"
+      "imgUrl": "https://xsgames.co/randomusers/assets/avatars/female/48.jpg"
     },
     "address": {
       "street": "Tel Aviv, Tel Aviv District, Israel",
       "country": "Israel",
       "location": {
-        "lat": 32.0745096466 ,
-        "lan": 34.7703692619 
+        "lat": 32.08812 ,
+        "lan":34.78179 
       },
       "countryCode": "IL",
       "city": "Tel Aviv"
@@ -89,7 +89,7 @@
           "fullname": "Sindre",
           "imgUrl": "https://xsgames.co/randomusers/assets/avatars/female/36.jpg"
         },
-        "txt": "Tal was very welcoming, accesible and flexible. She made our stay a pleasant experience."
+        "txt": "yosefa was very welcoming, accesible and flexible. She made our stay a pleasant experience."
       },
       {
         "at": "2017-09-19T04:00:00.000Z",
@@ -98,7 +98,7 @@
           "fullname": "Roger",
           "imgUrl": "https://xsgames.co/randomusers/assets/avatars/male/46.jpg"
         },
-        "txt": "Tal's place was clean and beautifully decorated. We had the apartment to ourselves for the three days we were in Tel Aviv, and the whole experience was perfect. It's located within a quick walking distance of a 24-hour CVS, plenty of restaurants, a Metro Station, local markets and parks, and we always felt safe walking around together, even late at night. She's a very pleasant host and was quick to communicate with us whenever we had questions during our stay. I would absolutely book here again! Thank you, Tal!"
+        "txt": "yosefa's place was clean and beautifully decorated. We had the apartment to ourselves for the three days we were in Tel Aviv, and the whole experience was perfect. It's located within a quick walking distance of a 24-hour CVS, plenty of restaurants, a Metro Station, local markets and parks, and we always felt safe walking around together, even late at night. She's a very pleasant host and was quick to communicate with us whenever we had questions during our stay. I would absolutely book here again! Thank you, yosefa!"
       },
       {
         "at": "2017-10-30T04:00:00.000Z",
@@ -107,7 +107,7 @@
           "fullname": "Eliza",
           "imgUrl": "https://xsgames.co/randomusers/assets/avatars/female/96.jpg"
         },
-        "txt": "Great location. Everything was lovely and as described. Tal was a super accommodating and friendly host."
+        "txt": "Great location. Everything was lovely and as described. yosefa was a super accommodating and friendly host."
       },
       {
         "at": "2017-12-04T05:00:00.000Z",
@@ -129,23 +129,13 @@
       },
      
       {
-        "at": "2018-08-16T04:00:00.000Z",
-        "by": {
-          "_id": "622f3407e36c59e6164fbe91",
-          "fullname": "Sophie",
-          "imgUrl": "https://xsgames.co/randomusers/assets/avatars/female/32.jpg"
-        },
-        "txt": "The host canceled this reservation 5 days before arrival. This is an automated posting."
-      },
-      
-      {
         "at": "2018-09-17T04:00:00.000Z",
         "by": {
           "_id": "622f3402e36c59e6164faec8",
           "fullname": "Logan",
           "imgUrl": "https://xsgames.co/randomusers/assets/avatars/female/65.jpg"
         },
-        "txt": "Tal's space was a lovely spot to visit in NY and was much better than expected. There were many places nearby to eat, shop and explore. Access to the subway was perfect. Could not have asked for better accommodations. Would definitely stay here again!"
+        "txt": "yosefa's space was a lovely spot to visit in NY and was much better than expected. There were many places nearby to eat, shop and explore. Access to the subway was perfect. Could not have asked for better accommodations. Would definitely stay here again!"
       },
       {
         "at": "2018-09-23T04:00:00.000Z",
@@ -154,7 +144,7 @@
           "fullname": "Mark",
           "imgUrl": "https://xsgames.co/randomusers/assets/avatars/male/77.jpg"
         },
-        "txt": "Great location! Plenty to do around the apartment.  Bars, restaurants (check out Ippudo for ramen, or Ray's for a 24h slice after a long night out!) and subway access. Check in was a breeze and Tal was very accommodating and available for questions the few times we messaged her. Also, the apartment is wonderfully decorated (pics don't do it justice!). Highly recommend!"
+        "txt": "Great location! Plenty to do around the apartment.  Bars, restaurants (check out Ippudo for ramen, or Ray's for a 24h slice after a long night out!) and subway access. Check in was a breeze and yosefa was very accommodating and available for questions the few times we messaged her. Also, the apartment is wonderfully decorated (pics don't do it justice!). Highly recommend!"
       },
       {
         "at": "2018-10-14T04:00:00.000Z",
@@ -172,7 +162,7 @@
           "fullname": "Mallory",
           "imgUrl": "https://xsgames.co/randomusers/assets/avatars/male/14.jpg"
         },
-        "txt": "Looking to adventure in Tel Aviv City? This is a good home base.  Local to several culture experiences of NYC.  Tal's space is very homey and decorated with vintage pieces and art. Would love to stay again for future trips I'll be making to NYC."
+        "txt": "Looking to adventure in Tel Aviv City? This is a good home base.  Local to several culture experiences of NYC.  yosefa's space is very homey and decorated with vintage pieces and art. Would love to stay again for future trips I'll be making to NYC."
       },
       {
         "at": "2018-10-28T04:00:00.000Z",
@@ -181,7 +171,7 @@
           "fullname": "Tatiana",
           "imgUrl": "https://xsgames.co/randomusers/assets/avatars/female/15.jpg"
         },
-        "txt": "You expect all what Tal offers at his place. Lovely clean apartment. Definitely coming back to it ❤️"
+        "txt": "You expect all what yosefa offers at his place. Lovely clean apartment. Definitely coming back to it ❤️"
       },
       {
         "at": "2018-11-23T05:00:00.000Z",
@@ -190,7 +180,7 @@
           "fullname": "思言",
           "imgUrl": "https://xsgames.co/randomusers/assets/avatars/male/16.jpg"
         },
-        "txt": "Perfect location!! Lots of nice Japanese restaurants and bubble tea downstairs. Real room decorating is better than photos. Cozy and romantic little apartment. Tal is nice. Good place to live in east village(๑˙ｰ˙๑)"
+        "txt": "Perfect location!! Lots of nice Japanese restaurants and bubble tea downstairs. Real room decorating is better than photos. Cozy and romantic little apartment. yosefa is nice. Good place to live in east village(๑˙ｰ˙๑)"
       },
       {
         "at": "2019-01-13T05:00:00.000Z",
@@ -199,7 +189,7 @@
           "fullname": "Jacquii",
           "imgUrl": "https://xsgames.co/randomusers/assets/avatars/female/17.jpg"
         },
-        "txt": "Tal's place is wonderful! The apartment is cozy and comfortable, but oozes character and a great vibe. \nThe location is fantastic for exploring different delicious cuisines, and quirky bars. \nTal was quick to communicate and flexible with our check-in time. \nTal's place is an awesome base for exploring the lower east side, and NYC generally. Would highly recommend!"
+        "txt": "yosefa's place is wonderful! The apartment is cozy and comfortable, but oozes character and a great vibe. \nThe location is fantastic for exploring different delicious cuisines, and quirky bars. \nyosefa was quick to communicate and flexible with our check-in time. \nyosefa's place is an awesome base for exploring the lower east side, and NYC generally. Would highly recommend!"
       },
       {
         "at": "2019-02-16T05:00:00.000Z",
@@ -208,16 +198,15 @@
           "fullname": "陳",
           "imgUrl": "https://xsgames.co/randomusers/assets/avatars/male/18.jpg"
         },
-        "txt": "Definitely a must-stay place for ppl who want to enjoy the city in NY style. The neighborhood is great and close to metro. Tal is super lovely and always in contact. The place is gorgeous and laidback. Will come back again!"
+        "txt": "Definitely a must-stay place for ppl who want to enjoy the city in NY style. The neighborhood is great and close to metro. yosefa is super lovely and always in contact. The place is gorgeous and laidback. Will come back again!"
       }
     ],
-    "_id": "622f337a75c7d36e498aab1b",
     "imgUrls": [
-      "171.jpeg",
-      "172.jpeg",
-      "173.jpeg",
-      "174.jpeg",
-      "175.jpeg"
+      "109.jpeg",
+      "105.jpeg",
+      "108.jpeg",
+      "122.jpeg",
+      "106.jpeg"
     ],
     "tags": [
       "beach",
