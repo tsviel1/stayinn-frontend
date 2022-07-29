@@ -2,7 +2,7 @@ import { storageService } from './async-storage.service.js'
 const ORDER_KEY = 'orderDB'
 import { httpService } from './http.service'
 import { socketService, SOCKET_EVENT_ORDER_SENT, SOCKET_EVENT_ORDER_RECEIVED } from './socket.service.js';
-import { store } from '../store/index'
+import  store  from '../store/index.js'
 const ENDPOINT = 'order'
 
 const orderChannel = new BroadcastChannel('orderChannel')
@@ -16,11 +16,11 @@ const orderChannel = new BroadcastChannel('orderChannel')
   setTimeout(() =>{
     socketService.on(SOCKET_EVENT_ORDER_SENT, (order) => {
       console.log('GOT from socket', order)
-      store.commit({type: 'saveOrder', order})
+      store.commit({type: 'setOrder', order})
     })
   })
   socketService.on(SOCKET_EVENT_ORDER_RECEIVED, (order) => {
-    query(order.stay.host)
+    store.commit({type: 'setOrders', order})
   })
 })
 
