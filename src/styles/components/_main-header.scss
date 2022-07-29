@@ -56,10 +56,12 @@
                 text-decoration: none;
                 justify-content: space-between;
                 font-size: rem(14px);
-
+                align-items: center;
 
                 .user-svg {
                     margin-left: 12px;
+                    display: flex;
+                    align-items: center;
 
                 }
 
@@ -67,7 +69,8 @@
 
                 &.btn-user {
                     margin-left: 8px;
-                    align-items: center;
+
+
 
                     .user-img {
                         width: 30px;
@@ -102,6 +105,21 @@
                     display: flex;
                     align-items: center;
                     padding: 0 10px 0 10px;
+
+                    &.board {
+                        font-family: airbnb-book;
+                        margin: 0;
+                    }
+
+                    &.wish {
+                        margin-top: 7px;
+                        margin-bottom: 0;
+                    }
+
+                    &.out {
+                        margin-top: 0;
+                        font-family: airbnb-book;
+                    }
                     span {
                         font-family: airbnb-book;
                     }

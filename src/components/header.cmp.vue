@@ -14,7 +14,7 @@
                     <world-svg />
                 </div> -->
                 <div class="btn-user-all">
-                    <a class="btn-user" @click="userDropdown = !userDropdown">
+                    <a class="btn-user" @click="toggleUserDropdown">
                         <div class="hamburger">
                             <hamburger-svg />
                         </div>
@@ -23,9 +23,20 @@
                             <user-svg v-else />
                         </div>
                     </a>
-                    <div class="user-dropdown" v-if="userDropdown">
+                    <div class="user-dropdown" v-if="userDropdown && !getUser">
                         <div class="sign-up" @click="loginPage">
                             Sign up <span>/ Log in</span>
+                        </div>
+                    </div>
+                    <div class="user-dropdown" v-if="userDropdown && getUser" v-click-outside="toggleUserDropdown">
+                        <div class="sign-up wish">
+                            Wishlist
+                        </div>
+                        <div class="sign-up board" @click="dashboard">
+                            Dashboard
+                        </div>
+                        <div class="sign-up out" @click="logout">
+                            Log out
                         </div>
                     </div>
                 </div>
@@ -96,6 +107,22 @@ export default {
         loginPage() {
             this.userDropdown = false
             this.$router.push('/login')
+        },
+        dashboard() {
+            this.userDropdown = false
+            this.$router.push('/order')
+        },
+        toggleUserDropdown() {
+            this.userDropdown = !this.userDropdown
+        },
+        async logout() {
+            this.userDropdown = false
+            try {
+                await this.$store.dispatch({type: 'logout'})
+            } catch(err) {
+                console.log('cannot logout', err)
+            }
+            
         }
     },
     computed: {
