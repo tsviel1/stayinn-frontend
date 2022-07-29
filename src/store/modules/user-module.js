@@ -12,9 +12,7 @@ export default  {
     },
     mutations: {
         setLoggedinUser(state, { user }) {
-            console.log(user, 3)
             state.loggedinUser = (user) ? { ...user } : null
-            console.log(state.loggedinUser, 4)
         },
         setWatchedUser(state, { user }) {
             state.watchedUser = user
@@ -26,9 +24,7 @@ export default  {
         async login({ commit }, { userCred }) {
             try {
                 const user = await userService.login(userCred)
-                console.log(user, 1)
                 commit({ type: 'setLoggedinUser', user })
-                console.log(user, 2)
                 return user
             } catch (err) {
                 console.log('userStore: Error in login', err)
@@ -54,6 +50,15 @@ export default  {
                 console.log('userStore: Error in logout', err)
                 throw err
             }
+        },
+        async getLoggedInUser({commit}) {
+            try{
+                const user =  await userService.getLoggedInUser()
+                commit({type: 'setLoggedinUser', user})
+            } catch (err) {
+                console.log('user not found', err)
+                throw err
+            } 
         },
 
 
