@@ -59,7 +59,7 @@ export default {
   data() {
     return {
       stayId: this.$route.params.id,
-      orderInfo: ''
+      orderInfo: '',
     };
   },
   created() {
@@ -79,6 +79,7 @@ export default {
     },
     approveOrder() {
       this.$store.dispatch({ type: 'saveOrder' })
+       this.$store.commit('toggleModal')
     }
 
 
