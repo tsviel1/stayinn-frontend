@@ -42,7 +42,20 @@ export default {
     },
     created() { },
     methods: {},
-    computed: {},
+    computed: {
+        pendingOrders() {
+            const pendings = this.orders.filter((order) => order.status === 'pending')
+            return pendings
+        },
+        rejectedOrders() {
+            const rejecteds = this.orders.filter((order) => order.status === 'rejected')
+            return rejecteds
+        },
+        approvedOrders() {
+            const approveds = this.orders.filter((order) => order.status === 'approved')
+            return approveds
+        },
+    },
     unmounted() { },
 }
 
