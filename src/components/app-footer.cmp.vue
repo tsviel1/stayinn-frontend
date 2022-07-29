@@ -1,5 +1,5 @@
 <template>
-    <section class="footer flex">
+    <section class="footer flex ">
         <div class="policies">
             <span class="coffeeright">
                 <span>&#169 Stayinn, inc.</span>
