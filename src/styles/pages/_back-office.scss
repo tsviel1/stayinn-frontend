@@ -1,5 +1,25 @@
 .back-office {
-    padding-top: 81px;
+    padding-top: 90px;
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: space-between;
+    
+    .data-card{
+      border: 1px solid $clr6;
+      width:450px ;
+      height: max-content;
+      padding: 20px;
+      border-radius: 8px;
+      position: sticky;
+      h1{
+        font-family: airbnb-medium;
+        font-size: 1.5em;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 15px 0;
+      }
+    }
    
     .back-office-title {
         font-family: airbnb-medium;
