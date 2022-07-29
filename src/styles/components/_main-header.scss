@@ -8,6 +8,7 @@
     right: 0;
     left: 0;
 }
+
 .main-header {
     border-bottom: 1px solid $clr4;
     background-color: $clr3;
@@ -22,18 +23,11 @@
         right: 0;
         left: 0;
 
-        .app-header {
-            // max-width: 1600px;
-            // margin: auto;
-            // padding: 0 80px;
-        }
-
         &.container {
-            max-width:none;
-            // min-width: 1600px;
+            max-width: none;
         }
     }
-    
+
     .app-header {
         display: flex;
         justify-content: space-between;
@@ -43,39 +37,100 @@
         .invisible {
             visibility: hidden;
         }
-        :hover{
-            cursor: pointer
-        };
+
         .active {
             height: 50px;
         }
     }
+
     .nav-container {
         display: flex;
         align-items: center;
         flex: 1 0 140px;
-
         justify-content: flex-end;
-        a {
-            color: $clr5;
-            text-decoration: none;
-            justify-content: space-between;
-            font-size: rem(14px);
-            .user-svg {
-                margin-left: 12px;
 
+        .btn-user-all {
+            position: relative;
+            a {
+                color: $clr5;
+                text-decoration: none;
+                justify-content: space-between;
+                font-size: rem(14px);
+                align-items: center;
+
+                .user-svg {
+                    margin-left: 12px;
+                    display: flex;
+                    align-items: center;
+
+                }
+
+                transition: box-shadow 0.2s ease;
+
+                &.btn-user {
+                    margin-left: 8px;
+
+
+
+                    .user-img {
+                        width: 30px;
+                        height: 30px;
+                        border-radius: 50%;
+                    }
+
+                }
+
+                &.btn-user:hover {
+                    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.18);
+
+                }
             }
-            transition: box-shadow 0.2s ease;
 
-            &.btn-user {
-                margin-left: 8px;
-            }
+            .user-dropdown {
+                // height: 10px;
+                margin-top: 12px;
+                background-color: $clr3;
+                position: absolute;
+                top: 100%;
+                right: 0;
+                width: 200px;
+                border-radius: 10px;
+                box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.18);
+                font-size: 14px;
+                font-family: airbnb-medium;
+                .sign-up {
+                    cursor: pointer;
+                    margin: 7px 0;
+                    height: 40px;
+                    display: flex;
+                    align-items: center;
+                    padding: 0 10px 0 10px;
 
-            &.btn-user:hover {
-                box-shadow: 0 2px 4px rgba(0,0,0,0.18);
+                    &.board {
+                        font-family: airbnb-book;
+                        margin: 0;
+                    }
 
+                    &.wish {
+                        margin-top: 7px;
+                        margin-bottom: 0;
+                    }
+
+                    &.out {
+                        margin-top: 0;
+                        font-family: airbnb-book;
+                    }
+                    span {
+                        font-family: airbnb-book;
+                    }
+                    &:hover {
+                        background-color: $clr7;
+                    }
+
+                }
             }
         }
+
     }
 
 
@@ -86,6 +141,10 @@
         color: $clr1;
         height: 80px;
         flex: 1 0 140px;
+        :hover {
+            cursor: pointer
+        }
+
         span {
             font-size: 23px;
         }

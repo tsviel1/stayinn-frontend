@@ -13,14 +13,33 @@
                 <div class="btn-grey">
                     <world-svg />
                 </div> -->
-                <a class="btn-user">
-                    <div class="hamburger">
-                        <hamburger-svg />
+                <div class="btn-user-all">
+                    <a class="btn-user" @click="toggleUserDropdown">
+                        <div class="hamburger">
+                            <hamburger-svg />
+                        </div>
+                        <div class="user-svg">
+                            <img class="user-img" v-if="getUser" :src="getUser.imgUrl">
+                            <user-svg v-else />
+                        </div>
+                    </a>
+                    <div class="user-dropdown" v-if="userDropdown && !getUser">
+                        <div class="sign-up" @click="loginPage">
+                            Sign up <span>/ Log in</span>
+                        </div>
                     </div>
-                    <div class="user-svg">
-                        <user-svg />
+                    <div class="user-dropdown" v-if="userDropdown && getUser" v-click-outside="toggleUserDropdown">
+                        <div class="sign-up wish">
+                            Wishlist
+                        </div>
+                        <div class="sign-up board" @click="dashboard">
+                            Dashboard
+                        </div>
+                        <div class="sign-up out" @click="logout">
+                            Log out
+                        </div>
                     </div>
-                </a>
+                </div>
             </nav>
         </div>
         <search-cmp @setFilterBy="setFilterBy" @setTripDates="setTripDates" :currFilterBy="getFilterBy"
@@ -48,6 +67,7 @@ export default {
     data() {
         return {
             currPageHome: null,
+            userDropdown: false
         };
     },
     created() { },
@@ -80,6 +100,29 @@ export default {
         },
         toggleSearchBig() {
             this.$store.commit('toggleSearchBig')
+        },
+        setupImgUrl(name) {
+            return new URL(`../assets/Images/${name}`, import.meta.url).href;
+        },
+        loginPage() {
+            this.userDropdown = false
+            this.$router.push('/login')
+        },
+        dashboard() {
+            this.userDropdown = false
+            this.$router.push('/order')
+        },
+        toggleUserDropdown() {
+            this.userDropdown = !this.userDropdown
+        },
+        async logout() {
+            this.userDropdown = false
+            try {
+                await this.$store.dispatch({type: 'logout'})
+            } catch(err) {
+                console.log('cannot logout', err)
+            }
+            
         }
     },
     computed: {
@@ -89,6 +132,9 @@ export default {
         currSearchFalse() {
             if (this.$store.getters.getSearch === false) return true
             else return false
+        },
+        getUser() {
+            return this.$store.getters.loggedinUser
         }
     },
     watch: {
@@ -96,7 +142,7 @@ export default {
             handler() {
                 if (this.$route.params.id) this.currPageHome = false
                 else this.currPageHome = true
-                if (this.$route.path === '/login' || this.$route.path === '/order')  {
+                if (this.$route.path === '/login' || this.$route.path === '/order') {
                     this.currPageHome = false
                 }
 
