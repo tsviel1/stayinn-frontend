@@ -24,7 +24,7 @@ export default {
                 labels: ['Pending', 'Rejected', 'Approved'],
                 datasets: [
                     {
-                        data: [this.rejectedOrders, this.approvedOrders, this.pendingOrders],
+                        data: [this.rejectedOrders, this.approvedOrders, this.pendings],
                         backgroundColor: ['#bd1e59', '#e61e4d', '#fbadc4'],
                     },
                 ],
@@ -37,24 +37,20 @@ export default {
                         backgroundColor: ['#bd1e59', '#e61e4d', '#d2729e', '#fbadc4'],
                     },
                 ],
-            }
+            },
+            pendings: null
         }
     },
     created() { },
-    methods: {},
+    methods: {
+        
+    },
     computed: {
-        pendingOrders() {
-            const pendings = this.orders.filter((order) => order.status === 'pending')
-            return pendings
+        
+        calcIncome(){
+            return this.$store.getters.calcTotalIncome
         },
-        rejectedOrders() {
-            const rejecteds = this.orders.filter((order) => order.status === 'rejected')
-            return rejecteds
-        },
-        approvedOrders() {
-            const approveds = this.orders.filter((order) => order.status === 'approved')
-            return approveds
-        },
+       
     },
     unmounted() { },
 }
