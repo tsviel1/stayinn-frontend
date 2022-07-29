@@ -78,7 +78,6 @@ export default {
       this.$store.commit('toggleModal')
     },
     approveOrder() {
-      this.$store.dispatch({ type: 'saveOrder' })
        this.$store.commit('toggleModal')
     }
 
