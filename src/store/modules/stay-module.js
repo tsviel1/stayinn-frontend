@@ -66,6 +66,9 @@ export default {
     toggleModal(state) {
       state.currModal = !state.currModal
     },
+    resetFilter(state) {
+      state.currFilterBy = null
+    }
   },
   actions: {
     async loadStays({ commit, state }) {

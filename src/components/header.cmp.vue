@@ -29,11 +29,11 @@
                         </div>
                     </div>
                     <div class="user-dropdown" v-if="userDropdown && getUser" v-click-outside="toggleUserDropdown">
-                        <div class="sign-up wish">
-                            Wishlist
-                        </div>
                         <div class="sign-up board" @click="dashboard">
                             Dashboard
+                        </div>
+                        <div class="sign-up wish" >
+                            Wishlist
                         </div>
                         <div class="sign-up out" @click="logout">
                             Log out
@@ -92,6 +92,8 @@ export default {
             })
         },
         backToHomePage() {
+            this.$store.commit({type: 'resetFilter'})
+            this.$store.commit({type: 'resetTrip'})
             this.$router.push(`/`)
         },
         toggleIsActive() {

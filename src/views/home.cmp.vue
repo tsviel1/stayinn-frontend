@@ -24,6 +24,8 @@ export default {
     };
   },
   created() {
+    this.$store.commit({type: 'resetFilter'})
+    this.$store.commit({type: 'resetTrip'})
     this.$store.dispatch({ type: 'loadStays' })
     this.$store.commit({type: 'makeSearchSmall'})
     
@@ -56,6 +58,5 @@ export default {
       return this.$store.getters.getSearch
     }
   },
-  unmounted() { },
 }
 </script>
