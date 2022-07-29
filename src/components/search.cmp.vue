@@ -26,7 +26,7 @@
       <div class="search-last-section">
         <div class="search-section">
           <div class="search-head">Who</div>
-          <div id="guests" class="add-guests search-sub" @click="toggleModalWhoInSearch">{{ getTotalGuests }}</div>
+          <div id="guests" class="add-guests search-sub" @click="toggleModalWho">{{ getTotalGuests }}</div>
         </div>
         <div class="search-btn-section" @click="searchTrip">
           <div class="search-btn">
@@ -36,7 +36,7 @@
       </div>
     </form>
     <div class="position-modal">
-      <guests-modal v-if="isModalWhoInSearch" />
+      <guests-modal v-if="modalWho" v-click-outside="toggleModalWho" />
     </div>
   </section>
 </template>
@@ -56,6 +56,7 @@ export default {
       tripDates: null,
       shouldShow: false,
       shouldShowSearch: false,
+      modalWho: false
 
     };
   },
@@ -99,8 +100,8 @@ export default {
       const chckOutDate = this.tripDates[1]
       this.$emit('setTripDates', chckInDate, chckOutDate)
     },
-    toggleModalWhoInSearch() {
-      this.$store.commit('toggleModalWhoInSearch')
+    toggleModalWho() {
+      this.modalWho = !this.modalWho
     },
     searchTrip() {
       const adults=  this.$store.getters.getAdultsNum

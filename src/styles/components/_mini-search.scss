@@ -12,11 +12,13 @@
 
     &:hover {
         box-shadow: 0 2px 4px rgba(0, 0, 0, 0.18);
+        cursor: pointer
     }
 
     .home-display {
         display: flex;
         align-items: center;
+
         .filter {
             font-size: rem(14px);
             height: 46px;
@@ -36,13 +38,14 @@
     }
 
     .details-display {
-            min-width: 255px;
-            padding-left: 8px;
-            .filter-details {
-                font-size: rem(14px);
-                padding: 0 16px;
-            }
-        
+        min-width: 255px;
+        padding-left: 8px;
+
+        .filter-details {
+            font-size: rem(14px);
+            padding: 0 16px;
+        }
+
     }
 
     .search-btn {

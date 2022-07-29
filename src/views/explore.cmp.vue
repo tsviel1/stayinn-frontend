@@ -1,5 +1,5 @@
 <template>
-  <section class="explore-app container">
+  <section class="explore-app main-layout">
     <!-- <stay-filter /> -->
     <stay-list :stays="staysToDisplay" />
   <div></div>
