@@ -17,9 +17,9 @@
                     </div>
                 </div>
             </div>
-            <div v-if="order.status === 'pending'" class="buttons">
-                <el-button type="success" plain>Approve</el-button>
-                <el-button type="danger" plain>Reject</el-button>
+            <div class="buttons" v-if="order.status === 'pending'">
+                <el-button @click="approve" type="success" plain>Approve</el-button>
+                <el-button @click ="reject" type="danger" plain>Reject</el-button>
             </div>
             <div v-else :class="{ 'green': isApproved, 'red': !isApproved }" class="status flex">
                 {{ order.status }}
@@ -76,7 +76,17 @@ export default {
         isApproved() {
             if (this.order.status === 'approved') return true
             else if (this.status === 'rejected') return false
-        }
+        },
+        approve() {
+            const newOrder = JSON.parse(JSON.stringify(this.order))
+            newOrder.status = 'approved'
+            this.$store.dispatch({type: 'approveOrder', order: newOrder})
+        },
+        reject() {
+            const newOrder = JSON.parse(JSON.stringify(this.order))
+            newOrder.status = 'rejected'
+            this.$store.dispatch({type: 'rejectOrder', order: newOrder})
+        },
     },
     unmounted() { },
 }

@@ -3,22 +3,17 @@ import { orderService } from '../../services/order-service.js'
 export default {
   state: {
     oreders: null,
-    order:null
   },
   getters: {
     getOrders({ orders }) {
       return orders
     },
     rejectedOrders({ orders }) {
-      const rejecteds = orders.filter(
-        (order) => order.status === 'rejected'
-      )
+      const rejecteds = orders.filter((order) => order.status === 'rejected')
       return rejecteds
     },
     approvedOrders({ orders }) {
-      const approveds = orders.filter(
-        (order) => order.status === 'approved'
-      )
+      const approveds = orders.filter((order) => order.status === 'approved')
       return approveds
     },
     pendingOrders({ orders }) {
@@ -26,60 +21,95 @@ export default {
       console.log(pendings)
       return pendings
     },
-    calcTotalIncome({ orders }, {approvedOrders}) {
+    calcTotalIncome({ orders }, { approvedOrders }) {
       return approvedOrders.reduce((acc, order) => {
-            const {chckInDate, chckOutDate} = order  
-            const chckInMls =  new Date (chckInDate).getTime()
-            const chckOutMls = new Date (chckOutDate).getTime()
-            const diff = chckOutMls - chckInMls
-            const diffInDays = diff / (1000 * 3600 * 24)
-            const { price } = order.stay
-            const total = price * diffInDays
-          return acc + total
-    }, 0)
+        const { chckInDate, chckOutDate } = order
+        const chckInMls = new Date(chckInDate).getTime()
+        const chckOutMls = new Date(chckOutDate).getTime()
+        const diff = chckOutMls - chckInMls
+        const diffInDays = diff / (1000 * 3600 * 24)
+        const { price } = order.stay
+        const total = price * diffInDays
+        return acc + total
+      }, 0)
+    },
   },
-},
   mutations: {
     setOrders(state, { orders }) {
       state.orders = orders
     },
-    setOrder(state,{order}){
-      state.order=order
-    }
-  },
-  actions: {
-    async loadOrders({ commit, state, rootState }) {
-      try {
-        console.log('in');
-        const currUser = rootState.userStore.loggedinUser
-        const orders = await orderService.query(currUser)
-        commit({ type: 'setOrders', orders })
-      } catch (err) {
-        console.log(err)
-      }
+    setOrder(state, { order }) {
+      state.order = order
     },
-    async saveOrder({ commit, state, rootState }) {
-      try {
-        //   console.log(state.trip.chckInDate)
-        const currStay = rootState.stayStore.currStay
-        const user = rootState.userStore.loggedinUser
-        const trip = rootState.tripStore.trip
-        let order = {
-          ...trip,
-          stay: currStay,
-          createdAt: Date.now(),
-          by: user,
-          status: 'pending',
+    approveOrder(state, { order }) {
+      console.log('order', order)
+      
+      // const orderId = order._id
+      // const idx = state.orders.findIndex((order) => order.id === orderId)
+      // state.order[idx].status = 'approved'
+    },
+    rejectOrder(state, { order }) {
+      const orderId = order._id
+      console.log('orderId', orderId)
+      console.log('state.orders', state.orders)
+      console.log('fiding index:', state.orders.findIndex(order => order.id === orderId))
+      
+      // const idx = state.orders.findIndex((order) => order.id === orderId)
+      // state.order[idx].status = 'rejected'
+    },
+  },
+    actions: {
+      async loadOrders({ commit, state, rootState }) {
+        try {
+          console.log('in')
+          const currUser = rootState.userStore.loggedinUser
+          const orders = await orderService.query(currUser)
+          commit({ type: 'setOrders', orders })
+        } catch (err) {
+          console.log(err)
         }
-        const isEdit = !!order._id
-        const savedOrder = await orderService.save(order)
-        commit({type:'setOrder',order})
-      } catch (err) {
-        console.log(err)
-      }
+      },
+      async saveOrder({ commit, state, rootState }) {
+        try {
+          //   console.log(state.trip.chckInDate)
+          const currStay = rootState.stayStore.currStay
+          const user = rootState.userStore.loggedinUser
+          const trip = rootState.tripStore.trip
+          let order = {
+            ...trip,
+            stay: currStay,
+            createdAt: Date.now(),
+            by: user,
+            status: 'pending',
+          }
+          const isEdit = !!order._id
+          const savedOrder = await orderService.save(order)
+          commit({ type: 'setOrder', order })
+        } catch (err) {
+          console.log(err)
+        }
+      },
+      async approveOrder({ commit, state }, { order }) {
+        try {
+
+          const savedOrder = await orderService.save(order)
+          commit({ type: 'approveOrder', order: savedOrder})
+        } catch (err) {
+          throw err
+        }
+      },
+      async rejectOrder({ commit, state }, { order }) {
+        try {
+          order.status = 'rejected'
+          const savedOrder = await orderService.save(order)
+          commit({ type: 'rejectOrder', order: savedOrder })
+        } catch (err) {
+          throw err
+        }
+      },
+      // async approveOrder({commit}, { order }) {
+      //   // commit({type: 'approveOrder', order })
+      // },
     },
-    // async approveOrder({commit}, { order }) {
-    //   // commit({type: 'approveOrder', order })
-    // },
-  },
-}
+  }
+

@@ -1,6 +1,6 @@
 <template>
   <section class="explore-app main-layout">
-    <!-- <stay-filter /> -->
+    <stay-filter />
     <stay-list :stays="staysToDisplay" />
   <div></div>
   </section>

@@ -1,8 +1,14 @@
 import { storageService } from './async-storage.service.js'
 const ORDER_KEY = 'orderDB'
 import { httpService } from './http.service'
-import { socketService, SOCKET_EVENT_ORDER_SENT, SOCKET_EVENT_ORDER_RECEIVED } from './socket.service.js';
-import  store  from '../store/index.js'
+import {
+  socketService,
+  SOCKET_EVENT_ORDER_SENT,
+  SOCKET_EVENT_ORDER_RECEIVED,
+  SOCKET_EVENT_REJECT_ORDER,
+  SOCKET_EVENT_APPROVE_ORDER,
+} from './socket.service.js'
+import store from '../store/index.js'
 const ENDPOINT = 'order'
 
 const orderChannel = new BroadcastChannel('orderChannel')
@@ -12,18 +18,25 @@ const orderChannel = new BroadcastChannel('orderChannel')
 //   return orders
 // }
 
-;(()=>{
-  setTimeout(() =>{
+// Tbc onapprove
+async function onApprove() {
+  socketService.on(SOCKET_EVENT_APPROVE_ORDER, (order) => {
+    // Show success message for this specific user
+  })
+}
+
+;(() => {
+  setTimeout(() => {
     socketService.on(SOCKET_EVENT_ORDER_SENT, (order) => {
       console.log('GOT from socket', order)
-      store.commit({type: 'setOrder', order})
+      store.dispatch({ type: 'loadOrders' })
     })
-  })
-  socketService.on(SOCKET_EVENT_ORDER_RECEIVED, (order) => {
-    this.$store.dispatch({type: 'loadOrders'})
-    console.log('Sending a message from server: ORDER WAS ADDED')
-  })
-})
+    // socketService.on(SOCKET_EVENT_ORDER_RECEIVED, (order) => {
+    //   this.$store.dispatch({type: 'loadOrders'}, order)
+    //   console.log('Sending a message from server: ORDER WAS ADDED')
+    // })
+  }, 0)
+})()
 
 async function query(user) {
   console.log('order query')
@@ -46,14 +59,29 @@ async function geOrderById(id) {
 //   }
 
 async function save(order) {
-  return order._id 
-  ? await httpService.put(`${ENDPOINT}/${order._id}`, order)
-  : await httpService.post(ENDPOINT, order)
+  // return order._id
+  // ? await httpService.put(`${ENDPOINT}/${order._id}`, order)
+  // : await httpService.post(ENDPOINT, order)
+  if (order._id) {
+    const savedOrder = await httpService.put(`${ENDPOINT}/${order._id}`, order)
+    if (order.status === 'approved') {
+      socketService.on(SOCKET_EVENT_APPROVE_ORDER, (order) => {
+        // Show success message for this specific user
+      })
+    } else if (order.status === 'rejected') {
+      socketService.on(SOCKET_EVENT_REJECT_ORDER, (order) => {
+        // Show success message for this specific user
+      })
+    }
+    return savedOrder
+  } else {
+    return await httpService.post(ENDPOINT, order)
+    
+  }
 }
 
-  export const orderService = {
-    query,
-    geOrderById,
-    save,
-
-  }
+export const orderService = {
+  query,
+  geOrderById,
+  save,
+}
