@@ -17,9 +17,12 @@
                     </div>
                 </div>
             </div>
-            <div class="buttons">
+            <div class="buttons" v-if="order.status === 'pending'">
                 <el-button type="success" plain>Approve</el-button>
                 <el-button type="danger" plain>Reject</el-button>
+            </div>
+            <div :class="{'status-green': isApproved, 'status-red': !isApproved}" class="status flex" v-else>
+                {{ order.status }}
             </div>
         </div>
 
@@ -79,8 +82,12 @@ export default {
             return formatedDate
         },
         user() {
-            console.log(this.$store.getters.loggedinUser)
+
             return this.$store.getters.loggedinUser
+        },
+        isApproved() {
+            if (this.order.status === 'approved') return true
+            else if (this.status === 'rejected') return false
         }
     },
     unmounted() { },

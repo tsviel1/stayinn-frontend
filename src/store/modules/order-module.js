@@ -3,6 +3,7 @@ import { orderService } from '../../services/order-service.js'
 export default {
   state: {
     oreders: null,
+    order:null
   },
   getters: {
     getOrders({ orders }) {
@@ -42,10 +43,14 @@ export default {
     setOrders(state, { orders }) {
       state.orders = orders
     },
+    setOrder(state,{order}){
+      state.order=order
+    }
   },
   actions: {
     async loadOrders({ commit, state, rootState }) {
       try {
+        console.log('in');
         const currUser = rootState.userStore.loggedinUser
         const orders = await orderService.query(currUser)
         commit({ type: 'setOrders', orders })
@@ -68,6 +73,7 @@ export default {
         }
         const isEdit = !!order._id
         const savedOrder = await orderService.save(order)
+        commit({type:'setOrder',order})
       } catch (err) {
         console.log(err)
       }
