@@ -5,7 +5,7 @@
         <div class="back-office">
             <div class="orders-list-main">
                 <ul class="orders-list clean-list">
-                    <li v-for="(order) in orders" :key="order._id">
+                    <li v-for="order in orders" :key="order._id">
                         <order-preview :order="order" />
                     </li>
                 </ul>

@@ -39,15 +39,15 @@ async function onApprove() {
 })()
 
 async function query(user) {
-  console.log('order query')
   return await httpService.get(ENDPOINT, user)
 }
+
 
 // function getById(orderId) {
 //   return storageService.get(ORDER_KEY, orderId)
 // }
 
-async function geOrderById(id) {
+async function getOrderById(id) {
   return await httpService.get(`${ENDPOINT}/${id}`)
 }
 
@@ -82,6 +82,6 @@ async function save(order) {
 
 export const orderService = {
   query,
-  geOrderById,
+  getOrderById,
   save,
 }
