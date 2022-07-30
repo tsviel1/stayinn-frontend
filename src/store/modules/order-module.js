@@ -2,7 +2,7 @@ import { orderService } from '../../services/order-service.js'
 
 export default {
   state: {
-    oreders: null,
+    orders: null,
   },
   getters: {
     getOrders({ orders }) {
@@ -22,6 +22,7 @@ export default {
       return pendings
     },
     calcTotalIncome({ orders }, { approvedOrders }) {
+      console.log()
       return approvedOrders.reduce((acc, order) => {
         const { chckInDate, chckOutDate } = order
         const chckInMls = new Date(chckInDate).getTime()
@@ -36,13 +37,14 @@ export default {
   },
   mutations: {
     setOrders(state, { orders }) {
+      console.log('in set order mutations')
       state.orders = orders
     },
     setOrder(state, { order }) {
       state.order = order
     },
     approveOrder(state, { order }) {
-      console.log('order', order)
+      // console.log('order', order)
       
       const orderId = order._id
       const idx = state.orders.findIndex((order) => order._id === orderId)
@@ -58,9 +60,10 @@ export default {
     actions: {
       async loadOrders({ commit, state, rootState }) {
         try {
-          console.log('in')
+          console.log('in load orders')
           const currUser = rootState.userStore.loggedinUser
           const orders = await orderService.query(currUser)
+          console.log(orders)
           commit({ type: 'setOrders', orders })
         } catch (err) {
           console.log(err)
@@ -88,7 +91,7 @@ export default {
       },
       async approveOrder({ commit, state }, { order }) {
         try {
-
+          console.log('in approve order')
           const savedOrder = await orderService.save(order)
           commit({ type: 'approveOrder', order: savedOrder})
         } catch (err) {
@@ -97,6 +100,7 @@ export default {
       },
       async rejectOrder({ commit, state }, { order }) {
         try {
+          console.log('in reject order')
           order.status = 'rejected'
           const savedOrder = await orderService.save(order)
           commit({ type: 'rejectOrder', order: savedOrder })
