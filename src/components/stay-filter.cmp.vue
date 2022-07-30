@@ -1,5 +1,5 @@
 <template>
-  <section>
+  <section class="filter-container">
     <div class="btn-container">
       <a @click="isShown = !isShown" class="filter-btn">
         <img src="../assets/svgs/filters.svg"/> Filters
@@ -57,10 +57,6 @@
         <input type="radio" id="bed-six" value="6" v-model.number="filterBy.beds" @change="onFilterBed($event)" />
         <label for="bed-six">6+</label>
       </form>
-      <form v-for="amenity in amenities">
-        <input type="checkbox" :id="amenity">
-        <label :for="amenity"></label>
-      </form>
       <button>Show Results</button>
     </form>
 
@@ -107,6 +103,7 @@ export default {
       console.log(price);
     },
     setFilterBy() {
+      console.log(this.filterBy);
       this.$store.commit({
         type: 'setFilter',
         filterBy: { ...this.filterBy }
