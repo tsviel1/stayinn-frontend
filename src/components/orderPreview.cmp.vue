@@ -18,8 +18,8 @@
                 </div>
             </div>
             <div class="buttons" v-if="order.status === 'pending'">
-                <el-button type="success" plain>Approve</el-button>
-                <el-button type="danger" plain>Reject</el-button>
+                <el-button @click="approve" type="success" plain>Approve</el-button>
+                <el-button @click ="reject" type="danger" plain>Reject</el-button>
             </div>
             <div :class="{'status-green': isApproved, 'status-red': !isApproved}" class="status flex" v-else>
                 {{ order.status }}
@@ -48,12 +48,6 @@ export default {
     methods: {},
     computed: {
         formatCheckin() {
-            // const newDate = new Date(this.order.chckInDate)
-            // const year = newDate.getFullYear()
-            // const month = newDate.getMonth()
-            // const day = newDate.getDay()
-            // const formatedDate = `${year}/${month}/${day}`
-            // return formatedDate
             const checkInDate = new Date(this.order.chckInDate)
             const checkInMonth = checkInDate.toLocaleString('en-US', {
                 month: 'short',
@@ -62,13 +56,6 @@ export default {
             return `${checkInMonth} ${checkInDay}`
         },
         formatCheckout() {
-            // const months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December']
-            // const newDate = new Date(this.order.chckOutDate)
-            // const year = newDate.getFullYear()
-            // const month = newDate.getMonth()
-            // const day = newDate.getDay()
-            // const formatedDate = `${year}/${month}/${day}`
-            // return formatedDate
             const checkOutDate = new Date(this.order.chckOutDate)
             const checkOutMonth = checkOutDate.toLocaleString('en-US', {
                 month: 'short',
@@ -88,7 +75,13 @@ export default {
         isApproved() {
             if (this.order.status === 'approved') return true
             else if (this.status === 'rejected') return false
-        }
+        },
+        approve() {
+            this.$store.dispatch({type: 'approveOrder', order: this.order})
+        },
+        reject() {
+            this.$store.dispatch({type: 'rejectOrder', order: this.order})
+        },
     },
     unmounted() { },
 }
