@@ -44,18 +44,15 @@ export default {
     approveOrder(state, { order }) {
       console.log('order', order)
       
-      // const orderId = order._id
-      // const idx = state.orders.findIndex((order) => order.id === orderId)
-      // state.order[idx].status = 'approved'
+      const orderId = order._id
+      const idx = state.orders.findIndex((order) => order._id === orderId)
+      state.orders[idx].status = 'approved'
     },
     rejectOrder(state, { order }) {
       const orderId = order._id
-      console.log('orderId', orderId)
-      console.log('state.orders', state.orders)
-      console.log('fiding index:', state.orders.findIndex(order => order.id === orderId))
       
-      // const idx = state.orders.findIndex((order) => order.id === orderId)
-      // state.order[idx].status = 'rejected'
+      const idx = state.orders.findIndex(order => order._id === orderId)
+      state.orders[idx].status = 'rejected'
     },
   },
     actions: {
