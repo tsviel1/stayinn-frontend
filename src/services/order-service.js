@@ -19,11 +19,11 @@ const orderChannel = new BroadcastChannel('orderChannel')
 // }
 
 // Tbc onapprove
-async function onApprove() {
-  socketService.on(SOCKET_EVENT_APPROVE_ORDER, (order) => {
-    // Show success message for this specific user
-  })
-}
+// async function onApprove() {
+//   socketService.on(SOCKET_EVENT_APPROVE_ORDER, (order) => {
+//     // Show success message for this specific user
+//   })
+// }
 
 ;(() => {
   setTimeout(() => {
@@ -39,7 +39,10 @@ async function onApprove() {
 })()
 
 async function query(user) {
-  return await httpService.get(ENDPOINT, user)
+  
+  const orders =  await httpService.get(ENDPOINT, user)
+  console.log(orders)
+  return orders
 }
 
 
@@ -73,6 +76,7 @@ async function save(order) {
         // Show success message for this specific user
       })
     }
+    console.log(' in save order, order services front')
     return savedOrder
   } else {
     return await httpService.post(ENDPOINT, order)

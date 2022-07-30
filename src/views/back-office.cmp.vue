@@ -51,6 +51,7 @@ export default {
     methods: {},
     computed: {
         orders() {
+            // console.log(this.$store.getters.getOrders)
             return this.$store.getters.getOrders
         },
 

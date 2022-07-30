@@ -44,8 +44,8 @@ export default {
                     },
                 ],
             }
-            console.log(this.orders);
-            console.log(status);
+            // console.log(this.orders);
+            // console.log(status);
             return status
         },
        
