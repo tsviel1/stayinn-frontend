@@ -2,7 +2,7 @@
     <section>
         <DoughnutChart v-if="ordersStatus" :chartData="ordersStatus" />
         <LineChart :chartData="ordersIncome" />
-        <h3> Total income: {{ calcIncome }}</h3>
+        <h3> Total income: ${{ calcIncome }}</h3>
     </section>
 </template>
 
@@ -25,7 +25,7 @@ export default {
             
 
             ordersIncome: {
-                labels: ['22/07/2002', '24/07/2022', '26/07/2022', '28/02/2022'],
+                labels: ['28/02/2022', '22/07/2002', '24/07/2022', '26/07/2022',],
                 datasets: [
                     {
                         data: [30, 40, 60, 70, 5],
