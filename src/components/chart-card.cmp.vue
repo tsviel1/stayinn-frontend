@@ -1,7 +1,6 @@
 <template>
     <section>
         <DoughnutChart v-if="ordersStatus" :chartData="ordersStatus" />
-        <LineChart :chartData="ordersIncome" />
         <h3> Total income: {{ calcIncome }}</h3>
     </section>
 </template>
@@ -22,17 +21,6 @@ export default {
     },
     data() {
         return {
-            
-
-            ordersIncome: {
-                labels: ['22/07/2002', '24/07/2022', '26/07/2022', '28/02/2022'],
-                datasets: [
-                    {
-                        data: [30, 40, 60, 70, 5],
-                        backgroundColor: ['#bd1e59', '#e61e4d', '#d2729e', '#fbadc4'],
-                    },
-                ],
-            },
             pendings: null
         }
     },
@@ -60,18 +48,7 @@ export default {
             console.log(status);
             return status
         },
-        // pendingOrders() {
-        //     const pendings =
-        //     return pendings
-        // },
-        // rejectedOrders() {
-        //     const rejecteds =
-        //     return rejecteds
-        // },
-        // approvedOrders() {
-        //     const approveds = 
-        //     return approveds
-        // },
+       
     },
     unmounted() { },
 }

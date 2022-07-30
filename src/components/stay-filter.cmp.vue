@@ -100,7 +100,7 @@ export default {
         max: ev[1]
       }
       this.filterBy.price = price
-      console.log(price);
+      console.log(this.filterBy);
     },
     setFilterBy() {
       console.log(this.filterBy);

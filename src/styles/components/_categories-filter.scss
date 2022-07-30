@@ -31,9 +31,7 @@
             box-shadow: none;
         }
 
-        .is-clicked {
-            border-bottom: 2px solid #000000;
-        }
+
 
         .category-btn {
             display: flex;
@@ -55,12 +53,29 @@
                 color: #000000;
                 // border-radius: 8px;
                 ;
-                border-bottom: 2px solid $clr6;
-
+                
                 img {
+                    filter: invert(8%) sepia(21%) saturate(21%) hue-rotate(60deg) brightness(94%) contrast(87%);
+                    
+                }
+            }
+            &:focus{
+                color: #000000;
+                border-bottom: 2px solid #000000;
+                img{
                     filter: invert(8%) sepia(21%) saturate(21%) hue-rotate(60deg) brightness(94%) contrast(87%);
 
                 }
+                
+            }
+            &:is(*:focus){
+                color: #000000;
+                border-bottom: 2px solid #000000;
+                img{
+                    filter: invert(8%) sepia(21%) saturate(21%) hue-rotate(60deg) brightness(94%) contrast(87%);
+    
+                }
+
             }
 
         }
