@@ -20,7 +20,8 @@ const orderChannel = new BroadcastChannel('orderChannel')
     })
   })
   socketService.on(SOCKET_EVENT_ORDER_RECEIVED, (order) => {
-    store.commit({type: 'setOrders', order})
+    this.$store.dispatch({type: 'loadOrders'})
+    console.log('Sending a message from server: ORDER WAS ADDED')
   })
 })
 

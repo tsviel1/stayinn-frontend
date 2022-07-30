@@ -65,6 +65,14 @@ export default {
       const diff = (chckOutDate - chckInDate) / (1000 *3600 * 24)
       const total = Math.round(diff * nightPrice) + Math.round(diff * nightPrice / 9)
       state.trip.tripCost = total
+    },
+    resetTrip(state) {
+      state.trip.chckInDate = null
+      state.trip.chckOutDate = null
+      state.trip.guests.adults = 0
+      state.trip.guests.children = 0
+      state.trip.dest.cityName = null
+      state.tripCost = null
     }
   },
   actions: {
@@ -72,3 +80,14 @@ export default {
 }
 
 // "2022-07-18T21:00:00.000Z"
+//      chckInDate: null,
+// chckOutDate: null,
+// guests: {
+//   adults: 0,
+//   children: 0,
+// },
+// dest: {
+//   cityName: null,
+// },
+// tripCost: null,
+// },
