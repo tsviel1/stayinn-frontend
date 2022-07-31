@@ -1,7 +1,6 @@
 <template>
     <section class="back-office-main main-layout-details">
         <h1 class="back-office-title">Orders status</h1>
-        <!-- <pre>{{ getOrders }}</pre> -->
         <div class="back-office">
             <div class="orders-list-main">
                 <ul class="orders-list clean-list">
