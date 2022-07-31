@@ -57,4 +57,16 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+.star{
+    font-size: 13px;
+    
+}
+span{
+padding-right: 5px;
+padding-left: 5px;
+}
+.avarage{
+    display: flex;
+    align-items: center;
+}
 </style>

@@ -1,8 +1,11 @@
 <template>
-  <section class="explore-app main-layout">
-    <stay-filter />
+  <section v-if="staysToDisplay" class="explore-app main-layout-expore">
+    <div class="explore-details">
+      <stay-filter />
+      <span>{{ staysLength }} stays</span>
+
+    </div>
     <stay-list :stays="staysToDisplay" />
-  <div></div>
   </section>
   <app-footer />
 </template>
@@ -20,7 +23,7 @@
    },
    data() {
      return {
- 
+       staysLength: null
      };
    },
    created() {
@@ -34,7 +37,7 @@
    computed: {
      staysToDisplay() {
        let stays = this.$store.getters.stays
-       // console.log(stays)
+       this.staysLength = stays?.length
        return stays
      },
      getIsSearchBig() {

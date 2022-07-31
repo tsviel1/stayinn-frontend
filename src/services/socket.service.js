@@ -53,6 +53,7 @@ function createSocketService() {
       socket.emit(SOCKET_EMIT_LOGIN, userId)
     },
     logout() {
+      console.log('logged out from user socket service',socket.userId);
       socket.emit(SOCKET_EMIT_LOGOUT)
     },
     terminate() {

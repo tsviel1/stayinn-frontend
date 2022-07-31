@@ -42,3 +42,24 @@
  .main-text {
      margin-bottom: rem(90px);
  }
+
+.main-layout-expore{
+    display: grid;
+    grid-template-columns: minmax(40px, 1fr) minmax(auto, 1600px) minmax(40px, 1fr);
+    grid-template-rows: 70px 1fr 80px;
+
+    >* {
+        grid-column: 2;
+
+        &.full {
+            grid-column: 1/-1;
+        }
+    }
+
+    @include for-normal-layout {
+        padding: 0 40px;
+    }
+
+}
+
+
