@@ -1,9 +1,10 @@
 <template>
     <section>
+        <h3 class="total-income"> Total earnings: {{ calcIncome }} $</h3>
+        <h3 class="avg-rating">Average Rating: 4.9</h3>
+        <h3 class="total-reviews">Amount of reviews: 51</h3>
+        <h2 class="chart-area-subtitle">Overall incoming orders</h2>
         <DoughnutChart v-if="ordersStatus" :chartData="ordersStatus" />
-        <h3> Total income: ${{ calcIncome }}</h3>
-        <h3 class="avarage">Avarage rating: <span>4.9</span> <i class="star fas fa-star"></i></h3>
-        <h3>Total reviews: 20</h3>
     </section>
 </template>
 
@@ -31,11 +32,10 @@ export default {
         
     },
     computed: {
-        
         calcIncome(){
             return this.$store.getters.calcTotalIncome
         },
-       
+               
         ordersStatus() {
             const status= {
                 labels: ['Pending', 'Rejected', 'Approved'],
@@ -46,8 +46,7 @@ export default {
                     },
                 ],
             }
-            // console.log(this.orders);
-            // console.log(status);
+
             return status
         },
        

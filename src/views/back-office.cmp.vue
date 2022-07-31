@@ -1,18 +1,20 @@
 <template>
     <section class="back-office-main main-layout-details">
-        <h1>Orders status</h1>
+        <h1 class="back-office-title">Orders status</h1>
         <!-- <pre>{{ getOrders }}</pre> -->
         <div class="back-office">
             <div class="orders-list-main">
                 <ul class="orders-list clean-list">
-                    <li v-for="(order) in orders" :key="order._id">
+                    <li v-for="order in orders" :key="order._id">
                         <order-preview :order="order" />
                     </li>
                 </ul>
             </div>
             <div class="back-office-charts" v-if="orders">
                 <div class="data-card">
-                    <h1>Weekly orders incoming</h1>
+                    <h1 class="chart-area-title">Hosting Summary</h1>
+                    <h2 class="bold">Fantastic Job!</h2>
+                    <h2 class="subtitle-area">Guests love what you're doing, keep up the good work and review your orders stats!</h2>
                     <chart-card :orders="orders" />
                 </div>
             </div>
@@ -54,7 +56,7 @@ export default {
             // console.log(this.$store.getters.getOrders)
             return this.$store.getters.getOrders
         },
-
+        
     },
     unmounted() { },
 }

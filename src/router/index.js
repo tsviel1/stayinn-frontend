@@ -4,6 +4,7 @@ import explore from '../views/explore.cmp.vue'
 import stayDetails from '../views/stay-details.cmp.vue'
 import backOffice from '../views/back-office.cmp.vue'
 import loginSignup from '../views/login-signup-page.cmp.vue' 
+import userTrips from '../views/user-dashboard.cmp.vue' 
 
 const router = createRouter({
   history: createWebHashHistory(import.meta.env.BASE_URL),
@@ -32,6 +33,11 @@ const router = createRouter({
       path: '/login',
       name: 'loginSignup',
       component: loginSignup
+    },
+    {
+      path: '/user',
+      name: 'user-trips',
+      component: userTrips
     },
   ]
 })

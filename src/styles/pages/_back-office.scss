@@ -4,22 +4,43 @@
   font-family: airbnb-medium;
 }
 
-
 .back-office {
   display: flex;
   justify-content: space-between;
 
   @media (max-width: 1010px) {
     display: grid;
-    grid-template-areas: "charts" "orders";
+    grid-template-areas: 'charts' 'orders';
   }
 
   .back-office-charts {
     @media (max-width: 1010px) {
       grid-area: charts;
     }
-
-    
+    font-family: airbnb-medium;
+    .chart-area-title {
+      margin: 0 0 0.6rem;
+      font-size: 22px;
+      font-family: airbnb-medium;
+    }
+    .bold {
+      font-size: 20px;
+      font-family: airbnb-medium;
+      margin: 0;
+    }
+    .subtitle-area {
+      font-size: 16px;
+      font-family: airbnb-book;
+      color: $clr2;
+      
+    }
+    .chart-area-subtitle {
+      font-size: 18px;
+      font-family: airbnb-medium;
+    }
+    .total-income {
+      font-family: airbnb-medium;
+    }
   }
 
   .orders-list-main {
@@ -55,13 +76,11 @@
     margin: 0 0 0.6rem;
     font-size: 22px;
     font-family: airbnb-medium;
-
   }
 
   .back-office-title {
     font-family: airbnb-medium;
     color: $clr1;
-
   }
 
   .orders-list {
@@ -86,8 +105,6 @@
           align-items: center;
           color: red;
         }
-
-
 
         .guest-details {
           //   margin-block: 10px;
@@ -128,7 +145,6 @@
 
         .order-details {
           margin: 0 3px;
-
         }
       }
 
