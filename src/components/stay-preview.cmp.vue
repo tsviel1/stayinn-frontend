@@ -48,7 +48,7 @@ import heartSvg from './svg/heart-svg.cmp.vue'
        this.$router.push(`/stay/${stayId}`)
      },
      setupImgUrl(name) {
-       return new URL(`../assets/Images/${name}`, import.meta.url).href;
+       return new URL(`../assets/imgs/${name}`, import.meta.url).href;
      },
  
    },

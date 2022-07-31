@@ -103,9 +103,6 @@ export default {
         toggleSearchBig() {
             this.$store.commit('toggleSearchBig')
         },
-        setupImgUrl(name) {
-            return new URL(`../assets/Images/${name}`, import.meta.url).href;
-        },
         loginPage() {
             this.userDropdown = false
             this.$router.push('/login')

@@ -26,7 +26,7 @@
         },
         methods: {
             setupImgUrl(name) {
-            return new URL(`../assets/svgs/${name}.svg`, import.meta.url).href;
+            return new URL(`/svgs/${name}.svg`, import.meta.url).href;
         },
         },
         computed: {},
