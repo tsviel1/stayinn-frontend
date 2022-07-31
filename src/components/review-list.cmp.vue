@@ -1,7 +1,7 @@
 <template>
   <section class="review-list">
     <h2 class="review-list-title">
-      <i class="fas fa-star reviews-svg"></i>
+      <img class="reviews-svg" src="../assets/svgs/star.svg">
       {{ getReviewAvg }} ·
       {{ reviewLength }} reviews
 

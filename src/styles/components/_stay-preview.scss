@@ -155,9 +155,10 @@ li.card-container {
                 display: flex;
                 align-items: center;
 
-                i {
-                    padding-right: 4px;
-                    font-size: 8px;
+                img {
+                    height: 12px;
+                    width: 12px;
+                    margin-right: 3px;
                 }
             }
         }

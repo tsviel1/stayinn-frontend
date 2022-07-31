@@ -42,7 +42,7 @@
                   <p class="details type">{{ stay.propertyType }}</p>
                   <p class="details">{{ stay.name }}</p>
                 </div>
-                <p class="details reviews"><i class="fas fa-star"></i> {{ reviewsAvg }} <span> ({{ stay.reviews.length
+                <p class="details reviews"><img src="../assets/svgs/star.svg"> {{ reviewsAvg }} <span> ({{ stay.reviews.length
                 }} reviews)</span></p>
               </div>
             </div>

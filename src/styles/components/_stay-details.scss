@@ -222,6 +222,7 @@
         border-bottom: 0.0714285714em solid #ddd;
         border-top: 0.0714285714em solid #ddd;
         padding: 48px 0;
+        
 
         .review-list-title {
             display: flex;
@@ -230,12 +231,15 @@
             // font-weight: 600;
             font-size: 22px;
             margin-bottom: 32px;
+
+            
         }
 
         .reviews-svg {
-            font-size: 14px;
-            text-align: center;
-            padding-right: 15px;
+            height: 15px;
+            width: 15px;
+            margin-right: 8px;
+
         }
 
         .review-preview {
