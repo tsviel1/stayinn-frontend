@@ -7,6 +7,19 @@
     max-height: max-content;
     position: relative;
 
+    .explore-details{
+        display: flex;
+        flex-direction: row-reverse;
+        justify-content: space-between;
+        align-items: center;
+
+        span{
+            font-family: airbnb-medium;
+            line-height: 18px;
+
+        }
+    }
+
 
     .stay-list {
         padding-top: 0;

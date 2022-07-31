@@ -1,7 +1,9 @@
 <template>
     <section>
         <DoughnutChart v-if="ordersStatus" :chartData="ordersStatus" />
-        <h3> Total income: {{ calcIncome }}</h3>
+        <h3> Total income: ${{ calcIncome }}</h3>
+        <h3 class="avarage">Avarage rating: <span>4.9</span> <i class="star fas fa-star"></i></h3>
+        <h3>Total reviews: 20</h3>
     </section>
 </template>
 
@@ -56,4 +58,16 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+.star{
+    font-size: 13px;
+    
+}
+span{
+padding-right: 5px;
+padding-left: 5px;
+}
+.avarage{
+    display: flex;
+    align-items: center;
+}
 </style>

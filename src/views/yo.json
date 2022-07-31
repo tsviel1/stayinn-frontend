@@ -1,8 +1,8 @@
-{"name": "Entire renyosefa unit hosted by yosefa",
-    "summary": "Warm and cozy 2 level loft (bedroom upstairs),in old bldg in heart of old Jaffa, 1 blk from sea and popular flea market. Quiet garden patio retreat is a jewel and a lovely place to stay.",
+{"name": "Entire renTal unit hosted by Tal",
+    "summary": "In the heart of Tel Aviv in a quiet street just few steps from the beach, this beautiful apartment has been totally renovated and carefully decorated by an architect. You will enjoy a terrace of 35 m2, a fully equipped kitchen open to a large living room, as well as 2 bedrooms and 2 bathrooms. An apartment where life is good and perfect to enjoy Tel Aviv!.",
     "interaction": "Hi Nice to meet you!",
     "houseRules": "Please no shoes when you are in the apartment. the floors scuff easily and after all it is NYC.  Also, please take trash out when you leave and place towels on hooks to the left of the closet.",
-    "propertyType": "Renyosefa Unit",
+    "propertyType": "Apartment",
     "roomType": "Entire home/apt",
     "bedType": "Real Bed",
     "cancellationPolicy": "flexible",
@@ -22,13 +22,13 @@
       "Dishes and silverware"
     ],
     "host": {
-      "_id": "62e2d53563c5a34e38ad0ded",
-      "fullname": "yosefa alon",
+      "_id": "62e2f8e95537ae0500289daf",
+      "fullname": "Tal ifrah",
       "location": "Tel Aviv, Tel Aviv Jaffa, Israel",
       "about": "I love a good adventure.",
       "responseTime": "within an hour",
       "isSuperhost": true,
-      "imgUrl": "https://xsgames.co/randomusers/assets/avatars/female/48.jpg"
+      "imgUrl": "https://xsgames.co/randomusers/assets/avatars/male/53.jpg"
     },
     "address": {
       "street": "Tel Aviv, Tel Aviv District, Israel",
@@ -41,7 +41,7 @@
       "city": "Tel Aviv"
     },
     "bathrooms": 1,
-    "price": 200,
+    "price": 350,
     "securityDeposit": 0,
     "cleaningFee": 125,
     "extraPeople": 0,
@@ -71,7 +71,7 @@
           "fullname": "Saundra",
           "imgUrl": "https://xsgames.co/randomusers/assets/avatars/female/1.jpg"
         },
-        "txt": "Everything was great! Nice clean apartment, bedrooms were both a good size. Host was generous and offered us toiletries throughout the place, hope to stay there again "
+        "txt": "incredible location and spacey home. Had an issue with the door and he was super quick to respond and got a locksmith immediately! Stay here!!!!"
       },
       {
         "at": "2017-01-01T05:00:00.000Z",
@@ -89,7 +89,7 @@
           "fullname": "Sindre",
           "imgUrl": "https://xsgames.co/randomusers/assets/avatars/female/36.jpg"
         },
-        "txt": "yosefa was very welcoming, accesible and flexible. She made our stay a pleasant experience."
+        "txt": "Tal was very welcoming, accesible and flexible. She made our stay a pleasant experience."
       },
       {
         "at": "2017-09-19T04:00:00.000Z",
@@ -98,7 +98,7 @@
           "fullname": "Roger",
           "imgUrl": "https://xsgames.co/randomusers/assets/avatars/male/46.jpg"
         },
-        "txt": "yosefa's place was clean and beautifully decorated. We had the apartment to ourselves for the three days we were in Tel Aviv, and the whole experience was perfect. It's located within a quick walking distance of a 24-hour CVS, plenty of restaurants, a Metro Station, local markets and parks, and we always felt safe walking around together, even late at night. She's a very pleasant host and was quick to communicate with us whenever we had questions during our stay. I would absolutely book here again! Thank you, yosefa!"
+        "txt": "Tal's place was clean and beautifully decorated. We had the apartment to ourselves for the three days we were in Tel Aviv, and the whole experience was perfect. It's located within a quick walking distance of a 24-hour CVS, plenty of restaurants, a Metro Station, local markets and parks, and we always felt safe walking around together, even late at night. She's a very pleasant host and was quick to communicate with us whenever we had questions during our stay. I would absolutely book here again! Thank you, Tal!"
       },
       {
         "at": "2017-10-30T04:00:00.000Z",
@@ -107,7 +107,16 @@
           "fullname": "Eliza",
           "imgUrl": "https://xsgames.co/randomusers/assets/avatars/female/96.jpg"
         },
-        "txt": "Great location. Everything was lovely and as described. yosefa was a super accommodating and friendly host."
+        "txt": "Great location. Everything was lovely and as described. Tal was a super accommodating and friendly host."
+      },
+      {
+        "at": "2017-08-30T04:00:00.000Z",
+        "by": {
+          "_id": "622f34gddg06e36c59e6164fbba5",
+          "fullname": "Ezra",
+          "imgUrl": "https://xsgames.co/randomusers/assets/avatars/male/76.jpg"
+        },
+        "txt": "This apartment has exceeded all my expectations. The view of the beach from the porch, the comfiest beds, cleanliness, and location, All were a 10/10.."
       },
       {
         "at": "2017-12-04T05:00:00.000Z",
@@ -116,7 +125,7 @@
           "fullname": "Ant",
           "imgUrl": "https://xsgames.co/randomusers/assets/avatars/male/6.jpg"
         },
-        "txt": "We had a wonderful stay, again! \n Perfect location, perfect appartement (with the sunset on the terrace every night!) and ultra responsive management!."
+        "txt": "Really beautiful flat in a great location. Well stocked, comfortable and lots of light. An all round great place to stay!."
       },
       {
         "at": "2018-07-07T04:00:00.000Z",
@@ -125,7 +134,7 @@
           "fullname": "James",
           "imgUrl": "https://xsgames.co/randomusers/assets/avatars/female/7.jpg"
         },
-        "txt": "Amazing and quirky place. Excellent location and an amazing host."
+        "txt": "We were very happy in this beautiful apartment. The giant terrace was fabulous just to sit out in the sun and also to have a relaxing dinner outside; the furniture was all comfortable and the decor is as nice as the photos make it look. Plenty of storage and lots and lots of towels! The kitchen is totally equipped and enabled us to make dinner for 10, and we were also able to do laundry during our stay.."
       },
      
       {
@@ -135,7 +144,7 @@
           "fullname": "Logan",
           "imgUrl": "https://xsgames.co/randomusers/assets/avatars/female/65.jpg"
         },
-        "txt": "yosefa's space was a lovely spot to visit in NY and was much better than expected. There were many places nearby to eat, shop and explore. Access to the subway was perfect. Could not have asked for better accommodations. Would definitely stay here again!"
+        "txt": "Tal's space was a lovely spot to visit in NY and was much better than expected. There were many places nearby to eat, shop and explore. Access to the subway was perfect. Could not have asked for better accommodations. Would definitely stay here again!"
       },
       {
         "at": "2018-09-23T04:00:00.000Z",
@@ -144,7 +153,7 @@
           "fullname": "Mark",
           "imgUrl": "https://xsgames.co/randomusers/assets/avatars/male/77.jpg"
         },
-        "txt": "Great location! Plenty to do around the apartment.  Bars, restaurants (check out Ippudo for ramen, or Ray's for a 24h slice after a long night out!) and subway access. Check in was a breeze and yosefa was very accommodating and available for questions the few times we messaged her. Also, the apartment is wonderfully decorated (pics don't do it justice!). Highly recommend!"
+        "txt": "This apartment is perfect for a family to stay when visiting Tel Aviv. It is a very comfortable and clean apartment, walking distance to the beach, restaurants, shops and more. We absolutely loved our visit to Tel Aviv, and would stay at Michel's place again. Tal is a very responsive SuperHost!"
       },
       {
         "at": "2018-10-14T04:00:00.000Z",
@@ -153,7 +162,7 @@
           "fullname": "Lisi",
           "imgUrl": "https://xsgames.co/randomusers/assets/avatars/female/3.jpg"
         },
-        "txt": "Perfect Place to Star in TLV!Many Young People!"
+        "txt": " Our host Tal is outstanding and great with communication. The unit is in a great location, although very noisy due to the proximity to the busy street and beach. Overall a nice unit."
       },
       {
         "at": "2018-10-21T04:00:00.000Z",
@@ -162,16 +171,7 @@
           "fullname": "Mallory",
           "imgUrl": "https://xsgames.co/randomusers/assets/avatars/male/14.jpg"
         },
-        "txt": "Looking to adventure in Tel Aviv City? This is a good home base.  Local to several culture experiences of NYC.  yosefa's space is very homey and decorated with vintage pieces and art. Would love to stay again for future trips I'll be making to NYC."
-      },
-      {
-        "at": "2018-10-28T04:00:00.000Z",
-        "by": {
-          "_id": "622f3404e36c59e6164fb354",
-          "fullname": "Tatiana",
-          "imgUrl": "https://xsgames.co/randomusers/assets/avatars/female/15.jpg"
-        },
-        "txt": "You expect all what yosefa offers at his place. Lovely clean apartment. Definitely coming back to it ❤️"
+        "txt": "Amazing apartment with nice finishing touches. The apartment is spacious and we loved the open concept of the kitchen and living room area. Close to the beach, restaurants, and shops. Michel was a great host. We would love to stay in this apartment again on our next trip to Tel Aviv."
       },
       {
         "at": "2018-11-23T05:00:00.000Z",
@@ -180,36 +180,17 @@
           "fullname": "思言",
           "imgUrl": "https://xsgames.co/randomusers/assets/avatars/male/16.jpg"
         },
-        "txt": "Perfect location!! Lots of nice Japanese restaurants and bubble tea downstairs. Real room decorating is better than photos. Cozy and romantic little apartment. yosefa is nice. Good place to live in east village(๑˙ｰ˙๑)"
-      },
-      {
-        "at": "2019-01-13T05:00:00.000Z",
-        "by": {
-          "_id": "622f3402e36c59e6164fac9a",
-          "fullname": "Jacquii",
-          "imgUrl": "https://xsgames.co/randomusers/assets/avatars/female/17.jpg"
-        },
-        "txt": "yosefa's place is wonderful! The apartment is cozy and comfortable, but oozes character and a great vibe. \nThe location is fantastic for exploring different delicious cuisines, and quirky bars. \nyosefa was quick to communicate and flexible with our check-in time. \nyosefa's place is an awesome base for exploring the lower east side, and NYC generally. Would highly recommend!"
-      },
-      {
-        "at": "2019-02-16T05:00:00.000Z",
-        "by": {
-          "_id": "622f3406e36c59e6164fbc0a",
-          "fullname": "陳",
-          "imgUrl": "https://xsgames.co/randomusers/assets/avatars/male/18.jpg"
-        },
-        "txt": "Definitely a must-stay place for ppl who want to enjoy the city in NY style. The neighborhood is great and close to metro. yosefa is super lovely and always in contact. The place is gorgeous and laidback. Will come back again!"
+        "txt": "Perfect location!! Lots of nice Japanese restaurants and bubble tea downstairs. Real room decorating is better than photos. Cozy and romantic little apartment. Tal is nice. Good place to live in east village(๑˙ｰ˙๑)"
       }
+    
     ],
     "imgUrls": [
-      "109.jpeg",
-      "105.jpeg",
-      "108.jpeg",
-      "122.jpeg",
-      "106.jpeg"
+      "221.jpeg",
+      "224.jpeg",
+      "222.jpeg",
+      "225.jpeg",
+      "223.jpeg"
     ],
     "tags": [
-      "beach",
-      "bed-breakfast",
-      "amazing-views"
+      "bed-breakfast"
     ]}
