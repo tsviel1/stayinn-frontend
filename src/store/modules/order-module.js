@@ -37,7 +37,6 @@ export default {
   },
   mutations: {
     setOrders(state, { orders }) {
-      console.log('in set order mutations')
       state.orders = orders
     },
     setOrder(state, { order }) {
@@ -60,10 +59,8 @@ export default {
     actions: {
       async loadOrders({ commit, state, rootState }) {
         try {
-          console.log('in load orders')
           const currUser = rootState.userStore.loggedinUser
           const orders = await orderService.query(currUser)
-          console.log(orders)
           commit({ type: 'setOrders', orders })
         } catch (err) {
           console.log(err)
@@ -71,7 +68,6 @@ export default {
       },
       async saveOrder({ commit, state, rootState }) {
         try {
-          //   console.log(state.trip.chckInDate)
           const currStay = rootState.stayStore.currStay
           const user = rootState.userStore.loggedinUser
           const trip = rootState.tripStore.trip
@@ -91,7 +87,6 @@ export default {
       },
       async approveOrder({ commit, state }, { order }) {
         try {
-          console.log('in approve order')
           const savedOrder = await orderService.save(order)
           commit({ type: 'approveOrder', order: savedOrder})
         } catch (err) {
@@ -100,7 +95,6 @@ export default {
       },
       async rejectOrder({ commit, state }, { order }) {
         try {
-          console.log('in reject order')
           order.status = 'rejected'
           const savedOrder = await orderService.save(order)
           commit({ type: 'rejectOrder', order: savedOrder })
