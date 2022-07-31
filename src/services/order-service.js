@@ -45,11 +45,12 @@ async function query(user) {
   return orders
 }
 
+
 // function getById(orderId) {
 //   return storageService.get(ORDER_KEY, orderId)
 // }
 
-async function geOrderById(id) {
+async function getOrderById(id) {
   return await httpService.get(`${ENDPOINT}/${id}`)
 }
 
@@ -85,6 +86,6 @@ async function save(order) {
 
 export const orderService = {
   query,
-  geOrderById,
+  getOrderById,
   save,
 }

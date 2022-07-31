@@ -1,15 +1,28 @@
-<template></template>
+<template>
+  <section class="user-dashboard main-layout-details">
+    <h1>Trips</h1>
+    <pre>{{ trips }}</pre>
+    <!-- <trip-list v-if="trips" /> -->
+  </section>
+
+</template>
  <script>
- export default {
- name: 'user-dashboard',
-    components: {},
-  data() {
-   return {};
-    },
-  created() {},
- methods: {},
- computed: {},
- unmounted() {},
-  };
-  </script>
- <style></style>
+import tripList from '../components/trip-list.cmp.vue'
+
+export default {
+  name: 'user-dashboard',
+  components: {
+    tripList
+  },
+  computed: {
+    trips() {
+      // return this.$store.getters.get
+    }
+  },
+  created() {
+    this.$store.dispatch({ type: 'getOrdersByGuest' })
+  }
+};
+</script>
+ <style>
+ </style>

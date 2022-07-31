@@ -1,7 +1,7 @@
 import { userService } from '../../services/user-service.js'
 import { socketService, SOCKET_EMIT_USER_WATCH, SOCKET_EVENT_USER_UPDATED } from '../../services/socket.service.js'
 
-export default  {
+export default {
     state: {
         loggedinUser: null,
         watchedUser: null
@@ -51,14 +51,14 @@ export default  {
                 throw err
             }
         },
-        async getLoggedInUser({commit}) {
-            try{
-                const user =  await userService.getLoggedInUser()
-                commit({type: 'setLoggedinUser', user})
+        async getLoggedInUser({ commit }) {
+            try {
+                const user = await userService.getLoggedInUser()
+                commit({ type: 'setLoggedinUser', user })
             } catch (err) {
                 console.log('user not found', err)
                 throw err
-            } 
+            }
         },
 
 
