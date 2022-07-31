@@ -70,7 +70,7 @@
    },
    methods: {
      setupImgUrl(name) {
-       return new URL(`../assets/imgs/${name}`, import.meta.url).href;
+       return new URL(`../asset/Images/${name}`, import.meta.url).href;
      },
      onApproveOrder() {
        this.$store.dispatch({ type: 'saveOrder' })

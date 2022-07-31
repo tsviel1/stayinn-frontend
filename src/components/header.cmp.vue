@@ -35,7 +35,7 @@
                         <div class="sign-up wish" >
                             Wishlist
                         </div>
-                        <div class="sign-up out" @click="logout">
+                        <div class="sign-up out" @click.stop="logout">
                             Log out
                         </div>
                     </div>

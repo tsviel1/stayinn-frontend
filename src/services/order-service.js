@@ -69,10 +69,12 @@ async function save(order) {
     const savedOrder = await httpService.put(`${ENDPOINT}/${order._id}`, order)
     if (order.status === 'approved') {
       socketService.on(SOCKET_EVENT_APPROVE_ORDER, (order) => {
+        console.log('accept');
         // Show success message for this specific user
       })
     } else if (order.status === 'rejected') {
       socketService.on(SOCKET_EVENT_REJECT_ORDER, (order) => {
+        console.log('reject');
         // Show success message for this specific user
       })
     }
