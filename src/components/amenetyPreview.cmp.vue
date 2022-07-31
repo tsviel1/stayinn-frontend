@@ -2,7 +2,6 @@
     <section class="amenety-preview ">
             <div class="amenety-list-item ">
                 <img class="amenity-img" :src="setupImgUrl(icons[amenety])" />  
-                
                 <span class="amenety-span">{{ amenety }} </span> 
             </div>
     </section>
@@ -26,7 +25,7 @@
         },
         methods: {
             setupImgUrl(name) {
-            return new URL(`/svgs/${name}.svg`, import.meta.url).href;
+            return new URL(`../assets/svgs/${name}.svg`, import.meta.url).href;
         },
         },
         computed: {},

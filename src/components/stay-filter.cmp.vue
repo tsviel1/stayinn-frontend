@@ -2,7 +2,7 @@
   <section class="filter-container">
     <div class="btn-container">
       <a @click="isShown = !isShown" class="filter-btn">
-        <img src="/svgs/filters.svg"/> Filters
+        <img src="../assets/svgs/filters.svg"/> Filters
       </a>
     </div>
 

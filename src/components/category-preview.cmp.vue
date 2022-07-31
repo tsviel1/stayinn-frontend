@@ -25,7 +25,7 @@ export default {
   },
     methods: {
         setupImgUrl(name) {
-            return new URL(`/categories/${name}.jpg`, import.meta.url).href;
+            return new URL(`../assets/categories/${name}.jpg`, import.meta.url).href;
         },
         filterByCategory(){
             this.filterBy.category=this.category
