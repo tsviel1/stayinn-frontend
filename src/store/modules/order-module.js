@@ -55,52 +55,6 @@ export default {
       state.orders[idx].status = 'rejected'
     },
   },
-<<<<<<< HEAD
-    actions: {
-      async loadOrders({ commit, state, rootState }) {
-        try {
-          const currUser = rootState.userStore.loggedinUser
-          const orders = await orderService.query(currUser)
-          commit({ type: 'setOrders', orders })
-        } catch (err) {
-          console.log(err)
-        }
-      },
-      async saveOrder({ commit, state, rootState }) {
-        try {
-          const currStay = rootState.stayStore.currStay
-          const user = rootState.userStore.loggedinUser
-          const trip = rootState.tripStore.trip
-          let order = {
-            ...trip,
-            stay: currStay,
-            createdAt: Date.now(),
-            by: user,
-            status: 'pending',
-          }
-          const isEdit = !!order._id
-          const savedOrder = await orderService.save(order)
-          commit({ type: 'setOrder', order })
-        } catch (err) {
-          console.log(err)
-        }
-      },
-      async approveOrder({ commit, state }, { order }) {
-        try {
-          const savedOrder = await orderService.save(order)
-          commit({ type: 'approveOrder', order: savedOrder})
-        } catch (err) {
-          throw err
-        }
-      },
-      async rejectOrder({ commit, state }, { order }) {
-        try {
-          order.status = 'rejected'
-          const savedOrder = await orderService.save(order)
-          commit({ type: 'rejectOrder', order: savedOrder })
-        } catch (err) {
-          throw err
-=======
   actions: {
     async loadOrders({ commit, state, rootState }) {
       try {
@@ -113,49 +67,8 @@ export default {
         console.log(err)
       }
     },
-    async saveOrder({ commit, state, rootState }) {
-      try {
-        //   console.log(state.trip.chckInDate)
-        const currStay = rootState.stayStore.currStay
-        const user = rootState.userStore.loggedinUser
-        const trip = rootState.tripStore.trip
-        let order = {
-          ...trip,
-          stay: currStay,
-          createdAt: Date.now(),
-          by: user,
-          status: 'pending',
->>>>>>> 33fb8ff89ecf3a33976b9e0819ac1f8ebfe262d4
-        }
-        const isEdit = !!order._id
-        const savedOrder = await orderService.save(order)
-        commit({ type: 'setOrder', order })
-      } catch (err) {
-        console.log(err)
-      }
-    },
-    async approveOrder({ commit, state }, { order }) {
-      try {
-        console.log('in approve order')
-        const savedOrder = await orderService.save(order)
-        commit({ type: 'approveOrder', order: savedOrder })
-      } catch (err) {
-        throw err
-      }
-    },
-    async rejectOrder({ commit, state }, { order }) {
-      try {
-        console.log('in reject order')
-        order.status = 'rejected'
-        const savedOrder = await orderService.save(order)
-        commit({ type: 'rejectOrder', order: savedOrder })
-      } catch (err) {
-        throw err
-      }
-      // async approveOrder({commit}, { order }) {
-      //   // commit({type: 'approveOrder', order })
-      // },
-    },
+   
+
     async saveOrder({ commit, state, rootState }) {
       try {
         //   console.log(state.trip.chckInDate)
