@@ -1,8 +1,8 @@
 <template>
-    <section>
-        <h3 class="total-income">$ Monthly earnings: {{ calcIncome }} </h3>
-        <h3 class="avg-rating">Average Rating: 4.9</h3>
-        <h3 class="total-reviews">Amount of reviews: 51</h3>
+    <section >
+        <h3 class="total-income"> Monthly earnings: ${{ calcIncome }} </h3>
+        <h3 class="avg-rating">Average Rating: {{ avgRate }}</h3>
+        <h3 class="total-reviews">Amount of reviews: {{ sumReviews }}</h3>
         <h2 class="chart-area-subtitle">Overall incoming orders</h2>
         <DoughnutChart v-if="ordersStatus" :chartData="ordersStatus" />
     </section>
@@ -16,7 +16,9 @@ Chart.register(...registerables);
 export default {
     name: 'chart-card',
     props: {
-        orders: Object
+        orders: Object,
+        sumReviews: Number,
+        avgRate: String,
     },
     components: {
         DoughnutChart,
@@ -27,7 +29,9 @@ export default {
             pendings: null
         }
     },
-    created() { },
+    created() { 
+       
+    },
     methods: {
         
     },
@@ -49,6 +53,7 @@ export default {
 
             return status
         },
+        
        
     },
     unmounted() { },

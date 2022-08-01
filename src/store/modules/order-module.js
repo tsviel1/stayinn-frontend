@@ -4,6 +4,7 @@ import { stayService } from '../../services/stay-service.js'
 export default {
   state: {
     orders: null,
+    hostStays: null,
   },
   getters: {
     getOrders({ orders }) {
@@ -34,9 +35,23 @@ export default {
         return acc + total
       }, 0)
     },
-    getTotalReviews({orders, rootState}) {
+    getTotalReviews({ hostStays}) {
+      const sumReviews = hostStays.reduce((acc, stay) => {
+          // console.log(stay.numOfReviews)
+          return  stay.numOfReviews + acc
+          
+        }, 0)
+        return sumReviews
+    },
+    getAvgRate({hostStays}) {
+      const numOfStays = hostStays.length
+      let avgRate = hostStays.reduce((acc, stay) => {
+        return stay.reviewScores.rating + acc
 
-    }
+      }, 0)
+      avgRate = ((avgRate / numOfStays) /20).toFixed(1)
+      return avgRate
+    },
   },
   mutations: {
     setOrders(state, { orders }) {
@@ -55,51 +70,62 @@ export default {
     rejectOrder(state, { order }) {
       const orderId = order._id
 
-      const idx = state.orders.findIndex(order => order._id === orderId)
+      const idx = state.orders.findIndex((order) => order._id === orderId)
       state.orders[idx].status = 'rejected'
     },
+    setHostStays(state, { stays }) {
+      state.hostStays = stays
+      console.log(state.hostStays)
+    },
   },
-    actions: {
-      async loadOrders({ commit, state, rootState }) {
-        try {
-          const currUser = rootState.userStore.loggedinUser
-          const orders = await orderService.query(currUser)
-          commit({ type: 'setOrders', orders })
-        } catch (err) {
-          console.log(err)
-        }
-      },
-      async loadHostStays({commit, state, rootState}) {
+  actions: {
+    async loadOrders({ commit, state, rootState }) {
+      try {
         const currUser = rootState.userStore.loggedinUser
-        const stays = await stayService.query(currUser)
-      },
-      async saveOrder({ commit, state, rootState }) {
-        try {
-          const currStay = rootState.stayStore.currStay
-          const user = rootState.userStore.loggedinUser
-          const trip = rootState.tripStore.trip
-          let order = {
-            ...trip,
-            stay: currStay,
-            createdAt: Date.now(),
-            by: user,
-            status: 'pending',
-          }
-          const isEdit = !!order._id
-          const savedOrder = await orderService.save(order)
-          commit({ type: 'setOrder', order })
-        } catch (err) {
-          console.log(err)
+        const orders = await orderService.query(currUser)
+        commit({ type: 'setOrders', orders })
+      } catch (err) {
+        console.log(err)
+      }
+    },
+    async loadHostStays({ commit, state, rootState }) {
+      try {
+        const currUser = rootState.userStore.loggedinUser
+        const filterBy = {hostId: currUser._id }
+        const stays = await stayService.query(filterBy)
+        console.log(`1`)
+        commit({ type: 'setHostStays', stays })
+      } catch (err) {
+        throw err
+      }
+    },
+    async saveOrder({ commit, state, rootState }) {
+      try {
+        const currStay = rootState.stayStore.currStay
+        const user = rootState.userStore.loggedinUser
+        const trip = rootState.tripStore.trip
+        let order = {
+          ...trip,
+          stay: currStay,
+          createdAt: Date.now(),
+          by: user,
+          status: 'pending',
         }
-      },
-      async approveOrder({ commit, state }, { order }) {
-        try {
-          const savedOrder = await orderService.save(order)
-          commit({ type: 'approveOrder', order: savedOrder})
-        } catch (err) {
-          throw err
-        }
-      },
+        const isEdit = !!order._id
+        const savedOrder = await orderService.save(order)
+        commit({ type: 'setOrder', order })
+      } catch (err) {
+        console.log(err)
+      }
+    },
+    async approveOrder({ commit, state }, { order }) {
+      try {
+        const savedOrder = await orderService.save(order)
+        commit({ type: 'approveOrder', order: savedOrder })
+      } catch (err) {
+        throw err
+      }
+    },
     async rejectOrder({ commit, state }, { order }) {
       try {
         console.log('in reject order')
@@ -116,11 +142,8 @@ export default {
         const trips = await orderService.query(currUser)
         commit({ type: 'setTrips', trips })
       } catch (err) {
-        console.log('Couldn\'nt load trips', err)
+        console.log("Couldn'nt load trips", err)
       }
     },
-
- 
   },
 }
-
