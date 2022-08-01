@@ -58,7 +58,7 @@ export default {
       state.orders = orders
     },
     setOrder(state, { order }) {
-      state.order = order
+      state.orders.unshift(order)
     },
     approveOrder(state, { order }) {
       // console.log('order', order)
@@ -113,7 +113,7 @@ export default {
         }
         const isEdit = !!order._id
         const savedOrder = await orderService.save(order)
-        commit({ type: 'setOrder', order })
+        commit({ type: 'setOrder', order: savedOrder })
       } catch (err) {
         console.log(err)
       }
