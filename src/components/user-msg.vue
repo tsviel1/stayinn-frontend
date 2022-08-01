@@ -46,7 +46,7 @@ export default {
 <style lang="scss" scoped>
 .user-msg {
   position: absolute;
-  top: 8%;
+  top: 9%;
   right: 20.5%;
   // left: 50%;
   padding: 15px 15px 15px 20px;
