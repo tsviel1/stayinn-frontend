@@ -14,7 +14,7 @@
                     Average Rating:
                 </div>
                 <div class="value">
-                    4.9
+                    {{ avgRate }}
                 </div>
             </div>
             <div class="stats-section flex justify-between border">
@@ -22,14 +22,13 @@
                     Amount of reviews:
                 </div>
                 <div class="value">
-                    51
+                    {{ sumReviews }}
                 </div>
             </div>
         </div>
         <div class="chart-main">
             <DoughnutChart v-if="ordersStatus" :chartData="ordersStatus" />
         </div>
-
     </section>
 </template>
 
@@ -41,7 +40,9 @@ Chart.register(...registerables);
 export default {
     name: 'chart-card',
     props: {
-        orders: Object
+        orders: Object,
+        sumReviews: Number,
+        avgRate: String,
     },
     components: {
         DoughnutChart,
@@ -52,7 +53,9 @@ export default {
             pendings: null
         }
     },
-    created() { },
+    created() {
+
+    },
     methods: {
 
     },
@@ -74,7 +77,6 @@ export default {
 
             return status
         },
-
     },
     unmounted() { },
 }

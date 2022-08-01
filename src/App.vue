@@ -42,6 +42,7 @@ export default {
     this.$store.dispatch({ type: 'loadStays' })
     window.addEventListener("scroll", this.handleScroll)
     this.$store.dispatch({type: 'getLoggedInUser'})
+     
   },
   destroyed() {
     window.removeEventListener("scroll", this.handleScroll)

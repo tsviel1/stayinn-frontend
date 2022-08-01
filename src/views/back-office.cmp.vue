@@ -14,7 +14,7 @@
                     <h1 class="chart-area-title">Hosting Summary</h1>
                     <h2 class="bold">Fantastic Job!</h2>
                     <h2 class="subtitle-area border">Guests love what you're doing, keep up the good work and review your orders stats!</h2>
-                    <chart-card :orders="orders" />
+                    <chart-card v-if="getSumReviews && getAvgRate"  :avgRate="getAvgRate" :sumReviews="getSumReviews" :orders="orders" />
                 </div>
             </div>
         </div>
@@ -47,6 +47,7 @@ export default {
     },
     created() {
         this.$store.dispatch({ type: 'loadOrders' })
+        this.$store.dispatch({type: 'loadHostStays'})
 
     },
     methods: {},
@@ -54,6 +55,12 @@ export default {
         orders() {
             // console.log(this.$store.getters.getOrders)
             return this.$store.getters.getOrders
+        },
+        getSumReviews() {
+            return this.$store.getters.getTotalReviews
+        },
+        getAvgRate() {
+            return this.$store.getters.getAvgRate
         },
         
     },
