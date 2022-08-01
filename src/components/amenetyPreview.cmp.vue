@@ -2,7 +2,6 @@
     <section class="amenety-preview ">
             <div class="amenety-list-item ">
                 <img class="amenity-img" :src="setupImgUrl(icons[amenety])" />  
-                
                 <span class="amenety-span">{{ amenety }} </span> 
             </div>
     </section>

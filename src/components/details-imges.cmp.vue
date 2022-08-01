@@ -27,8 +27,6 @@ export default {
             return new URL(`../assets/Images/${name}`, import.meta.url).href;
         },
     },
-    computed: {},
-    unmounted() { },
 }
 
 </script>

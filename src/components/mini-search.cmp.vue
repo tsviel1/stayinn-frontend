@@ -76,11 +76,10 @@
      getNumOfGuests() {
        const adultsNum = this.$store.getters.getAdultsNum
        const childrenNum = this.$store.getters.getChildrenNum
- 
-       if (!adultsNum && !childrenNum) return 'Add guests'
-       if (!childrenNum) return adultsNum + ' guests'
-       if (!adultsNum) return childrenNum + ' guests'
-       return adultsNum + childrenNum + ' guests'
+       const guests = adultsNum + childrenNum
+       if (!guests) return 'Add guests'
+       if (guests === 1) return '1 guest'
+       else return guests + ' guests'
      }
  
    },

@@ -9,6 +9,7 @@ import {
   SOCKET_EVENT_APPROVE_ORDER,
 } from './socket.service.js'
 import store from '../store/index.js'
+import {showErrorMsg, showSuccessMsg} from './event-bus.service.js'
 const ENDPOINT = 'order'
 
 const orderChannel = new BroadcastChannel('orderChannel')
@@ -30,6 +31,16 @@ const orderChannel = new BroadcastChannel('orderChannel')
     socketService.on(SOCKET_EVENT_ORDER_SENT, (order) => {
       console.log('GOT from socket', order)
       store.dispatch({ type: 'loadOrders' })
+    })
+    socketService.on(SOCKET_EVENT_APPROVE_ORDER, (order) => {
+      console.log('accept');
+      showSuccessMsg('You\'r order has been aprroved')
+      // Show success message for this specific user
+    })
+    socketService.on(SOCKET_EVENT_REJECT_ORDER, (order) => {
+      console.log('reject');
+      showErrorMsg('You\'r order has been rejected')
+      // Show success message for this specific user
     })
     // socketService.on(SOCKET_EVENT_ORDER_RECEIVED, (order) => {
     //   this.$store.dispatch({type: 'loadOrders'}, order)
@@ -68,21 +79,16 @@ async function save(order) {
   if (order._id) {
     const savedOrder = await httpService.put(`${ENDPOINT}/${order._id}`, order)
     if (order.status === 'approved') {
-      socketService.on(SOCKET_EVENT_APPROVE_ORDER, (order) => {
-        console.log('accept');
-        // Show success message for this specific user
-      })
+      console.log('1');
+     
     } else if (order.status === 'rejected') {
-      socketService.on(SOCKET_EVENT_REJECT_ORDER, (order) => {
-        console.log('reject');
-        // Show success message for this specific user
-      })
+      console.log('2');
+      
     }
     console.log(' in save order, order services front')
     return savedOrder
   } else {
     return await httpService.post(ENDPOINT, order)
-    
   }
 }
 

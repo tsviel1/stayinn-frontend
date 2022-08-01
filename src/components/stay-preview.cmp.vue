@@ -13,7 +13,7 @@
       </div>
       <div class="text-container">
         <div class="title"><span>{{ stay.propertyType }} in {{ stay.address.city }}</span>
-          <div class="rating"><i class="fas fa-star"></i> {{ reviewsAvg }} ({{ stay.reviews.length }})</div>
+          <div class="rating"> <img src="../assets/svgs/star.svg"> {{ reviewsAvg.toFixed(1) }} ({{ stay.reviews.length }})</div>
         </div>
         <div>
           <p class="stay-summery">{{ stay.summary }}</p>
