@@ -4,7 +4,7 @@
         <div class="sub-titles flex">
             <div class="sub-titles-details flex">
                 <span>
-                    <i class="fa fa-star"></i> <span class="avg-reviews"> {{ getAvgReviews }} · </span>
+                   <img class="star-svg" src="../assets/svgs/star.svg" /> <span class="avg-reviews">  {{ getAvgReviews.toFixed(1) }} · </span>
                     <span class="underline">{{ getReviewsAmount }} reviews </span>
                 </span>
                 <span class="dot"> · </span>

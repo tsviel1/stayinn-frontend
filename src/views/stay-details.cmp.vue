@@ -28,6 +28,7 @@
     <review-list :stay="stay" />
     <mini-host-preview :stay="stay" />
   </section>
+ 
   <app-footer />
 </template>
  <script>

@@ -6,7 +6,7 @@
                     <span class="cost">${{ stay.price }} <span>night</span></span>
                 </p>
                 <p>
-                    <span class="reviews">{{ stay.reviews.length }} reviews</span>
+                    <img class="star-svg" src="../assets/svgs/star.svg" /> <span class="avg-span">{{reviewsAvg.toFixed(1)}}</span> ·<span class="reviews">{{ stay.reviews.length }} reviews</span>
                 </p>
             </div>
 
@@ -63,6 +63,7 @@ export default {
         reviewsAvg() {
             return this.$store.getters.getCurrStayAvg
         },
+        
 
         getIsDatesSelected() {
             const chckIn = this.$store.getters.getCurrChckInDate

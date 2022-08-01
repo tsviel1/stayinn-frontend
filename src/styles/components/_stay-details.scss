@@ -83,6 +83,12 @@
             align-items: center;
             margin-top: 8px;
         }
+        .star-svg{
+            height: 12px;
+            width: 12px;
+            filter: invert(7%) sepia(3%) saturate(43%) hue-rotate(314deg) brightness(97%) contrast(85%);
+
+        }
 
         .share-btn,
         .save-btn {

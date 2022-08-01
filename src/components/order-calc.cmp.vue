@@ -7,7 +7,7 @@
                     ${{ getCurrStayPrice }} x {{ getCurrNights }} nights
                 </div>
                 <div class="calc-right">
-                    ${{ getCurrNights * getCurrStayPrice }}
+                    ${{ Math.round(getCurrNights * getCurrStayPrice).toLocaleString() }}
                 </div>
             </div>
             <div class="calc-section">
@@ -15,7 +15,7 @@
                     Service fee
                 </div>
                 <div class="calc-right">
-                    ${{ ((getCurrNights * getCurrStayPrice) / 9).toFixed(0) }}
+                    ${{ Math.round((getCurrNights * getCurrStayPrice) / 9).toLocaleString() }}
                 </div>
             </div>
         </div>
@@ -25,7 +25,7 @@
                     Total
                 </div>
                 <div class="total-right">
-                    ${{ ((getCurrNights * getCurrStayPrice) / 9 + getCurrNights * getCurrStayPrice).toFixed(0) }}
+                    ${{ Math.round(((getCurrNights * getCurrStayPrice) / 9 + getCurrNights * getCurrStayPrice)).toLocaleString()}}
                 </div>
             </div>
         </div>

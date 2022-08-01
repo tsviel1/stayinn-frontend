@@ -36,7 +36,8 @@ export default {
       }, 0)
     },
     getTotalReviews({ hostStays}) {
-      const sumReviews = hostStays.reduce((acc, stay) => {
+      
+      const sumReviews = hostStays?.reduce((acc, stay) => {
           // console.log(stay.numOfReviews)
           return  stay.numOfReviews + acc
           
@@ -45,7 +46,7 @@ export default {
     },
     getAvgRate({hostStays}) {
       const numOfStays = hostStays.length
-      let avgRate = hostStays.reduce((acc, stay) => {
+      let avgRate = hostStays?.reduce((acc, stay) => {
         return stay.reviewScores.rating + acc
 
       }, 0)

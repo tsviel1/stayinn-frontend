@@ -6,7 +6,7 @@
                     Monthly earnings:
                 </div>
                 <div class="value">
-                    ${{ calcIncome }}
+                    ${{ (calcIncome).toLocaleString() }}
                 </div>
             </div>
             <div class="stats-section flex justify-between">
@@ -27,7 +27,7 @@
             </div>
         </div>
         <div class="chart-main">
-            <DoughnutChart v-if="ordersStatus" :chartData="ordersStatus" />
+            <DoughnutChart v-if="ordersStatus" :chartData="ordersStatus" :options="options" />
         </div>
     </section>
 </template>
@@ -50,7 +50,16 @@ export default {
     },
     data() {
         return {
-            pendings: null
+            pendings: null,
+             options: {
+                responsive:true,
+                    plugins: {
+                        legend: {
+                            display: true,
+                            position:'bottom'
+                        }
+                    }
+                }
         }
     },
     created() {
@@ -73,6 +82,7 @@ export default {
                         backgroundColor: ['#fc5e03', '#f56c6c', '#67c23a'],
                     },
                 ],
+               
             }
 
             return status

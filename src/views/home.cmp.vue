@@ -1,7 +1,10 @@
 <template>
-  <section class="home-page main-layout">
+  <section v-if="staysToDisplay" class="home-page main-layout">
     <categories-filter />
     <stay-list v-if="staysToDisplay" :stays="staysToDisplay" />
+  </section>
+   <section v-else>
+    <img class="img" src="../assets/loader/loader.gif">
   </section>
 </template>
 <script>
@@ -57,3 +60,9 @@ export default {
   },
 }
 </script>
+<style>
+.img{
+  height:98vh;
+  object-fit:cover
+}
+</style>
