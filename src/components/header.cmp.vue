@@ -23,7 +23,7 @@
                             <user-svg v-else />
                         </div>
                     </a>
-                    <div class="user-dropdown" v-if="userDropdown && !getUser">
+                    <div class="user-dropdown" v-if="userDropdown && !getUser" v-click-outside="toggleUserDropdown">
                         <div class="sign-up" @click="loginPage">
                             Sign up <span>/ Log in</span>
                         </div>

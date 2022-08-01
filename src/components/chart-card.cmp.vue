@@ -1,10 +1,35 @@
 <template>
-    <section>
-        <h3 class="total-income">$ Monthly earnings: {{ calcIncome }} </h3>
-        <h3 class="avg-rating">Average Rating: 4.9</h3>
-        <h3 class="total-reviews">Amount of reviews: 51</h3>
-        <h2 class="chart-area-subtitle">Overall incoming orders</h2>
-        <DoughnutChart v-if="ordersStatus" :chartData="ordersStatus" />
+    <section class="chart-card">
+        <div class="stats">
+            <div class="stats-section flex justify-between">
+                <div class="key">
+                    Monthly earnings:
+                </div>
+                <div class="value">
+                    ${{ calcIncome }}
+                </div>
+            </div>
+            <div class="stats-section flex justify-between">
+                <div class="key">
+                    Average Rating:
+                </div>
+                <div class="value">
+                    4.9
+                </div>
+            </div>
+            <div class="stats-section flex justify-between border">
+                <div class="key">
+                    Amount of reviews:
+                </div>
+                <div class="value">
+                    51
+                </div>
+            </div>
+        </div>
+        <div class="chart-main">
+            <DoughnutChart v-if="ordersStatus" :chartData="ordersStatus" />
+        </div>
+
     </section>
 </template>
 
@@ -29,27 +54,27 @@ export default {
     },
     created() { },
     methods: {
-        
+
     },
     computed: {
-        calcIncome(){
+        calcIncome() {
             return this.$store.getters.calcTotalIncome
         },
-               
+
         ordersStatus() {
-            const status= {
+            const status = {
                 labels: ['Pending', 'Rejected', 'Approved'],
                 datasets: [
                     {
-                        data:[ this.orders.filter((order) => order.status === 'pending').length, this.orders.filter((order) => order.status === 'rejected').length,this.orders.filter((order) => order.status === 'approved').length],
-                        backgroundColor: ['#bd1e59', '#e61e4d', '#fbadc4'],
+                        data: [this.orders.filter((order) => order.status === 'pending').length, this.orders.filter((order) => order.status === 'rejected').length, this.orders.filter((order) => order.status === 'approved').length],
+                        backgroundColor: ['#fc5e03', '#f56c6c', '#67c23a'],
                     },
                 ],
             }
 
             return status
         },
-       
+
     },
     unmounted() { },
 }
@@ -57,15 +82,17 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.star{
+.star {
     font-size: 13px;
-    
+
 }
-span{
-padding-right: 5px;
-padding-left: 5px;
+
+span {
+    padding-right: 5px;
+    padding-left: 5px;
 }
-.avarage{
+
+.avarage {
     display: flex;
     align-items: center;
 }

@@ -10,42 +10,49 @@
 
   @media (max-width: 1010px) {
     display: grid;
-    grid-template-areas: 'charts' 'orders';
+    grid-template-areas: 'charts''orders';
   }
 
   .back-office-charts {
     @media (max-width: 1010px) {
       grid-area: charts;
     }
-    font-family: airbnb-medium;
+
+    // font-family: airbnb-medium;
     .chart-area-title {
       margin: 0 0 0.6rem;
       font-size: 22px;
       font-family: airbnb-medium;
     }
+
     .bold {
-      font-size: 20px;
+      font-size: 18px;
       font-family: airbnb-medium;
-      margin: 0;
+      margin-bottom: 5px;
     }
+
     .subtitle-area {
-      font-size: 16px;
+      font-size: 15px;
       font-family: airbnb-book;
       color: $clr2;
-      
+      padding-bottom: 13px;
+
     }
+
     .chart-area-subtitle {
       font-size: 18px;
       font-family: airbnb-medium;
     }
+
     .total-income {
-      font-family: airbnb-medium;
+      // font-family: airbnb-medium;
     }
   }
 
   .orders-list-main {
     flex-grow: 1;
     margin-right: 20px;
+
     @media (max-width: 1010px) {
       grid-area: orders;
     }
@@ -58,8 +65,54 @@
     padding: 20px;
     border-radius: 8px;
     position: sticky;
+
     @media (max-width: 1010px) {
       width: 100%;
+    }
+
+    .chart-card {
+      @media (max-width: 1010px) {
+        display: flex;
+        width: 100%;
+      }
+      .chart-main {
+        @media (max-width: 1010px) {
+          width: 50%;
+          padding: 15px;
+        }
+      }
+      div {
+        canvas {
+          height: 250px !important;
+        }
+      }
+
+      .stats {
+        @media (max-width: 1010px) {
+          flex-grow: 1;
+        }
+        .stats-section {
+          padding-bottom: 10px;
+
+          .key {
+            color: $clr2;
+          }
+
+          .value {
+            color: green;
+            img {
+              height: 10px;
+              display: inline-block;
+            }
+          }
+
+          &.border {
+            padding-bottom: 13px;
+            margin-bottom: 16px;
+          }
+        }
+      }
+
     }
 
     h1 {
@@ -67,7 +120,7 @@
       font-size: 1.5em;
       display: flex;
       align-items: center;
-      justify-content: center;
+      // justify-content: center;
       margin: 15px 0;
     }
   }
@@ -99,11 +152,12 @@
 
         .green {
           align-items: center;
-          color: green;
+          color: #67c23a;
         }
+
         .red {
           align-items: center;
-          color: red;
+          color: #f56c6c;
         }
 
         .guest-details {
@@ -121,6 +175,25 @@
             flex-direction: column;
             padding-left: 10px;
 
+            .place-info {
+              width: 200x;
+              text-overflow: ellipsis;
+              white-space: nowrap;
+              overflow: hidden;
+              color: $clr2;
+              margin-top: 5px;
+
+              span {
+                text-transform: lowercase;
+              }
+
+            }
+
+            .guest-name-and-created {
+              height: 50px;
+              margin-bottom: 3px;
+            }
+
             .guest-name {
               margin: 0;
               font-family: airbnb-medium;
@@ -133,6 +206,7 @@
             .order-created-at {
               font-family: airbnb-medium;
               font-size: 15px;
+              margin-bottom: 0;
             }
           }
         }
@@ -146,6 +220,10 @@
 
         .order-details {
           margin: 0 3px;
+
+          &.last {
+            width: 100%
+          }
         }
       }
 
@@ -156,6 +234,7 @@
         overflow: hidden;
         display: inline-block;
         margin: 0;
+
         @media (max-width: 1010px) {
           min-width: 300px;
           overflow: hidden;
@@ -168,6 +247,11 @@
         display: flex;
         flex-direction: column;
         align-self: flex-end;
+
+        .el-button+.el-button {
+          margin-top: 5px;
+          margin-left: 0;
+        }
       }
 
       // .status {

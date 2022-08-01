@@ -4,16 +4,21 @@
             <div class="guest-details flex">
                 <user-img class="guest-img" :order="order" />
                 <div class="guest-details-inner flex">
-                    <h3 class="guest-name">{{ order.by.fullname }}</h3>
-                    <h3 class="order-created-at">Created at: {{ formatCreatedAt }}</h3>
+                    <div class="guest-name-and-created flex column justify-between">
+                        <h3 class="guest-name">{{ order.by.fullname }}</h3>
+                        <h3 class="order-created-at">Reserved at: {{ formatCreatedAt }}</h3>
+                    </div>
                     <div class="sub-title">
                         <span class="order-details">{{ order.guests.adults + order.guests.children }} guests <span>
                                 |
                             </span></span>
-                        <span class="order-details"> {{ getOrderDates }} | </span>
-                        <span class="order-details ">
+                        <span class="order-details"> {{ getOrderDates }}</span>
+                        <!-- <span class="order-details last">
                             <p class="last-details">{{ order.stay.address.street }} </p>
-                        </span>
+                        </span> -->
+                    </div>
+                    <div class="place-info"> Your <span>{{ order.stay.propertyType }} </span> in
+                        {{ order.stay.address.street }}
                     </div>
                 </div>
             </div>
@@ -21,7 +26,7 @@
                 <el-button @click="approve" type="success" plain>Approve</el-button>
                 <el-button @click="reject" type="danger" plain>Reject</el-button>
             </div>
-            <div v-else :class="{ 'green': isApproved, 'red': !isApproved }"  class="status flex">
+            <div v-else :class="{ 'green': isApproved, 'red': !isApproved }" class="status flex">
                 {{ order.status }}
             </div>
         </div>
@@ -49,12 +54,12 @@ export default {
         approve() {
             const newOrder = JSON.parse(JSON.stringify(this.order))
             newOrder.status = 'approved'
-            this.$store.dispatch({type: 'approveOrder', order: newOrder})
+            this.$store.dispatch({ type: 'approveOrder', order: newOrder })
         },
         reject() {
             const newOrder = JSON.parse(JSON.stringify(this.order))
             newOrder.status = 'rejected'
-            this.$store.dispatch({type: 'rejectOrder', order: newOrder})
+            this.$store.dispatch({ type: 'rejectOrder', order: newOrder })
         },
     },
     computed: {
@@ -88,12 +93,12 @@ export default {
             if (this.order.status === 'approved') return true
             else if (this.order.status === 'rejected') return false
         },
-        
+
     },
-    unmounted() { },
 }
 
 </script>
 
 <style lang="scss" scoped>
+
 </style>
