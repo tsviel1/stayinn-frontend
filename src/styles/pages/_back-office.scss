@@ -126,6 +126,7 @@
               font-family: airbnb-medium;
               align-self: center;
               // padding-left: 10px;
+              text-transform: capitalize;
               align-self: flex-start;
             }
 
@@ -169,9 +170,9 @@
         align-self: flex-end;
       }
 
-      .status {
-        //  justify-content: flex-end;
-      }
+      // .status {
+      //   //  justify-content: flex-end;
+      // }
     }
   }
 }

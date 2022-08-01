@@ -44,7 +44,7 @@ export const amenitiesMap = {
   "Pets live on this property": "pets",
   "Bathtub": "bathtub",
   "High chair": "high-chair",
-  "travel crib": "travel-crib",
+  "Travel crib": "travel-crib",
   "BBQ grill": "bbq-grill",
   "Cleaning before checkout": "cleaning-before-checkout",
   "Pets allowed": "pets",

@@ -1,4 +1,5 @@
 import { orderService } from '../../services/order-service.js'
+import { stayService } from '../../services/stay-service.js'
 
 export default {
   state: {
@@ -33,6 +34,9 @@ export default {
         return acc + total
       }, 0)
     },
+    getTotalReviews({orders, rootState}) {
+
+    }
   },
   mutations: {
     setOrders(state, { orders }) {
@@ -55,6 +59,7 @@ export default {
       state.orders[idx].status = 'rejected'
     },
   },
+<<<<<<< HEAD
   actions: {
     async loadOrders({ commit, state, rootState }) {
       try {
@@ -73,6 +78,49 @@ export default {
         throw err
       }
     },
+=======
+    actions: {
+      async loadOrders({ commit, state, rootState }) {
+        try {
+          const currUser = rootState.userStore.loggedinUser
+          const orders = await orderService.query(currUser)
+          commit({ type: 'setOrders', orders })
+        } catch (err) {
+          console.log(err)
+        }
+      },
+      async loadHostStays({commit, state, rootState}) {
+        const currUser = rootState.userStore.loggedinUser
+        const stays = await stayService.query(currUser)
+      },
+      async saveOrder({ commit, state, rootState }) {
+        try {
+          const currStay = rootState.stayStore.currStay
+          const user = rootState.userStore.loggedinUser
+          const trip = rootState.tripStore.trip
+          let order = {
+            ...trip,
+            stay: currStay,
+            createdAt: Date.now(),
+            by: user,
+            status: 'pending',
+          }
+          const isEdit = !!order._id
+          const savedOrder = await orderService.save(order)
+          commit({ type: 'setOrder', order })
+        } catch (err) {
+          console.log(err)
+        }
+      },
+      async approveOrder({ commit, state }, { order }) {
+        try {
+          const savedOrder = await orderService.save(order)
+          commit({ type: 'approveOrder', order: savedOrder})
+        } catch (err) {
+          throw err
+        }
+      },
+>>>>>>> f468362b353962b46d65d537bf816413b3fe3664
     async rejectOrder({ commit, state }, { order }) {
       try {
         console.log('in reject order')
@@ -83,6 +131,7 @@ export default {
         throw err
       }
     },
+<<<<<<< HEAD
     async saveOrder({ commit, state, rootState }) {
       try {
         //   console.log(state.trip.chckInDate)
@@ -103,6 +152,8 @@ export default {
         console.log(err)
       }
     },
+=======
+>>>>>>> f468362b353962b46d65d537bf816413b3fe3664
     async getOrdersByGuest({ commit, state, rootState }) {
       try {
         const currUser = rootState.userStore.loggedinUser
@@ -112,6 +163,11 @@ export default {
         console.log('Couldn\'nt load trips', err)
       }
     },
+<<<<<<< HEAD
+=======
+
+ 
+>>>>>>> f468362b353962b46d65d537bf816413b3fe3664
   },
 }
 

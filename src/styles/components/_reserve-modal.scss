@@ -164,6 +164,7 @@
     .btn-div{
         display: flex;
         justify-content: space-around;
+        flex-direction: row-reverse;
         margin-top:90px;
         @media (max-width: 880px) {
             margin-top: 50px;
