@@ -2,7 +2,7 @@
   <section class="review-list">
     <h2 class="review-list-title">
       <img class="reviews-svg" src="../assets/svgs/star.svg">
-      {{ getReviewAvg }} ·
+      {{ getReviewAvg.toFixed(1) }} ·
       {{ reviewLength }} reviews
 
     </h2>

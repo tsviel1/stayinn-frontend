@@ -30,6 +30,17 @@
         justify-content: space-between;
         width: 100%;
         margin-bottom: 24px;
+        .star-svg{
+            height: 12px;
+            width: 12px;
+            filter: invert(7%) sepia(3%) saturate(43%) hue-rotate(314deg) brightness(97%) contrast(85%);
+        }
+        .avg-span{
+            color: $clr5;
+            font-size: 14px;
+            font-family: airbnb-medium;
+            font-weight: 300;
+        }
 
         p {
             margin: 0;

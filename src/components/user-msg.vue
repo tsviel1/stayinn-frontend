@@ -32,9 +32,9 @@ export default {
   methods: {
     showMsg(msg) {
       this.msg = msg;
-      // setTimeout(() => {
-      //   this.msg = null;
-      // }, 3000);
+      setTimeout(() => {
+        this.msg = null;
+      }, 6500);
     },
   },
   unmounted() {
@@ -45,12 +45,12 @@ export default {
 
 <style lang="scss" scoped>
 .user-msg {
-  position: absolute;
+  position: fixed;
   top: 9%;
-  right: 20.5%;
-  // left: 50%;
+  right: 4.5%;
   padding: 15px 15px 15px 20px;
-
+  transform:traslateX(-50%) ;
+  transition:opacity 0.3s;
   border-radius: 5px;
 
   &.success {
