@@ -1,5 +1,5 @@
 <template>
-  <section class="categories-container main-layout" :class="{'shadow-bottom':!top}">
+  <section class="categories-container main-layout full" :class="{'shadow-bottom':!top}">
     <!-- <Carousel :settings="settings" :breakpoints="breakpoints"> -->
     <!-- <Slide v-for="slide in categories" :key="slide"> -->
 
