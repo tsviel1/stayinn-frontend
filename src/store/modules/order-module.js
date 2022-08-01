@@ -59,26 +59,6 @@ export default {
       state.orders[idx].status = 'rejected'
     },
   },
-<<<<<<< HEAD
-  actions: {
-    async loadOrders({ commit, state, rootState }) {
-      try {
-        const currUser = rootState.userStore.loggedinUser
-        const orders = await orderService.query(currUser)
-        commit({ type: 'setOrders', orders })
-      } catch (err) {
-        console.log(err)
-      }
-    },
-    async approveOrder({ commit, state }, { order }) {
-      try {
-        const savedOrder = await orderService.save(order)
-        commit({ type: 'approveOrder', order: savedOrder })
-      } catch (err) {
-        throw err
-      }
-    },
-=======
     actions: {
       async loadOrders({ commit, state, rootState }) {
         try {
@@ -120,7 +100,6 @@ export default {
           throw err
         }
       },
->>>>>>> f468362b353962b46d65d537bf816413b3fe3664
     async rejectOrder({ commit, state }, { order }) {
       try {
         console.log('in reject order')
@@ -131,29 +110,6 @@ export default {
         throw err
       }
     },
-<<<<<<< HEAD
-    async saveOrder({ commit, state, rootState }) {
-      try {
-        //   console.log(state.trip.chckInDate)
-        const currStay = rootState.stayStore.currStay
-        const user = rootState.userStore.loggedinUser
-        const trip = rootState.tripStore.trip
-        let order = {
-          ...trip,
-          stay: currStay,
-          createdAt: Date.now(),
-          by: user,
-          status: 'pending',
-        }
-        const isEdit = !!order._id
-        const savedOrder = await orderService.save(order)
-        commit({ type: 'setOrder', order })
-      } catch (err) {
-        console.log(err)
-      }
-    },
-=======
->>>>>>> f468362b353962b46d65d537bf816413b3fe3664
     async getOrdersByGuest({ commit, state, rootState }) {
       try {
         const currUser = rootState.userStore.loggedinUser
@@ -163,11 +119,8 @@ export default {
         console.log('Couldn\'nt load trips', err)
       }
     },
-<<<<<<< HEAD
-=======
 
  
->>>>>>> f468362b353962b46d65d537bf816413b3fe3664
   },
 }
 
