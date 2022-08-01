@@ -22,9 +22,13 @@
                             {{ getTotalGuests }}
                         </div>
                     </div>
-                    <div class="arrow-down">
+                    <div v-if="guestsModalShown" class="arrow-down">
                         <arrow-down-svg />
                     </div>
+                    <div v-else class="arrow-down">
+                        <arrow-up-svg />
+                    </div>
+
                 </div>
 
 
@@ -76,6 +80,7 @@
 
 <script>
 import arrowDownSvg from './svg/arrow-down-svg.vue'
+import arrowUpSvg from './svg/arrow-up-svg.vue'
 export default {
     name: 'reserve-table',
     props: {
@@ -142,7 +147,8 @@ export default {
         this.tripDates = [chckInDate, chckOutDate]
     },
     components: {
-        arrowDownSvg
+        arrowDownSvg,
+        arrowUpSvg
     }
 
 }
