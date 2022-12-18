@@ -1,5 +1,3 @@
-import { orderService } from '../../services/order-service.js'
-
 export default {
   state: {
     trip: {
@@ -34,10 +32,9 @@ export default {
     getChildrenNum({ trip }) {
       return trip.guests.children
     },
-    getTripCost({trip}) {
+    getTripCost({ trip }) {
       return trip.tripCost
     }
-   
   },
   mutations: {
     setTripDates(state, { chckInDate, chckOutDate }) {
@@ -48,8 +45,6 @@ export default {
       state.guests = guests
     },
     setTripCity(state, { filterBy }) {
-      console.log('tripCity', filterBy.txt)
-
       state.trip.dest.cityName = filterBy.txt
     },
     setAdults(state, { newAdultsNum }) {
@@ -61,8 +56,8 @@ export default {
     setTripCost(state, rootState) {
       const nightPrice = rootState.stayStore.currStay.price
       const chckInDate = state.trip.chckInDate.getTime()
-      const chckOutDate =state.trip.chckOutDate.getTime()
-      const diff = (chckOutDate - chckInDate) / (1000 *3600 * 24)
+      const chckOutDate = state.trip.chckOutDate.getTime()
+      const diff = (chckOutDate - chckInDate) / (1000 * 3600 * 24)
       const total = Math.round(diff * nightPrice) + Math.round(diff * nightPrice / 9)
       state.trip.tripCost = total
     },
@@ -78,16 +73,3 @@ export default {
   actions: {
   },
 }
-
-// "2022-07-18T21:00:00.000Z"
-//      chckInDate: null,
-// chckOutDate: null,
-// guests: {
-//   adults: 0,
-//   children: 0,
-// },
-// dest: {
-//   cityName: null,
-// },
-// tripCost: null,
-// },

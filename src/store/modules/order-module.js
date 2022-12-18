@@ -35,22 +35,20 @@ export default {
         return acc + total
       }, 0)
     },
-    getTotalReviews({ hostStays}) {
-      
+    getTotalReviews({ hostStays }) {
+
       const sumReviews = hostStays?.reduce((acc, stay) => {
-          // console.log(stay.numOfReviews)
-          return  stay.numOfReviews + acc
-          
-        }, 0)
-        return sumReviews
+        return stay.numOfReviews + acc
+      }, 0)
+      return sumReviews
     },
-    getAvgRate({hostStays}) {
+    getAvgRate({ hostStays }) {
       const numOfStays = hostStays.length
       let avgRate = hostStays?.reduce((acc, stay) => {
         return stay.reviewScores.rating + acc
 
       }, 0)
-      avgRate = ((avgRate / numOfStays) /20).toFixed(1)
+      avgRate = ((avgRate / numOfStays) / 20).toFixed(1)
       return avgRate
     },
   },
@@ -62,8 +60,6 @@ export default {
       state.orders.unshift(order)
     },
     approveOrder(state, { order }) {
-      // console.log('order', order)
-
       const orderId = order._id
       const idx = state.orders.findIndex((order) => order._id === orderId)
       state.orders[idx].status = 'approved'
@@ -76,7 +72,6 @@ export default {
     },
     setHostStays(state, { stays }) {
       state.hostStays = stays
-      console.log(state.hostStays)
     },
   },
   actions: {
@@ -86,15 +81,13 @@ export default {
         const orders = await orderService.query(currUser)
         commit({ type: 'setOrders', orders })
       } catch (err) {
-        console.log(err)
       }
     },
     async loadHostStays({ commit, state, rootState }) {
       try {
         const currUser = rootState.userStore.loggedinUser
-        const filterBy = {hostId: currUser._id }
+        const filterBy = { hostId: currUser._id }
         const stays = await stayService.query(filterBy)
-        console.log(`1`)
         commit({ type: 'setHostStays', stays })
       } catch (err) {
         throw err
@@ -129,7 +122,6 @@ export default {
     },
     async rejectOrder({ commit, state }, { order }) {
       try {
-        console.log('in reject order')
         order.status = 'rejected'
         const savedOrder = await orderService.save(order)
         commit({ type: 'rejectOrder', order: savedOrder })
@@ -143,7 +135,7 @@ export default {
         const trips = await orderService.query(currUser)
         commit({ type: 'setTrips', trips })
       } catch (err) {
-        console.log("Couldn'nt load trips", err)
+        console.log("Error loading trips", err)
       }
     },
   },

@@ -23,7 +23,6 @@ export default {
     methods: {},
     computed: {
         position() {
-            console.log(this.stay);
             const pos = {
                 lat: +this.stay.loc.lat,
                 lng: +this.stay.loc.lan

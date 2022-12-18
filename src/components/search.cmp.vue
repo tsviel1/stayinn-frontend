@@ -42,7 +42,6 @@
 </template>
  <script>
 import calenderCmp from './calender.cmp.vue'
-import chckIn from './chck-in.cmp.vue'
 import guestsModal from "./guests-modal.cmp.vue"
 import searchSvg from "./svg/search-svg.vue"
 export default {
@@ -120,7 +119,6 @@ export default {
   },
   components: {
     calenderCmp,
-    chckIn,
     guestsModal,
     searchSvg
   },

@@ -96,7 +96,6 @@
        }
      },
      startDate() {
-       console.log('yoo');
        const checkInDate = this.$store.getters.getCurrChckInDate
        this.checkIn = checkInDate
        if (checkInDate) {
@@ -104,7 +103,6 @@
            month: 'short',
          })
          const checkInDay = checkInDate.getDate()
-         console.log(checkInMonth);
          return `${checkInMonth} ${checkInDay}`
        }
  

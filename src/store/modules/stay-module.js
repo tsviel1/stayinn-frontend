@@ -39,16 +39,12 @@ export default {
   mutations: {
     setStays(state, { stays }) {
       state.stays = stays
-      // console.log(state.stays)
     },
     setCurrStay(state, { stay }) {
-      // console.log(stay)
       state.currStay = stay
-      // console.log(state.currStay)
     },
     setFilter(state, { filterBy }) {
       state.currFilterBy = filterBy
-      // console.log(state.currFilterBy)
     },
     toggleSearchBig(state) {
       state.currSearchBig = !state.currSearchBig
@@ -73,7 +69,6 @@ export default {
   actions: {
     async loadStays({ commit, state }) {
       try {
-        console.log(state.currFilterBy);
         const stays = await stayService.query(state.currFilterBy)
         commit({ type: 'setStays', stays })
       } catch (err) {

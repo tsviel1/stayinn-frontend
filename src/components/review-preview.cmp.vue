@@ -25,15 +25,10 @@ export default {
             isMore: false,
         }
     },
-    created() {
-        // console.log(this.review)
-    },
     methods: {},
     computed: {
         getReviewLength() {
-            // console.log(this.review.txt.length);
             return this.review.txt.length > 180
-
         },
         formatedText() {
             return this.isMore ? this.review.txt : this.review.txt.slice(0, 180)

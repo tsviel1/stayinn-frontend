@@ -60,7 +60,6 @@ const ENDPOINT = 'stay'
 // await httpService.get(`${ENDPOINT}/${stayId}`)
 
 async function query(filterBy = {}) {
-  console.log(filterBy)
   return await httpService.get(ENDPOINT, filterBy)
 }
 

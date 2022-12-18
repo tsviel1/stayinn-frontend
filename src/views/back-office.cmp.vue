@@ -1,7 +1,6 @@
 <template>
     <section class="back-office-main main-layout-details">
         <div class="title-backoffice">
-
             <h1 class="back-office-title">Orders status</h1>
         </div>
         <div class="back-office">
@@ -16,13 +15,13 @@
                 <div class="data-card">
                     <h1 class="chart-area-title">Hosting Summary</h1>
                     <h2 class="bold">Fantastic Job!</h2>
-                    <h2 class="subtitle-area border">Guests love what you're doing, keep up the good work and review your orders stats!</h2>
-                    <chart-card v-if="getSumReviews && getAvgRate"  :avgRate="getAvgRate" :sumReviews="getSumReviews" :orders="orders" />
+                    <h2 class="subtitle-area border">Guests love what you're doing, keep up the good work and review
+                        your orders stats!</h2>
+                    <chart-card v-if="getSumReviews && getAvgRate" :avgRate="getAvgRate" :sumReviews="getSumReviews"
+                        :orders="orders" />
                 </div>
             </div>
         </div>
-
-
     </section>
 </template>
 
@@ -42,21 +41,12 @@ export default {
         LineChart,
         ChartCard
     },
-    data() {
-        return {
-
-        }
-
-    },
     created() {
         this.$store.dispatch({ type: 'loadOrders' })
-        this.$store.dispatch({type: 'loadHostStays'})
-
+        this.$store.dispatch({ type: 'loadHostStays' })
     },
-    methods: {},
     computed: {
         orders() {
-            // console.log(this.$store.getters.getOrders)
             return this.$store.getters.getOrders
         },
         getSumReviews() {
@@ -65,12 +55,6 @@ export default {
         getAvgRate() {
             return this.$store.getters.getAvgRate
         },
-        
-    },
-    unmounted() { },
+    }
 }
-
 </script>
-
-<style lang="scss" scoped>
-</style>
