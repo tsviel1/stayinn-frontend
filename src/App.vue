@@ -1,26 +1,19 @@
-
 <template>
-
   <app-header />
   <black-screen :class="{ 'modal-open': checkIfScreen }" @click="closeAllBig" />
   <router-view />
   <user-msg />
-
-
 </template>
 <script>
 import appHeader from './components/header.cmp.vue'
-import userMsg from './components/user-msg.vue';
-import blackScreen from './components/black-screen.cmp.vue';
-
-
+import userMsg from './components/user-msg.vue'
+import blackScreen from './components/black-screen.cmp.vue'
 
 export default {
   components: {
     appHeader,
     userMsg,
     blackScreen
-
   },
   computed: {
     checkIfScreen() {
@@ -42,7 +35,6 @@ export default {
     this.$store.dispatch({ type: 'loadStays' })
     window.addEventListener("scroll", this.handleScroll)
     this.$store.dispatch({type: 'getLoggedInUser'})
-     
   },
   destroyed() {
     window.removeEventListener("scroll", this.handleScroll)
