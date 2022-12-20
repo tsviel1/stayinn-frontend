@@ -14,7 +14,6 @@ import closeSvg from './svg/close-svg.vue';
 import { eventBus } from '@/services/event-bus.service.js';
 import CloseSvg from './svg/close-svg.vue';
 
-
 export default {
   data() {
     return {

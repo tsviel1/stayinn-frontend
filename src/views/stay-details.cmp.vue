@@ -15,8 +15,6 @@
           </div>
           <img class="type-heading-img" :src="stay.host.imgUrl" />
         </div>
-
-
         <p class="stay-details-desc">{{ stay.summary }}</p>
         <ameneties :stay="stay" />
       </div>
@@ -28,10 +26,9 @@
     <review-list :stay="stay" />
     <mini-host-preview :stay="stay" />
   </section>
- 
   <app-footer />
 </template>
- <script>
+<script>
 import modalCmp from '../components/reserve-modal.cmp.vue'
 import stayReserve from '../components/stay-reserve.cmp.vue';
 import ameneties from '../components/ameneties.cmp.vue';
@@ -42,9 +39,7 @@ import stayDetailsHeading from '../components/stay-details-heading.cmp.vue'
 import detailsImages from '../components/details-imges.cmp.vue'
 import appFooter from '../components/app-footer.cmp.vue';
 
-
 export default {
-
   name: 'stay-details',
   components: {
     stayReserve,
@@ -71,7 +66,6 @@ export default {
     onClickStay(filterBy) {
       this.$router.push(`/`)
     },
-
     openModal() {
       this.$store.commit('toggleModal')
     },
@@ -79,10 +73,8 @@ export default {
       this.$store.commit('toggleModal')
     },
     approveOrder() {
-       this.$store.commit('toggleModal')
+      this.$store.commit('toggleModal')
     }
-
-
   },
   computed: {
     stay() {
@@ -97,11 +89,6 @@ export default {
     isModalShown() {
       return this.$store.getters.getModal
     },
-  },
-  unmounted() {
-
-  },
+  }
 };
 </script>
- <style>
- </style>
