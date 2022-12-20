@@ -1,7 +1,7 @@
 <template>
     <section class="ameneties">
         <h2 class="ameneties-title">What this place offers</h2>
-        <ul class="ameneties-list clean-list ">
+        <ul class="ameneties-list clean-list">
             <li class="amenety-preview" v-for="(amenety, index) in stay.amenities">
                 <amenety-preview :amenety="amenety" />
             </li>

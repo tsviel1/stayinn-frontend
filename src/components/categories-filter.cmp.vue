@@ -1,5 +1,5 @@
 <template>
-  <section class="categories-container main-layout full" :class="{'shadow-bottom':!top}">
+  <section class="categories-container main-layout full" :class="{ 'shadow-bottom': !top }">
     <!-- <Carousel :settings="settings" :breakpoints="breakpoints"> -->
     <!-- <Slide v-for="slide in categories" :key="slide"> -->
 
@@ -14,12 +14,10 @@
 
   </section>
 </template>
- <script>
+<script>
 import categoryPreview from './category-preview.cmp.vue'
 import { defineComponent } from 'vue'
 import { Carousel, Navigation, Slide } from 'vue3-carousel'
-
-
 
 export default {
   name: 'categories-filter',
@@ -75,5 +73,3 @@ export default {
   },
 };
 </script>
- <style>
- </style>

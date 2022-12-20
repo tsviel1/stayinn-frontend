@@ -21,7 +21,7 @@
     </form>
     <form v-else @submit.prevent="doSignup" class="container home-page main-layout">
       <div class="signup-section">
-        <h2 class="signup-header">Welcome to Stayin</h2>
+        <h2 class="signup-header">Welcome to StayInn</h2>
         <input v-model="signupCred.fullname" class="input" type="text" placeholder="Full name">
         <input v-model="signupCred.username" class="input" type="text" placeholder="Username">
         <input v-model="signupCred.password" class="input" type="password" placeholder="Password">

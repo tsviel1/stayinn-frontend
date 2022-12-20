@@ -9,7 +9,6 @@
                     <img class="star-svg" src="../assets/svgs/star.svg" /> <span class="avg-span">{{reviewsAvg.toFixed(1)}}</span> ·<span class="reviews">{{ stay.reviews.length }} reviews</span>
                 </p>
             </div>
-
             <reserve-table :stay="stay" />
             <reserve-btn v-if="getIsDatesSelected" @click="reserveTrip" />
             <check-avail-btn v-if="!getIsDatesSelected" />
@@ -19,10 +18,8 @@
                 </li>
             </ul>
             <order-calc-section v-if="getIsDatesSelected" />
-
         </div>
     </section>
-
 </template>
 
 <script>
@@ -53,18 +50,14 @@ export default {
     created() {
     },
     methods: {
-        
         async reserveTrip() {
             this.$emit('onReserve')
         },
-
     },
     computed: {
         reviewsAvg() {
             return this.$store.getters.getCurrStayAvg
         },
-        
-
         getIsDatesSelected() {
             const chckIn = this.$store.getters.getCurrChckInDate
             const chckOut = this.$store.getters.getCurrChckOutDate
@@ -73,5 +66,4 @@ export default {
         }
     },
 }
-
 </script>

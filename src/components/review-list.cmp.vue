@@ -32,10 +32,8 @@ export default {
     };
   },
   created() {
-    // console.log(this.stay)
     this.reviewLength = this.stay.reviews.length
   },
-  methods: {},
   computed: {
     getReviewAvg() {
       return this.$store.getters.getCurrStayAvg
@@ -47,8 +45,5 @@ export default {
       return this.isMore ? ` Show less` : `Show all ${this.reviewLength} reviews`
     },
   },
-  unmounted() { },
 };
 </script>
- <style>
- </style>

@@ -51,28 +51,21 @@ export default {
     data() {
         return {
             pendings: null,
-             options: {
-                responsive:true,
-                    plugins: {
-                        legend: {
-                            display: true,
-                            position:'bottom'
-                        }
+            options: {
+                responsive: true,
+                plugins: {
+                    legend: {
+                        display: true,
+                        position: 'bottom'
                     }
                 }
+            }
         }
-    },
-    created() {
-
-    },
-    methods: {
-
     },
     computed: {
         calcIncome() {
             return this.$store.getters.calcTotalIncome
         },
-
         ordersStatus() {
             const status = {
                 labels: ['Pending', 'Rejected', 'Approved'],
@@ -82,13 +75,10 @@ export default {
                         backgroundColor: ['#fc5e03', '#f56c6c', '#67c23a'],
                     },
                 ],
-               
             }
-
             return status
         },
     },
-    unmounted() { },
 }
 
 </script>

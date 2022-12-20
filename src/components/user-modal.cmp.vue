@@ -5,23 +5,11 @@
 </template>
 
 <script>
-    export default {
-
-        data() {
-        return {}
-        },
-        created() {},
-        methods: {},
-        computed: {
-            user() {
-                return this.$store.getters.loggedinUser
-            }
-        },
-        unmounted() {},
+export default {
+    computed: {
+        user() {
+            return this.$store.getters.loggedinUser
         }
-
+    },
+}
 </script>
-
-<style lang="scss" scoped>
-
-</style>

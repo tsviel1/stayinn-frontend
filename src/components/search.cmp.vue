@@ -40,8 +40,8 @@
     </div>
   </section>
 </template>
- <script>
-import calenderCmp from './calender.cmp.vue'
+
+<script>
 import guestsModal from "./guests-modal.cmp.vue"
 import searchSvg from "./svg/search-svg.vue"
 export default {
@@ -103,10 +103,10 @@ export default {
       this.modalWho = !this.modalWho
     },
     searchTrip() {
-      const adults=  this.$store.getters.getAdultsNum
-      const kids=this.$store.getters.getChildrenNum
-      const sum=adults+kids
-      this.filterBy.capacity=sum
+      const adults = this.$store.getters.getAdultsNum
+      const kids = this.$store.getters.getChildrenNum
+      const sum = adults + kids
+      this.filterBy.capacity = sum
 
       // filter stays
       this.$emit('setFilterBy', { ...this.filterBy })
@@ -118,40 +118,39 @@ export default {
     },
   },
   components: {
-    calenderCmp,
     guestsModal,
     searchSvg
   },
 }
 
 </script>
- <style>
- .date-picker-container {
-   z-index: 1 !important;
-   position: absolute !important;
-   opacity: 0 !important;
-   width: 270px !important;
-   cursor: pointer !important;
- }
- 
- .el-range-editor.el-input__wrapper {
-   cursor: pointer !important;
- }
- 
- .el-date-table td.available:hover {
-   color: black !important;
- }
- 
- .el-range-editor .el-range-input {
-   cursor: pointer !important;
- }
- 
- 
- .start-date.in-range .el-date-table-cell .el-date-table-cell__text {
-   background: black;
- }
- 
- .end-date.in-range .el-date-table-cell .el-date-table-cell__text {
-   background: black;
- }
- </style>
+<style>
+.date-picker-container {
+  z-index: 1 !important;
+  position: absolute !important;
+  opacity: 0 !important;
+  width: 270px !important;
+  cursor: pointer !important;
+}
+
+.el-range-editor.el-input__wrapper {
+  cursor: pointer !important;
+}
+
+.el-date-table td.available:hover {
+  color: black !important;
+}
+
+.el-range-editor .el-range-input {
+  cursor: pointer !important;
+}
+
+
+.start-date.in-range .el-date-table-cell .el-date-table-cell__text {
+  background: black;
+}
+
+.end-date.in-range .el-date-table-cell .el-date-table-cell__text {
+  background: black;
+}
+</style>

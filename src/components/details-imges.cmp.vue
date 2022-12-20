@@ -14,14 +14,9 @@
 <script>
 export default {
      name: 'details-images',
-        
         props: {
             stay: Object
         },
-    data() {
-        return {}
-    },
-    created() { },
     methods: {
         setupImgUrl(name) {
             return new URL(`../assets/Images/${name}`, import.meta.url).href;

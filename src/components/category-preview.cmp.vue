@@ -1,7 +1,7 @@
 <template>
-    <button :class="{'is-clicked': isClicked}" @click="filterByCategory" class="category-btn">
+    <button :class="{ 'is-clicked': isClicked }" @click="filterByCategory" class="category-btn">
         <img :src="setupImgUrl(category)" class="flex" />
-        <span>{{ categoryMadeNormal }}</span>
+        <span>{{ categoryName }}</span>
     </button>
 </template>
 
@@ -14,41 +14,33 @@ export default {
         category: String
     },
     data() {
-    return {
-        isClicked:false,
-        filterBy:{
-            category:null
-        },
-       
-
-    }
-  },
+        return {
+            isClicked: false,
+            filterBy: {
+                category: null
+            },
+        }
+    },
     methods: {
         setupImgUrl(name) {
             return new URL(`../assets/categories/${name}.jpg`, import.meta.url).href;
         },
-        filterByCategory(){
-            this.filterBy.category=this.category
-            this.isClicked=true
+        filterByCategory() {
+            this.filterBy.category = this.category
+            this.isClicked = true
             this.$store.commit({
-        type: 'setFilter',
-        filterBy: { ...this.filterBy }
-      })
-      this.$store.dispatch({ type: "loadStays", filterBy: { ...this.filterBy } })
-
+                type: 'setFilter',
+                filterBy: { ...this.filterBy }
+            })
+            this.$store.dispatch({ type: "loadStays", filterBy: { ...this.filterBy } })
         }
     },
     computed: {
-        categoryMadeNormal() {
+        categoryName() {
             const category = this.category
-            const c = category.replaceAll('-', ' ')
-            const d = c.charAt(0).toUpperCase() + c.slice(1)
-            return d
+            const categoryNoDash = category.replaceAll('-', ' ')
+            return categoryNoDash.charAt(0).toUpperCase() + categoryNoDash.slice(1)
         }
     }
-    ,created(){
-
-    }
-
 }
 </script>
